@@ -136,19 +136,19 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Brand */}
-        <a href="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-400 to-sky-500 shadow" />
           <span className="font-semibold tracking-tight">SIFworld</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
-          <a href="/" className="hover:text-emerald-600">
+          <Link to="/" className="hover:text-emerald-600">
             Home
-          </a>
-          <a href="/about-us" className="hover:text-emerald-600">
+          </Link>
+          <Link to="/about-us" className="hover:text-emerald-600">
             About
-          </a>
+          </Link>
           {/* Mega menu trigger */}
           <div
             className="relative"
@@ -191,8 +191,8 @@ export default function Navbar() {
                       <ul className="space-y-2">
                         {col.items.map((it) => (
                           <li key={it.label}>
-                            <a
-                              href={it.href}
+                            <Link
+                              href={it.to}
                               className="block rounded-lg p-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
                               role="menuitem"
                             >
@@ -202,7 +202,7 @@ export default function Navbar() {
                               <div className="text-xs text-neutral-500 dark:text-neutral-400">
                                 {it.desc}
                               </div>
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -215,8 +215,8 @@ export default function Navbar() {
                   <span className="text-neutral-600 dark:text-neutral-300">
                     Looking to partner?
                   </span>
-                  <a
-                    href="#csr"
+                  <Link
+                    to="#csr"
                     className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-3 py-1.5 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900"
                   >
                     CSR Programs
@@ -231,35 +231,35 @@ export default function Navbar() {
                       <path d="M5 12h14" />
                       <path d="M12 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
           </div>
-          <a href="/gallery" className="hover:text-emerald-600">
+          <Link to="/gallery" className="hover:text-emerald-600">
             Gallery
-          </a>
-          <a href="/#sunyatimes" className="hover:text-emerald-600">
+          </Link>
+          <Link to="/#sunyatimes" className="hover:text-emerald-600">
             Sunyatimes
-          </a>
-          <a href="/odoc" className="hover:text-emerald-600">
+          </Link>
+          <Link to="/odoc" className="hover:text-emerald-600">
             ODOC
-          </a>
-          <a href="/impact-stories" className="hover:text-emerald-600">
+          </Link>
+          <Link to="/impact-stories" className="hover:text-emerald-600">
             Impact Stories
-          </a>
-          <a href="/contact-us" className="hover:text-emerald-600">
+          </Link>
+          <Link to="/contact-us" className="hover:text-emerald-600">
             Contact
-          </a>
-          <a href="/join-us" className="hover:text-emerald-600">
+          </Link>
+          <Link to="/join-us" className="hover:text-emerald-600">
             Join Us
-          </a>
-          <a
-            href="/#cta"
+          </Link>
+          <Link
+            to="/#cta"
             className="rounded-full bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900"
           >
             Get Involved
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile toggle */}
@@ -297,18 +297,18 @@ export default function Navbar() {
         <div className="md:hidden">
           <div className="mx-4 mb-4 rounded-2xl border border-neutral-200 bg-white p-3 shadow dark:border-neutral-800 dark:bg-neutral-900">
             <div className="grid gap-2">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
               >
                 Home
-              </a>
-              <a
-                href="/about-us"
+              </Link>
+              <Link
+                to="/about-us"
                 className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
               >
                 About
-              </a>
+              </Link>
               {/* Collapsible Activities */}
               <details className="rounded-lg">
                 <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800">
@@ -334,12 +334,12 @@ export default function Navbar() {
                       <ul className="mt-1">
                         {col.items.map((it) => (
                           <li key={it.label}>
-                            <a
-                              href={it.href}
+                            <Link
+                              to={it.href}
                               className="block rounded-md px-2 py-1.5 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800"
                             >
                               {it.label}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -348,24 +348,24 @@ export default function Navbar() {
                 </div>
               </details>
 
-              <a
-                href="/#sunyatimes"
+              <Link
+                to="/#sunyatimes"
                 className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
               >
                 Sunyatimes
-              </a>
-              <a
-                href="/#odoc"
+              </Link>
+              <Link
+                to="/#odoc"
                 className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
               >
                 ODOC
-              </a>
-              <a
-                href="/#cta"
+              </Link>
+              <Link
+                to="/#cta"
                 className="rounded-lg bg-neutral-900 px-3 py-2 text-center text-white dark:bg-white dark:text-neutral-900"
               >
                 Get Involved
-              </a>
+              </Link>
             </div>
           </div>
         </div>
