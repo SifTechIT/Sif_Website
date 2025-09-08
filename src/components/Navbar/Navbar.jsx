@@ -193,7 +193,7 @@ export default function Navbar() {
                         {col.items.map((it) => (
                           <li key={it.label}>
                             <Link
-                              href={it.to}
+                              to={it.to}
                               className="block rounded-lg p-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
                               role="menuitem"
                             >
