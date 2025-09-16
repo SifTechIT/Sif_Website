@@ -1,5 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-
+import Banner1 from "../../assets/SunyaMeditation/Banner1.jpg";
+import Banner2 from "../../assets/SunyaMeditation/Banner2.JPG";
+import Banner3 from "../../assets/SunyaMeditation/Banner3.jpeg";
+import FoundationCourse from "../../assets/SunyaMeditation/FoundationCourse.jpg";
+import OnlineSession from "../../assets/SunyaMeditation/OnlineSession.jpeg";
+import RESIDENTIAl from "../../assets/SunyaMeditation/RESIDENTIAl.jpg";
+import SchoolPrograms from "../../assets/SunyaMeditation/SchoolPrograms.jpeg";
+import Sunya from "../../assets/SunyaMeditation/SunyaMedi.jpg";
+import Trainers from "../../assets/SunyaMeditation/Trainers.jpg";
+import Transformation from "../../assets/SunyaMeditation/Transformation.jpg";
 // If you're using Next.js, you can move the <Head> font link there.
 // For CRA/Vite, add Inter in index.html or via @import in your CSS.
 
@@ -22,6 +31,7 @@ function Hero() {
   const slides = useMemo(
     () => [
       {
+        image: Banner1,
         badge: "🧘‍♂️ Ancient Wisdom, Modern Practice",
         title: "Sunya Meditation",
         desc: "Experience the transformative power of NOTHING. Discover inner peace through ancient wisdom revived for the modern world.",
@@ -32,6 +42,7 @@ function Hero() {
         bg: "from-indigo-500 to-indigo-600",
       },
       {
+        image: Banner2,
         badge: "🌿 Find Your Center",
         title: "Inner Peace Awaits",
         desc: "In a world of noise, discover silence. Sunya brings you back to stillness, clarity, and purpose through conscious emptiness.",
@@ -42,6 +53,7 @@ function Hero() {
         bg: "from-emerald-500 to-indigo-500",
       },
       {
+        image: Banner3,
         badge: "✨ Transform Your Life",
         title: "Meet Yourself",
         desc: "Practiced by thousands worldwide, Sunya forms the cornerstone of personality development and mindful living. Start your journey today.",
@@ -75,7 +87,8 @@ function Hero() {
           }`}
         >
           <div
-            className={`h-full w-full bg-gradient-to-br ${s.bg} flex items-center`}
+            className={"h-full w-full flex items-center bg-center bg-cover"}
+            style={{ backgroundImage: `url(${s.image})` }}
           >
             <div className="max-w-[1280px] mx-auto px-6 w-full">
               <div className="text-white max-w-3xl mx-auto text-center animate-[slideUp_800ms_cubic-bezier(0.4,0,0.2,1)]">
@@ -210,9 +223,11 @@ function WhatIsSunya() {
         </div>
 
         <div className="relative h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-          <div className="w-52 h-52 rounded-full bg-gradient-to-br from-indigo-500 to-emerald-500 flex items-center justify-center animate-[breathe_4s_ease-in-out_infinite]">
-            <span className="text-6xl text-white">🕯️</span>
-          </div>
+          <img
+            src={Sunya}
+            alt="circle"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
@@ -283,18 +298,21 @@ function Activities() {
   const slides = [
     [
       {
+        image: FoundationCourse,
         icon: "🪷",
         title: "Foundation Course",
         desc: "A 3-day beginner-level meditation and self-awareness workshop conducted in communities, colleges, and NGOs.",
         tags: ["3 Days", "Beginner", "Group Sessions"],
       },
       {
+        image: RESIDENTIAl,
         icon: "🧘",
         title: "Residential Retreats",
         desc: "Multi-day silent retreats (3, 7, or 10 days) in serene environments with expert guidance for deep practice.",
         tags: ["Silent Retreat", "7-10 Days", "Deep Practice"],
       },
       {
+        image: OnlineSession,
         icon: "🎙️",
         title: "Online Sessions",
         desc: "Free guided meditations every weekend through Zoom and YouTube live for global accessibility.",
@@ -303,18 +321,21 @@ function Activities() {
     ],
     [
       {
+        image: SchoolPrograms,
         icon: "🏫",
         title: "School Programs",
         desc: "Introduction to Sunya for students and teachers to enhance focus and reduce exam anxiety.",
         tags: ["Students", "Teachers", "Focus Training"],
       },
       {
+        image: Transformation,
         icon: "🫂",
         title: "Transformation Circles",
         desc: "Small group gatherings focused on emotional healing and life-purpose discovery in supportive environments.",
         tags: ["Small Groups", "Healing Focus", "Life Purpose"],
       },
       {
+        image: Trainers,
         icon: "📚",
         title: "Trainers Program",
         desc: "Train-the-trainer initiative to build certified facilitators in different regions and languages.",
@@ -393,11 +414,11 @@ function Activities() {
   );
 }
 
-function ActivityCard({ icon, title, desc, tags }) {
+function ActivityCard({ image, icon, title, desc, tags }) {
   return (
     <div className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3 hover:shadow-2xl bg-white">
-      <div className="h-52 bg-gradient-to-br from-indigo-500 to-emerald-500 grid place-items-center text-5xl text-white">
-        {icon}
+      <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
+        <img src={image} alt={title} className="h-full w-full object-cover " />
       </div>
       <div className="p-8">
         <h3 className="text-xl font-bold mb-2">{title}</h3>

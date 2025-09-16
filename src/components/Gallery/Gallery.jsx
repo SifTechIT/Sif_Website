@@ -1,5 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
-
+import ChildrenGames from "../../assets/AusumKids/Expressive_Games.jpeg";
+import LittleSunyatee from "../../assets/AusumKids/Little_Sunyatee.jpeg";
+import ChildrenGroupLearning from "../../assets/AusumKids/StoryTelling.jpg";
+import CommunityExhibition from "../../assets/CulturalRevival/Gallery_Community_Exhibition.JPG";
+import SutraEngraving from "../../assets/CulturalRevival/Gallery_Sutra_Engraving.jpg";
+import FarmerSmile from "../../assets/FarmerEmpowerment/Gallery_Farmer_Smile.jpeg";
+import Noni from "../../assets/FarmerEmpowerment/Gallery_Noni.jpeg";
+import SoilTesting from "../../assets/FarmerEmpowerment/Gallery_Soil.jpg";
+import PalmLeafPreparation from "../../assets/PalmLeafSutra/Mission.jpg";
+import StressRelief from "../../assets/RuralHealth/Stress_Relief.jpg";
+import BodhGaya from "../../assets/SunyaMeditation/Gallery_Bodh_Gaya.JPG";
+import ChildrenFirst from "../../assets/SunyaMeditation/Gallery_ChildMeditation.jpg";
+import CommunityPractice from "../../assets/SunyaMeditation/Gallery_Community_Practice.JPG";
+import FirstSale from "../../assets/WomenEmpowerment/Gallery_First_Sale.jpg";
+import WomenLeader from "../../assets/WomenEmpowerment/Gallery_Leader.jpg";
+import GallerySkillCenter from "../../assets/WomenEmpowerment/Gallery_Skill_Center.jpg";
 export default function SifGalleryPage() {
   const [activeTab, setActiveTab] = useState("photos");
   const [filter, setFilter] = useState("all");
@@ -7,6 +22,7 @@ export default function SifGalleryPage() {
     open: false,
     title: "",
     desc: "",
+    image: null,
   });
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,9 +46,14 @@ export default function SifGalleryPage() {
       {activeTab === "photos" ? (
         <PhotosSection
           filter={filter}
-          onOpen={(p) =>
-            setLightbox({ open: true, title: p.title, desc: p.desc })
-          }
+          onOpen={(p) => {
+            setLightbox({
+              open: true,
+              title: p.title,
+              desc: p.desc,
+              image: p.image,
+            });
+          }}
         />
       ) : (
         <VideosSection filter={filter} />
@@ -41,7 +62,10 @@ export default function SifGalleryPage() {
         open={lightbox.open}
         title={lightbox.title}
         desc={lightbox.desc}
-        onClose={() => setLightbox({ open: false, title: "", desc: "" })}
+        image={lightbox.image}
+        onClose={() =>
+          setLightbox({ open: false, title: "", desc: "", image: null })
+        }
       />
       {/* <Footer /> */}
     </div>
@@ -49,64 +73,11 @@ export default function SifGalleryPage() {
 }
 
 /* ========================= Header ========================= */
-function Header({ scrolled }) {
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all ${
-        scrolled ? "bg-white/95 border-gray-200" : "bg-white/80 border-gray-200"
-      } backdrop-blur-xl`}
-    >
-      <nav className="container max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <ul className="hidden md:flex gap-8 text-gray-600 text-[15px] font-medium">
-          <li>
-            <a href="#programs" className="hover:text-gray-900">
-              Programs
-            </a>
-          </li>
-          <li>
-            <a href="#impact" className="hover:text-gray-900">
-              Impact
-            </a>
-          </li>
-        </ul>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-emerald-500 relative flex items-center justify-center overflow-hidden">
-            <div className="w-6 h-4 border-2 border-white rounded-full" />
-            <div className="absolute bottom-2 w-4 h-0.5 bg-white" />
-          </div>
-          <span className="font-extrabold text-[20px] tracking-tight text-gray-900">
-            SIF
-          </span>
-        </div>
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-gray-600 text-[15px] font-medium">
-            <li>
-              <a href="#about" className="hover:text-gray-900">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-gray-900">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button className="px-4 py-2 rounded-lg bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition">
-            Donate
-          </button>
-          <button className="md:hidden text-2xl" aria-label="Open menu">
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
 
 /* ========================= Hero ========================= */
 function Hero() {
   return (
-    <section className="relative h-screen mt-[72px] bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center overflow-hidden">
+    <section className="relative h-screen bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div className="w-full h-full opacity-20 bg-[radial-gradient(circle_at_20%_20%,white,transparent_50%),radial-gradient(circle_at_80%_80%,white,transparent_50%)]" />
       </div>
@@ -184,6 +155,7 @@ function PhotosSection({ filter, onOpen }) {
     () => [
       // Meditation
       {
+        image: BodhGaya,
         category: "meditation",
         emoji: "🧘",
         badge: "Mindfulness & Sunya",
@@ -191,6 +163,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Powerful moments from meditation retreats in the sacred land where Buddha attained enlightenment.",
       },
       {
+        image: CommunityPractice,
         category: "meditation",
         emoji: "👥",
         badge: "Mindfulness & Sunya",
@@ -198,6 +171,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "People across ages coming together for shared meditation and mindfulness practices.",
       },
       {
+        image: ChildrenFirst,
         category: "meditation",
         emoji: "👶",
         badge: "Mindfulness & Sunya",
@@ -206,6 +180,7 @@ function PhotosSection({ filter, onOpen }) {
       },
       // Farmer
       {
+        image: Noni,
         category: "farmer",
         emoji: "🌱",
         badge: "Farmer Empowerment",
@@ -213,6 +188,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Farmers tending to their Noni cultivation fields in Siddipet with care and hope.",
       },
       {
+        image: SoilTesting,
         category: "farmer",
         emoji: "🧪",
         badge: "Farmer Empowerment",
@@ -220,6 +196,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Scientific soil testing workshops and sustainable farming training sessions in progress.",
       },
       {
+        image: FarmerSmile,
         category: "farmer",
         emoji: "😊",
         badge: "Farmer Empowerment",
@@ -228,6 +205,7 @@ function PhotosSection({ filter, onOpen }) {
       },
       // Women
       {
+        image: GallerySkillCenter,
         category: "women",
         emoji: "✂️",
         badge: "Women Empowerment",
@@ -235,6 +213,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Women at skill development centers crafting eco-products and textiles with pride.",
       },
       {
+        image: FirstSale,
         category: "women",
         emoji: "🏪",
         badge: "Women Empowerment",
@@ -242,6 +221,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Self-help groups showcasing their first sales at local exhibitions with joy and achievement.",
       },
       {
+        image: WomenLeader,
         category: "women",
         emoji: "🎤",
         badge: "Women Empowerment",
@@ -250,6 +230,7 @@ function PhotosSection({ filter, onOpen }) {
       },
       // Education
       {
+        image: ChildrenGames,
         category: "education",
         emoji: "🎲",
         badge: "Child Education",
@@ -257,6 +238,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Children engaged in mindfulness games like Food Bingo and Conflict Cards.",
       },
       {
+        image: ChildrenGroupLearning,
         category: "education",
         emoji: "📚",
         badge: "Child Education",
@@ -264,6 +246,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Group learning sessions in rural education centers with interactive activities.",
       },
       {
+        image: LittleSunyatee,
         category: "education",
         emoji: "👨‍🏫",
         badge: "Child Education",
@@ -286,6 +269,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Girls proudly holding dignity kits during menstrual health awareness drives.",
       },
       {
+        image: StressRelief,
         category: "health",
         emoji: "🧘‍♀️",
         badge: "Rural Health",
@@ -294,6 +278,7 @@ function PhotosSection({ filter, onOpen }) {
       },
       // Heritage
       {
+        image: PalmLeafPreparation,
         category: "heritage",
         emoji: "🌿",
         badge: "Cultural Revival",
@@ -301,6 +286,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Odisha artisans carefully preparing palm leaves for traditional manuscript creation.",
       },
       {
+        image: SutraEngraving,
         category: "heritage",
         emoji: "💎",
         badge: "Cultural Revival",
@@ -308,6 +294,7 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Laser-engraving of the Diamond Sutra using modern technology on traditional materials.",
       },
       {
+        image: CommunityExhibition,
         category: "heritage",
         emoji: "🏛️",
         badge: "Cultural Revival",
@@ -346,7 +333,13 @@ function PhotosSection({ filter, onOpen }) {
                   catGradient[p.category]
                 } text-white grid place-items-center text-5xl relative`}
               >
-                <span>{p.emoji}</span>
+                <div className="h-[250px]  w-full bg-gray-100 flex items-center justify-center">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="h-full w-full object-cover "
+                  />
+                </div>
                 <span className="absolute top-3 right-3 text-xs font-semibold bg-black/60 rounded-full px-2 py-0.5">
                   {p.category}
                 </span>
@@ -510,7 +503,7 @@ function FeaturedCard({ title, desc, grad, emoji, span }) {
 }
 
 /* ========================= Lightbox ========================= */
-function Lightbox({ open, title, desc, onClose }) {
+function Lightbox({ open, title, desc, onClose, image }) {
   useEffect(() => {
     const onKey = (e) => {
       if (open && e.key === "Escape") onClose();
@@ -518,7 +511,7 @@ function Lightbox({ open, title, desc, onClose }) {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
-
+  console.log("image", image);
   if (!open) return null;
   return (
     <div
@@ -538,19 +531,13 @@ function Lightbox({ open, title, desc, onClose }) {
         </button>
         {/* Placeholder image using inline SVG text (no external URLs) */}
         <div className="w-[80vw] max-w-[900px]">
-          <svg viewBox="0 0 800 500" className="w-full h-auto block">
-            <rect width="800" height="500" fill="#f3f4f6" />
-            <text
-              x="400"
-              y="250"
-              textAnchor="middle"
-              fontFamily="sans-serif"
-              fontSize="24"
-              fill="#6b7280"
-            >
-              {title}
-            </text>
-          </svg>
+          <div className="h-full w-full bg-gray-100 flex items-center justify-center">
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover "
+            />
+          </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 text-white p-6 bg-gradient-to-t from-black/80 to-transparent">
           <div className="text-lg font-bold">{title}</div>
@@ -561,103 +548,6 @@ function Lightbox({ open, title, desc, onClose }) {
   );
 }
 
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white py-16 mt-12">
-      <div className="container max-w-[1280px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
-        <div>
-          <h3 className="text-lg font-bold mb-3">SIF</h3>
-          <p className="text-white/70">Visual stories of transformation.</p>
-          <p className="text-white/70">From mindfulness to community impact.</p>
-          <p className="text-white/70">hello@sifworld.com</p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold mb-3">Programs</h3>
-          <p>
-            <a
-              href="#farmer-empowerment"
-              className="text-white/70 hover:text-white"
-            >
-              Farmer Empowerment
-            </a>
-          </p>
-          <p>
-            <a
-              href="#women-empowerment"
-              className="text-white/70 hover:text-white"
-            >
-              Women Empowerment
-            </a>
-          </p>
-          <p>
-            <a href="#education" className="text-white/70 hover:text-white">
-              Child Education
-            </a>
-          </p>
-          <p>
-            <a href="#health" className="text-white/70 hover:text-white">
-              Rural Health
-            </a>
-          </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold mb-3">Gallery</h3>
-          <p>
-            <a href="#photos" className="text-white/70 hover:text-white">
-              Photo Gallery
-            </a>
-          </p>
-          <p>
-            <a href="#videos" className="text-white/70 hover:text-white">
-              Video Stories
-            </a>
-          </p>
-          <p>
-            <a href="#testimonials" className="text-white/70 hover:text-white">
-              Testimonials
-            </a>
-          </p>
-          <p>
-            <a href="#events" className="text-white/70 hover:text-white">
-              Events
-            </a>
-          </p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold mb-3">Follow Us</h3>
-          <p>
-            <a href="#" className="text-white/70 hover:text-white">
-              Instagram
-            </a>
-          </p>
-          <p>
-            <a href="#" className="text-white/70 hover:text-white">
-              Facebook
-            </a>
-          </p>
-          <p>
-            <a href="#" className="text-white/70 hover:text-white">
-              LinkedIn
-            </a>
-          </p>
-          <p>
-            <a href="#" className="text-white/70 hover:text-white">
-              YouTube
-            </a>
-          </p>
-        </div>
-      </div>
-      <div className="border-t border-white/10 pt-6 text-center text-white/60 text-sm">
-        <p>© 2025 Sunyatee International Foundation. All Rights Reserved.</p>
-        <p>Capturing moments of transformation and hope</p>
-      </div>
-    </footer>
-  );
-}
-
-/* ========================= Utilities ========================= */
-// Simple CSS keyframes without config
 const style = document.createElement("style");
 style.innerHTML = `@keyframes slideUp {from {opacity:0; transform: translateY(32px);} to {opacity:1; transform: translateY(0);} }`;
 if (

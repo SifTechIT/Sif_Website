@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-
+import Banner1 from "../../assets/BrickHouse/Banner1.jpg";
+import Banner2 from "../../assets/BrickHouse/Banner2.jpg";
+import Banner3 from "../../assets/BrickHouse/Banner3.jpg";
+import BrickHouse from "../../assets/BrickHouse/Brick_House.jpg";
 export default function BrickHouseProjectPage() {
   return (
     <main>
@@ -83,6 +86,7 @@ function Header() {
 function HeroSlider() {
   const slides = [
     {
+      image: Banner1,
       badge: "🏛️ Reviving Ancient Indian Traditions & Knowledge Systems",
       title: "Brick House Project",
       text: "Building enduring foundations for cultural preservation. From architectural heritage to intellectual treasures, safeguarding what is timeless while reinterpreting it for today's world.",
@@ -93,6 +97,7 @@ function HeroSlider() {
       bg: "from-amber-700 to-orange-700",
     },
     {
+      image: Banner2,
       badge: "🧱 Each Brick Strengthens Heritage",
       title: "Enduring Foundations",
       text: "Just as each brick contributes to a strong house, each preserved text, tradition, and practice strengthens the collective heritage of humanity.",
@@ -103,6 +108,7 @@ function HeroSlider() {
       bg: "from-yellow-600 to-rose-600",
     },
     {
+      image: Banner3,
       badge: "🌱 Revival of Indian Traditions (IT)",
       title: "Ancient IT",
       text: "True innovation for the future lies in re-learning from the past. Reviving Indian traditions in philosophy, ecology, health, architecture, and governance for modern applications.",
@@ -125,34 +131,40 @@ function HeroSlider() {
       {slides.map((s, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            i === idx ? "opacity-100" : "opacity-0"
-          } bg-gradient-to-br ${s.bg} flex items-center`}
+          className={`absolute inset-0 transition-opacity duration-[1200ms] ${
+            idx === i ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden={i !== idx}
         >
-          <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-              <span>{s.badge}</span>
-            </div>
-            <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
-              {s.title}
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
-              {s.text}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {s.ctas.map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  className={`px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
-                    c.primary
-                      ? "bg-white text-amber-700 hover:bg-gray-100"
-                      : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {c.label}
-                </a>
-              ))}
+          <div
+            className={"h-full w-full flex items-center bg-center bg-cover"}
+            style={{ backgroundImage: `url(${s.image})` }}
+          >
+            <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
+                <span>{s.badge}</span>
+              </div>
+              <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
+                {s.title}
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+                {s.text}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {s.ctas.map((c) => (
+                  <a
+                    key={c.label}
+                    href={c.href}
+                    className={`px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
+                      c.primary
+                        ? "bg-white text-amber-700 hover:bg-gray-100"
+                        : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    {c.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -254,11 +266,12 @@ function ProgramOverview() {
             wisdom, culture, and sustainability can live together.
           </p>
         </div>
-        <div className="relative h-[420px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 grid place-items-center">
-          <div className="w-52 h-52 rounded-2xl grid place-items-center text-5xl text-white bg-gradient-to-br from-amber-700 to-orange-600 animate-pulse relative">
-            <div className="absolute -top-5 left-8 right-8 h-5 rounded-t-xl bg-rose-600" />
-            🧱
-          </div>
+        <div className="relative h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+          <img
+            src={BrickHouse}
+            alt="circle"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>

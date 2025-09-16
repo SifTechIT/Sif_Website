@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import WomenStitching from "../../assets/women_stitching.JPG";
+import Banner1 from "../../assets/WomenEmpowerment/banner1.jpeg";
 export default function WomenEmpowermentPage() {
   return (
     <main>
@@ -12,57 +13,12 @@ export default function WomenEmpowermentPage() {
   );
 }
 
-/* ========================= Header ========================= */
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-[1000] border-b transition-all ${
-        scrolled ? "bg-white/90" : "bg-white/80"
-      } backdrop-saturate-150 backdrop-blur-xl border-black/10`}
-    >
-      <div className="max-w-[1200px] h-[52px] mx-auto flex items-center justify-between px-5 md:px-10">
-        <div className="text-[21px] font-semibold tracking-[-0.01em]">
-          Sunyatee International Foundation
-        </div>
-        <nav className="hidden md:flex items-center gap-8 text-[17px]">
-          <a href="#home" className="hover:opacity-80">
-            Home
-          </a>
-          <a href="#mission" className="hover:opacity-80">
-            Mission
-          </a>
-          <a href="#projects" className="hover:opacity-80">
-            Projects
-          </a>
-          <a href="#impact" className="hover:opacity-80">
-            Impact
-          </a>
-        </nav>
-        <a
-          href="#get-involved"
-          className="inline-flex items-center rounded-full bg-[#007aff] text-white px-4 py-2 text-[17px] hover:bg-[#0051d5] transition active:translate-y-px"
-        >
-          Get Involved
-        </a>
-      </div>
-    </header>
-  );
-}
-
 /* ========================= Hero ========================= */
 function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center text-center text-white bg-gradient-to-br from-[#667eea] to-[#764ba2] relative"
+      className="h-screen flex items-center justify-center text-center text-white bg-gradient-to-br from-[#667eea] to-[#764ba2] relative"
     >
       {/* Inline CSS for custom keyframes */}
       <style>
@@ -73,50 +29,56 @@ function Hero() {
           }
         `}
       </style>
-
-      <div className="max-w-3xl px-5 md:px-10 pt-20">
-        <p
-          className="text-[19px]"
-          style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
-        >
-          Women Empowerment at SIF
-        </p>
-        <h1
-          className="text-[clamp(48px,6vw,80px)] font-semibold leading-[1.05] tracking-[-0.015em] mt-4"
-          style={{ animation: "fadeInUp 1s ease-out 0.5s forwards" }}
-        >
-          She Leads, We Rise
-        </h1>
-        <h2
-          className="text-[28px] font-normal leading-tight mt-4"
-          style={{ animation: "fadeInUp 1s ease-out 0.7s forwards" }}
-        >
-          Transforming hesitation into confidence, silence into leadership
-        </h2>
-        <p
-          className="text-[21px] text-white/90 leading-relaxed mt-6"
-          style={{ animation: "fadeInUp 1s ease-out 0.9s forwards" }}
-        >
-          Across the heartlands of India—from Nagpur to Siddipet—we are
-          rewriting the story of rural women through skill development,
-          meditation, and sustainable livelihood programs.
-        </p>
-        <div
-          className="mt-8 flex flex-wrap items-center justify-center gap-6"
-          style={{ animation: "fadeInUp 1s ease-out 1.1s forwards" }}
-        >
-          <a
-            href="#projects"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full text-[17px] bg-white text-[#1d1d1f] hover:bg-[#f5f5f7] transition shadow-sm"
+      <div
+        className={
+          "h-full w-full flex items-center justify-center text-center bg-center bg-cover"
+        }
+        style={{ backgroundImage: `url(${Banner1})` }}
+      >
+        <div className="max-w-3xl px-5 md:px-10 pt-20">
+          <p
+            className="text-[19px]"
+            style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
           >
-            Explore Projects
-          </a>
-          <a
-            href="#impact"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full text-[17px] border-2 border-white text-white hover:bg-white/10 transition"
+            Women Empowerment at SIF
+          </p>
+          <h1
+            className="text-[clamp(48px,6vw,80px)] font-semibold leading-[1.05] tracking-[-0.015em] mt-4"
+            style={{ animation: "fadeInUp 1s ease-out 0.5s forwards" }}
           >
-            See Impact
-          </a>
+            She Leads, We Rise
+          </h1>
+          <h2
+            className="text-[28px] font-normal leading-tight mt-4"
+            style={{ animation: "fadeInUp 1s ease-out 0.7s forwards" }}
+          >
+            Transforming hesitation into confidence, silence into leadership
+          </h2>
+          <p
+            className="text-[21px] text-white/90 leading-relaxed mt-6"
+            style={{ animation: "fadeInUp 1s ease-out 0.9s forwards" }}
+          >
+            Across the heartlands of India—from Nagpur to Siddipet—we are
+            rewriting the story of rural women through skill development,
+            meditation, and sustainable livelihood programs.
+          </p>
+          <div
+            className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            style={{ animation: "fadeInUp 1s ease-out 1.1s forwards" }}
+          >
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-[17px] bg-white text-[#1d1d1f] hover:bg-[#f5f5f7] transition shadow-sm"
+            >
+              Explore Projects
+            </a>
+            <a
+              href="#impact"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-[17px] border-2 border-white text-white hover:bg-white/10 transition"
+            >
+              See Impact
+            </a>
+          </div>
         </div>
       </div>
     </section>

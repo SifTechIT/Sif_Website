@@ -1,9 +1,12 @@
+import DrLim from "../../assets/About/DrLim2.png";
+import DrSavera from "../../assets/About/DrSavera1.png";
+
 export default function LeadershipSection() {
   const leaders = [
     {
       name: "Datuk Lim Siow Jin",
       role: "Guiding Principal",
-      img: "https://via.placeholder.com/400x400.png?text=Datuk+Lim+Siow+Jin",
+      img: DrLim,
       bio: `Founder of DXN and Guiding Principal of SIF. His vision inspired the
       establishment of Sunyatee International Foundation to promote peace,
       prosperity, and mindfulness globally.`,
@@ -11,7 +14,7 @@ export default function LeadershipSection() {
     {
       name: "Dr. Rajesh Savera",
       role: "Founder & Director",
-      img: "https://via.placeholder.com/400x400.png?text=Dr+Rajesh+Savera",
+      img: DrSavera,
       bio: `Founder of SIF, mindfulness coach, author, and facilitator. He leads
       initiatives in Sunya meditation, farmer and women empowerment, rural
       health, and cultural revival.`,

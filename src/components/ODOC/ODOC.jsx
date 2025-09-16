@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-
+import Banner1 from "../../assets/ODOC/Banner1.jpeg";
 export default function ODOCPage() {
   return (
     <main>
@@ -15,107 +15,44 @@ export default function ODOCPage() {
   );
 }
 
-/* ========================= Header ========================= */
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 border-b transition-all ${
-        scrolled ? "bg-white/95 border-gray-200" : "bg-white/80 border-gray-200"
-      } backdrop-blur-xl`}
-    >
-      <nav className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <div className="hidden md:flex items-center">
-          <ul className="flex gap-8 text-[15px] text-gray-600 font-medium">
-            <li>
-              <a className="hover:text-gray-900" href="#programs">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#impact">
-                Impact
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-emerald-600 grid place-items-center relative overflow-hidden">
-            <div className="w-6 h-4 border-2 border-white rounded-full"></div>
-            <div className="absolute bottom-2 w-4 h-0.5 bg-white" />
-          </div>
-          <span className="text-[20px] font-extrabold tracking-tight">
-            ODOC
-          </span>
-        </div>
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-[15px] text-gray-600 font-medium">
-            <li>
-              <a className="hover:text-gray-900" href="#about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#support">
-                Support
-              </a>
-            </li>
-          </ul>
-          <button className="px-4 py-2 rounded-md bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 transition">
-            Donate $1
-          </button>
-          <button
-            className="md:hidden text-2xl text-gray-800"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 /* ========================= Hero ========================= */
 function Hero() {
   return (
     <section className="h-screen relative overflow-hidden bg-gradient-to-br from-emerald-600 to-sky-500 flex items-center">
-      <div className="max-w-[900px] mx-auto px-6 text-center text-white">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-          <span>🌍</span>
-          Global Nutrition Initiative by DXN & SIF
-        </div>
-        <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-2">
-          ODOC
-        </h1>
-        <p className="text-xl md:text-2xl font-semibold opacity-90 mb-4">
-          One Dollar. One Child.
-        </p>
-        <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
-          Transforming lives through targeted nutrition intervention. Our goal:
-          Combat malnutrition in 1 million children through Spirulina
-          supplementation and comprehensive health monitoring.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#impact"
-            className="px-6 py-3 rounded-xl font-semibold text-base bg-white text-emerald-600 shadow hover:bg-gray-100 transition"
-          >
-            See Live Impact
-          </a>
-          <a
-            href="#support"
-            className="px-6 py-3 rounded-xl font-semibold text-base bg-white/10 border border-white/30 text-white hover:bg-white/20 transition"
-          >
-            Support a Child
-          </a>
+      <div
+        className={"h-full w-full flex items-center bg-center bg-cover"}
+        style={{ backgroundImage: `url(${Banner1})` }}
+      >
+        <div className="max-w-[900px] mx-auto px-6 text-center text-white">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
+            <span>🌍</span>
+            Global Nutrition Initiative by DXN & SIF
+          </div>
+          <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-2">
+            ODOC
+          </h1>
+          <p className="text-xl md:text-2xl font-semibold opacity-90 mb-4">
+            One Dollar. One Child.
+          </p>
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+            Transforming lives through targeted nutrition intervention. Our
+            goal: Combat malnutrition in 1 million children through Spirulina
+            supplementation and comprehensive health monitoring.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#impact"
+              className="px-6 py-3 rounded-xl font-semibold text-base bg-white text-emerald-600 shadow hover:bg-gray-100 transition"
+            >
+              See Live Impact
+            </a>
+            <a
+              href="#support"
+              className="px-6 py-3 rounded-xl font-semibold text-base bg-white/10 border border-white/30 text-white hover:bg-white/20 transition"
+            >
+              Support a Child
+            </a>
+          </div>
         </div>
       </div>
     </section>

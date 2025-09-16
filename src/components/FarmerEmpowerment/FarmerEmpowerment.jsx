@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
-
+import Banner1 from "../../assets/FarmerEmpowerment/Banner1.jpeg";
+import Banner2 from "../../assets/FarmerEmpowerment/Banner2.jpeg";
+import Banner3 from "../../assets/FarmerEmpowerment/Banner3.jpeg";
+import Crop from "../../assets/FarmerEmpowerment/crop.jpeg";
+import Farmer from "../../assets/FarmerEmpowerment/FARMER.jpeg";
+import {
+  default as FarmerGroups,
+  default as Market,
+} from "../../assets/FarmerEmpowerment/Farmer_Groups.jpeg";
+import SoilTesting from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
+import Technology from "../../assets/FarmerEmpowerment/Technology.jpeg";
+import Training from "../../assets/FarmerEmpowerment/Training.jpeg";
 export default function FarmerEmpowermentPage() {
   return (
     <main>
@@ -18,6 +29,7 @@ export default function FarmerEmpowermentPage() {
 function HeroSlider() {
   const slides = [
     {
+      image: Banner1,
       badge: "🌾 Sustainable Agriculture, Resilient Communities",
       title: "Farmer Empowerment",
       text: "Transforming rural livelihoods through sustainable agriculture, modern training, and assured market linkages. Building resilient farming communities for the future.",
@@ -28,6 +40,7 @@ function HeroSlider() {
       bg: "from-emerald-500 to-emerald-700",
     },
     {
+      image: Banner2,
       badge: "🤝 Partnership with DXN",
       title: "Assured Income",
       text: "Through our buy-back scheme with DXN, farmers gain financial security and confidence. Experience the power of guaranteed market linkages.",
@@ -38,6 +51,7 @@ function HeroSlider() {
       bg: "from-amber-400 to-amber-700",
     },
     {
+      image: Banner3,
       badge: "🚀 Scaling Impact",
       title: "Future Ready",
       text: "From 21 farmers to 200+ acres. Join our mission to expand sustainable farming practices across Telangana and beyond.",
@@ -60,35 +74,40 @@ function HeroSlider() {
       {slides.map((s, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            i === idx ? "opacity-100" : "opacity-0"
-          } bg-gradient-to-br ${s.bg} flex items-center`}
+          className={`absolute inset-0 transition-opacity duration-[1200ms] ${
+            idx === i ? "opacity-100" : "opacity-0"
+          }`}
           aria-hidden={i !== idx}
         >
-          <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-              <span>{s.badge}</span>
-            </div>
-            <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight tracking-[-0.025em] mb-4">
-              {s.title}
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
-              {s.text}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {s.ctas.map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  className={`inline-block px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
-                    c.primary
-                      ? "bg-white text-emerald-600 hover:bg-gray-100"
-                      : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {c.label}
-                </a>
-              ))}
+          <div
+            className={"h-full w-full flex items-center bg-center bg-cover"}
+            style={{ backgroundImage: `url(${s.image})` }}
+          >
+            <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
+                <span>{s.badge}</span>
+              </div>
+              <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight tracking-[-0.025em] mb-4">
+                {s.title}
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+                {s.text}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {s.ctas.map((c) => (
+                  <a
+                    key={c.label}
+                    href={c.href}
+                    className={`inline-block px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
+                      c.primary
+                        ? "bg-white text-emerald-600 hover:bg-gray-100"
+                        : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    {c.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -196,10 +215,12 @@ function ProgramOverview() {
             uncertainty that often plagues agricultural income.
           </p>
         </div>
-        <div className="relative h-[420px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 grid place-items-center">
-          <div className="w-52 h-52 rounded-full grid place-items-center text-5xl text-white bg-gradient-to-br from-emerald-500 to-amber-500 animate-pulse select-none">
-            🌱
-          </div>
+        <div className="relative h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+          <img
+            src={Farmer}
+            alt="circle"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
@@ -271,31 +292,37 @@ function NoniProject() {
 function Interventions() {
   const items = [
     {
+      image: SoilTesting,
       icon: "🧪",
       title: "Soil Testing & Fertility Management",
       text: "Scientific soil assessment and application of bio-fertilizers and organic manures to enhance soil health and productivity.",
     },
     {
+      image: Training,
       icon: "🎓",
       title: "Training Workshops",
       text: "Practical sessions on crop rotation, organic inputs, pest management, and modern irrigation methods.",
     },
     {
+      image: Crop,
       icon: "🌿",
       title: "Crop Diversification",
       text: "Encouraging farmers to experiment with medicinal and high-value crops to reduce dependency on conventional farming.",
     },
     {
+      image: FarmerGroups,
       icon: "👥",
       title: "Farmer Groups & Coordination",
       text: "Forming small farmer groups for collective bargaining, bulk procurement of inputs, and shared learning experiences.",
     },
     {
+      image: Technology,
       icon: "📱",
       title: "Technology Integration",
       text: "Exploring mobile-based monitoring systems for field-level updates, alerts, and productivity tracking.",
     },
     {
+      image: Market,
       icon: "💰",
       title: "Market Linkages",
       text: "Establishing direct connections with buyers and ensuring assured procurement through strategic partnerships.",
@@ -321,8 +348,12 @@ function Interventions() {
               key={it.title}
               className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3"
             >
-              <div className="h-48 grid place-items-center text-6xl text-white bg-gradient-to-br from-emerald-500 to-amber-500 select-none">
-                {it.icon}
+              <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
+                <img
+                  src={it.image}
+                  alt={it.title}
+                  className="h-full w-full object-cover "
+                />
               </div>
               <div className="p-8">
                 <h3 className="text-lg font-bold mb-2">{it.title}</h3>

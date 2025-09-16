@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
-
+import AusumKids from "../../assets/AusumKids/Ausum_kids.jpg";
+import Banner1 from "../../assets/AusumKids/Banner1.jpg";
+import Banner2 from "../../assets/AusumKids/Banner2.jpg";
+import Banner3 from "../../assets/AusumKids/Banner3.jpg";
+import CommunityBuilding from "../../assets/AusumKids/CommunityBuilding.jpg";
+import ExpressiveGames from "../../assets/AusumKids/Expressive_Games.jpeg";
+import MindfulnessSession from "../../assets/AusumKids/MindfulnessSession.jpeg";
+import OpenCircles from "../../assets/AusumKids/Open_Circles.jpeg";
+import ResolutionCards from "../../assets/AusumKids/Resolution_Cards.jpeg";
+import StoryTelling from "../../assets/AusumKids/StoryTelling.jpg";
 export default function ChildEducationCentresPage() {
   return (
     <main>
@@ -15,75 +24,12 @@ export default function ChildEducationCentresPage() {
   );
 }
 
-/* ========================= Header ========================= */
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 border-b transition-all ${
-        scrolled ? "bg-white/95 border-gray-200" : "bg-white/80 border-gray-200"
-      } backdrop-blur-xl`}
-    >
-      <nav className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <div className="hidden md:flex items-center">
-          <ul className="flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#programs">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#impact">
-                Impact
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-orange-500 grid place-items-center relative">
-            <span className="text-white text-xl">📚</span>
-          </div>
-          <span className="text-[20px] font-extrabold tracking-tight">SIF</span>
-        </div>
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button className="px-4 py-2 rounded-md bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition">
-            Donate
-          </button>
-          <button
-            className="md:hidden text-2xl text-gray-800"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 /* ========================= Hero Slider ========================= */
 function HeroSlider() {
   const slides = [
     {
+      image: Banner1,
+
       badge: "🌟 Safe, Nurturing Learning Spaces",
       title: "Child Education Centres",
       text: "Creating safe, nurturing spaces where children learn, play, and grow holistically. Building strong foundations for education, mindfulness, and life through early learning and behavioral development.",
@@ -94,6 +40,7 @@ function HeroSlider() {
       bg: "from-orange-500 to-orange-700",
     },
     {
+      image: Banner2,
       badge: "🧘 Little Sunyatee Mindfulness",
       title: "Kids' Sunya Programs",
       text: "Introducing mindfulness and meditation through simple, playful practices. Helping children develop concentration, patience, emotional intelligence, and self-awareness from an early age.",
@@ -104,6 +51,7 @@ function HeroSlider() {
       bg: "from-yellow-400 to-orange-500",
     },
     {
+      image: Banner3,
       badge: "🎨 Creative & Expressive Learning",
       title: "Holistic Development",
       text: "Through storytelling, role-play, art, and group games, we encourage imagination, collaboration, and social skills. Every child's voice is valued in our inclusive learning environment.",
@@ -134,30 +82,35 @@ function HeroSlider() {
             i === idx ? "opacity-100" : "opacity-0"
           } bg-gradient-to-br ${s.bg} flex items-center`}
         >
-          <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-              <span>{s.badge}</span>
-            </div>
-            <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
-              {s.title}
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
-              {s.text}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {s.ctas.map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  className={`px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
-                    c.primary
-                      ? "bg-white text-orange-600 hover:bg-gray-100"
-                      : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {c.label}
-                </a>
-              ))}
+          <div
+            className={"h-full w-full flex items-center bg-center bg-cover"}
+            style={{ backgroundImage: `url(${s.image})` }}
+          >
+            <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
+                <span>{s.badge}</span>
+              </div>
+              <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
+                {s.title}
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+                {s.text}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {s.ctas.map((c) => (
+                  <a
+                    key={c.label}
+                    href={c.href}
+                    className={`px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
+                      c.primary
+                        ? "bg-white text-orange-600 hover:bg-gray-100"
+                        : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    {c.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -258,10 +211,12 @@ function ProgramOverview() {
             every child's voice is heard and valued.
           </p>
         </div>
-        <div className="relative h-[420px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 grid place-items-center">
-          <div className="w-52 h-52 rounded-full grid place-items-center text-5xl text-white bg-gradient-to-br from-orange-500 to-yellow-400 animate-bounce">
-            📚
-          </div>
+        <div className="relative h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+          <img
+            src={AusumKids}
+            alt="circle"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
@@ -337,31 +292,37 @@ function ProgramFocus() {
 function Activities() {
   const items = [
     {
+      image: OpenCircles,
       icon: "👥",
       title: "Opening Circles",
       text: "Children begin each session by sharing something about their friends, creating an environment of respect, belonging, and visibility.",
     },
     {
+      image: ExpressiveGames,
       icon: "🎲",
       title: "Expressive Games",
       text: "Activities like Food Bingo, story enactments, and snack-sharing games where children practice kindness, empathy, and communication.",
     },
     {
+      image: ResolutionCards,
       icon: "🃏",
       title: "Conflict Resolution Cards",
       text: "Older children explore real-life situations using cards that help them reflect on conflict resolution and respectful responses.",
     },
     {
+      image: MindfulnessSession,
       icon: "🧘",
       title: "Daily Mindfulness Sessions",
       text: "Grounding through Sunya meditation, helping children develop calmness, focus, and self-regulation skills.",
     },
     {
+      image: StoryTelling,
       icon: "📖",
       title: "Storytelling & Role-Play",
       text: "Interactive storytelling sessions and role-playing activities that develop language skills, creativity, and social understanding.",
     },
     {
+      image: CommunityBuilding,
       icon: "🤝",
       title: "Community Building",
       text: "Activities that bring together children, parents, and facilitators to strengthen community bonds and support networks.",
@@ -385,8 +346,12 @@ function Activities() {
               key={it.title}
               className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3"
             >
-              <div className="h-48 grid place-items-center text-6xl text-white bg-gradient-to-br from-orange-500 to-yellow-400">
-                {it.icon}
+              <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
+                <img
+                  src={it.image}
+                  alt={it.title}
+                  className="h-full w-full object-cover "
+                />
               </div>
               <div className="p-8">
                 <h3 className="text-lg font-bold mb-2">{it.title}</h3>

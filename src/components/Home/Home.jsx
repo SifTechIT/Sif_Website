@@ -1,6 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import NoniCultivate from "../../assets/noni_cultivate.jpg";
+import Agamas from "../../assets/Home/Agamas.jpeg";
+import AwakeningPeace from "../../assets/Home/Awakening_Peace.png";
+import Awareness from "../../assets/Home/Awareness.jpeg";
+import Meditation from "../../assets/Home/Meditation.JPG";
+import MegaRetreatActivities from "../../assets/Home/MegaRetreat_Activities.JPG";
+import NoniCultivation from "../../assets/Home/Noni_Cultivation.jpeg";
+import ODOC1 from "../../assets/Home/ODOC1.jpeg";
+import ODOC2 from "../../assets/Home/ODOC2.jpeg";
+import ODOC3 from "../../assets/Home/ODOC3.jpeg";
+import ODOC4 from "../../assets/Home/ODOC4.jpeg";
+import ODOCBanner from "../../assets/Home/ODOC_banner.jpg";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
+import WomenSkillCenter from "../../assets/Home/Women_Skill_Center.jpg";
 import Navbar from "../Navbar/Navbar";
 import AboutSIFSection from "./About";
 import FeaturesSection from "./Feature";
@@ -27,22 +39,19 @@ const HERO_SLIDES = [
   {
     title: "Awakening Peace. Empowering Communities.",
     sub: "Mindfulness, farmer empowerment, women’s leadership, and cultural revival — powered by Sunya.",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
+    image: AwakeningPeace,
     cta: { text: "Join the Movement", href: "#cta" },
   },
   {
     title: "Sunya Meditation: From Stillness to Strength",
     sub: "A step-by-step belt pathway to clarity, resilience, and liberation.",
-    image:
-      "https://images.unsplash.com/photo-1549877452-9c387954fbc6?q=80&w=1600&auto=format&fit=crop",
+    image: SunyaMeditation,
     cta: { text: "Explore Sunya", href: "#sunya" },
   },
   {
     title: "One Dollar One Child (ODOC)",
     sub: "Spirulina nutrition for children. A global community initiative.",
-    image:
-      "https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?q=80&w=1600&auto=format&fit=crop",
+    image: ODOCBanner,
     cta: { text: "Support ODOC", href: "#odoc" },
   },
 ];
@@ -109,31 +118,27 @@ const ACTIVITIES = [
   {
     title: "Sunya Mega Retreats",
     desc: "Immersive global gatherings in Bodh Gaya & Lumbini, telecast to 40+ countries.",
-    image:
-      "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1600&auto=format&fit=crop",
+    image: MegaRetreatActivities,
   },
   {
     title: "Noni Cultivation Project",
     desc: "High-value crop + buy-back assurance improving farmer incomes and soil health.",
-    image: NoniCultivate,
+    image: NoniCultivation,
   },
   {
     title: "Women Skill Centers",
     desc: "From textiles to eco-products, SHGs powering dignity, resilience, and income.",
-    image:
-      "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?q=80&w=1600&auto=format&fit=crop",
+    image: WomenSkillCenter,
   },
   {
     title: "Rural Health & Awareness",
     desc: "Preventive health camps, nutrition, hygiene, mental well-being & Sunya workshops.",
-    image:
-      "https://images.unsplash.com/photo-1512061942530-1f2b99246584?q=80&w=1600&auto=format&fit=crop",
+    image: Awareness,
   },
   {
     title: "Agamas & Sutras",
     desc: "Translations + palm-leaf printing to preserve timeless Indian & Buddhist wisdom.",
-    image:
-      "https://images.unsplash.com/photo-1526312426976-593c128eea49?q=80&w=1600&auto=format&fit=crop",
+    image: Agamas,
   },
 ];
 
@@ -676,7 +681,7 @@ export default function Home() {
                 <img
                   alt="Sunya Practice"
                   className="h-full w-full object-cover"
-                  src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5a?q=80&w=1600&auto=format&fit=crop"
+                  src={Meditation}
                 />
               </div>
             </div>
@@ -789,7 +794,7 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {[1, 2, 3, 4].map((n) => (
+              {[ODOC1, ODOC2, ODOC3, ODOC4].map((img, n) => (
                 <div
                   key={n}
                   className="aspect-square overflow-hidden rounded-xl"
@@ -797,7 +802,7 @@ export default function Home() {
                   <img
                     alt="ODOC"
                     className="h-full w-full object-cover"
-                    src={`https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=800&auto=format&fit=crop`}
+                    src={img}
                   />
                 </div>
               ))}

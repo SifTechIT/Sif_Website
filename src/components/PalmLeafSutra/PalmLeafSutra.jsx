@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import Banner from "../../assets/PalmLeafSutra/Banner.JPG";
+import Missions from "../../assets/PalmLeafSutra/Mission.jpg";
 
 export default function PalmLeafSutraPage() {
   return (
@@ -50,91 +52,45 @@ function FadeIn({ children, className = "" }) {
   );
 }
 
-/* ========================= Header ========================= */
-function Header() {
-  const scrolled = useScrolled();
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 border-b backdrop-blur-xl transition-all ${
-        scrolled ? "bg-white/95 border-gray-200" : "bg-white/80 border-gray-200"
-      }`}
-    >
-      <nav className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <ul className="hidden md:flex gap-8 text-[15px] text-gray-600">
-          <li>
-            <a className="hover:text-gray-900" href="#programs">
-              Programs
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-gray-900" href="#impact">
-              Impact
-            </a>
-          </li>
-        </ul>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-amber-600 grid place-items-center relative">
-            <span className="text-white text-xl">📜</span>
-          </div>
-          <span className="text-[20px] font-extrabold tracking-tight">SIF</span>
-        </div>
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button className="px-4 py-2 rounded-lg bg-amber-600 text-white text-sm font-semibold hover:bg-amber-700 transition">
-            Donate
-          </button>
-          <button className="md:hidden text-2xl" aria-label="Open menu">
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 /* ========================= Hero ========================= */
 function Hero() {
   return (
     <section className="relative overflow-hidden h-screen bg-gradient-to-br from-amber-600 to-emerald-600 flex items-center text-white">
-      <div className="container max-w-[900px] mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-          <span>🌿</span> Ancient Craftsmanship Meets Modern Technology
-        </div>
-        <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-2">
-          Palm Leaf Sutra Printing
-        </h1>
-        <p className="text-2xl font-semibold opacity-90 mb-4">
-          Reviving India's Sacred Manuscript Tradition
-        </p>
-        <p className="text-lg md:text-xl opacity-90 leading-relaxed mb-8">
-          Starting with the Diamond Sutra, this initiative fuses ancestral
-          craftsmanship with modern laser technology to preserve timeless wisdom
-          while empowering artisans with sustainable livelihoods.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#artisan-legacy"
-            className="px-6 py-3 rounded-xl font-semibold bg-white text-amber-700 shadow hover:bg-gray-100"
-          >
-            Meet Our Artisans
-          </a>
-          <a
-            href="#sacred-texts"
-            className="px-6 py-3 rounded-xl font-semibold bg-white/10 border border-white/30 text-white hover:bg-white/20"
-          >
-            Explore Texts
-          </a>
+      <div
+        className={
+          "h-full w-full flex items-center justify-center text-center bg-center bg-cover"
+        }
+        style={{ backgroundImage: `url(${Banner})` }}
+      >
+        <div className="container max-w-[900px] mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
+            <span>🌿</span> Ancient Craftsmanship Meets Modern Technology
+          </div>
+          <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-2">
+            Palm Leaf Sutra Printing
+          </h1>
+          <p className="text-2xl font-semibold opacity-90 mb-4">
+            Reviving India's Sacred Manuscript Tradition
+          </p>
+          <p className="text-lg md:text-xl opacity-90 leading-relaxed mb-8">
+            Starting with the Diamond Sutra, this initiative fuses ancestral
+            craftsmanship with modern laser technology to preserve timeless
+            wisdom while empowering artisans with sustainable livelihoods.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#artisan-legacy"
+              className="px-6 py-3 rounded-xl font-semibold bg-white text-amber-700 shadow hover:bg-gray-100"
+            >
+              Meet Our Artisans
+            </a>
+            <a
+              href="#sacred-texts"
+              className="px-6 py-3 rounded-xl font-semibold bg-white/10 border border-white/30 text-white hover:bg-white/20"
+            >
+              Explore Texts
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -244,11 +200,12 @@ function Mission() {
               ))}
             </ul>
           </div>
-          <div className="relative h-[420px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 grid place-items-center">
-            <div className="w-[260px] h-[160px] rounded-[50px] bg-gradient-to-br from-amber-600 to-yellow-400 grid place-items-center animate-bounce shadow-inner relative">
-              <div className="absolute inset-5 rounded-[30px] border-2 border-amber-900/40"></div>
-              <span className="text-5xl text-amber-900">📜</span>
-            </div>
+          <div className="relative h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+            <img
+              src={Missions}
+              alt="circle"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

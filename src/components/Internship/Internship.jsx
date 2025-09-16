@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
-
+import Banner1 from "../../assets/Internship/Banner1.jpg";
+import Banner2 from "../../assets/Internship/Banner2.jpg";
+import Banner3 from "../../assets/Internship/Banner3.jpg";
+import Career from "../../assets/Internship/Career.jpeg";
+import Creative from "../../assets/Internship/Creative.jpeg";
+import Growth from "../../assets/Internship/Growth.png";
+import Internship from "../../assets/Internship/Internship.jpg";
+import Mentorship from "../../assets/Internship/Mentorship.jpg";
+import Practical from "../../assets/Internship/Practical.jpeg";
+import Skill from "../../assets/Internship/Skill.jpg";
 export default function InternshipProgramsPage() {
   return (
     <main>
@@ -14,76 +23,10 @@ export default function InternshipProgramsPage() {
   );
 }
 
-/* ========================= Header ========================= */
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 border-b transition-all ${
-        scrolled ? "bg-white/95 border-gray-200" : "bg-white/80 border-gray-200"
-      } backdrop-blur-xl`}
-    >
-      <nav className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <div className="hidden md:flex items-center">
-          <ul className="flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#programs">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#impact">
-                Impact
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-emerald-500 relative grid place-items-center">
-            <div className="w-6 h-4 border-2 border-white rounded-full" />
-            <div className="absolute bottom-2 w-4 h-0.5 bg-white" />
-          </div>
-          <span className="text-[20px] font-extrabold tracking-tight">SIF</span>
-        </div>
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button className="px-4 py-2 rounded-md bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 transition">
-            Donate
-          </button>
-          <button
-            className="md:hidden text-2xl text-gray-800"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
-/* ========================= Hero Slider ========================= */
 function HeroSlider() {
   const slides = [
     {
+      image: Banner1,
       badge: "🎓 Learning with Impact, Growing with Purpose",
       title: "Internship Programs",
       text: "Combine meaningful learning with social impact. Join young changemakers across education, health, technology, and community development initiatives.",
@@ -94,6 +37,7 @@ function HeroSlider() {
       bg: "from-indigo-500 to-purple-700",
     },
     {
+      image: Banner2,
       badge: "🚀 Skills for the Future",
       title: "Career Ready",
       text: "Build portfolios that matter. Gain experience in project management, technology, research, and grassroots engagement with expert mentorship.",
@@ -104,6 +48,7 @@ function HeroSlider() {
       bg: "from-amber-500 to-amber-800",
     },
     {
+      image: Banner3,
       badge: "🌟 Mentorship & Growth",
       title: "Future Leaders",
       text: "Join our Internship Academy program with structured learning modules, alumni networks, and pathways to global opportunities.",
@@ -122,38 +67,43 @@ function HeroSlider() {
   }, [slides.length]);
 
   return (
-    <section className="h-screen relative overflow-hidden mt-[72px]">
+    <section className="h-screen relative overflow-hidden">
       {slides.map((s, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            i === idx ? "opacity-100" : "opacity-0"
-          } bg-gradient-to-br ${s.bg} flex items-center`}
+          className={`absolute inset-0 transition-opacity duration-[1200ms] ${
+            idx === i ? "opacity-100" : "opacity-0"
+          }`}
         >
-          <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-              <span>{s.badge}</span>
-            </div>
-            <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
-              {s.title}
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
-              {s.text}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {s.ctas.map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  className={`px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
-                    c.primary
-                      ? "bg-white text-emerald-600 hover:bg-gray-100"
-                      : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {c.label}
-                </a>
-              ))}
+          <div
+            className={"h-full w-full flex items-center bg-center bg-cover"}
+            style={{ backgroundImage: `url(${s.image})` }}
+          >
+            <div className="container mx-auto max-w-[800px] px-6 text-center text-white">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
+                <span>{s.badge}</span>
+              </div>
+              <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
+                {s.title}
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+                {s.text}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {s.ctas.map((c) => (
+                  <a
+                    key={c.label}
+                    href={c.href}
+                    className={`px-6 py-3 rounded-xl font-semibold text-base transition shadow ${
+                      c.primary
+                        ? "bg-white text-emerald-600 hover:bg-gray-100"
+                        : "bg-white/10 border border-white/30 text-white hover:bg-white/20"
+                    }`}
+                  >
+                    {c.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -255,10 +205,12 @@ function ProgramOverview() {
             mindfulness, farmer empowerment, and cultural heritage preservation.
           </p>
         </div>
-        <div className="relative h-[420px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 grid place-items-center">
-          <div className="w-52 h-52 rounded-full grid place-items-center text-5xl text-white bg-gradient-to-br from-indigo-500 to-emerald-500 animate-pulse">
-            💡
-          </div>
+        <div className="relative h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+          <img
+            src={Internship}
+            alt="circle"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>
@@ -353,31 +305,37 @@ function ProgramAreas() {
 function Benefits() {
   const cards = [
     {
+      image: Practical,
       icon: "🎯",
       title: "Practical Learning",
       text: "Apply academic knowledge to real-world projects that directly benefit communities and build tangible skills.",
     },
     {
+      image: Skill,
       icon: "🛠️",
       title: "Skill Development",
       text: "Gain exposure to project management, communication, design, IT, research, and grassroots engagement.",
     },
     {
+      image: Mentorship,
       icon: "👥",
       title: "Expert Mentorship",
       text: "Receive guidance from SIF leaders and project coordinators who ensure structured learning and personal growth.",
     },
     {
+      image: Career,
       icon: "💼",
       title: "Career Pathways",
       text: "Build strong portfolios, enhance CVs, and gain confidence in choosing future career directions.",
     },
     {
+      image: Creative,
       icon: "🎨",
       title: "Creative Projects",
       text: "Contribute to publications like Sunyatimes, design campaigns, and manage social media presence.",
     },
     {
+      image: Growth,
       icon: "🌱",
       title: "Personal Growth",
       text: "Develop confidence, leadership, and problem-solving skills while making a meaningful difference.",
@@ -394,14 +352,18 @@ function Benefits() {
             Comprehensive development through meaningful work and mentorship
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cards.map((c) => (
             <div
               key={c.title}
               className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3"
             >
-              <div className="h-28 grid place-items-center text-5xl text-white bg-gradient-to-br from-emerald-600 to-amber-500">
-                {c.icon}
+              <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  className="h-full w-full object-cover "
+                />
               </div>
               <div className="p-8">
                 <h3 className="text-lg font-bold mb-2">{c.title}</h3>

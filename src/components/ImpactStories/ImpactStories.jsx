@@ -1,5 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-
+import SoilTest from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
+import CommunityConfidence from "../../assets/ImpactStories/Community_Confidence.png";
+import ConflictCards from "../../assets/ImpactStories/Conflict_Cards.jpg";
+import CorporateCalm from "../../assets/ImpactStories/Corporate_Calm.JPG";
+import EnergyLearn from "../../assets/ImpactStories/Energy_Learn.jpeg";
+import FoodBingoLesson from "../../assets/ImpactStories/Food_Bingo_Lesson.png";
+import GlobalRetreats from "../../assets/ImpactStories/Global_Retreats.JPG";
+import HealingRelationships from "../../assets/ImpactStories/Healing_Relation.png";
+import HomemakerToEntrepreneur from "../../assets/ImpactStories/HomemakerToEntrepreneur.jpg";
+import KimonoCommunityPride from "../../assets/ImpactStories/KimonoCommunityPride.png";
+import MindfulnessPlay from "../../assets/ImpactStories/Mindfulness_Play.png";
+import ParentalPride from "../../assets/ImpactStories/Parental_Pride.jpg";
+import SecureLivehoods from "../../assets/ImpactStories/SecureLivelihoods.jpg";
+import StudentsGainFocus from "../../assets/ImpactStories/Students_Gain_Focus.JPG";
+import TacklingAnemia from "../../assets/ImpactStories/Tackling_Anemia.jpeg";
+import TransparencyAction from "../../assets/ImpactStories/Transparency_Action.jpeg";
+import WomenFarmer from "../../assets/ImpactStories/WomenFarmer.jpg";
+import YouthFarm from "../../assets/ImpactStories/YouthFarm.png";
 export default function ImpactStoriesPage() {
   return (
     <main>
@@ -11,78 +28,10 @@ export default function ImpactStoriesPage() {
   );
 }
 
-/* ========================= Header ========================= */
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 border-b transition-all backdrop-blur-xl ${
-        scrolled ? "bg-white/95 border-gray-200" : "bg-white/80 border-gray-200"
-      }`}
-    >
-      <nav className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <div className="hidden md:flex items-center">
-          <ul className="flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#programs">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#impact">
-                Impact
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-emerald-500 grid place-items-center relative overflow-hidden">
-            <div className="w-6 h-4 border-2 border-white rounded-full"></div>
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-white" />
-          </div>
-          <span className="text-[20px] font-extrabold tracking-tight">SIF</span>
-        </div>
-
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button className="px-4 py-2 rounded-md bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition">
-            Donate
-          </button>
-          <button
-            className="md:hidden text-2xl text-gray-800"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 /* ========================= Hero ========================= */
 function Hero() {
   return (
-    <section className="mt-[72px] bg-gradient-to-br from-emerald-500 to-emerald-700 text-white text-center py-40">
+    <section className="bg-gradient-to-br from-emerald-500 to-emerald-700 text-white text-center py-40">
       <div className="max-w-[800px] mx-auto px-6">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
           <span>📈</span>
@@ -165,6 +114,7 @@ function FeaturedStories() {
 const ALL_STORIES = [
   // Farmer Empowerment
   {
+    image: SecureLivehoods,
     category: "farmer",
     color: "from-emerald-600 to-emerald-700",
     emoji: "🌾",
@@ -175,6 +125,7 @@ const ALL_STORIES = [
     author: "– Ravi, Farmer",
   },
   {
+    image: SoilTest,
     category: "farmer",
     color: "from-emerald-600 to-emerald-700",
     emoji: "🧪",
@@ -182,6 +133,7 @@ const ALL_STORIES = [
     desc: "After soil testing showed nutrient gaps, SIF introduced bio-fertilizers, preventing crop loss and saving dozens of acres.",
   },
   {
+    image: YouthFarm,
     category: "farmer",
     color: "from-emerald-600 to-emerald-700",
     emoji: "🏠",
@@ -189,6 +141,7 @@ const ALL_STORIES = [
     desc: "With modern training and assured income, rural youth who migrated to cities are returning to their family farms.",
   },
   {
+    image: WomenFarmer,
     category: "farmer",
     color: "from-emerald-600 to-emerald-700",
     emoji: "👩‍🌾",
@@ -198,6 +151,7 @@ const ALL_STORIES = [
 
   // Women Empowerment
   {
+    image: HomemakerToEntrepreneur,
     category: "women",
     color: "from-pink-500 to-pink-700",
     emoji: "💼",
@@ -205,6 +159,7 @@ const ALL_STORIES = [
     desc: "A women's self-help group trained by SIF now produces eco-friendly bags sold in local markets.",
   },
   {
+    image: KimonoCommunityPride,
     category: "women",
     color: "from-pink-500 to-pink-700",
     emoji: "🧵",
@@ -261,6 +216,7 @@ const ALL_STORIES = [
 
   // Child Education
   {
+    image: FoodBingoLesson,
     category: "education",
     color: "from-amber-500 to-orange-600",
     emoji: "🎲",
@@ -268,6 +224,7 @@ const ALL_STORIES = [
     desc: "Children learned kindness through sharing snacks and playing games that reinforced empathy.",
   },
   {
+    image: ConflictCards,
     category: "education",
     color: "from-amber-500 to-orange-600",
     emoji: "🤝",
@@ -275,6 +232,7 @@ const ALL_STORIES = [
     desc: "Older kids reflected on real-life disputes and learned respectful responses.",
   },
   {
+    image: MindfulnessPlay,
     category: "education",
     color: "from-amber-500 to-orange-600",
     emoji: "🎯",
@@ -282,6 +240,7 @@ const ALL_STORIES = [
     desc: "Stick-color matching games boosted concentration and patience in young children.",
   },
   {
+    image: ParentalPride,
     category: "education",
     color: "from-amber-500 to-orange-600",
     emoji: "👨‍👩‍👧",
@@ -294,6 +253,7 @@ const ALL_STORIES = [
 
   // ODOC
   {
+    image: EnergyLearn,
     category: "odoc",
     color: "from-violet-600 to-violet-700",
     emoji: "⚡",
@@ -301,6 +261,7 @@ const ALL_STORIES = [
     desc: "Spirulina supplementation reduced fatigue, improving school attendance among children.",
   },
   {
+    image: TacklingAnemia,
     category: "odoc",
     color: "from-violet-600 to-violet-700",
     emoji: "🩸",
@@ -308,6 +269,7 @@ const ALL_STORIES = [
     desc: "Weekly BMI checks showed anemia levels decreasing among girls receiving supplementation.",
   },
   {
+    image: CommunityConfidence,
     category: "odoc",
     color: "from-violet-600 to-violet-700",
     emoji: "🤝",
@@ -315,6 +277,7 @@ const ALL_STORIES = [
     desc: "Families shared improved trust in nutrition after seeing visible health gains.",
   },
   {
+    image: TransparencyAction,
     category: "odoc",
     color: "from-violet-600 to-violet-700",
     emoji: "📊",
@@ -324,6 +287,7 @@ const ALL_STORIES = [
 
   // Sunya
   {
+    image: CorporateCalm,
     category: "sunya",
     color: "from-cyan-600 to-cyan-700",
     emoji: "💼",
@@ -331,6 +295,7 @@ const ALL_STORIES = [
     desc: "An IT company reported reduced stress levels after Sunya training sessions for employees.",
   },
   {
+    image: HealingRelationships,
     category: "sunya",
     color: "from-cyan-600 to-cyan-700",
     emoji: "💕",
@@ -338,6 +303,7 @@ const ALL_STORIES = [
     desc: "A couple used Sunya meditation practices to rebuild empathy and communication.",
   },
   {
+    image: StudentsGainFocus,
     category: "sunya",
     color: "from-cyan-600 to-cyan-700",
     emoji: "📚",
@@ -345,6 +311,7 @@ const ALL_STORIES = [
     desc: "Teens practicing Sunya before exams reported less anxiety and better scores.",
   },
   {
+    image: GlobalRetreats,
     category: "sunya",
     color: "from-cyan-600 to-cyan-700",
     emoji: "🌍",
@@ -440,10 +407,12 @@ function StoriesWithFilter() {
               key={`${s.title}-${i}`}
               className="rounded-2xl overflow-hidden border border-gray-200 transition hover:-translate-y-2 bg-white"
             >
-              <div
-                className={`h-52 grid place-items-center text-5xl text-white bg-gradient-to-br ${s.color}`}
-              >
-                {s.emoji}
+              <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="h-full w-full object-cover "
+                />
               </div>
               <div className="p-8">
                 <span className="inline-block text-xs font-semibold tracking-wider uppercase bg-gray-100 text-gray-600 px-3 py-1 rounded-full mb-3">
@@ -567,104 +536,5 @@ function CountUp({ to, suffix }) {
       {n}
       {suffix}
     </span>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-[#1f2937] text-white pt-20 pb-8">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <h3 className="text-lg font-bold mb-4">Contact</h3>
-            <p className="text-white/70">📍 80 Harrison Lane, FL 32547</p>
-            <p className="text-white/70">📞 +1 555 87 89 56</p>
-            <p className="text-white/70">📧 stories@sifworld.com</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-4">Programs</h3>
-            <ul className="space-y-2 text-white/70">
-              <li>
-                <a href="#farmer-empowerment" className="hover:text-white">
-                  Farmer Empowerment
-                </a>
-              </li>
-              <li>
-                <a href="#women-empowerment" className="hover:text-white">
-                  Women Empowerment
-                </a>
-              </li>
-              <li>
-                <a href="#education" className="hover:text-white">
-                  Child Education
-                </a>
-              </li>
-              <li>
-                <a href="#health" className="hover:text-white">
-                  Rural Health
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-4">Impact</h3>
-            <ul className="space-y-2 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  All Stories
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Success Metrics
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Community Voices
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Annual Reports
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-            <ul className="space-y-2 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-6 text-center text-white/60">
-          <p>© 2025 Sunyatee International Foundation. All Rights Reserved.</p>
-          <p>
-            Transforming lives, building communities, creating lasting change
-          </p>
-        </div>
-      </div>
-    </footer>
   );
 }

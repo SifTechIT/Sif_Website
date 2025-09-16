@@ -1,3 +1,12 @@
+import Agamas from "../../assets/Home/Agamas_ac.jpeg";
+import AusumKids from "../../assets/Home/Ausum_Kids_ac.jpg";
+import Awareness from "../../assets/Home/Awareness.jpeg";
+import CSR from "../../assets/Home/CSR_ac.png";
+import Education from "../../assets/Home/Education_ac.jpg";
+import Farmer from "../../assets/Home/Farmer_ac.jpeg";
+import ODOC from "../../assets/Home/ODOC_ac.jpeg";
+import SunyaMeditation from "../../assets/Home/Sunya_meditation_ac.JPG";
+import Women from "../../assets/Home/Women_ac.jpg";
 /**
  * ServicesGridSection – 3x3 Grid (Image Top)
  * ------------------------------------------
@@ -16,63 +25,63 @@ const DEFAULT_SERVICES = [
     key: "sunya",
     title: "Sunya Meditation Programs",
     desc: "Structured 7-belt pathway, retreats, and online practice to build clarity and resilience.",
-    img: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5a?q=80&w=1600&auto=format&fit=crop",
+    img: SunyaMeditation,
     href: "#sunya",
   },
   {
     key: "farmer",
     title: "Farmer Empowerment",
     desc: "Soil testing, noni cultivation, training & buy-back support to boost farmer incomes.",
-    img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1600&auto=format&fit=crop",
+    img: Farmer,
     href: "#farmer",
   },
   {
     key: "women",
     title: "Women’s Skill Centers",
     desc: "Textiles, eco-products, and SHG-led entrepreneurship for livelihood and dignity.",
-    img: "https://images.unsplash.com/photo-1515165562835-c3b8c2e6b4ab?q=80&w=1600&auto=format&fit=crop",
+    img: Women,
     href: "#women",
   },
   {
     key: "health",
     title: "Rural Health & Awareness",
     desc: "Preventive health camps, nutrition & hygiene sessions, mental well-being workshops.",
-    img: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
+    img: Awareness,
     href: "#health",
   },
   {
     key: "csr",
     title: "CSR Partnerships",
     desc: "Design and execution of high-impact CSR programs in health, education, and livelihoods.",
-    img: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=1600&auto=format&fit=crop",
+    img: CSR,
     href: "#csr",
   },
   {
     key: "odoc",
     title: "One Dollar One Child",
     desc: "Spirulina nutrition at $1 per child—community-driven malnutrition intervention.",
-    img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+    img: ODOC,
     href: "#odoc",
   },
   {
     key: "ausum",
     title: "Ausum Kids",
     desc: "Therapy & inclusion programs for children on the spectrum and their caregivers.",
-    img: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1600&auto=format&fit=crop",
+    img: AusumKids,
     href: "#ausum",
   },
   {
     key: "agamas",
     title: "Agamas & Translations",
     desc: "Palm-leaf sutra printing and scripture translations preserving timeless wisdom.",
-    img: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1600&auto=format&fit=crop",
+    img: Agamas,
     href: "#agamas",
   },
   {
     key: "education",
     title: "Internships & Education",
     desc: "Hands-on training in IT, design, agritech, and management for youth and volunteers.",
-    img: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop",
+    img: Education,
     href: "#education",
   },
 ];
