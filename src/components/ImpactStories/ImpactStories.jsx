@@ -1,12 +1,17 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import SoilTest from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
+import COVIDPPE from "../../assets/ImpactStories/COVID_PPE.png";
 import CommunityConfidence from "../../assets/ImpactStories/Community_Confidence.png";
+import ConfidenceBeyondIncome from "../../assets/ImpactStories/Confidence_Beyond_Income.png";
 import ConflictCards from "../../assets/ImpactStories/Conflict_Cards.jpg";
 import CorporateCalm from "../../assets/ImpactStories/Corporate_Calm.JPG";
+import DiamondSutraLives from "../../assets/ImpactStories/Diamond_Sutra_Lives.jpg";
 import EnergyLearn from "../../assets/ImpactStories/Energy_Learn.jpeg";
+import FinancialIndependenceSHG from "../../assets/ImpactStories/Financial_Independence_SHG.JPG";
 import FoodBingoLesson from "../../assets/ImpactStories/Food_Bingo_Lesson.png";
+import GlobalRecognition from "../../assets/ImpactStories/Global_Recognition.jpg";
 import GlobalRetreats from "../../assets/ImpactStories/Global_Retreats.JPG";
-import HealingRelationships from "../../assets/ImpactStories/Healing_Relation.png";
+import HealingRelationships from "../../assets/ImpactStories/Healing.png";
 import HomemakerToEntrepreneur from "../../assets/ImpactStories/HomemakerToEntrepreneur.jpg";
 import KimonoCommunityPride from "../../assets/ImpactStories/KimonoCommunityPride.png";
 import MindfulnessPlay from "../../assets/ImpactStories/Mindfulness_Play.png";
@@ -17,6 +22,7 @@ import TacklingAnemia from "../../assets/ImpactStories/Tackling_Anemia.jpeg";
 import TransparencyAction from "../../assets/ImpactStories/Transparency_Action.jpeg";
 import WomenFarmer from "../../assets/ImpactStories/WomenFarmer.jpg";
 import YouthFarm from "../../assets/ImpactStories/YouthFarm.png";
+import YouthCraft from "../../assets/ImpactStories/Youth_Craft.jpg";
 export default function ImpactStoriesPage() {
   return (
     <main>
@@ -170,6 +176,7 @@ const ALL_STORIES = [
     author: "– Lakshmi, Artisan",
   },
   {
+    image: FinancialIndependenceSHG,
     category: "women",
     color: "from-pink-500 to-pink-700",
     emoji: "💰",
@@ -177,6 +184,7 @@ const ALL_STORIES = [
     desc: "Dozens of women now run small savings groups, handling loans and income collectively.",
   },
   {
+    image: ConfidenceBeyondIncome,
     category: "women",
     color: "from-pink-500 to-pink-700",
     emoji: "🎤",
@@ -200,6 +208,7 @@ const ALL_STORIES = [
     desc: "Girls attended school regularly after SIF distributed dignity kits and conducted health sessions.",
   },
   {
+    image: COVIDPPE,
     category: "health",
     color: "from-blue-600 to-blue-800",
     emoji: "😷",
@@ -330,6 +339,7 @@ const ALL_STORIES = [
     desc: "800 artisans in Odisha now have sustainable incomes by reviving palm-leaf work.",
   },
   {
+    image: DiamondSutraLives,
     category: "palm",
     color: "from-orange-600 to-orange-700",
     emoji: "📜",
@@ -337,6 +347,7 @@ const ALL_STORIES = [
     desc: "Ancient text preserved through laser engraving, now shared worldwide with new generations.",
   },
   {
+    image: YouthCraft,
     category: "palm",
     color: "from-orange-600 to-orange-700",
     emoji: "👥",
@@ -344,6 +355,7 @@ const ALL_STORIES = [
     desc: "Young artisans learn modern engraving techniques, bridging tradition and technology.",
   },
   {
+    image: GlobalRecognition,
     category: "palm",
     color: "from-orange-600 to-orange-700",
     emoji: "🌐",
