@@ -345,21 +345,21 @@ function FocusAreas() {
       title: "Architectural Revival",
       text: "Documenting and reinterpreting ancient Indian brick and stone architecture, ensuring eco-friendly designs and sustainable building practices are not lost to time.",
     },
-    {
-      icon: "📜",
-      title: "Manuscript Preservation",
-      text: "Safeguarding palm-leaf and handmade paper texts that hold invaluable knowledge of medicine, agriculture, astronomy, and philosophy.",
-    },
-    {
-      icon: "📚",
-      title: "Knowledge Translation",
-      text: "Making ancient systems of Ayurveda, Siddha, Yoga, Buddhist and Jain Agamas accessible through modern publications and translations.",
-    },
-    {
-      icon: "🎨",
-      title: "Cultural Education",
-      text: "Programs for youth and communities that integrate traditional crafts, rituals, and wisdom into experiential learning and modern education.",
-    },
+    // {
+    //   icon: "📜",
+    //   title: "Manuscript Preservation",
+    //   text: "Safeguarding palm-leaf and handmade paper texts that hold invaluable knowledge of medicine, agriculture, astronomy, and philosophy.",
+    // },
+    // {
+    //   icon: "📚",
+    //   title: "Knowledge Translation",
+    //   text: "Making ancient systems of Ayurveda, Siddha, Yoga, Buddhist and Jain Agamas accessible through modern publications and translations.",
+    // },
+    // {
+    //   icon: "🎨",
+    //   title: "Cultural Education",
+    //   text: "Programs for youth and communities that integrate traditional crafts, rituals, and wisdom into experiential learning and modern education.",
+    // },
     {
       icon: "🏛️",
       title: "Community Hubs (Brick Houses)",
