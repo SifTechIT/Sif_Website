@@ -422,7 +422,7 @@ export default function Home() {
         <HeroSlider />
 
         {/* Pillars / Tabs */}
-        <section id="activities" className="mt-16">
+        {/* <section id="activities" className="mt-16">
           <div className="mb-6 flex items-end justify-between">
             <div>
               <p className="text-sm uppercase tracking-wider text-emerald-600">
@@ -434,7 +434,7 @@ export default function Home() {
             </div>
           </div>
           <ActivitiesCarousel />
-        </section>
+        </section> */}
         <AboutSIFSection />
         <FeaturesSection />
         <section id="pillars" className="mt-16">
@@ -505,7 +505,6 @@ export default function Home() {
         {/* Sunyatimes (PDF download + inline preview) */}
         <section id="sunyatimes" className="mt-16">
           <div className="mb-6 grid gap-6 md:grid-cols-3 md:items-center">
-            {/* Left Text */}
             <div className="md:col-span-2">
               <p className="text-sm uppercase tracking-wider text-emerald-600">
                 Sunyatimes
@@ -519,7 +518,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Buttons */}
             <div className="flex flex-wrap items-center gap-3 md:justify-end">
               <a
                 href={SUNYATIMES_PDF}
@@ -553,7 +551,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Inline PDF Preview */}
           <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow dark:border-neutral-800 dark:bg-neutral-950">
             <object
               data={SUNYATIMES_PDF}

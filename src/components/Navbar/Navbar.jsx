@@ -179,7 +179,7 @@ export default function Navbar() {
             {/* Mega menu panel */}
             {openMega && (
               <div
-                onMouseEnter={() => setOpenMega(true)}
+                // onMouseEnter={() => setOpenMega(true)}
                 className="absolute left-1/2 mt-3 w-[800px] -translate-x-1/2 rounded-2xl border border-neutral-200 bg-white p-5 shadow-2xl dark:border-neutral-800 dark:bg-neutral-900"
                 role="menu"
               >

@@ -23,19 +23,26 @@ function Hero() {
       {/* Inline CSS for custom keyframes */}
       <style>
         {`
-          @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-        `}
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `}
       </style>
+
       <div
         className={
-          "h-full w-full flex items-center justify-center text-center bg-center bg-cover"
+          "relative h-full w-full flex items-center justify-center text-center bg-center bg-cover"
         }
         style={{ backgroundImage: `url(${Banner1})` }}
       >
-        <div className="max-w-3xl px-5 md:px-10 pt-20">
+        {/* Overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-black/30"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 max-w-3xl px-5 md:px-10 pt-20">
           <p
             className="text-[19px]"
             style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
