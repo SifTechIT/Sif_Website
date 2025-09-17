@@ -416,7 +416,7 @@ function Testimonials() {
             {slides.map((s, i) => (
               <div key={i} className="inline-block align-top w-full">
                 <div className="bg-white/5 border border-white/10 backdrop-blur p-12 text-center">
-                  <p className="text-2xl md:text-[32px] leading-snug italic mb-10">
+                  <p className="text-2xl md:text-[32px] leading-snug italic mb-10 text-wrap">
                     {s.text}
                   </p>
                   <div className="flex items-center justify-center gap-4">

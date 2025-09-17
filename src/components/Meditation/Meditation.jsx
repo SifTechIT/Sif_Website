@@ -296,56 +296,54 @@ function Activities() {
   const ref = useFadeIn();
 
   const slides = [
-    [
-      {
-        image: FoundationCourse,
-        icon: "🪷",
-        title: "Foundation Course",
-        desc: "A 3-day beginner-level meditation and self-awareness workshop conducted in communities, colleges, and NGOs.",
-        tags: ["3 Days", "Beginner", "Group Sessions"],
-      },
-      {
-        image: RESIDENTIAl,
-        icon: "🧘",
-        title: "Residential Retreats",
-        desc: "Multi-day silent retreats (3, 7, or 10 days) in serene environments with expert guidance for deep practice.",
-        tags: ["Silent Retreat", "7-10 Days", "Deep Practice"],
-      },
-      {
-        image: OnlineSession,
-        icon: "🎙️",
-        title: "Online Sessions",
-        desc: "Free guided meditations every weekend through Zoom and YouTube live for global accessibility.",
-        tags: ["Free", "Weekly", "Global Access"],
-      },
-    ],
-    [
-      {
-        image: SchoolPrograms,
-        icon: "🏫",
-        title: "School Programs",
-        desc: "Introduction to Sunya for students and teachers to enhance focus and reduce exam anxiety.",
-        tags: ["Students", "Teachers", "Focus Training"],
-      },
-      {
-        image: Transformation,
-        icon: "🫂",
-        title: "Transformation Circles",
-        desc: "Small group gatherings focused on emotional healing and life-purpose discovery in supportive environments.",
-        tags: ["Small Groups", "Healing Focus", "Life Purpose"],
-      },
-      {
-        image: Trainers,
-        icon: "📚",
-        title: "Trainers Program",
-        desc: "Train-the-trainer initiative to build certified facilitators in different regions and languages.",
-        tags: ["Certification", "Train Trainers", "Multilingual"],
-      },
-    ],
+    {
+      image: FoundationCourse,
+      icon: "🪷",
+      title: "Foundation Course",
+      desc: "A 3-day beginner-level meditation and self-awareness workshop conducted in communities, colleges, and NGOs.",
+      tags: ["3 Days", "Beginner", "Group Sessions"],
+    },
+    {
+      image: RESIDENTIAl,
+      icon: "🧘",
+      title: "Residential Retreats",
+      desc: "Multi-day silent retreats (3, 7, or 10 days) in serene environments with expert guidance for deep practice.",
+      tags: ["Silent Retreat", "7-10 Days", "Deep Practice"],
+    },
+    {
+      image: OnlineSession,
+      icon: "🎙️",
+      title: "Online Sessions",
+      desc: "Free guided meditations every weekend through Zoom and YouTube live for global accessibility.",
+      tags: ["Free", "Weekly", "Global Access"],
+    },
+    {
+      image: SchoolPrograms,
+      icon: "🏫",
+      title: "School Programs",
+      desc: "Introduction to Sunya for students and teachers to enhance focus and reduce exam anxiety.",
+      tags: ["Students", "Teachers", "Focus Training"],
+    },
+    {
+      image: Transformation,
+      icon: "🫂",
+      title: "Transformation Circles",
+      desc: "Small group gatherings focused on emotional healing and life-purpose discovery in supportive environments.",
+      tags: ["Small Groups", "Healing Focus", "Life Purpose"],
+    },
+    {
+      image: Trainers,
+      icon: "📚",
+      title: "Trainers Program",
+      desc: "Train-the-trainer initiative to build certified facilitators in different regions and languages.",
+      tags: ["Certification", "Train Trainers", "Multilingual"],
+    },
   ];
 
   const [i, setI] = useState(0);
-  const total = slides.length;
+
+  const itemsPerSlide = 3; // show 3 per slide on desktop
+  const total = Math.ceil(slides.length / itemsPerSlide);
 
   const next = () => setI((v) => (v + 1) % total);
   const prev = () => setI((v) => (v - 1 + total) % total);
@@ -354,6 +352,11 @@ function Activities() {
     const id = setInterval(next, 6000);
     return () => clearInterval(id);
   }, []);
+
+  // slice into groups of itemsPerSlide
+  const slideGroups = Array.from({ length: total }, (_, idx) =>
+    slides.slice(idx * itemsPerSlide, (idx + 1) * itemsPerSlide)
+  );
 
   return (
     <section id="activities" className="py-28 bg-white" ref={ref}>
@@ -368,10 +371,10 @@ function Activities() {
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${i * 100}%)` }}
           >
-            {slides.map((group, gi) => (
+            {slideGroups.map((group, gi) => (
               <div
                 key={gi}
-                className="shrink-0 basis-full grid md:grid-cols-3 gap-8"
+                className="shrink-0 basis-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
               >
                 {group.map((card) => (
                   <ActivityCard key={card.title} {...card} />
@@ -380,6 +383,7 @@ function Activities() {
             ))}
           </div>
 
+          {/* Controls */}
           <div className="flex items-center justify-center gap-6 mt-12">
             <button
               onClick={prev}
@@ -638,9 +642,6 @@ function GetInvolved() {
   );
 }
 
-/* ========================= Footer ========================= */
-
-/* ========================= Shared: Section Header ========================= */
 function SectionHeader({ title, subtitle, invert = false }) {
   return (
     <div className="text-center mb-16">

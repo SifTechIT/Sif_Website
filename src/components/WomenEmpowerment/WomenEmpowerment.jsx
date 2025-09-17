@@ -63,7 +63,7 @@ function Hero() {
             meditation, and sustainable livelihood programs.
           </p>
           <div
-            className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            className="my-8 flex flex-wrap items-center justify-center gap-6"
             style={{ animation: "fadeInUp 1s ease-out 1.1s forwards" }}
           >
             <a

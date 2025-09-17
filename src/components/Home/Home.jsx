@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import Agamas from "../../assets/Home/Agamas.jpeg";
 import AwakeningPeace from "../../assets/Home/Awakening_Peace.png";
 import Awareness from "../../assets/Home/Awareness.jpeg";
@@ -13,7 +12,6 @@ import ODOC4 from "../../assets/Home/ODOC4.jpeg";
 import ODOCBanner from "../../assets/Home/ODOC_banner.jpg";
 import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
 import WomenSkillCenter from "../../assets/Home/Women_Skill_Center.jpg";
-import Navbar from "../Navbar/Navbar";
 import AboutSIFSection from "./About";
 import FeaturesSection from "./Feature";
 /**
@@ -263,7 +261,7 @@ function PillarsTabs({ items = PILLARS }) {
   );
   return (
     <div className="w-full">
-      <div className="no-scrollbar relative flex w-full gap-2 overflow-x-auto rounded-xl bg-neutral-100 p-2 dark:bg-neutral-900/40">
+      <div className="no-scrollbar relative flex flex-wrap w-full gap-2 overflow-x-auto rounded-xl bg-neutral-100 p-2 dark:bg-neutral-900/40">
         {items.map((p) => (
           <button
             key={p.key}
@@ -414,193 +412,9 @@ function Testimonials() {
   );
 }
 
-// ---------- Header / Nav ----------
-function Header() {
-  const [open, setOpen] = useState(false);
-  return (
-    <header className="sticky top-0 z-30 w-full border-b border-neutral-200/60 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/50">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="#" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-400 to-sky-500 shadow" />
-          <span className="font-semibold tracking-tight">SIFworld</span>
-        </a>
-        {/* <nav className="hidden items-center gap-6 md:flex">
-          <Link
-            to="home"
-            className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about-us"
-            className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-          >
-            About Us
-          </Link>
-          <a href="#sunya" className="hover:text-emerald-600">
-            Sunya
-          </a>
-          <a href="#activities" className="hover:text-emerald-600">
-            Activities
-          </a>
-          <a href="#sunyatimes" className="hover:text-emerald-600">
-            Sunyatimes
-          </a>
-          <a href="#odoc" className="hover:text-emerald-600">
-            ODOC
-          </a>
-          <a
-            href="#cta"
-            className="rounded-full bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
-          >
-            Get Involved
-          </a>
-        </nav> */}
-        <Navbar />
-        <button
-          className="md:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M3 12h18M3 6h18M3 18h18" />
-          </svg>
-        </button>
-      </div>
-      {open && (
-        <div className="md:hidden">
-          <div className="mx-4 mb-3 rounded-2xl border border-neutral-200 bg-white p-3 dark:border-neutral-800 dark:bg-neutral-900">
-            <div className="grid gap-2">
-              <Link
-                to="home"
-                className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-              >
-                Home
-              </Link>
-              <Link
-                to="/about-us"
-                className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-              >
-                About Us
-              </Link>
-              <a
-                href="#sunya"
-                className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-              >
-                Sunya
-              </a>
-              <a
-                href="#activities"
-                className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-              >
-                Activities
-              </a>
-              <a
-                href="#sunyatimes"
-                className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-              >
-                Sunyatimes
-              </a>
-              <a
-                href="#odoc"
-                className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
-              >
-                ODOC
-              </a>
-              <a
-                href="#cta"
-                className="rounded-lg bg-neutral-900 px-3 py-2 text-white"
-              >
-                Get Involved
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-    </header>
-  );
-}
-
-// ---------- Footer ----------
-// function Footer() {
-//   return (
-//     <footer className="mt-20 border-t border-neutral-200/60 bg-white/70 py-10 dark:border-neutral-800 dark:bg-neutral-950/40">
-//       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-4">
-//         <div>
-//           <div className="flex items-center gap-2">
-//             <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-400 to-sky-500 shadow" />
-//             <span className="font-semibold">SIFworld</span>
-//           </div>
-//           <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300">
-//             Creating Peace, Prosperity & Mindful Communities since 2019.
-//           </p>
-//         </div>
-//         <div>
-//           <p className="font-medium">Explore</p>
-//           <ul className="mt-2 space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
-//             <li>
-//               <a className="hover:underline" href="#sunya">
-//                 Sunya Meditation
-//               </a>
-//             </li>
-//             <li>
-//               <a className="hover:underline" href="#activities">
-//                 Activities
-//               </a>
-//             </li>
-//             <li>
-//               <a className="hover:underline" href="#odoc">
-//                 ODOC
-//               </a>
-//             </li>
-//             <li>
-//               <a className="hover:underline" href="#sunyatimes">
-//                 Sunyatimes
-//               </a>
-//             </li>
-//           </ul>
-//         </div>
-//         <div>
-//           <p className="font-medium">Initiatives</p>
-//           <ul className="mt-2 space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
-//             <li>Farmer Empowerment</li>
-//             <li>Women Empowerment</li>
-//             <li>CSR & Relief</li>
-//             <li>Agamas & Translations</li>
-//           </ul>
-//         </div>
-//         <div>
-//           <p className="font-medium">Contact</p>
-//           <ul className="mt-2 space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
-//             <li>Hyderabad · Nagpur · Global</li>
-//             <li>
-//               <a className="hover:underline" href="mailto:hello@sifworld.com">
-//                 hello@sifworld.com
-//               </a>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//       <div className="mx-auto mt-8 max-w-7xl px-4 text-xs text-neutral-500 sm:px-6">
-//         © {new Date().getFullYear()} Sunyatee International Foundation
-//       </div>
-//     </footer>
-//   );
-// }
-
-// ---------- Page ----------
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-neutral-50 to-white text-neutral-900 dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-950 dark:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-neutral-50 to-white text-neutral-900 overflow-x-hidden">
       {/* <Navbar /> */}
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6">
@@ -690,8 +504,9 @@ export default function Home() {
 
         {/* Sunyatimes (PDF download + inline preview) */}
         <section id="sunyatimes" className="mt-16">
-          <div className="mb-6 flex items-end justify-between">
-            <div>
+          <div className="mb-6 grid gap-6 md:grid-cols-3 md:items-center">
+            {/* Left Text */}
+            <div className="md:col-span-2">
               <p className="text-sm uppercase tracking-wider text-emerald-600">
                 Sunyatimes
               </p>
@@ -703,11 +518,13 @@ export default function Home() {
                 communities. Download the latest edition or read inline.
               </p>
             </div>
-            <div className="flex gap-3">
+
+            {/* Buttons */}
+            <div className="flex flex-wrap items-center gap-3 md:justify-end">
               <a
                 href={SUNYATIMES_PDF}
                 download
-                className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
+                className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800"
               >
                 <svg
                   width="18"
@@ -729,18 +546,15 @@ export default function Home() {
                 href={SUNYATIMES_PDF}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-neutral-900 shadow hover:bg-neutral-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-900 shadow hover:bg-neutral-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
               >
                 Open in New Tab
               </a>
             </div>
           </div>
 
+          {/* Inline PDF Preview */}
           <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow dark:border-neutral-800 dark:bg-neutral-950">
-            {/*
-              NOTE: For robust inline PDF preview, consider pdf.js or an <object> fallback.
-              Place the actual PDF in /public and set SUNYATIMES_PDF accordingly.
-            */}
             <object
               data={SUNYATIMES_PDF}
               type="application/pdf"
@@ -838,7 +652,7 @@ export default function Home() {
                 make peace and prosperity a lived reality.
               </p>
             </div>
-            <div className="flex gap-3 md:justify-end">
+            <div className="flex flex-wrap gap-3">
               <a
                 href="#"
                 className="rounded-full bg-white px-5 py-2.5 text-neutral-900 hover:bg-neutral-100"

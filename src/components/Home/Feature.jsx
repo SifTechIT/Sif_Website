@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Agamas from "../../assets/Home/Agamas_ac.jpeg";
 import AusumKids from "../../assets/Home/Ausum_Kids_ac.jpg";
 import Awareness from "../../assets/Home/Awareness.jpeg";
@@ -26,28 +27,28 @@ const DEFAULT_SERVICES = [
     title: "Sunya Meditation Programs",
     desc: "Structured 7-belt pathway, retreats, and online practice to build clarity and resilience.",
     img: SunyaMeditation,
-    href: "#sunya",
+    href: "/meditation",
   },
   {
     key: "farmer",
     title: "Farmer Empowerment",
     desc: "Soil testing, noni cultivation, training & buy-back support to boost farmer incomes.",
     img: Farmer,
-    href: "#farmer",
+    href: "/farmer-empowerment",
   },
   {
     key: "women",
     title: "Women’s Skill Centers",
     desc: "Textiles, eco-products, and SHG-led entrepreneurship for livelihood and dignity.",
     img: Women,
-    href: "#women",
+    href: "/women-empowerment",
   },
   {
     key: "health",
     title: "Rural Health & Awareness",
     desc: "Preventive health camps, nutrition & hygiene sessions, mental well-being workshops.",
     img: Awareness,
-    href: "#health",
+    href: "/rural-health-awareness",
   },
   {
     key: "csr",
@@ -61,28 +62,28 @@ const DEFAULT_SERVICES = [
     title: "One Dollar One Child",
     desc: "Spirulina nutrition at $1 per child—community-driven malnutrition intervention.",
     img: ODOC,
-    href: "#odoc",
+    href: "/onedollar-onechild",
   },
   {
     key: "ausum",
     title: "Ausum Kids",
     desc: "Therapy & inclusion programs for children on the spectrum and their caregivers.",
     img: AusumKids,
-    href: "#ausum",
+    href: "/child-education",
   },
   {
     key: "agamas",
     title: "Agamas & Translations",
     desc: "Palm-leaf sutra printing and scripture translations preserving timeless wisdom.",
     img: Agamas,
-    href: "#agamas",
+    href: "/agamas-translations",
   },
   {
     key: "education",
     title: "Internships & Education",
     desc: "Hands-on training in IT, design, agritech, and management for youth and volunteers.",
     img: Education,
-    href: "#education",
+    href: "/internships-education",
   },
 ];
 
@@ -110,8 +111,8 @@ function ServiceCard({ s }) {
         </p>
 
         <div className="mt-4">
-          <a
-            href={s.href}
+          <Link
+            to={s.href}
             className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
           >
             Know more
@@ -128,7 +129,7 @@ function ServiceCard({ s }) {
               <path d="M5 12h14" />
               <path d="M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </article>

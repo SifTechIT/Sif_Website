@@ -240,7 +240,7 @@ export default function Navbar() {
           <Link to="/gallery" className="hover:text-emerald-600">
             Gallery
           </Link>
-          <Link to="/#sunyatimes" className="hover:text-emerald-600">
+          <Link to="/sunyatimes" className="hover:text-emerald-600">
             Sunyatimes
           </Link>
           <Link to="/odoc" className="hover:text-emerald-600">
@@ -350,13 +350,13 @@ export default function Navbar() {
               </details>
 
               <Link
-                to="/#sunyatimes"
+                to="/sunyatimes"
                 className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
               >
                 Sunyatimes
               </Link>
               <Link
-                to="/#odoc"
+                to="/odoc"
                 className="rounded-lg px-3 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800"
               >
                 ODOC
