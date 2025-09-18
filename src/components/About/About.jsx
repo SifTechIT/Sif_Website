@@ -265,25 +265,58 @@ export default function AboutUsPage() {
       </section> */}
 
       {/* Stats Section */}
-      <section className="mx-auto max-w-7xl px-6 mt-30 lg:px-8">
-        <h2 className="text-3xl font-bold text-center">
-          Our Impact in Numbers
-        </h2>
-        <dl className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="rounded-xl bg-purple-50 p-6 text-center shadow dark:bg-neutral-900"
-            >
-              <dt className="text-2xl font-bold text-purple-900 dark:text-purple-300">
-                {s.value}
-              </dt>
-              <dd className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-                {s.label}
-              </dd>
+      <section className="bg-slate-900 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6">
+            {/* Vision Card */}
+            <div className="lg:col-span-6 bg-slate-800/50 rounded-2xl p-8 border border-slate-700/30 hover:bg-slate-800/70 transition-all duration-300">
+              <h2 className="text-xl font-light text-white mb-4 tracking-wide">
+                Our Vision
+              </h2>
+              <p className="text-slate-300 leading-7 font-light">
+                To create a world where peace and prosperity are lived
+                realities, rooted in mindfulness, compassion, and
+                service—transforming individuals and communities for generations
+                to come.
+              </p>
             </div>
-          ))}
-        </dl>
+
+            {/* Mission Card */}
+            <div className="lg:col-span-6 bg-slate-800/50 rounded-2xl p-8 border border-slate-700/30 hover:bg-slate-800/70 transition-all duration-300">
+              <h2 className="text-xl font-light text-white mb-4 tracking-wide">
+                Our Mission
+              </h2>
+              <p className="text-slate-300 leading-7 font-light">
+                SIF is committed to spreading Sunya meditation globally while
+                empowering farmers, women, children, and communities through
+                sustainable programs that nurture peace, inclusivity, and
+                holistic well-being.
+              </p>
+            </div>
+
+            {/* Impact Header Card */}
+            <div className="lg:col-span-12 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-2xl p-6 border border-slate-700/30 text-center">
+              <h2 className="text-2xl font-light text-white tracking-wide">
+                Our Impact in Numbers
+              </h2>
+            </div>
+
+            {/* Stats Cards */}
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className="lg:col-span-4 bg-slate-800/30 rounded-2xl p-6 border border-slate-700/30 text-center group hover:bg-slate-800/50 hover:border-slate-600/50 transition-all duration-300"
+              >
+                <dt className="text-3xl lg:text-4xl font-extralight text-white mb-3 group-hover:text-slate-200 transition-colors duration-300">
+                  {stat.value}
+                </dt>
+                <dd className="text-xs uppercase tracking-widest text-slate-400 font-medium">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Focus Areas */}

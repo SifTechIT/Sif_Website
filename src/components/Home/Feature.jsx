@@ -142,7 +142,7 @@ export default function ServicesGridSection({
   subtitle = "Explore how we serve communities through meditation, empowerment, health, heritage, and education.",
 }) {
   return (
-    <section id="services" className="mt-30">
+    <section id="services" className="mt-30 mx-auto max-w-7xl px-4 sm:px-6">
       {/* Heading */}
       <div className="mb-6">
         <p className="text-sm uppercase tracking-wider text-emerald-600">

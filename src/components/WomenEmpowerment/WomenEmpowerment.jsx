@@ -43,28 +43,19 @@ function Hero() {
         />
 
         <div className="relative z-10 max-w-3xl px-5 md:px-10 pt-20">
-          <p
-            className="text-[19px]"
-            style={{ animation: "fadeInUp 1s ease-out 0.3s forwards" }}
-          >
-            Women Empowerment at SIF
-          </p>
-          <h1
-            className="text-[clamp(48px,6vw,80px)] font-semibold leading-[1.05] tracking-[-0.015em] mt-4"
-            style={{ animation: "fadeInUp 1s ease-out 0.5s forwards" }}
-          >
-            She Leads, We Rise
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
+            <span>👭 She Leads, We Rise</span>
+          </div>
+          <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight tracking-[-0.025em] mb-4">
+            Women Empowerment
           </h1>
-          <h2
+          {/* <h2
             className="text-[28px] font-normal leading-tight mt-4"
             style={{ animation: "fadeInUp 1s ease-out 0.7s forwards" }}
           >
             Transforming hesitation into confidence, silence into leadership
-          </h2>
-          <p
-            className="text-[21px] text-white/90 leading-relaxed mt-6"
-            style={{ animation: "fadeInUp 1s ease-out 0.9s forwards" }}
-          >
+          </h2> */}
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
             Across the heartlands of India—from Nagpur to Siddipet—we are
             rewriting the story of rural women through skill development,
             meditation, and sustainable livelihood programs.

@@ -12,7 +12,9 @@ import AboutSIFSection from "./About";
 import AllActivities from "./AllActivity";
 import FeaturesSection from "./Feature";
 import AnimatedPDFBookReader from "./PdfSection";
-
+import TestimonialsSection from "./Testimonals";
+const imageSrc =
+  "https://images.unsplash.com/photo-1460602594182-8568137446ce?q=80&w=1400&auto=format&fit=crop";
 const HERO_SLIDES = [
   {
     title: "Awakening Peace. Empowering Communities.",
@@ -161,69 +163,71 @@ function HeroSlider({ slides = HERO_SLIDES, interval = 5000 }) {
   useInterval(() => setActive((i) => (i + 1) % length), interval);
 
   return (
-    <div className="relative h-[68vh] md:h-[82vh] w-full overflow-hidden rounded-3xl shadow-2xl">
-      {slides.map((s, i) => {
-        const isActive = i === active;
-        return (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              isActive ? "opacity-100" : "opacity-0"
-            }`}
-            aria-hidden={!isActive}
-          >
+    <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="relative h-[68vh] md:h-[82vh] w-full overflow-hidden rounded-3xl shadow-2xl">
+        {slides.map((s, i) => {
+          const isActive = i === active;
+          return (
             <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${s.image})` }}
-            />
-            <div className="absolute inset-0 bg-black/40" />
-            <div className="relative z-10 flex h-full items-center justify-start p-6 sm:p-12">
-              <div className="max-w-3xl text-white">
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight drop-shadow-lg">
-                  {s.title}
-                </h1>
-                <p className="mt-4 text-base sm:text-lg md:text-xl text-white/90 max-w-2xl">
-                  {s.sub}
-                </p>
-                <div className="mt-8">
-                  <a
-                    href={s.cta.href}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/90 px-6 py-3 text-neutral-900 font-medium shadow hover:bg-white transition"
-                  >
-                    {s.cta.text}
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+              key={i}
+              className={`absolute inset-0 transition-opacity duration-700 ${
+                isActive ? "opacity-100" : "opacity-0"
+              }`}
+              aria-hidden={!isActive}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${s.image})` }}
+              />
+              <div className="absolute inset-0 bg-black/40" />
+              <div className="relative z-10 flex h-full items-center justify-start p-6 sm:p-12">
+                <div className="max-w-3xl text-white">
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight drop-shadow-lg">
+                    {s.title}
+                  </h1>
+                  <p className="mt-4 text-base sm:text-lg md:text-xl text-white/90 max-w-2xl">
+                    {s.sub}
+                  </p>
+                  <div className="mt-8">
+                    <a
+                      href={s.cta.href}
+                      className="inline-flex items-center gap-2 rounded-full bg-white/90 px-6 py-3 text-neutral-900 font-medium shadow hover:bg-white transition"
                     >
-                      <path d="M5 12h14" />
-                      <path d="M12 5l7 7-7 7" />
-                    </svg>
-                  </a>
+                      {s.cta.text}
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="M12 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
 
-      {/* Dots */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            className={`h-2.5 w-2.5 rounded-full border border-white/70 transition ${
-              active === i ? "bg-white" : "bg-white/20 hover:bg-white/40"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
+        {/* Dots */}
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`h-2.5 w-2.5 rounded-full border border-white/70 transition ${
+                active === i ? "bg-white" : "bg-white/20 hover:bg-white/40"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -394,12 +398,11 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-white via-neutral-50 to-white text-neutral-900 overflow-x-hidden">
       {/* <Navbar /> */}
 
-      <main className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6">
-        {/* Hero */}
-        <HeroSlider />
+      {/* Hero */}
+      <HeroSlider />
 
-        {/* Pillars / Tabs */}
-        {/* <section id="activities" className="mt-16">
+      {/* Pillars / Tabs */}
+      {/* <section id="activities" className="mt-16">
           <div className="mb-6 flex items-end justify-between">
             <div>
               <p className="text-sm uppercase tracking-wider text-emerald-600">
@@ -412,75 +415,75 @@ export default function Home() {
           </div>
           <ActivitiesCarousel />
         </section> */}
-        <AboutSIFSection />
-        <FeaturesSection />
-        <section id="pillars" className="mt-30">
-          <div className="mb-6 flex items-end justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-wider text-emerald-600">
-                Our Objectives
-              </p>
-              <h2 className="mt-1 text-3xl font-semibold tracking-tight">
-                Keys to Impact
-              </h2>
+      <AboutSIFSection />
+      <FeaturesSection />
+      <section id="pillars" className="mt-30 mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="mb-6 flex items-end justify-between">
+          <div>
+            <p className="text-sm uppercase tracking-wider text-emerald-600">
+              Our Objectives
+            </p>
+            <h2 className="mt-1 text-3xl font-semibold tracking-tight">
+              Keys to Impact
+            </h2>
+          </div>
+        </div>
+        <PillarsTabs />
+      </section>
+
+      {/* Activities Carousel */}
+
+      {/* Sunya Section */}
+      <section
+        id="sunya"
+        className="mx-auto max-w-7xl px-4 sm:px-6 mt-30 rounded-3xl bg-gradient-to-br from-emerald-50 to-sky-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60"
+      >
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <div>
+            <h3 className="text-3xl font-semibold tracking-tight">
+              Sunya Meditation
+            </h3>
+            <p className="mt-3 text-neutral-700 dark:text-neutral-300">
+              Sunya is the wisdom of emptiness: a practical path to clarity,
+              balance, and liberation. Our 7-belt pathway guides practitioners
+              from self-awareness to mastery through retreats, online programs,
+              and community practice.
+            </p>
+            <ul className="mt-4 grid gap-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li>• 7-Belt progression · Red → Violet</li>
+              <li>• International mega retreats · 40+ country telecasts</li>
+              <li>• Corporate, youth & special-needs adaptations</li>
+            </ul>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#cta"
+                className="rounded-full bg-neutral-900 px-5 py-2.5 text-white hover:bg-neutral-800"
+              >
+                Join a Retreat
+              </a>
+              <a
+                href="#sunyatimes"
+                className="rounded-full bg-white px-5 py-2.5 text-neutral-900 shadow hover:bg-neutral-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
+              >
+                Read Stories
+              </a>
             </div>
           </div>
-          <PillarsTabs />
-        </section>
-
-        {/* Activities Carousel */}
-
-        {/* Sunya Section */}
-        <section
-          id="sunya"
-          className="mt-30 rounded-3xl bg-gradient-to-br from-emerald-50 to-sky-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60"
-        >
-          <div className="grid items-center gap-8 md:grid-cols-2">
-            <div>
-              <h3 className="text-3xl font-semibold tracking-tight">
-                Sunya Meditation
-              </h3>
-              <p className="mt-3 text-neutral-700 dark:text-neutral-300">
-                Sunya is the wisdom of emptiness: a practical path to clarity,
-                balance, and liberation. Our 7-belt pathway guides practitioners
-                from self-awareness to mastery through retreats, online
-                programs, and community practice.
-              </p>
-              <ul className="mt-4 grid gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-                <li>• 7-Belt progression · Red → Violet</li>
-                <li>• International mega retreats · 40+ country telecasts</li>
-                <li>• Corporate, youth & special-needs adaptations</li>
-              </ul>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="#cta"
-                  className="rounded-full bg-neutral-900 px-5 py-2.5 text-white hover:bg-neutral-800"
-                >
-                  Join a Retreat
-                </a>
-                <a
-                  href="#sunyatimes"
-                  className="rounded-full bg-white px-5 py-2.5 text-neutral-900 shadow hover:bg-neutral-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
-                >
-                  Read Stories
-                </a>
-              </div>
-            </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white p-2 shadow dark:border-neutral-800 dark:bg-neutral-950">
-              <div className="aspect-video w-full overflow-hidden rounded-xl">
-                {/* Replace with your video/embed */}
-                <img
-                  alt="Sunya Practice"
-                  className="h-full w-full object-cover"
-                  src={Meditation}
-                />
-              </div>
+          <div className="rounded-2xl border border-neutral-200 bg-white p-2 shadow dark:border-neutral-800 dark:bg-neutral-950">
+            <div className="aspect-video w-full overflow-hidden rounded-xl">
+              {/* Replace with your video/embed */}
+              <img
+                alt="Sunya Practice"
+                className="h-full w-full object-cover"
+                src={Meditation}
+              />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Sunyatimes (PDF download + inline preview) */}
-        {/* <section id="sunyatimes" className="mt-16">
+      {/* Sunyatimes (PDF download + inline preview) */}
+      {/* <section id="sunyatimes" className="mt-16">
           <div className="mb-6 grid gap-6 md:grid-cols-3 md:items-center">
             <div className="md:col-span-2">
               <p className="text-sm uppercase tracking-wider text-emerald-600">
@@ -549,10 +552,10 @@ export default function Home() {
             </object>
           </div>
         </section> */}
-        <AnimatedPDFBookReader />
+      <AnimatedPDFBookReader />
 
-        {/* ODOC */}
-        {/* <section
+      {/* ODOC */}
+      {/* <section
           id="odoc"
           className="mt-16 rounded-3xl bg-gradient-to-br from-yellow-50 to-rose-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60"
         >
@@ -598,9 +601,9 @@ export default function Home() {
             </div>
           </div>
         </section> */}
-        <AllActivities />
-        {/* Testimonials */}
-        <section id="testimonials" className="mt-30">
+      <AllActivities />
+      {/* Testimonials */}
+      {/* <section id="testimonials" className="mt-30">
           <div className="mb-6">
             <p className="text-sm uppercase tracking-wider text-emerald-600">
               Testimonials
@@ -610,52 +613,76 @@ export default function Home() {
             </h2>
           </div>
           <Testimonials />
-        </section>
+        </section> */}
+      <TestimonialsSection />
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 mb-30 mt-30">
+        {/* Card container with dark purple background */}
+        <div className="relative overflow-hidden rounded-[2rem] ring-1 ring-white/20 bg-[#2c003e] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
+          {/* Purple gradient overlays */}
+          <div
+            className="absolute inset-0 opacity-80"
+            aria-hidden
+            style={{
+              backgroundImage: `radial-gradient(700px 700px at 90% 50%, rgba(255,255,255,0.15) 0%, rgba(147,51,234,0.35) 35%, rgba(76,29,149,0.55) 55%, rgba(44,0,62,0.9) 100%)`,
+            }}
+          />
 
-        {/* CTA */}
-        <section
-          id="cta"
-          className="mt-30 rounded-3xl bg-neutral-900 px-8 py-12 text-white"
-        >
-          <div className="grid items-center gap-8 md:grid-cols-3">
-            <div className="md:col-span-2">
-              <h3 className="text-3xl font-semibold tracking-tight">
+          {/* subtle top-left light to simulate inset card */}
+          <div className="pointer-events-none absolute -inset-px rounded-[2rem] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.3)]" />
+
+          {/* Content grid */}
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-10 p-8 sm:p-12">
+            {/* Left copy */}
+            <div className="max-w-xl order-2 lg:order-1">
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
                 Be part of SIF’s journey.
-              </h3>
-              <p className="mt-2 text-white/80">
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-white/85 leading-relaxed">
                 Volunteer, partner via CSR, or support ODOC. Together, let’s
                 make peace and prosperity a lived reality.
               </p>
+              {/* Buttons row */}
+              <div className="mt-8 flex flex-wrap gap-4">
+                {[
+                  { label: "Careers", href: "#careers" },
+                  { label: "Interns", href: "#interns" },
+                  { label: "Volunteer", href: "#volunteer" },
+                  { label: "Support", href: "#support" },
+                ].map((b) => (
+                  <a
+                    key={b.label}
+                    href={b.href}
+                    className="group relative inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-emerald-600
+              to-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg
+              shadow-emerald-600/25 transition-all duration-200
+              hover:from-emerald-700 hover:to-teal-700 hover:shadow-xl
+              hover:shadow-emerald-600/30 dark:shadow-emerald-500/20
+              dark:hover:shadow-emerald-500/30"
+                  >
+                    <span className="h-5 w-5 rounded-full bg-gradient-to-b from-white to-neutral-300 shadow-inner ring-1 ring-black/40 transition group-hover:translate-x-0.5" />
+                    <span className="relative z-10">{b.label}</span>
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#"
-                className="rounded-full bg-white px-5 py-2.5 text-neutral-900 hover:bg-neutral-100"
-              >
-                Careers
-              </a>
-              <a
-                href="#"
-                className="rounded-full bg-white px-5 py-2.5 text-neutral-900 hover:bg-neutral-100"
-              >
-                Interns
-              </a>
-              <a
-                href="#"
-                className="rounded-full bg-white px-5 py-2.5 text-neutral-900 hover:bg-neutral-100"
-              >
-                Volunteer
-              </a>
-              <a
-                href="#"
-                className="rounded-full bg-emerald-500 px-5 py-2.5 text-neutral-900 hover:bg-emerald-400"
-              >
-                Support
-              </a>
+
+            {/* Right image (responsive) */}
+            <div className="order-1 lg:order-2">
+              <figure className="relative overflow-hidden rounded-2xl ring-1 ring-white/20 shadow-xl max-w-xl mx-auto lg:max-w-none">
+                <img
+                  src={imageSrc}
+                  alt="SIF community impact"
+                  className="h-64 w-full object-cover sm:h-80 lg:h-[360px]"
+                  loading="lazy"
+                />
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#2c003e]/80 to-transparent" />
+              </figure>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
       {/* 
       <Footer /> */}
     </div>

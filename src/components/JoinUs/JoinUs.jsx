@@ -19,7 +19,7 @@ export default function JoinUs() {
 
       <main>
         {/* Hero */}
-        <section className="mt-[72px] relative overflow-hidden">
+        <section className="relative overflow-hidden">
           <div className="bg-gradient-to-br from-[#10b981] to-[#059669]">
             <div className="relative">
               <div className="absolute inset-0 [background:radial-gradient(circle_at_20%_20%,rgba(255,255,255,.12)_0%,transparent_50%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,.1)_0%,transparent_50%)]" />
@@ -66,16 +66,15 @@ export default function JoinUs() {
 
         {/* Choice Chips */}
         <section className="sticky top-[72px] z-40 bg-white border-b border-gray-200 py-4">
-          <div className="max-w-[600px] mx-auto flex gap-2 bg-gray-100 rounded-xl p-2 justify-center">
+          <div className="max-w-[400px] mx-auto flex gap-2 bg-gray-100 rounded-xl p-2 justify-center">
             {[
               { id: "volunteer", label: "Volunteer" },
               { id: "internship", label: "Internship" },
-              { id: "careers", label: "Careers" },
             ].map((c) => (
               <button
                 key={c.id}
                 onClick={() => setActiveTab(c.id)}
-                className={`flex-1 px-4 py-2 rounded-lg font-semibold text-sm transition ${
+                className={`flex-1 px-4 py-2 rounded-lg font-semibold text-sm transition cursor-pointer ${
                   activeTab === c.id
                     ? "bg-white shadow text-gray-900"
                     : "text-gray-600"
@@ -90,7 +89,7 @@ export default function JoinUs() {
         {/* Sections */}
         {activeTab === "volunteer" && <VolunteerForm />}
         {activeTab === "internship" && <InternshipForm />}
-        {activeTab === "careers" && <CareersSection />}
+        {/* {activeTab === "careers" && <CareersSection />} */}
       </main>
     </div>
   );

@@ -114,7 +114,7 @@ function GalleryNav({ activeTab, setActiveTab, filter, setFilter }) {
   return (
     <section className="sticky top-[72px] z-40 bg-white border-b border-gray-200 py-6">
       <div className="container max-w-[1280px] mx-auto px-6">
-        <div className="max-w-[420px] mx-auto flex gap-2 bg-gray-100 rounded-2xl p-2 mb-4">
+        {/* <div className="max-w-[420px] mx-auto flex gap-2 bg-gray-100 rounded-2xl p-2 mb-4">
           {["photos", "videos"].map((tab) => (
             <button
               key={tab}
@@ -128,7 +128,7 @@ function GalleryNav({ activeTab, setActiveTab, filter, setFilter }) {
               {tab === "photos" ? "Photos" : "Videos"}
             </button>
           ))}
-        </div>
+        </div> */}
         <div className="flex flex-wrap justify-center gap-3">
           {FILTERS.map((f) => (
             <button

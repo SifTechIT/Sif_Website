@@ -156,7 +156,7 @@ const PDFBookReader = () => {
 
   if (isLoading) {
     return (
-      <section id="sunyatimes" className="mt-30">
+      <section id="sunyatimes" className="mt-30 mx-auto max-w-7xl px-4 sm:px-6">
         <div className="overflow-hidden rounded-2xl border bg-white shadow dark:bg-neutral-950">
           <div className="flex items-center justify-center h-96">
             <div className="text-center">
@@ -172,7 +172,7 @@ const PDFBookReader = () => {
   }
 
   return (
-    <section id="sunyatimes" className="mt-30">
+    <section id="sunyatimes" className="mt-30 mx-auto max-w-7xl px-4 sm:px-6">
       {/* Make fullscreen look right */}
       <style>{`
         /* When the shell is fullscreen, stretch it and center the book */
@@ -227,19 +227,15 @@ const PDFBookReader = () => {
       {/* Flipbook (wrapped in a real DOM shell for fullscreen) */}
       <div
         ref={shellRef}
-        className="flipbook-shell overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-950"
+        className="flipbook-shell overflow-hidden "
+        style={{ height: "500px", maxWidth: "100%" }}
       >
         <HTMLFlipBook
           width={450}
-          height={480}
-          size="stretch"
-          minWidth={250}
-          maxWidth={1200} // allow bigger size in fullscreen
-          minHeight={250}
-          maxHeight={1000}
+          height={500}
+          maxHeight={1200}
           showCover={true}
           className="mx-auto"
-          style={{ margin: "0 auto" }}
           onFlip={onFlip}
           ref={bookRef}
         >
@@ -251,7 +247,7 @@ const PDFBookReader = () => {
               <img
                 src={src}
                 alt={`Page ${index + 1}`}
-                className="max-w-full max-h-full"
+                className="w-full h-full object-contain"
               />
             </div>
           ))}
