@@ -1,3 +1,4 @@
+import ScrollToTop from "@/lib/ScrollToTop";
 import { Outlet, Route, Routes } from "react-router-dom";
 import AboutUsPage from "../About/About";
 import AgamasTranslationsPage from "../AgamasTranslation/AgamaTranslation";
@@ -21,6 +22,7 @@ import WomenEmpowermentPage from "../WomenEmpowerment/WomenEmpowerment";
 const AllRoutes = () => {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <div>
         <Routes>

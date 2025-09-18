@@ -26,7 +26,7 @@ export default function AboutSIFSectionDark({
     <section
       id="about"
       className="
-        relative mt-20 overflow-hidden
+        relative mt-30 overflow-hidden
         rounded-3xl
         bg-[#2f2760]
         text-white

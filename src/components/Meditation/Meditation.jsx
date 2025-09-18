@@ -156,7 +156,7 @@ function Stats() {
   ];
 
   return (
-    <section id="stats" className="py-28 bg-gray-50" ref={ref}>
+    <section id="stats" className="mt-30 py-28 bg-gray-50" ref={ref}>
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionHeader
           title="Impact at Scale"
@@ -198,7 +198,7 @@ function WhatIsSunya() {
   const ref = useFadeIn();
 
   return (
-    <section id="what-is-sunya" className="py-28 bg-white" ref={ref}>
+    <section id="what-is-sunya" className="mt-30 bg-white" ref={ref}>
       <div className="max-w-[1280px] mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
         <div>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">
@@ -265,7 +265,7 @@ function Benefits() {
   ];
 
   return (
-    <section id="benefits" className="py-28 bg-gray-50" ref={ref}>
+    <section id="benefits" className="mt-30 py-28 bg-gray-50" ref={ref}>
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionHeader
           title="Why Practice Sunya?"
@@ -359,7 +359,7 @@ function Activities() {
   );
 
   return (
-    <section id="activities" className="py-28 bg-white" ref={ref}>
+    <section id="activities" className="mt-30 bg-white" ref={ref}>
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionHeader
           title="Core Activities"
@@ -480,7 +480,7 @@ function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-28 bg-gray-900 text-white"
+      className="mt-30 py-28 bg-gray-900 text-white"
       ref={ref}
     >
       <div className="max-w-[1280px] mx-auto px-6">

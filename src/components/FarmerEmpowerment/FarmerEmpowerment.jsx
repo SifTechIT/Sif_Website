@@ -150,7 +150,7 @@ function Stats() {
   ];
 
   return (
-    <section id="impact" className="py-28 bg-gray-50">
+    <section id="impact" className="mt-30 bg-gray-50">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
@@ -192,7 +192,7 @@ function Stats() {
 /* ========================= Program Overview ========================= */
 function ProgramOverview() {
   return (
-    <section id="overview" className="py-28 bg-white">
+    <section id="overview" className="mt-30 bg-white">
       <div className="max-w-[1280px] mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
@@ -257,7 +257,7 @@ function NoniProject() {
   ];
 
   return (
-    <section id="noni-project" className="py-28 bg-gray-50">
+    <section id="noni-project" className="mt-30 py-28 bg-gray-50">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
@@ -330,7 +330,7 @@ function Interventions() {
   ];
 
   return (
-    <section id="interventions" className="py-28 bg-white">
+    <section id="interventions" className="mt-30 bg-white">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
@@ -397,7 +397,7 @@ function Testimonials() {
   }, []);
 
   return (
-    <section id="testimonials" className="py-28 bg-gray-900 text-white">
+    <section id="testimonials" className="py-28 mt-30 bg-gray-900 text-white">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
@@ -500,7 +500,7 @@ function GetInvolved() {
   ];
 
   return (
-    <section id="get-involved" className="py-28 bg-gray-50">
+    <section id="get-involved" className="mt-30 py-28 bg-gray-50">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">

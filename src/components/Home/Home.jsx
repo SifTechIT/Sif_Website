@@ -5,34 +5,14 @@ import Awareness from "../../assets/Home/Awareness.jpeg";
 import Meditation from "../../assets/Home/Meditation.JPG";
 import MegaRetreatActivities from "../../assets/Home/MegaRetreat_Activities.JPG";
 import NoniCultivation from "../../assets/Home/Noni_Cultivation.jpeg";
-import ODOC1 from "../../assets/Home/ODOC1.jpeg";
-import ODOC2 from "../../assets/Home/ODOC2.jpeg";
-import ODOC3 from "../../assets/Home/ODOC3.jpeg";
-import ODOC4 from "../../assets/Home/ODOC4.jpeg";
 import ODOCBanner from "../../assets/Home/ODOC_banner.jpg";
 import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
 import WomenSkillCenter from "../../assets/Home/Women_Skill_Center.jpg";
 import AboutSIFSection from "./About";
+import AllActivities from "./AllActivity";
 import FeaturesSection from "./Feature";
-/**
- * SIFworld.com – Landing Page UI (Single-File React Component)
- * ------------------------------------------------------------
- * - TailwindCSS-based responsive layout
- * - Hero slider (auto + manual)
- * - Pillars/Objectives Tabs
- * - Activities carousel
- * - Sunyatimes section with inline preview + Download
- * - Testimonials carousel
- * - CTA + Footer
- *
- * How to use:
- * 1) Ensure TailwindCSS is configured in your project (https://tailwindcss.com/docs/guides/vite)
- * 2) Drop this file into your React app (e.g., src/pages/SIFLandingPage.jsx)
- * 3) Import and render <SIFLandingPage />
- * 4) Replace placeholder images and links where noted.
- */
+import AnimatedPDFBookReader from "./PdfSection";
 
-// ---------- Mock Data (replace with CMS / API as needed) ----------
 const HERO_SLIDES = [
   {
     title: "Awakening Peace. Empowering Communities.",
@@ -160,9 +140,6 @@ const TESTIMONIALS = [
     role: "Women Empowerment Beneficiary",
   },
 ];
-
-// Replace with your actual magazine PDF asset (public/sunyatimes-2024.pdf for example)
-const SUNYATIMES_PDF = "/sunyatimes-annual.pdf"; // TODO: set correct path in your app
 
 // ---------- Helpers ----------
 function useInterval(callback, delay) {
@@ -437,7 +414,7 @@ export default function Home() {
         </section> */}
         <AboutSIFSection />
         <FeaturesSection />
-        <section id="pillars" className="mt-16">
+        <section id="pillars" className="mt-30">
           <div className="mb-6 flex items-end justify-between">
             <div>
               <p className="text-sm uppercase tracking-wider text-emerald-600">
@@ -456,7 +433,7 @@ export default function Home() {
         {/* Sunya Section */}
         <section
           id="sunya"
-          className="mt-16 rounded-3xl bg-gradient-to-br from-emerald-50 to-sky-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60"
+          className="mt-30 rounded-3xl bg-gradient-to-br from-emerald-50 to-sky-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60"
         >
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div>
@@ -503,7 +480,7 @@ export default function Home() {
         </section>
 
         {/* Sunyatimes (PDF download + inline preview) */}
-        <section id="sunyatimes" className="mt-16">
+        {/* <section id="sunyatimes" className="mt-16">
           <div className="mb-6 grid gap-6 md:grid-cols-3 md:items-center">
             <div className="md:col-span-2">
               <p className="text-sm uppercase tracking-wider text-emerald-600">
@@ -571,10 +548,11 @@ export default function Home() {
               </p>
             </object>
           </div>
-        </section>
+        </section> */}
+        <AnimatedPDFBookReader />
 
         {/* ODOC */}
-        <section
+        {/* <section
           id="odoc"
           className="mt-16 rounded-3xl bg-gradient-to-br from-yellow-50 to-rose-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60"
         >
@@ -619,10 +597,10 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
-
+        </section> */}
+        <AllActivities />
         {/* Testimonials */}
-        <section id="testimonials" className="mt-16">
+        <section id="testimonials" className="mt-30">
           <div className="mb-6">
             <p className="text-sm uppercase tracking-wider text-emerald-600">
               Testimonials
@@ -637,7 +615,7 @@ export default function Home() {
         {/* CTA */}
         <section
           id="cta"
-          className="mt-16 rounded-3xl bg-neutral-900 px-8 py-12 text-white"
+          className="mt-30 rounded-3xl bg-neutral-900 px-8 py-12 text-white"
         >
           <div className="grid items-center gap-8 md:grid-cols-3">
             <div className="md:col-span-2">
