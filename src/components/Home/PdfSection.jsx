@@ -11,13 +11,13 @@ import HTMLFlipBook from "react-pageflip";
 
 import SUNYATIMES_PDF from "../../assets/pdf.pdf";
 
-const PDFBookReader = () => {
+export default function PDFBookReader() {
   const [pages, setPages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [jumpPage, setJumpPage] = useState("");
-  const bookRef = useRef(null); // ref to FlipBook component (API)
-  const shellRef = useRef(null); // ref to a real DOM node for fullscreen
+  const bookRef = useRef(null); // FlipBook API
+  const shellRef = useRef(null); // Real DOM element for fullscreen
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   // Load PDF.js and render pages
@@ -32,7 +32,8 @@ const PDFBookReader = () => {
 
         const workerScript = document.createElement("script");
         workerScript.textContent = `
-          window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
         `;
         document.head.appendChild(workerScript);
       } else {
@@ -43,10 +44,8 @@ const PDFBookReader = () => {
     const loadPDF = async () => {
       try {
         const pdf = await window.pdfjsLib.getDocument(SUNYATIMES_PDF).promise;
-        const numPages = pdf.numPages;
         const pageImages = [];
-
-        for (let i = 1; i <= numPages; i++) {
+        for (let i = 1; i <= pdf.numPages; i++) {
           const page = await pdf.getPage(i);
           const viewport = page.getViewport({ scale: 1.3 });
           const canvas = document.createElement("canvas");
@@ -56,11 +55,10 @@ const PDFBookReader = () => {
           await page.render({ canvasContext: ctx, viewport }).promise;
           pageImages.push(canvas.toDataURL("image/png"));
         }
-
         setPages(pageImages);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error loading PDF:", error);
+      } catch (e) {
+        console.error("Error loading PDF:", e);
+      } finally {
         setIsLoading(false);
       }
     };
@@ -77,13 +75,12 @@ const PDFBookReader = () => {
         document.msFullscreenElement;
       setIsFullscreen(!!fsEl);
 
-      // Nudge layout so FlipBook recalculates size
+      // Force FlipBook to recompute layout
       setTimeout(() => {
         try {
-          // some versions expose update(); otherwise trigger a resize
           bookRef.current?.pageFlip?.()?.update?.();
         } catch (err) {
-          console.error("Error in changing fullscreen", err);
+          console.log("Error in Force FlipBook to recompute layout", err);
         }
         window.dispatchEvent(new Event("resize"));
       }, 50);
@@ -102,9 +99,9 @@ const PDFBookReader = () => {
   const onFlip = (e) => setCurrentPage(e.data);
 
   const goToPage = () => {
-    const pageNum = parseInt(jumpPage, 10);
-    if (pageNum > 0 && pageNum <= pages.length) {
-      bookRef.current.pageFlip().turnToPage(pageNum - 1);
+    const n = parseInt(jumpPage, 10);
+    if (n > 0 && n <= pages.length) {
+      bookRef.current?.pageFlip().turnToPage(n - 1);
       setJumpPage("");
     }
   };
@@ -144,15 +141,13 @@ const PDFBookReader = () => {
           text: "Check out this flipbook!",
           url: window.location.href,
         });
-      } catch (error) {
-        console.error("Share failed:", error);
+      } catch (e) {
+        console.error("Share failed:", e);
       }
     } else {
       alert("Sharing not supported in this browser.");
     }
   };
-
-  const handleMore = () => alert("More options coming soon...");
 
   if (isLoading) {
     return (
@@ -173,17 +168,18 @@ const PDFBookReader = () => {
 
   return (
     <section id="sunyatimes" className="mt-30 mx-auto max-w-7xl px-4 sm:px-6">
-      {/* Make fullscreen look right */}
+      {/* Fullscreen layout helper */}
       <style>{`
-        /* When the shell is fullscreen, stretch it and center the book */
         .flipbook-shell:fullscreen,
         .flipbook-shell:-webkit-full-screen {
           width: 100vw !important;
           height: 100vh !important;
           background: #0a0a0a;
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr auto; /* book + vertical toolbar */
+          gap: 1rem;
           align-items: center;
-          justify-content: center;
+          justify-items: center;
           padding: 1rem;
           box-sizing: border-box;
         }
@@ -224,105 +220,160 @@ const PDFBookReader = () => {
         </div>
       </div>
 
-      {/* Flipbook (wrapped in a real DOM shell for fullscreen) */}
-      <div
-        ref={shellRef}
-        className="flipbook-shell overflow-hidden "
-        style={{ height: "500px", maxWidth: "100%" }}
-      >
-        <HTMLFlipBook
-          width={450}
-          height={500}
-          maxHeight={1200}
-          showCover={true}
-          className="mx-auto"
-          onFlip={onFlip}
-          ref={bookRef}
+      {/* Book + RIGHT vertical controls */}
+      <div className="grid grid-cols-[1fr_auto] gap-4">
+        {/* Flipbook shell (for fullscreen) */}
+        <div
+          ref={shellRef}
+          className="flipbook-shell overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xl dark:border-neutral-800 dark:bg-neutral-950"
+          style={{ height: 640 }}
         >
-          {pages.map((src, index) => (
-            <div
-              key={index}
-              className="page bg-white flex items-center justify-center"
-            >
-              <img
-                src={src}
-                alt={`Page ${index + 1}`}
-                className="w-full h-full object-contain"
+          <HTMLFlipBook
+            width={560}
+            height={640}
+            size="stretch"
+            minWidth={250}
+            maxWidth={1200}
+            minHeight={250}
+            maxHeight={1000}
+            showCover
+            className="mx-auto"
+            onFlip={onFlip}
+            ref={bookRef}
+          >
+            {pages.map((src, index) => (
+              <div
+                key={index}
+                className="page bg-white flex items-center justify-center"
+              >
+                <img
+                  src={src}
+                  alt={`Page ${index + 1}`}
+                  className="max-w-full max-h-full"
+                />
+              </div>
+            ))}
+          </HTMLFlipBook>
+
+          {/* When fullscreen, float the same toolbar inside to the RIGHT */}
+          {isFullscreen && (
+            <aside className="pointer-events-auto absolute right-4 top-1/2 -translate-y-1/2">
+              <ControlsVertical
+                currentPage={currentPage}
+                totalPages={pages.length}
+                jumpPage={jumpPage}
+                setJumpPage={setJumpPage}
+                goToPage={goToPage}
+                flipPrev={() => bookRef.current.pageFlip().flipPrev()}
+                flipNext={() => bookRef.current.pageFlip().flipNext()}
+                toggleFullscreen={toggleFullscreen}
+                handleShare={handleShare}
+                isFullscreen={isFullscreen}
               />
-            </div>
-          ))}
-        </HTMLFlipBook>
-      </div>
-
-      {/* Bottom Controls */}
-      <div className="border rounded-2xl border-neutral-200 bg-white/95 backdrop-blur-sm px-6 py-3 dark:border-neutral-800 dark:bg-neutral-950/95 mt-4">
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          {/* Left buttons */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => bookRef.current.pageFlip().flipPrev()}
-              className="rounded-lg bg-neutral-100 p-2 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            <button
-              onClick={() => bookRef.current.pageFlip().flipNext()}
-              className="rounded-lg bg-neutral-100 p-2 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
-            >
-              <ChevronRight size={16} />
-            </button>
-          </div>
-
-          {/* Jump to page */}
-          <div className="flex items-center gap-2">
-            <input
-              type="number"
-              value={jumpPage}
-              onChange={(e) => setJumpPage(e.target.value)}
-              placeholder="Page #"
-              className="w-20 rounded-md border px-2 py-1 text-sm dark:bg-neutral-800 dark:border-neutral-700"
-            />
-            <button
-              onClick={goToPage}
-              className="rounded-md bg-emerald-600 px-3 py-1 text-sm text-white hover:bg-emerald-500"
-            >
-              Go
-            </button>
-          </div>
-
-          {/* Page info */}
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            Page {currentPage + 1} / {pages.length}
-          </p>
-
-          {/* Extra icons */}
-          <div className="flex items-center justify-end gap-3">
-            <button
-              onClick={toggleFullscreen}
-              className="rounded-lg bg-neutral-100 p-2 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
-              title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
-            >
-              <Maximize2 size={16} />
-            </button>
-            <button
-              onClick={handleShare}
-              className="rounded-lg bg-neutral-100 p-2 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
-              title="Share"
-            >
-              <Share2 size={16} />
-            </button>
-            {/* <button
-              onClick={handleMore}
-              className="rounded-lg bg-neutral-100 p-2 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
-              title="More options"
-            >
-              <MoreHorizontal size={16} />
-            </button> */}
-          </div>
+            </aside>
+          )}
         </div>
+
+        {/* RIGHT sidebar toolbar (hidden in fullscreen to avoid duplicate) */}
+        {!isFullscreen && (
+          <aside className="sticky top-24 self-start">
+            <ControlsVertical
+              currentPage={currentPage}
+              totalPages={pages.length}
+              jumpPage={jumpPage}
+              setJumpPage={setJumpPage}
+              goToPage={goToPage}
+              flipPrev={() => bookRef.current.pageFlip().flipPrev()}
+              flipNext={() => bookRef.current.pageFlip().flipNext()}
+              toggleFullscreen={toggleFullscreen}
+              handleShare={handleShare}
+              isFullscreen={isFullscreen}
+            />
+          </aside>
+        )}
       </div>
     </section>
   );
-};
+}
 
-export default PDFBookReader;
+/** Vertical toolbar component */
+function ControlsVertical({
+  currentPage,
+  totalPages,
+  jumpPage,
+  setJumpPage,
+  goToPage,
+  flipPrev,
+  flipNext,
+  toggleFullscreen,
+  handleShare,
+  isFullscreen,
+}) {
+  return (
+    <div className="flex flex-col items-center gap-3 rounded-2xl border border-neutral-200 bg-white/95 px-2 py-3 shadow-lg backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/95">
+      {/* Page info (vertical style) */}
+      <div className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
+        {currentPage + 1} / {totalPages}
+      </div>
+
+      {/* Nav */}
+      <button
+        onClick={flipPrev}
+        className="rounded-lg bg-neutral-100 p-2 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        title="Previous page"
+        aria-label="Previous page"
+      >
+        <ChevronLeft size={16} />
+      </button>
+      <button
+        onClick={flipNext}
+        className="rounded-lg bg-neutral-100 p-2 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        title="Next page"
+        aria-label="Next page"
+      >
+        <ChevronRight size={16} />
+      </button>
+
+      {/* Jump to page */}
+      <div className="mt-1 flex flex-col items-center gap-2">
+        <input
+          type="number"
+          value={jumpPage}
+          onChange={(e) => setJumpPage(e.target.value)}
+          placeholder="#"
+          className="w-14 rounded-md border px-1 py-2 text-xs dark:bg-neutral-800 dark:border-neutral-700 text-center"
+          aria-label="Jump to page number"
+        />
+        <button
+          onClick={goToPage}
+          className="w-14 rounded-md bg-emerald-600 px-2 py-2 text-xs font-medium text-white hover:bg-emerald-500 cursor-pointer"
+          aria-label="Go to page"
+        >
+          Go
+        </button>
+      </div>
+
+      {/* Divider */}
+      <div className="my-1 h-px w-8 bg-neutral-200 dark:bg-neutral-800" />
+
+      {/* Extra actions */}
+      <button
+        onClick={toggleFullscreen}
+        className="rounded-lg bg-neutral-100 p-2 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+        aria-label="Toggle Fullscreen"
+      >
+        <Maximize2 size={16} />
+      </button>
+
+      <button
+        onClick={handleShare}
+        className="rounded-lg bg-neutral-100 p-2 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        title="Share"
+        aria-label="Share"
+      >
+        <Share2 size={16} />
+      </button>
+    </div>
+  );
+}

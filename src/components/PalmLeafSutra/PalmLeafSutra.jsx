@@ -62,6 +62,11 @@ function Hero() {
         }
         style={{ backgroundImage: `url(${Banner})` }}
       >
+        {/* Overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-black/30"
+          aria-hidden="true"
+        />
         <div className="container max-w-[900px] mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
             <span>🌿</span> Ancient Craftsmanship Meets Modern Technology

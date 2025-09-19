@@ -1,3 +1,5 @@
+import { saveData } from "@/lib/db";
+import { serverTimestamp } from "firebase/firestore";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 /** Join Us – SIF (React + Tailwind, no config) */
@@ -109,6 +111,25 @@ function Stat({ n, l }) {
 function VolunteerForm() {
   const [show, setShow] = useState(false);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      fullName: form[0].value,
+      email: form[1].value,
+      phone: form[2].value,
+      city: form[3].value,
+      interest: form[4].value,
+      availability: form[5].value,
+      startDate: form[6].value,
+      why: form[7].value,
+      createdAt: serverTimestamp(),
+    };
+    await saveData("volunteers", data);
+    setShow(true);
+    form.reset();
+    setTimeout(() => setShow(false), 5000);
+  };
   return (
     <section id="volunteer" className="py-24">
       <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
@@ -126,15 +147,7 @@ function VolunteerForm() {
             </div>
           )}
 
-          <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setShow(true);
-              e.currentTarget.reset();
-              setTimeout(() => setShow(false), 5000);
-            }}
-          >
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-4">
               <Input required placeholder="Full Name" />
               <Input type="email" required placeholder="Email" />
@@ -172,13 +185,13 @@ function VolunteerForm() {
             <div className="flex gap-3">
               <button
                 type="submit"
-                className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600"
+                className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 cursor-pointer"
               >
                 Submit Interest
               </button>
               <button
                 type="reset"
-                className="border px-6 py-3 rounded-lg font-semibold"
+                className="border px-6 py-3 rounded-lg font-semibold cursor-pointer"
               >
                 Clear
               </button>
@@ -247,7 +260,28 @@ function VolunteerForm() {
 /* ---------- Internship ---------- */
 function InternshipForm() {
   const [show, setShow] = useState(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      fullName: form[0].value,
+      email: form[1].value,
+      phone: form[2].value,
+      city: form[3].value,
+      discipline: form[4].value,
+      team: form[5].value,
+      duration: form[6].value,
+      startDate: form[7].value,
+      portfolio: form[8].value,
+      sop: form[9].value,
+      createdAt: serverTimestamp(),
+    };
+    await saveData("internships", data);
 
+    setShow(true);
+    form.reset();
+    setTimeout(() => setShow(false), 5000);
+  };
   return (
     <section id="internship" className="py-24 bg-gray-50">
       <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12">
@@ -267,12 +301,7 @@ function InternshipForm() {
           <form
             className="space-y-4"
             id="internshipForm"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setShow(true);
-              e.currentTarget.reset();
-              setTimeout(() => setShow(false), 5000);
-            }}
+            onSubmit={handleSubmit}
           >
             <div className="grid md:grid-cols-2 gap-4">
               <Input required placeholder="Full Name" />
@@ -332,13 +361,13 @@ function InternshipForm() {
             <div className="flex gap-3">
               <button
                 type="submit"
-                className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600"
+                className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 cursor-pointer"
               >
                 Apply
               </button>
               <button
                 type="reset"
-                className="border px-6 py-3 rounded-lg font-semibold"
+                className="border px-6 py-3 rounded-lg font-semibold cursor-pointer"
               >
                 Clear
               </button>
@@ -400,6 +429,29 @@ function CareersSection() {
     []
   );
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      fullName: form[0].value,
+      email: form[1].value,
+      phone: form[2].value,
+      city: form[3].value,
+      role: form[4].value,
+      experience: form[5].value,
+      linkedin: form[6].value,
+      portfolio: form[7].value,
+      startDate: form[8].value,
+      type: form[9].value,
+      why: form[10].value,
+      createdAt: serverTimestamp(),
+    };
+    await saveData("careers", data);
+
+    setShow(true);
+    form.reset();
+    setTimeout(() => setShow(false), 5000);
+  };
   return (
     <section id="careers" className="py-24">
       <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12">
@@ -468,16 +520,7 @@ function CareersSection() {
             </div>
           )}
 
-          <form
-            id="careersForm"
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setShow(true);
-              e.currentTarget.reset();
-              setTimeout(() => setShow(false), 5000);
-            }}
-          >
+          <form id="careersForm" className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-4">
               <Input required placeholder="Full Name" />
               <Input type="email" required placeholder="Email" />

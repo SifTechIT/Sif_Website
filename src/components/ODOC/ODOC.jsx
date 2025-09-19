@@ -23,23 +23,28 @@ function Hero() {
         className={"h-full w-full flex items-center bg-center bg-cover"}
         style={{ backgroundImage: `url(${Banner1})` }}
       >
+        {/* Overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-black/30"
+          aria-hidden="true"
+        />
         <div className="max-w-[900px] mx-auto px-6 text-center text-white">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
             <span>🌍</span>
             Global Nutrition Initiative by DXN & SIF
           </div>
-          <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-2">
+          <h1 className="text-[clamp(3rem,8vw,5rem)] opacity-90 font-extrabold leading-tight mb-2">
             ODOC
           </h1>
-          <p className="text-xl md:text-2xl font-semibold opacity-90 mb-4">
+          {/* <p className="text-xl md:text-2xl font-semibold opacity-90 mb-4">
             One Dollar. One Child.
-          </p>
-          <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+          </p> */}
+          <p className="text-lg md:text-xl opacity-90 leading-relaxed mb-10">
             Transforming lives through targeted nutrition intervention. Our
             goal: Combat malnutrition in 1 million children through Spirulina
             supplementation and comprehensive health monitoring.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap opacity-90 items-center justify-center gap-4">
             <a
               href="#impact"
               className="px-6 py-3 rounded-xl font-semibold text-base bg-white text-emerald-600 shadow hover:bg-gray-100 transition"

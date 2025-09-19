@@ -90,19 +90,24 @@ function Hero() {
             className={"h-full w-full flex items-center bg-center bg-cover"}
             style={{ backgroundImage: `url(${s.image})` }}
           >
+            {/* Overlay */}
+            <div
+              className="pointer-events-none absolute inset-0 bg-black/30"
+              aria-hidden="true"
+            />
             <div className="max-w-[1280px] mx-auto px-6 w-full">
               <div className="text-white max-w-3xl mx-auto text-center animate-[slideUp_800ms_cubic-bezier(0.4,0,0.2,1)]">
                 <div className="inline-flex items-center gap-2 mb-8 rounded-full border border-white/20 bg-white/10 backdrop-blur px-4 py-1.5 text-sm font-medium">
                   <span>{s.badge.split(" ")[0]}</span>
                   <span>{s.badge.split(" ").slice(1).join(" ")}</span>
                 </div>
-                <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4">
+                <h1 className="text-4xl opacity-90 sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4">
                   {s.title}
                 </h1>
-                <p className="text-lg md:text-xl/8 opacity-90 mb-10">
+                <p className="text-lg md:text-xl/8 opacity-90  mb-10">
                   {s.desc}
                 </p>
-                <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="flex flex-wrap opacity-90 items-center justify-center gap-4">
                   {s.ctas.map((c) => (
                     <a
                       key={c.label}

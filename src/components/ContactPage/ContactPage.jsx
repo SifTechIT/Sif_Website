@@ -1,3 +1,5 @@
+import { saveData } from "@/lib/db";
+import { serverTimestamp } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 
 /** Contact Us – SIF | React + Tailwind (no config) */
@@ -11,81 +13,6 @@ export default function ContactPage() {
   );
 }
 
-/* ========================= Header ========================= */
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all backdrop-blur-xl ${
-        scrolled ? "bg-white/95 shadow-sm" : "bg-white/95"
-      } border-[#e2e8f0]`}
-    >
-      <nav className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <div className="hidden md:flex items-center">
-          <ul className="flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="index.html">
-                Home
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#programs">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#impact">
-                Impact
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Logo centered */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="relative w-10 h-10 rounded-full bg-emerald-500 grid place-items-center overflow-hidden">
-            <div className="w-6 h-4 rounded-full border-2 border-white" />
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-white" />
-          </div>
-          <span className="text-[20px] font-extrabold tracking-tight">SIF</span>
-        </div>
-
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="about.html">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button className="px-5 py-2 rounded-lg bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition">
-            Donate
-          </button>
-          <button
-            className="md:hidden text-2xl text-gray-800"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
-/* ========================= Hero ========================= */
 function Hero() {
   return (
     <section className="mt-[72px] bg-gradient-to-br from-white to-[#f8fafc]">
@@ -149,10 +76,26 @@ function ContactMain() {
 function ContactForm() {
   const [show, setShow] = useState(false);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+
+    // Collect form data
+    const form = e.target;
+    const data = {
+      firstName: form.firstName.value,
+      lastName: form.lastName.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      subject: form.subject.value,
+      message: form.message.value,
+      createdAt: serverTimestamp(),
+    };
+
+    // Save to Firebase
+    await saveData("contacts", data);
+
     setShow(true);
-    e.currentTarget.reset();
+    form.reset();
     setTimeout(() => setShow(false), 5000);
   };
 
@@ -226,7 +169,7 @@ function ContactForm() {
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-emerald-500 text-white font-semibold px-6 py-3 hover:bg-emerald-600 transition shadow-sm"
+          className="w-full rounded-lg bg-emerald-500 text-white font-semibold px-6 py-3 hover:bg-emerald-600 transition shadow-sm cursor-pointer"
         >
           Send Message
         </button>
@@ -359,57 +302,5 @@ function EmailContact() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-[#1f2937] text-white">
-      <div className="max-w-[1200px] mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-          <div>
-            <h3 className="text-[16px] font-bold mb-3">Contact</h3>
-            <p className="text-white/70">hello@sifworld.com</p>
-            <p className="text-white/70">Multiple Office Locations</p>
-            <p className="text-white/70">Serving Communities Across India</p>
-          </div>
-          <div>
-            <h3 className="text-[16px] font-bold mb-3">Programs</h3>
-            <FooterLink href="#farmer-empowerment" label="Farmer Empowerment" />
-            <FooterLink href="#women-empowerment" label="Women Empowerment" />
-            <FooterLink href="#education" label="Child Education" />
-            <FooterLink href="#health" label="Rural Health" />
-          </div>
-          <div>
-            <h3 className="text-[16px] font-bold mb-3">Get Involved</h3>
-            <FooterLink href="#" label="Volunteer" />
-            <FooterLink href="#" label="Donate" />
-            <FooterLink href="#" label="Partnership" />
-            <FooterLink href="#" label="Internship" />
-          </div>
-          <div>
-            <h3 className="text-[16px] font-bold mb-3">Follow Us</h3>
-            <FooterLink href="#" label="Instagram" />
-            <FooterLink href="#" label="Facebook" />
-            <FooterLink href="#" label="LinkedIn" />
-            <FooterLink href="#" label="YouTube" />
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-6 text-center text-white/60 text-sm">
-          © 2025 Sunyatee International Foundation. All Rights Reserved.
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function FooterLink({ href, label }) {
-  return (
-    <p>
-      <a href={href} className="text-white/70 hover:text-white transition">
-        {label}
-      </a>
-    </p>
   );
 }
