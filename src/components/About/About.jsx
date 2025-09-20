@@ -63,13 +63,13 @@
 //     </section>
 //   );
 // }
-import About from "../../assets/About/about.jpg";
 import CSRCovid from "../../assets/About/CSR_Covid.jpg";
 import DrLim from "../../assets/About/DrLim2.png";
 import DrSavera from "../../assets/About/DrSavera1.png";
 import Farmer from "../../assets/About/Farmer.jpeg";
 import Health from "../../assets/About/Health.png";
 import PalmLeaf from "../../assets/About/Palm_Leaf.JPG";
+import About from "../../assets/About/sif.jpg";
 import SunyaMeditation from "../../assets/About/sunya_meditation.jpg";
 import Women from "../../assets/About/Women.jpg";
 /**

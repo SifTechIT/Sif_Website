@@ -71,7 +71,7 @@ function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
             <span>🌿</span> Ancient Craftsmanship Meets Modern Technology
           </div>
-          <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-2">
+          <h1 className="text-[clamp(3rem,8vw,5rem)]  opacity-90 font-extrabold leading-tight mb-2">
             Palm Leaf Sutra Printing
           </h1>
           <p className="text-2xl font-semibold opacity-90 mb-4">
@@ -82,7 +82,7 @@ function Hero() {
             craftsmanship with modern laser technology to preserve timeless
             wisdom while empowering artisans with sustainable livelihoods.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 opacity-90">
             <a
               href="#artisan-legacy"
               className="px-6 py-3 rounded-xl font-semibold bg-white text-amber-700 shadow hover:bg-gray-100"

@@ -1,6 +1,9 @@
 import { saveData } from "@/lib/db";
+import { storage } from "@/lib/firebase";
 import { serverTimestamp } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useEffect, useMemo, useRef, useState } from "react";
+import FileUpload from "./FileUpload";
 
 /** Join Us – SIF (React + Tailwind, no config) */
 export default function JoinUs() {
@@ -260,27 +263,47 @@ function VolunteerForm() {
 /* ---------- Internship ---------- */
 function InternshipForm() {
   const [show, setShow] = useState(false);
+  const [resumeFile, setResumeFile] = useState(null);
+  const [uploading, setUploading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const data = {
-      fullName: form[0].value,
-      email: form[1].value,
-      phone: form[2].value,
-      city: form[3].value,
-      discipline: form[4].value,
-      team: form[5].value,
-      duration: form[6].value,
-      startDate: form[7].value,
-      portfolio: form[8].value,
-      sop: form[9].value,
-      createdAt: serverTimestamp(),
-    };
-    await saveData("internships", data);
+    try {
+      setUploading(true);
+      let resumeURL = "";
+      if (resumeFile) {
+        const resumeRef = ref(
+          storage,
+          `resumes/${Date.now()}_${resumeFile.name}`
+        );
+        await uploadBytes(resumeRef, resumeFile);
+        resumeURL = await getDownloadURL(resumeRef);
+      }
+      const data = {
+        fullName: form[0].value,
+        email: form[1].value,
+        phone: form[2].value,
+        city: form[3].value,
+        discipline: form[4].value,
+        team: form[5].value,
+        duration: form[6].value,
+        startDate: form[7].value,
+        portfolio: form[8].value,
+        sop: form[9].value,
+        createdAt: serverTimestamp(),
+        resumeURL,
+      };
+      await saveData("internships", data);
 
-    setShow(true);
-    form.reset();
-    setTimeout(() => setShow(false), 5000);
+      setShow(true);
+      form.reset();
+      setResumeFile(null);
+      setTimeout(() => setShow(false), 5000);
+    } catch (err) {
+      console.log("Error in submitting the form:", err);
+    } finally {
+      setUploading(false);
+    }
   };
   return (
     <section id="internship" className="py-24 bg-gray-50">
@@ -352,18 +375,24 @@ function InternshipForm() {
               </Select>
               <Input type="date" placeholder="Start Date" />
             </div>
+
             <Input placeholder="Portfolio / LinkedIn / GitHub (comma separated)" />
             <Textarea
               required
               placeholder="Statement of Purpose — What do you want to learn and build with SIF?"
               minRows={5}
             />
+            <FileUpload
+              onFileChange={setResumeFile}
+              accept=".pdf,.doc,.docx"
+              required
+            />
             <div className="flex gap-3">
               <button
                 type="submit"
                 className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 cursor-pointer"
               >
-                Apply
+                {uploading ? "Uploading..." : "Apply"}
               </button>
               <button
                 type="reset"

@@ -88,13 +88,13 @@ function HeroSlider() {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
                 <span>{s.badge}</span>
               </div>
-              <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
+              <h1 className="text-[clamp(3rem,8vw,5rem)] opacity-90 font-extrabold leading-tight mb-4">
                 {s.title}
               </h1>
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-10">
+              <p className="text-lg md:text-xl opacity-90 leading-relaxed mb-10">
                 {s.text}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4">
+              <div className="flex flex-wrap items-center justify-center gap-4  opacity-90">
                 {s.ctas.map((c) => (
                   <a
                     key={c.label}
