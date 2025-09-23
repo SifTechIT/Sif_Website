@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner from "../../assets/PalmLeafSutra/Banner.JPG";
 import Missions from "../../assets/PalmLeafSutra/Mission.jpg";
 
@@ -465,6 +466,7 @@ function GetInvolved() {
       grad: "from-amber-600 to-amber-500",
       lightIcon: true,
       cta: "Support Now",
+      href: "/contact-us",
     },
     {
       icon: "account_balance",
@@ -472,6 +474,7 @@ function GetInvolved() {
       desc: "Contribute to cultural preservation and global heritage by sponsoring manuscript digitization and preservation projects.",
       grad: "from-white to-white",
       cta: "Contribute",
+      href: "/",
     },
     {
       icon: "school",
@@ -480,6 +483,7 @@ function GetInvolved() {
       grad: "from-emerald-600 to-emerald-700",
       lightIcon: true,
       cta: "Get Involved",
+      href: "/join-us",
     },
   ];
   return (
@@ -519,8 +523,8 @@ function GetInvolved() {
                 {c.desc}
               </p>
               <div className="text-center mt-6">
-                <a
-                  href="#"
+                <Link
+                  to={c.href}
                   className={`inline-block px-5 py-2.5 rounded-xl font-semibold border ${
                     c.grad.includes("white")
                       ? "bg-amber-600 text-white border-amber-600 hover:bg-amber-700"
@@ -528,112 +532,12 @@ function GetInvolved() {
                   }`}
                 >
                   {c.cta}
-                </a>
+                </Link>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-[1280px] mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <h3 className="font-bold mb-4">Contact</h3>
-            <p className="text-white/70">📍 80 Harrison Lane, FL 32547</p>
-            <p className="text-white/70">📞 +1 555 87 89 56</p>
-            <p className="text-white/70">📧 palmleaf@sifworld.com</p>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Programs</h3>
-            <ul className="space-y-2 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Palm Leaf Printing
-                </a>
-              </li>
-              <li>
-                <a href="#sacred-texts" className="hover:text-white">
-                  Sacred Texts
-                </a>
-              </li>
-              <li>
-                <a href="#artisan-legacy" className="hover:text-white">
-                  Artisan Legacy
-                </a>
-              </li>
-              <li>
-                <a href="#impact" className="hover:text-white">
-                  Manuscript Preservation
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Get Involved</h3>
-            <ul className="space-y-2 text-white/70">
-              <li>
-                <a href="#get-involved" className="hover:text-white">
-                  Support Artisans
-                </a>
-              </li>
-              <li>
-                <a href="#get-involved" className="hover:text-white">
-                  Cultural Preservation
-                </a>
-              </li>
-              <li>
-                <a href="#get-involved" className="hover:text-white">
-                  Spread Wisdom
-                </a>
-              </li>
-              <li>
-                <a href="#get-involved" className="hover:text-white">
-                  Volunteer
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Follow Us</h3>
-            <ul className="space-y-2 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-6 text-center text-white/60">
-          <p>© 2025 Sunyatee International Foundation. All Rights Reserved.</p>
-          <p className="mt-1">
-            Preserving ancient wisdom through sacred manuscripts, empowering
-            artisans, bridging tradition with innovation
-          </p>
-        </div>
-      </div>
-    </footer>
   );
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="border-t border-neutral-200/60 bg-white/70 py-10 dark:border-neutral-800 dark:bg-neutral-950/40">
@@ -15,24 +17,24 @@ const Footer = () => {
           <p className="font-medium">Explore</p>
           <ul className="mt-2 space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
             <li>
-              <a className="hover:underline" href="#sunya">
+              <Link className="hover:underline" to={"/meditation"}>
                 Sunya Meditation
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:underline" href="#activities">
+              <Link className="hover:underline" to={"/gallery"}>
                 Activities
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:underline" href="#odoc">
+              <Link className="hover:underline" to={"/onedollar-onechild"}>
                 ODOC
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:underline" href="#sunyatimes">
+              <Link className="hover:underline" to={"/sunyatimes"}>
                 Sunyatimes
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -50,9 +52,12 @@ const Footer = () => {
           <ul className="mt-2 space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
             <li>Hyderabad · Nagpur · Global</li>
             <li>
-              <a className="hover:underline" href="mailto:hello@sifworld.com">
+              <Link
+                className="hover:underline"
+                to={"mailto:hello@sifworld.com"}
+              >
                 hello@sifworld.com
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

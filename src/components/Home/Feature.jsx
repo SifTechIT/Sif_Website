@@ -55,7 +55,7 @@ const DEFAULT_SERVICES = [
     title: "CSR Partnerships",
     desc: "Design and execution of high-impact CSR programs in health, education, and livelihoods.",
     img: CSR,
-    href: "#csr",
+    href: "/csr-partnership",
   },
   {
     key: "odoc",

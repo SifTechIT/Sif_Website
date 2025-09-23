@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import WomenStitching from "../../assets/women_stitching.JPG";
 import Banner1 from "../../assets/WomenEmpowerment/banner1.jpeg";
 export default function WomenEmpowermentPage() {
@@ -64,18 +65,18 @@ function Hero() {
             className="my-8 flex flex-wrap items-center justify-center gap-6"
             style={{ animation: "fadeInUp 1s ease-out 1.1s forwards" }}
           >
-            <a
-              href="#projects"
+            <Link
+              to={"/gallery"}
               className="inline-flex items-center justify-center px-6 py-3 rounded-full text-[17px] bg-white text-[#1d1d1f] hover:bg-[#f5f5f7] transition shadow-sm"
             >
               Explore Projects
-            </a>
-            <a
-              href="#impact"
+            </Link>
+            <Link
+              to={"/impact-stories"}
               className="inline-flex items-center justify-center px-6 py-3 rounded-full text-[17px] border-2 border-white text-white hover:bg-white/10 transition"
             >
               See Impact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -576,37 +577,21 @@ function CTA() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-          <a
-            href="#"
+          <Link
+            to={"/contact-us"}
             className="inline-flex items-center px-6 py-3 rounded-full bg-white text-[#1d1d1f] text-[17px] hover:bg-[#f5f5f7] transition shadow"
           >
             Get Involved Today
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to={"/gallery"}
             className="inline-flex items-center px-6 py-3 rounded-full border-2 border-white text-white text-[17px] hover:bg-white/10 transition"
           >
             Learn More
-          </a>
+          </Link>
         </div>
       </div>
     </section>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-[#f5f5f7] border-t border-[#d2d2d7]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10 py-10 text-center">
-        <p className="text-sm text-[#86868b] leading-relaxed">
-          © 2024 Sunyatee International Foundation. All rights reserved.
-        </p>
-        <p className="text-sm text-[#86868b] leading-relaxed">
-          Making a difference, one life at a time.
-        </p>
-      </div>
-    </footer>
   );
 }
 

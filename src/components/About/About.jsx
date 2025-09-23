@@ -63,6 +63,7 @@
 //     </section>
 //   );
 // }
+import { Link } from "react-router-dom";
 import CSRCovid from "../../assets/About/CSR_Covid.jpg";
 import DrLim from "../../assets/About/DrLim2.png";
 import DrSavera from "../../assets/About/DrSavera1.png";
@@ -384,18 +385,18 @@ export default function AboutUsPage() {
           your contribution helps us transform lives and communities.
         </p>
         <div className="mt-6 flex justify-center gap-4">
-          <a
-            href="#cta"
+          <Link
+            to={"/join-us"}
             className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-purple-900 shadow hover:bg-purple-50"
           >
             Get Involved
-          </a>
-          <a
-            href="#sunyatimes"
+          </Link>
+          <Link
+            to={"/sunyatimes"}
             className="rounded-full border border-white/40 bg-white/10 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/20"
           >
             Read Sunyatimes
-          </a>
+          </Link>
         </div>
       </section>
     </div>

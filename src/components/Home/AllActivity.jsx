@@ -371,6 +371,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ODOC1 from "../../assets/Home/ODOC1.jpeg";
 import ODOC2 from "../../assets/Home/ODOC2.jpeg";
 import ODOC3 from "../../assets/Home/ODOC3.jpeg";
@@ -462,12 +463,18 @@ export default function OdocSlider() {
         <h2 className="text-2xl font-bold">{slides[current].title}</h2>
         <p className="text-gray-700">{slides[current].description}</p>
         <div className="flex space-x-4">
-          <button className="bg-black text-white px-4 py-2 rounded-full hover:opacity-90 text-nowrap">
+          <Link
+            to={"/onedollar-onechild"}
+            className="bg-black text-white px-4 py-2 rounded-full hover:opacity-90 text-nowrap"
+          >
             Sponsor a Child
-          </button>
-          <button className="bg-white border px-4 py-2 rounded-full hover:bg-gray-100 text-nowrap">
+          </Link>
+          <Link
+            to={"/impact-stories"}
+            className="bg-white border px-4 py-2 rounded-full hover:bg-gray-100 text-nowrap"
+          >
             See Impact
-          </button>
+          </Link>
         </div>
       </div>
 

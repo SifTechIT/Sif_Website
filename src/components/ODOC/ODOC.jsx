@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner1 from "../../assets/ODOC/Banner1.jpeg";
 export default function ODOCPage() {
   return (
@@ -45,18 +46,18 @@ function Hero() {
             supplementation and comprehensive health monitoring.
           </p>
           <div className="flex flex-wrap opacity-90 items-center justify-center gap-4">
-            <a
-              href="#impact"
+            <Link
+              to={"/impact-stories"}
               className="px-6 py-3 rounded-xl font-semibold text-base bg-white text-emerald-600 shadow hover:bg-gray-100 transition"
             >
               See Live Impact
-            </a>
-            <a
-              href="#support"
+            </Link>
+            <Link
+              to={"/contact-us"}
               className="px-6 py-3 rounded-xl font-semibold text-base bg-white/10 border border-white/30 text-white hover:bg-white/20 transition"
             >
               Support a Child
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -420,6 +421,7 @@ function Support() {
       icon: "favorite",
       grad: "from-emerald-600 to-green-700",
       btn: "Donate $1",
+      href: "/",
     },
     {
       title: "Partner with Us",
@@ -427,6 +429,7 @@ function Support() {
       icon: "business",
       grad: "",
       btn: "Partner Now",
+      href: "/contact-us",
     },
     {
       title: "Volunteer & Collaborate",
@@ -434,6 +437,7 @@ function Support() {
       icon: "volunteer_activism",
       grad: "from-sky-500 to-teal-600",
       btn: "Get Involved",
+      href: "/join-us",
     },
   ];
   return (
@@ -471,8 +475,8 @@ function Support() {
               >
                 {c.desc}
               </p>
-              <a
-                href="#"
+              <Link
+                to={c.href}
                 className={`inline-block px-5 py-2.5 rounded-xl font-semibold border transition ${
                   c.grad
                     ? "bg-white/10 border-white/20 hover:bg-white/20"
@@ -480,114 +484,11 @@ function Support() {
                 }`}
               >
                 {c.btn}
-              </a>
+              </Link>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white pt-20 pb-10">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-          <div>
-            <h3 className="font-bold mb-4">Contact</h3>
-            <p className="text-white/80">📍 Global Initiative Headquarters</p>
-            <p className="text-white/80">📞 +1 555 ODOC (6362)</p>
-            <p className="text-white/80">📧 support@odocglobal.org</p>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Initiative</h3>
-            <ul className="space-y-1 text-white/70">
-              <li>
-                <a href="#impact" className="hover:text-white">
-                  Live Dashboard
-                </a>
-              </li>
-              <li>
-                <a href="#mission" className="hover:text-white">
-                  Mission & Vision
-                </a>
-              </li>
-              <li>
-                <a href="#leadership" className="hover:text-white">
-                  Leadership
-                </a>
-              </li>
-              <li>
-                <a href="#reports" className="hover:text-white">
-                  Impact Reports
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Get Involved</h3>
-            <ul className="space-y-1 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Sponsor a Child
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Partner with Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Volunteer
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Spread Awareness
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Follow Our Impact</h3>
-            <ul className="space-y-1 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-6 text-center text-white/60 space-y-1">
-          <p>
-            © 2025 ODOC - One Dollar One Child Initiative. A collaborative
-            effort by DXN & SIF.
-          </p>
-          <p>
-            Transforming lives, one child at a time, toward a malnutrition-free
-            world
-          </p>
-        </div>
-      </div>
-    </footer>
   );
 }

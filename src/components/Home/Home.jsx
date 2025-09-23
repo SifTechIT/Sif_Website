@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Agamas from "../../assets/Home/Agamas.jpeg";
 import AwakeningPeace from "../../assets/Home/Awakening_Peace.png";
 import Awareness from "../../assets/Home/Awareness.jpeg";
@@ -20,19 +21,19 @@ const HERO_SLIDES = [
     title: "Awakening Peace. Empowering Communities.",
     sub: "Mindfulness, farmer empowerment, women’s leadership, and cultural revival — powered by Sunya.",
     image: AwakeningPeace,
-    cta: { text: "Join the Movement", href: "#cta" },
+    cta: { text: "Join the Movement", href: "/meditation" },
   },
   {
     title: "Sunya Meditation: From Stillness to Strength",
     sub: "A step-by-step belt pathway to clarity, resilience, and liberation.",
     image: SunyaMeditation,
-    cta: { text: "Explore Sunya", href: "#sunya" },
+    cta: { text: "Explore Sunya", href: "/meditation" },
   },
   {
     title: "One Dollar One Child (ODOC)",
     sub: "Spirulina nutrition for children. A global community initiative.",
     image: ODOCBanner,
-    cta: { text: "Support ODOC", href: "#odoc" },
+    cta: { text: "Support ODOC", href: "/onedollar-onechild" },
   },
 ];
 
@@ -189,8 +190,8 @@ function HeroSlider({ slides = HERO_SLIDES, interval = 5000 }) {
                     {s.sub}
                   </p>
                   <div className="mt-8">
-                    <a
-                      href={s.cta.href}
+                    <Link
+                      to={s.cta.href}
                       className="inline-flex items-center gap-2 rounded-full bg-white/90 px-6 py-3 text-neutral-900 font-medium shadow hover:bg-white transition"
                     >
                       {s.cta.text}
@@ -207,7 +208,7 @@ function HeroSlider({ slides = HERO_SLIDES, interval = 5000 }) {
                         <path d="M5 12h14" />
                         <path d="M12 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -278,21 +279,21 @@ function PillarsTabs({ items = PILLARS }) {
           <div className="rounded-xl bg-gradient-to-br from-emerald-50 to-sky-50 p-6 text-sm shadow-inner dark:from-neutral-800 dark:to-neutral-800/40">
             <p className="font-medium">Quick Links</p>
             <div className="mt-3 grid gap-2">
-              <a className="hover:underline" href="#sunya">
+              <Link className="hover:underline" to="/meditation">
                 Sunya Meditation
-              </a>
-              <a className="hover:underline" href="#activities">
+              </Link>
+              <Link className="hover:underline" to="/gallery">
                 Activities
-              </a>
-              <a className="hover:underline" href="#odoc">
+              </Link>
+              <Link className="hover:underline" to="/onedollar-onechild">
                 ODOC
-              </a>
-              <a className="hover:underline" href="#sunyatimes">
+              </Link>
+              <Link className="hover:underline" to="/sunyatimes">
                 Sunyatimes
-              </a>
-              <a className="hover:underline" href="#cta">
+              </Link>
+              <Link className="hover:underline" to="/csr-partnership">
                 Volunteer / CSR
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -455,18 +456,18 @@ export default function Home() {
               <li>• Corporate, youth & special-needs adaptations</li>
             </ul>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="#cta"
+              <Link
+                to="/meditation"
                 className="rounded-full bg-neutral-900 px-5 py-2.5 text-white hover:bg-neutral-800"
               >
                 Join a Retreat
-              </a>
-              <a
-                href="#sunyatimes"
+              </Link>
+              <Link
+                to="/impact-stories"
                 className="rounded-full bg-white px-5 py-2.5 text-neutral-900 shadow hover:bg-neutral-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
               >
                 Read Stories
-              </a>
+              </Link>
             </div>
           </div>
           <div className="rounded-2xl border border-neutral-200 bg-white p-2 shadow dark:border-neutral-800 dark:bg-neutral-950">
@@ -645,14 +646,14 @@ export default function Home() {
               {/* Buttons row */}
               <div className="mt-8 flex flex-wrap gap-4">
                 {[
-                  { label: "Careers", href: "#careers" },
-                  { label: "Interns", href: "#interns" },
-                  { label: "Volunteer", href: "#volunteer" },
-                  { label: "Support", href: "#support" },
+                  { label: "Careers", href: "/careers" },
+                  { label: "Interns", href: "/join-us" },
+                  { label: "Volunteer", href: "/join-us" },
+                  { label: "Support", href: "/contact-us" },
                 ].map((b) => (
-                  <a
+                  <Link
                     key={b.label}
-                    href={b.href}
+                    to={b.href}
                     className="group relative inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-emerald-600
               to-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg
               shadow-emerald-600/25 transition-all duration-200
@@ -662,7 +663,7 @@ export default function Home() {
                   >
                     <span className="h-5 w-5 rounded-full bg-gradient-to-b from-white to-neutral-300 shadow-inner ring-1 ring-black/40 transition group-hover:translate-x-0.5" />
                     <span className="relative z-10">{b.label}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -11,6 +11,8 @@
  *   // If no logoSrc provided, it shows a placeholder monogram.
  */
 
+import { Link } from "react-router-dom";
+
 export default function AboutSIFSectionDark({
   logoSrc,
   title = "Sunyatee International Foundation",
@@ -112,8 +114,8 @@ export default function AboutSIFSectionDark({
 
               {/* CTA buttons */}
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#features"
+                <Link
+                  to={"/about-us"}
                   className="
                   inline-flex items-center gap-2 rounded-full
                   bg-white px-5 py-2.5 text-sm font-medium text-violet-900
@@ -134,9 +136,9 @@ export default function AboutSIFSectionDark({
                     <path d="M5 12h14" />
                     <path d="M12 5l7 7-7 7" />
                   </svg>
-                </a>
-                <a
-                  href="#cta"
+                </Link>
+                <Link
+                  to={"/csr-partnership"}
                   className="
                   inline-flex items-center gap-2 rounded-full
                   border border-white/15 bg-white/10 px-5 py-2.5 text-sm
@@ -145,7 +147,7 @@ export default function AboutSIFSectionDark({
                 "
                 >
                   Partner via CSR
-                </a>
+                </Link>
               </div>
             </div>
 

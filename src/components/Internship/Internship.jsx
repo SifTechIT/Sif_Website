@@ -495,18 +495,21 @@ function GetInvolved() {
       cta: "Apply Now",
       grad: "from-indigo-500 to-purple-700",
       white: true,
+      href: "/join-us",
     },
     {
       icon: "groups",
       title: "Volunteer Programs",
       text: "Start with shorter-term volunteer opportunities to experience our work and explore potential internship areas.",
       cta: "Get Involved",
+      href: "/join-us",
     },
     {
       icon: "network_check",
       title: "Alumni Network",
       text: "Connect with our growing network of alumni interns who can provide guidance and mentorship for your career journey.",
       cta: "Connect",
+      href: "/contact-us",
     },
     {
       icon: "rocket_launch",
@@ -515,6 +518,7 @@ function GetInvolved() {
       cta: "Learn More",
       grad: "from-amber-500 to-amber-800",
       white: true,
+      href: "/",
     },
   ];
   return (
@@ -576,102 +580,5 @@ function GetInvolved() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-[#1f2937] text-white pt-20 pb-8">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <h3 className="font-bold mb-4">Contact</h3>
-            <p className="text-white/80">📍 80 Harrison Lane, FL 32547</p>
-            <p className="text-white/80">📞 +1 555 87 89 56</p>
-            <p className="text-white/80">📧 internships@sifworld.com</p>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Programs</h3>
-            <ul className="space-y-1 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Farmer Empowerment
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Child Education
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Sunya Meditation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Women Empowerment
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">For Interns</h3>
-            <ul className="space-y-1 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Apply for Internship
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Volunteer Opportunities
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Alumni Network
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Future Academy
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Follow Us</h3>
-            <ul className="space-y-1 text-white/70">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-6 text-center text-white/60">
-          <p>© 2025 Sunyatee International Foundation. All Rights Reserved.</p>
-          <p>Empowering youth, building skills, creating future leaders</p>
-        </div>
-      </div>
-    </footer>
   );
 }

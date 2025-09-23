@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner1 from "../../assets/BrickHouse/Banner1.jpg";
 import Banner2 from "../../assets/BrickHouse/Banner2.jpg";
 import Banner3 from "../../assets/BrickHouse/Banner3.jpg";
@@ -14,71 +15,6 @@ export default function BrickHouseProjectPage() {
       <ImpactFuture />
       <GetInvolved />
     </main>
-  );
-}
-
-/* ========================= Header ========================= */
-function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 border-b transition-all ${
-        scrolled ? "bg-white/95 border-gray-200" : "bg-white/80 border-gray-200"
-      } backdrop-blur-xl`}
-    >
-      <nav className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between relative">
-        <div className="hidden md:flex items-center">
-          <ul className="flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#programs">
-                Programs
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#impact">
-                Impact
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-amber-600 grid place-items-center">
-            <span className="text-white text-xl">🏛️</span>
-          </div>
-          <span className="text-[20px] font-extrabold tracking-tight">SIF</span>
-        </div>
-        <div className="flex items-center gap-4 ml-auto">
-          <ul className="hidden md:flex gap-8 text-[15px] text-gray-600">
-            <li>
-              <a className="hover:text-gray-900" href="#about">
-                About
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-gray-900" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button className="px-4 py-2 rounded-md bg-amber-600 text-white text-sm font-semibold hover:bg-orange-600 transition">
-            Donate
-          </button>
-          <button
-            className="md:hidden text-2xl text-gray-800"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
   );
 }
 
@@ -476,18 +412,21 @@ function GetInvolved() {
       text: "Help document ancient architecture, traditional crafts, or manuscript collections in your region. Contribute to preserving India's cultural heritage for future generations.",
       primary: true,
       cta: "Get Involved",
+      href: "/",
     },
     {
       icon: "school",
       title: "Research Partnership",
       text: "Collaborate with us as an academic institution, cultural organization, or heritage expert to advance knowledge translation and preservation efforts.",
       cta: "Partner With Us",
+      href: "/contact-us",
     },
     {
       icon: "groups",
       title: "Community Programs",
       text: "Organize or participate in cultural education workshops, traditional craft sessions, or heritage awareness programs in your community.",
       cta: "Join Programs",
+      href: "/",
     },
     {
       icon: "favorite",
@@ -495,6 +434,7 @@ function GetInvolved() {
       text: "Support the establishment of Brick House Centers — community hubs that serve as libraries, meditation halls, and cultural preservation centers.",
       accent: true,
       cta: "Sponsor",
+      href: "/",
     },
   ];
   return (
@@ -538,8 +478,8 @@ function GetInvolved() {
               >
                 {c.text}
               </p>
-              <a
-                href="#"
+              <Link
+                to={c.href}
                 className={`inline-block mt-6 px-5 py-2.5 rounded-xl font-semibold ${
                   idx === 0 || idx === 3
                     ? "bg-white/10 border border-white/30 text-white hover:bg-white/20"
@@ -547,111 +487,11 @@ function GetInvolved() {
                 }`}
               >
                 {c.cta}
-              </a>
+              </Link>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-[1280px] mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <div>
-          <h3 className="font-bold mb-4">Contact</h3>
-          <ul className="space-y-2 text-white/70">
-            <li>📍 80 Harrison Lane, FL 32547</li>
-            <li>📞 +1 555 87 89 56</li>
-            <li>📧 heritage@sifworld.com</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-bold mb-4">Programs</h3>
-          <ul className="space-y-2 text-white/70">
-            <li>
-              <a href="#" className="hover:text-white">
-                Brick House Project
-              </a>
-            </li>
-            <li>
-              <a href="#focus-areas" className="hover:text-white">
-                Architectural Revival
-              </a>
-            </li>
-            <li>
-              <a href="#focus-areas" className="hover:text-white">
-                Manuscript Preservation
-              </a>
-            </li>
-            <li>
-              <a href="#focus-areas" className="hover:text-white">
-                Cultural Education
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-bold mb-4">Get Involved</h3>
-          <ul className="space-y-2 text-white/70">
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Heritage Documentation
-              </a>
-            </li>
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Research Partnership
-              </a>
-            </li>
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Community Programs
-              </a>
-            </li>
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Fund Centers
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-bold mb-4">Follow Us</h3>
-          <ul className="space-y-2 text-white/70">
-            <li>
-              <a href="#" className="hover:text-white">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                YouTube
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-white/10 py-6 text-center text-white/60">
-        <p>© 2025 Sunyatee International Foundation. All Rights Reserved.</p>
-        <p className="mt-1">
-          Building enduring foundations where wisdom, culture, and
-          sustainability live together
-        </p>
-      </div>
-    </footer>
   );
 }

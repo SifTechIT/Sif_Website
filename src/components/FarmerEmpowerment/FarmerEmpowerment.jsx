@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner1 from "../../assets/FarmerEmpowerment/Banner1.jpeg";
 import Banner2 from "../../assets/FarmerEmpowerment/Banner2.jpeg";
 import Banner3 from "../../assets/FarmerEmpowerment/Banner3.jpeg";
@@ -483,24 +484,28 @@ function GetInvolved() {
       title: "Become a Partner Farmer",
       text: "Join our network of progressive farmers and benefit from training, market linkages, and technical support for sustainable agriculture.",
       cta: "Apply Now",
+      href: "/contact-us",
     },
     {
       icon: "🏢",
       title: "Corporate Partnerships",
       text: "Partner with us to create buy-back schemes, provide training, or support farmer community development initiatives.",
       cta: "Partner With Us",
+      href: "/contact-us",
     },
     {
       icon: "🎓",
       title: "Training & Education",
       text: "Support our farmer education programs or volunteer to share knowledge in sustainable agriculture and modern farming techniques.",
       cta: "Get Involved",
+      href: "/join-us",
     },
     {
       icon: "❤️",
       title: "Sponsor a Farm",
       text: "Help expand our program by sponsoring farmers, funding training workshops, or supporting infrastructure development.",
       cta: "Sponsor",
+      href: "/contact-us",
     },
   ];
 
@@ -543,8 +548,8 @@ function GetInvolved() {
               >
                 {c.text}
               </p>
-              <a
-                href="#"
+              <Link
+                to={c.href}
                 className={`inline-block mt-6 px-5 py-2.5 rounded-xl font-semibold transition ${
                   i === 0 || i === 3
                     ? "bg-white text-emerald-700 hover:bg-gray-100"
@@ -552,7 +557,7 @@ function GetInvolved() {
                 }`}
               >
                 {c.cta}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function RuralHealthPage() {
   return (
@@ -451,6 +452,7 @@ function GetInvolved() {
       title: "Volunteer Doctor",
       text: "Join our medical camps as a volunteer healthcare professional and provide essential medical services to underserved rural communities.",
       cta: "Register Now",
+      href: "/join-us",
     },
     {
       icon: "🏢",
@@ -463,6 +465,7 @@ function GetInvolved() {
       title: "Health Education Volunteer",
       text: "Support our awareness campaigns by volunteering to teach hygiene, nutrition, and wellness practices in rural schools and communities.",
       cta: "Get Involved",
+      href: "/join-us",
     },
     {
       icon: "❤️",
@@ -511,8 +514,8 @@ function GetInvolved() {
               >
                 {c.text}
               </p>
-              <a
-                href="#"
+              <Link
+                to={c.href}
                 className={`inline-block mt-6 px-5 py-2.5 rounded-xl font-semibold transition ${
                   i === 0 || i === 3
                     ? "bg-white text-blue-700 hover:bg-gray-100"
@@ -520,7 +523,7 @@ function GetInvolved() {
                 }`}
               >
                 {c.cta}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

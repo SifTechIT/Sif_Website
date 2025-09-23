@@ -72,7 +72,7 @@ const ACTIVITIES_COLUMNS = [
       },
       {
         label: "CSR Partnerships",
-        href: "#csr",
+        href: "/csr-partnership",
         desc: "High-impact programs with companies.",
       },
       {
@@ -480,15 +480,6 @@ export default function Navbar() {
                       About Us
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      to="/our-team"
-                      className="block rounded-lg px-3 py-2 text-sm transition-colors duration-200 hover:bg-white dark:hover:bg-slate-800"
-                      onClick={() => setOpenMobile(false)}
-                    >
-                      Our Team
-                    </Link>
-                  </li>
                 </ul>
               </div>
             </details>
@@ -579,7 +570,7 @@ export default function Navbar() {
         </div>
 
         <div
-          className="fixed inset-0 -z-10 bg-slate-900/20 backdrop-blur-sm transition-opacity duration-300"
+          className="fixed inset-0 -z-10 backdrop-blur-sm transition-opacity duration-300"
           onClick={() => setOpenMobile(false)}
         />
       </div>

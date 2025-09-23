@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner1 from "../../assets/SunyaMeditation/Banner1.jpg";
 import Banner2 from "../../assets/SunyaMeditation/Banner2.JPG";
 import Banner3 from "../../assets/SunyaMeditation/Banner3.jpeg";
@@ -565,18 +566,21 @@ function GetInvolved() {
       text: "Experience transformative meditation through our Foundation Course or immersive residential retreats.",
       cta: "Find Events",
       variant: "indigo",
+      href: "/",
     },
     {
       title: "Invite Us",
       icon: "location_on",
       text: "Bring Sunya meditation to your school, office, or community center with customized programs.",
       cta: "Request Visit",
+      href: "/contact-us",
     },
     {
       title: "Become a Trainer",
       icon: "school",
       text: "Join our certified trainer program and help spread Sunya practices in your region and language.",
       cta: "Apply Now",
+      href: "/join-us",
     },
     {
       title: "Sponsor a Retreat",
@@ -584,6 +588,7 @@ function GetInvolved() {
       text: "Support meditation retreats for underserved communities, bringing peace to those who need it most.",
       cta: "Sponsor",
       variant: "green",
+      href: "/contact-us",
     },
   ];
 
@@ -629,8 +634,8 @@ function GetInvolved() {
               >
                 {c.text}
               </p>
-              <a
-                href="#"
+              <Link
+                to={c.href}
                 className={`${
                   c.variant
                     ? "inline-block rounded-xl border border-white/30 bg-white/10 px-5 py-2 font-semibold hover:bg-white/20"
@@ -638,7 +643,7 @@ function GetInvolved() {
                 }`}
               >
                 {c.cta}
-              </a>
+              </Link>
             </div>
           ))}
         </div>
