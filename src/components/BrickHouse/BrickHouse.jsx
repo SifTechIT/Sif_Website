@@ -407,7 +407,7 @@ function ImpactFuture() {
 function GetInvolved() {
   const cards = [
     {
-      icon: "account_balance",
+      icon: "📝",
       title: "Heritage Documentation",
       text: "Help document ancient architecture, traditional crafts, or manuscript collections in your region. Contribute to preserving India's cultural heritage for future generations.",
       primary: true,
@@ -415,21 +415,21 @@ function GetInvolved() {
       href: "/",
     },
     {
-      icon: "school",
+      icon: "🤝",
       title: "Research Partnership",
       text: "Collaborate with us as an academic institution, cultural organization, or heritage expert to advance knowledge translation and preservation efforts.",
       cta: "Partner With Us",
       href: "/contact-us",
     },
     {
-      icon: "groups",
+      icon: "👥",
       title: "Community Programs",
       text: "Organize or participate in cultural education workshops, traditional craft sessions, or heritage awareness programs in your community.",
       cta: "Join Programs",
       href: "/",
     },
     {
-      icon: "favorite",
+      icon: "❤️",
       title: "Fund Brick House Centers",
       text: "Support the establishment of Brick House Centers — community hubs that serve as libraries, meditation halls, and cultural preservation centers.",
       accent: true,

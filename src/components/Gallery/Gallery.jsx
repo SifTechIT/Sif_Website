@@ -129,12 +129,12 @@ function GalleryNav({ activeTab, setActiveTab, filter, setFilter }) {
             </button>
           ))}
         </div> */}
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-start sm:justify-center gap-3">
           {FILTERS.map((f) => (
             <button
               key={f.id}
               onClick={() => setFilter(f.id)}
-              className={`px-4 py-2 rounded-full border text-sm font-medium transition ${
+              className={`px-4 py-2 rounded-full border text-sm font-medium transition cursor-pointer ${
                 filter === f.id
                   ? "bg-emerald-500 text-white border-emerald-500"
                   : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"

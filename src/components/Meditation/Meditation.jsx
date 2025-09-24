@@ -346,24 +346,6 @@ function Activities() {
     },
   ];
 
-  const [i, setI] = useState(0);
-
-  const itemsPerSlide = 3; // show 3 per slide on desktop
-  const total = Math.ceil(slides.length / itemsPerSlide);
-
-  const next = () => setI((v) => (v + 1) % total);
-  const prev = () => setI((v) => (v - 1 + total) % total);
-
-  useEffect(() => {
-    const id = setInterval(next, 6000);
-    return () => clearInterval(id);
-  }, []);
-
-  // slice into groups of itemsPerSlide
-  const slideGroups = Array.from({ length: total }, (_, idx) =>
-    slides.slice(idx * itemsPerSlide, (idx + 1) * itemsPerSlide)
-  );
-
   return (
     <section id="activities" className="mt-30 bg-white" ref={ref}>
       <div className="max-w-[1280px] mx-auto px-6">
@@ -372,52 +354,35 @@ function Activities() {
           subtitle="Comprehensive programs designed to deepen your Sunya meditation practice"
         />
 
-        <div className="relative mt-16 overflow-hidden">
-          <div
-            className="flex transition-transform duration-500"
-            style={{ transform: `translateX(-${i * 100}%)` }}
-          >
-            {slideGroups.map((group, gi) => (
-              <div
-                key={gi}
-                className="shrink-0 basis-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-              >
-                {group.map((card) => (
-                  <ActivityCard key={card.title} {...card} />
-                ))}
-              </div>
-            ))}
-          </div>
-
-          {/* Controls */}
-          <div className="flex items-center justify-center gap-6 mt-12">
-            <button
-              onClick={prev}
-              className="h-12 w-12 rounded-full border bg-white text-gray-600 hover:bg-indigo-500 hover:text-white transition grid place-items-center"
-              aria-label="Previous"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {slides.map((it) => (
+            <div
+              key={it.title}
+              className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3"
             >
-              ‹
-            </button>
-            <div className="flex gap-2">
-              {Array.from({ length: total }).map((_, di) => (
-                <button
-                  key={di}
-                  onClick={() => setI(di)}
-                  className={`h-2 w-2 rounded-full ${
-                    i === di ? "bg-indigo-600 scale-110" : "bg-gray-300"
-                  } transition`}
-                  aria-label={`Go to slide ${di + 1}`}
+              <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
+                <img
+                  src={it.image}
+                  alt={it.title}
+                  className="h-full w-full object-cover "
                 />
-              ))}
+              </div>
+              <div className="p-8">
+                <h3 className="text-lg font-bold mb-2">{it.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{it.desc}</p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {it?.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-600"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <button
-              onClick={next}
-              className="h-12 w-12 rounded-full border bg-white text-gray-600 hover:bg-indigo-500 hover:text-white transition grid place-items-center"
-              aria-label="Next"
-            >
-              ›
-            </button>
-          </div>
+          ))}
         </div>
       </div>
     </section>

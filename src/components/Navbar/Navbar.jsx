@@ -92,7 +92,7 @@ export default function Navbar() {
   const navRef = useRef(null);
   const timeoutRef = useRef(null);
   const aboutTimeoutRef = useRef(null);
-
+  const [openActivities, setOpenActivities] = useState(false);
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setOpenMega(false);
@@ -158,7 +158,7 @@ export default function Navbar() {
           : "border-transparent bg-white/80 backdrop-blur-md dark:bg-slate-950/50"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 shadow-lg shadow-emerald-500/25 transition-transform duration-200 group-hover:scale-105" />
           <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -246,13 +246,13 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <button
-              onFocus={handleMouseEnter}
-              onBlur={() => {
-                setTimeout(() => setOpenMega(false), 300);
-              }}
+              // onFocus={handleMouseEnter}
+              // onBlur={() => {
+              //   setTimeout(() => setOpenMega(false), 300);
+              // }}
               className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:text-emerald-600 focus:outline-none dark:text-slate-300 dark:hover:text-emerald-400"
-              aria-expanded={openMega}
-              aria-haspopup="true"
+              // aria-expanded={openMega}
+              // aria-haspopup="true"
             >
               Our Activities
               <svg
@@ -484,14 +484,10 @@ export default function Navbar() {
               </div>
             </details>
 
-            <div
-              className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+            <div className="relative">
               <button
                 className="inline-flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800"
-                onClick={() => setOpenMega(!openMega)}
+                onClick={() => setOpenActivities(!openActivities)}
               >
                 Our Activities
                 <svg
@@ -499,7 +495,7 @@ export default function Navbar() {
                   height="16"
                   viewBox="0 0 24 24"
                   className={`opacity-70 transition-transform duration-200 ${
-                    openMega ? "rotate-180" : ""
+                    openActivities ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -509,7 +505,7 @@ export default function Navbar() {
                 </svg>
               </button>
 
-              {openMega && (
+              {openActivities && (
                 <div className="mt-2 max-h-96 overflow-y-auto rounded-xl border border-slate-100 bg-slate-50/50 p-3 dark:border-slate-800 dark:bg-slate-800/30">
                   <div className="space-y-4">
                     {ACTIVITIES_COLUMNS.map((col) => (
@@ -523,7 +519,10 @@ export default function Navbar() {
                               <Link
                                 to={it.href}
                                 className="block rounded-lg px-3 py-2 text-sm transition-colors duration-200 hover:bg-white dark:hover:bg-slate-800"
-                                onClick={() => setOpenMobile(false)}
+                                onClick={() => {
+                                  setOpenMobile(false);
+                                  setOpenActivities(!openActivities);
+                                }}
                               >
                                 {it.label}
                               </Link>

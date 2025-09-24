@@ -71,7 +71,7 @@ export default function JoinUs() {
 
         {/* Choice Chips */}
         <section className="sticky top-[72px] z-40 bg-white border-b border-gray-200 py-4">
-          <div className="max-w-[400px] mx-auto flex gap-2 bg-gray-100 rounded-xl p-2 justify-center">
+          <div className="max-w-[315px] sm:max-w-[400px]  mx-auto flex gap-2 bg-gray-100 rounded-xl p-2 justify-center">
             {[
               { id: "volunteer", label: "Volunteer" },
               { id: "internship", label: "Internship" },
@@ -188,13 +188,13 @@ function VolunteerForm() {
             <div className="flex gap-3">
               <button
                 type="submit"
-                className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 cursor-pointer"
+                className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 text-nowrap cursor-pointer"
               >
                 Submit Interest
               </button>
               <button
                 type="reset"
-                className="border px-6 py-3 rounded-lg font-semibold cursor-pointer"
+                className="border px-6 py-3 rounded-lg font-semibold text-nowrap cursor-pointer"
               >
                 Clear
               </button>

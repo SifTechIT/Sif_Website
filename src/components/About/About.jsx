@@ -266,7 +266,7 @@ export default function AboutUsPage() {
       </section> */}
 
       {/* Stats Section */}
-      <section className="bg-slate-900 py-20">
+      <section className="bg-slate-900 py-20 mt-30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6">
             {/* Vision Card */}
@@ -348,32 +348,59 @@ export default function AboutUsPage() {
       </section>
 
       {/* Milestones */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-10 sm:mb-12">
+          Our Journey
+        </h2>
 
-        <div className="relative flex items-center justify-between">
-          {/* Line */}
-          <div className="absolute top-5 left-0 w-full h-1 bg-purple-300"></div>
+        {/* Mobile/Tablet: Vertical */}
+        <div className="md:hidden relative">
+          {/* Vertical line */}
+          <div className="absolute left-5 top-0 bottom-0 w-1 bg-purple-300" />
+          <ul className="space-y-8">
+            {milestones.map((m) => (
+              <li key={m.year} className="relative pl-16">
+                {/* Dot */}
+                <span className="absolute left-5 top-1.5 -translate-x-1/2 block h-6 w-6 rounded-full bg-purple-600 border-4 border-white shadow-lg ring-4 ring-white" />
+                {/* Year */}
+                <p className="text-purple-700 dark:text-purple-300 font-semibold">
+                  {m.year}
+                </p>
+                {/* Event */}
+                <p className="mt-1 text-neutral-700 dark:text-neutral-300">
+                  {m.event}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          {milestones.map((m, idx) => (
-            <div
-              key={m.year}
-              className="relative flex flex-col items-center text-center w-1/6"
-            >
-              {/* Timeline Dot */}
-              <div className="w-6 h-6 rounded-full bg-purple-600 border-4 border-white shadow-lg z-10"></div>
+        {/* Desktop: Horizontal */}
+        <div className="hidden md:block">
+          <div className="relative flex">
+            {/* Line */}
+            <div className="absolute top-5 left-0 w-full h-1 bg-purple-300"></div>
 
-              {/* Year */}
-              <span className="mt-4 text-purple-700 dark:text-purple-300 font-semibold">
-                {m.year}
-              </span>
+            {milestones.map((m, idx) => (
+              <div
+                key={m.year}
+                className="relative flex flex-col items-center text-center w-1/6"
+              >
+                {/* Timeline Dot */}
+                <div className="w-6 h-6 rounded-full bg-purple-600 border-4 border-white shadow-lg z-10"></div>
 
-              {/* Event */}
-              <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300 max-w-[10rem]">
-                {m.event}
-              </p>
-            </div>
-          ))}
+                {/* Year */}
+                <span className="mt-4 text-purple-700 dark:text-purple-300 font-semibold">
+                  {m.year}
+                </span>
+
+                {/* Event */}
+                <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300 max-w-[10rem]">
+                  {m.event}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

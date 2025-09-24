@@ -423,61 +423,60 @@ function Testimonials() {
             SIF
           </p>
         </div>
-        <div className="overflow-hidden rounded-3xl border border-white/10 backdrop-blur">
+
+        <div className="relative overflow-hidden rounded-3xl">
           <div
-            className="flex transition-transform duration-700"
-            style={{
-              transform: `translateX(-${idx * 100}%)`,
-              width: `${count * 100}%`,
-            }}
+            className="whitespace-nowrap transition-transform duration-700"
+            style={{ transform: `translateX(-${idx * 100}%)` }}
           >
             {slides.map((s, i) => (
-              <div
-                key={i}
-                className="w-full flex-shrink-0 bg-white/[0.06] p-12 text-center"
-              >
-                <p className="text-2xl md:text-[32px] leading-snug italic mb-10">
-                  “{s.text}”
-                </p>
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-emerald-500 grid place-items-center font-bold text-xl">
-                    {s.avatar}
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-semibold">{s.name}</h4>
-                    <p className="text-white/70 text-sm">{s.role}</p>
+              <div key={i} className="inline-block align-top w-full">
+                <div className="bg-white/5 border border-white/10 backdrop-blur p-12 text-center">
+                  <p className="text-2xl md:text-[32px] leading-snug italic mb-10 text-wrap">
+                    {s.text}
+                  </p>
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="w-16 h-16 rounded-full grid place-items-center bg-gradient-to-br from-blue-600 to-teal-500 text-2xl font-bold">
+                      {s.avatar}
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-base font-semibold">{s.name}</h4>
+                      <p className="text-sm text-white/70">{s.role}</p>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="flex items-center justify-center gap-6 mt-6">
+        <div className="mt-8 flex items-center justify-center gap-6">
           <button
-            className="w-12 h-12 rounded-full bg-white text-gray-700 grid place-items-center border border-gray-200 hover:scale-105 transition"
-            onClick={() => setIdx((i) => (i - 1 + count) % count)}
+            onClick={() =>
+              setIdx((i) => (i - 1 + slides.length) % slides.length)
+            }
+            className="w-12 h-12 rounded-full bg-white text-gray-700 border border-gray-200 grid place-items-center hover:scale-105 transition"
             aria-label="Previous testimonial"
           >
-            ‹
+            ◀
           </button>
           <div className="flex gap-2">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setIdx(i)}
-                className={`w-2 h-2 rounded-full transition ${
-                  i === idx ? "bg-emerald-400 scale-110" : "bg-white/40"
-                }`}
                 aria-label={`Go to testimonial ${i + 1}`}
+                className={`w-2 h-2 rounded-full transition ${
+                  i === idx ? "bg-teal-400 scale-110" : "bg-white/30"
+                }`}
               />
             ))}
           </div>
           <button
-            className="w-12 h-12 rounded-full bg-white text-gray-700 grid place-items-center border border-gray-200 hover:scale-105 transition"
-            onClick={() => setIdx((i) => (i + 1) % count)}
+            onClick={() => setIdx((i) => (i + 1) % slides.length)}
+            className="w-12 h-12 rounded-full bg-white text-gray-700 border border-gray-200 grid place-items-center hover:scale-105 transition"
             aria-label="Next testimonial"
           >
-            ›
+            ▶
           </button>
         </div>
       </div>

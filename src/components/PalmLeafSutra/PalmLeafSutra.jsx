@@ -75,9 +75,9 @@ function Hero() {
           <h1 className="text-[clamp(3rem,8vw,5rem)]  opacity-90 font-extrabold leading-tight mb-2">
             Palm Leaf Sutra Printing
           </h1>
-          <p className="text-2xl font-semibold opacity-90 mb-4">
+          {/* <p className="text-2xl font-semibold opacity-90 mb-4">
             Reviving India's Sacred Manuscript Tradition
-          </p>
+          </p> */}
           <p className="text-lg md:text-xl opacity-90 leading-relaxed mb-8">
             Starting with the Diamond Sutra, this initiative fuses ancestral
             craftsmanship with modern laser technology to preserve timeless
@@ -460,7 +460,7 @@ function Impact() {
 function GetInvolved() {
   const cards = [
     {
-      icon: "handyman",
+      icon: "🧑‍🎨",
       title: "Support Artisans",
       desc: "Help artisans sustain their craft and livelihood by supporting our palm leaf printing initiatives and traditional skill preservation programs.",
       grad: "from-amber-600 to-amber-500",
@@ -469,7 +469,7 @@ function GetInvolved() {
       href: "/contact-us",
     },
     {
-      icon: "account_balance",
+      icon: "📜",
       title: "Cultural Preservation",
       desc: "Contribute to cultural preservation and global heritage by sponsoring manuscript digitization and preservation projects.",
       grad: "from-white to-white",
@@ -477,7 +477,7 @@ function GetInvolved() {
       href: "/",
     },
     {
-      icon: "school",
+      icon: "📚",
       title: "Spread Wisdom",
       desc: "Ensure that timeless wisdom of sutras continues to inspire generations through education and awareness programs.",
       grad: "from-emerald-600 to-emerald-700",

@@ -15,7 +15,7 @@ export default function ContactPage() {
 
 function Hero() {
   return (
-    <section className="mt-[72px] bg-gradient-to-br from-white to-[#f8fafc]">
+    <section className="bg-gradient-to-br from-white to-[#f8fafc]">
       <div className="max-w-[1200px] mx-auto px-6 py-28 text-center">
         <div className="max-w-[680px] mx-auto">
           <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold leading-tight tracking-tight mb-3">
@@ -229,28 +229,28 @@ function OfficeInfo() {
         title="Registered Office"
         type="Legal & Administrative Hub • Telangana"
         address="Beside Ayyapa temple, Opp. 2-Town Police Station, Karimnagar road, Siddipet, Telangana-502103 India"
-        icon="gavel"
+        icon="🏛️"
         bg="from-violet-500 to-violet-700"
       />
       <OfficeCard
         title="Head Office & Sunya Studio"
         type="Main Operations Center • Maharashtra"
         address="BUSINESS POINT, OFFICE NO. 401, 4TH FLOOR, Laxman Nagar, Baner, Pune, Maharashtra 411045"
-        icon="business_center"
+        icon="🏛"
         bg="from-emerald-500 to-emerald-700"
       />
       <OfficeCard
         title="South & CSR Office"
         type="Regional Operations • Telangana"
         address="5th Floor, Rajapushpa Summit, ISB Rd, Financial District, Gachibowli, Nanakramguda, Telangana 500032"
-        icon="corporate_fare"
+        icon="🤝"
         bg="from-blue-500 to-blue-700"
       />
       <OfficeCard
         title="Central Office"
         type="Regional Coordination • Maharashtra"
         address="201, Ram Residency, Near UCO Bank, Manish Nagar, Nagpur – 440015"
-        icon="location_city"
+        icon="📍"
         bg="from-amber-500 to-orange-700"
       />
     </div>

@@ -475,43 +475,67 @@ function Testimonials() {
             education community
           </p>
         </div>
-        <div className="overflow-hidden rounded-2xl">
+
+        <div className="relative overflow-hidden rounded-3xl">
           <div
-            className="flex transition-transform duration-700"
-            style={{
-              transform: `translateX(-${idx * 100}%)`,
-              width: `${slides.length * 100}%`,
-            }}
+            className="whitespace-nowrap transition-transform duration-700"
+            style={{ transform: `translateX(-${idx * 100}%)` }}
           >
             {slides.map((s, i) => (
-              <div
-                key={i}
-                className="w-full flex-shrink-0 bg-white/5 p-12 text-center"
-              >
-                <p className="text-2xl italic mb-8">{s.text}</p>
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-yellow-400 flex items-center justify-center font-bold text-xl">
-                    {s.avatar}
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-semibold">{s.name}</h4>
-                    <p className="text-gray-300 text-sm">{s.role}</p>
+              <div key={i} className="inline-block align-top w-full">
+                <div className="bg-white/5 border border-white/10 backdrop-blur p-12 text-center">
+                  <p className="text-2xl md:text-[32px] leading-snug italic mb-10 text-wrap">
+                    {s.text}
+                  </p>
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="min-w-12 min-h-12 w-16 h-16 rounded-full grid place-items-center bg-gradient-to-br from-blue-600 to-teal-500 text-lg sm:text-xl md:text-2xl font-bold shrink-0">
+                      {s.avatar}
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-sm sm:text-base font-semibold">
+                        {s.name}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-white/70">
+                        {s.role}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="flex justify-center gap-2 mt-6">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIdx(i)}
-              className={`w-3 h-3 rounded-full ${
-                i === idx ? "bg-white" : "bg-white/40"
-              }`}
-            />
-          ))}
+
+        {/* controls */}
+        <div className="mt-8 flex items-center justify-center gap-6">
+          <button
+            onClick={() =>
+              setIdx((i) => (i - 1 + slides.length) % slides.length)
+            }
+            className="w-12 h-12 rounded-full bg-white text-gray-700 border border-gray-200 grid place-items-center hover:scale-105 transition"
+            aria-label="Previous testimonial"
+          >
+            ◀
+          </button>
+          <div className="flex gap-2">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIdx(i)}
+                aria-label={`Go to testimonial ${i + 1}`}
+                className={`w-2 h-2 rounded-full transition ${
+                  i === idx ? "bg-teal-400 scale-110" : "bg-white/30"
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={() => setIdx((i) => (i + 1) % slides.length)}
+            className="w-12 h-12 rounded-full bg-white text-gray-700 border border-gray-200 grid place-items-center hover:scale-105 transition"
+            aria-label="Next testimonial"
+          >
+            ▶
+          </button>
         </div>
       </div>
     </section>
@@ -522,7 +546,7 @@ function Testimonials() {
 function GetInvolved() {
   const items = [
     {
-      icon: "school",
+      icon: "🏫",
       title: "Become a Facilitator",
       text: "Train to become a certified facilitator and help deliver our Little Sunyatee programs and mindfulness education to children in your community.",
       cta: "Apply Now",
@@ -530,19 +554,19 @@ function GetInvolved() {
       invert: true,
     },
     {
-      icon: "volunteer_activism",
+      icon: "🙋‍♀️",
       title: "Volunteer Support",
       text: "Support our centres through volunteer activities, help with children's programs, or assist with administrative and operational needs.",
       cta: "Get Involved",
     },
     {
-      icon: "family_restroom",
+      icon: "👨‍👩‍👧‍👦",
       title: "Parent Workshops",
       text: "Join our parent education programs to extend behavioral and mindfulness practices into your home environment.",
       cta: "Register",
     },
     {
-      icon: "favorite",
+      icon: "❤️",
       title: "Sponsor a Centre",
       text: "Help establish new Child Education Centres or support existing ones with materials, training, and operational funding.",
       cta: "Sponsor",
@@ -601,105 +625,5 @@ function GetInvolved() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white pt-20 pb-8">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <h3 className="font-bold mb-4">Contact</h3>
-            <p className="text-gray-300">📍 80 Harrison Lane, FL 32547</p>
-            <p className="text-gray-300">📞 +1 555 87 89 56</p>
-            <p className="text-gray-300">📧 children@sifworld.com</p>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Programs</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <a href="#child-education" className="hover:text-white">
-                  Child Education Centres
-                </a>
-              </li>
-              <li>
-                <a href="#little-sunyatee" className="hover:text-white">
-                  Little Sunyatee Program
-                </a>
-              </li>
-              <li>
-                <a href="#sunya" className="hover:text-white">
-                  Sunya Meditation
-                </a>
-              </li>
-              <li>
-                <a href="#mindfulness" className="hover:text-white">
-                  Kids' Mindfulness
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Get Involved</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Become Facilitator
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Volunteer Support
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Parent Workshops
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Sponsor Centre
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4">Follow Us</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <a href="#" className="hover:text-white">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-6 text-center text-gray-400">
-          <p>© 2025 Sunyatee International Foundation. All Rights Reserved.</p>
-          <p>
-            Nurturing young minds through mindful education, creativity, and
-            compassionate learning
-          </p>
-        </div>
-      </div>
-    </footer>
   );
 }

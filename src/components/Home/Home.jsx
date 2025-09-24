@@ -435,11 +435,8 @@ export default function Home() {
       {/* Activities Carousel */}
 
       {/* Sunya Section */}
-      <section
-        id="sunya"
-        className="mx-auto max-w-7xl px-4 sm:px-6 mt-30 rounded-3xl bg-gradient-to-br from-emerald-50 to-sky-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60"
-      >
-        <div className="grid items-center gap-8 md:grid-cols-2">
+      <section id="sunya" className="mx-auto max-w-7xl px-4 sm:px-6 mt-30 ">
+        <div className="grid items-center gap-8 md:grid-cols-2 rounded-3xl bg-gradient-to-br from-emerald-50 to-sky-50 p-8 shadow-inner dark:from-neutral-900 dark:to-neutral-900/60">
           <div>
             <h3 className="text-3xl font-semibold tracking-tight">
               Sunya Meditation

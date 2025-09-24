@@ -388,7 +388,7 @@ function FocusAreas() {
               <div className="h-52 grid place-items-center text-6xl text-white bg-gradient-to-br from-amber-600 to-indigo-700">
                 {c.icon}
               </div>
-              <div className="p-8 bg-white/70 backdrop-blur">
+              <div className="p-8 bg-white/70 h-full backdrop-blur">
                 <h3 className="text-lg font-bold mb-2">{c.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{c.text}</p>
               </div>
@@ -603,104 +603,6 @@ function iconEmoji(name) {
     default:
       return "✨";
   }
-}
-
-/* ========================= Footer ========================= */
-function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-[1280px] mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <div>
-          <h3 className="text-lg font-bold mb-4">Contact</h3>
-          <p className="text-white/70">📍 80 Harrison Lane, FL 32547</p>
-          <p className="text-white/70">📞 +1 555 87 89 56</p>
-          <p className="text-white/70">📧 translations@sifworld.com</p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold mb-4">Programs</h3>
-          <ul className="space-y-2 text-white/70">
-            <li>
-              <a href="#overview" className="hover:text-white">
-                Agamas & Translations
-              </a>
-            </li>
-            <li>
-              <a href="#focus-areas" className="hover:text-white">
-                Palm-leaf Printing
-              </a>
-            </li>
-            <li>
-              <a href="#focus-areas" className="hover:text-white">
-                Digital Archives
-              </a>
-            </li>
-            <li>
-              <a href="#impact-future" className="hover:text-white">
-                Amaravati Centre
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold mb-4">Get Involved</h3>
-          <ul className="space-y-2 text-white/70">
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Become Translator
-              </a>
-            </li>
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Research Partnership
-              </a>
-            </li>
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Support Digitization
-              </a>
-            </li>
-            <li>
-              <a href="#get-involved" className="hover:text-white">
-                Fund Preservation
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-          <ul className="space-y-2 text-white/70">
-            <li>
-              <a href="#" className="hover:text-white">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                YouTube
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-white/10 py-6 text-center text-white/60 text-sm">
-        <p>© 2025 Sunyatee International Foundation. All Rights Reserved.</p>
-        <p>
-          Preserving ancient wisdom, bridging past and future through
-          translation and cultural preservation
-        </p>
-      </div>
-    </footer>
-  );
 }
 
 /* ========================= Utilities ========================= */

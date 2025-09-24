@@ -397,12 +397,12 @@ function StoriesWithFilter() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-start sm:justify-center  gap-2 mb-12">
           {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => setActive(t.id)}
-              className={`px-5 py-2 rounded-full text-sm font-medium border transition ${
+              className={`px-5 py-2 rounded-full text-sm font-medium border transition cursor-pointer ${
                 active === t.id
                   ? "bg-emerald-500 border-emerald-500 text-white"
                   : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
