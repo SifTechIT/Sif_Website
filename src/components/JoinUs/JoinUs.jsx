@@ -306,9 +306,9 @@ function InternshipForm() {
     }
   };
   return (
-    <section id="internship" className="py-24 bg-gray-50">
+    <section id="internship" className="py-24">
       <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12">
-        <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-8">
+        <div className="rounded-2xl border border-gray-200 shadow-sm p-8">
           <h3 className="text-2xl font-bold mb-2">Internship Application</h3>
           <p className="text-gray-600 mb-6">
             Real projects, real mentors, real impact.
@@ -408,7 +408,7 @@ function InternshipForm() {
           </form>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-8">
+        <div className="h-fit rounded-2xl border border-gray-200 shadow-sm p-8">
           <h3 className="text-2xl font-bold mb-2">Intern Benefits</h3>
           <p className="text-gray-600 mb-6">
             Mentored pathways & certifications

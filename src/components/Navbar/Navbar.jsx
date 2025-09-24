@@ -292,10 +292,10 @@ export default function Navbar() {
                       }`}
                       style={{ transitionDelay: `${colIndex * 100}ms` }}
                     >
-                      <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                      <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                         {col.title}
                       </h3>
-                      <ul className="space-y-3">
+                      <ul className="space-y-1">
                         {col.items.map((item, itemIndex) => (
                           <li
                             key={item.label}
@@ -312,7 +312,7 @@ export default function Navbar() {
                           >
                             <Link
                               to={item.href}
-                              className="group block rounded-xl p-3 transition-all duration-200 hover:bg-slate-50/80 hover:shadow-sm dark:hover:bg-slate-800/50"
+                              className="group block rounded-xl px-3 py-2 transition-all duration-200 hover:bg-slate-50/80 hover:shadow-sm dark:hover:bg-slate-800/50"
                               role="menuitem"
                               onClick={() => setOpenMega(false)}
                             >
@@ -331,7 +331,7 @@ export default function Navbar() {
                 </div>
 
                 <div
-                  className={`mt-8 flex items-center justify-between rounded-xl bg-gradient-to-r from-slate-50 to-slate-100/50 p-4 transition-all duration-700 ease-out dark:from-slate-800/50 dark:to-slate-800/30 ${
+                  className={`mt-2 flex items-center justify-between rounded-xl bg-gradient-to-r from-slate-50 to-slate-100/50 p-4 transition-all duration-700 ease-out dark:from-slate-800/50 dark:to-slate-800/30 ${
                     openMega
                       ? "translate-y-0 opacity-100"
                       : "translate-y-4 opacity-0"
