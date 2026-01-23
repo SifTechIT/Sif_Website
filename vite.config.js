@@ -8,7 +8,7 @@ export default defineConfig({
     host: true,
   },
   plugins: [react(), tailwindcss()],
-  base: "/Sif_Website/",
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
