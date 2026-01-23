@@ -15,6 +15,7 @@ import CommunityPractice from "../../assets/SunyaMeditation/Gallery_Community_Pr
 import FirstSale from "../../assets/WomenEmpowerment/Gallery_First_Sale.jpg";
 import WomenLeader from "../../assets/WomenEmpowerment/Gallery_Leader.jpg";
 import GallerySkillCenter from "../../assets/WomenEmpowerment/Gallery_Skill_Center.jpg";
+
 export default function SifGalleryPage() {
   const [activeTab, setActiveTab] = useState("photos");
   const [filter, setFilter] = useState("all");
@@ -24,19 +25,88 @@ export default function SifGalleryPage() {
     desc: "",
     image: null,
   });
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <div className="scroll-smooth font-sans text-[#111827] bg-white">
       {/* <Header scrolled={scrolled} /> */}
-      <Hero />
+      <section className="relative overflow-hidden bg-background">
+        {/* Subtle decorative background */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Gradient orbs */}
+          <div
+            className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-[0.03]"
+            style={{
+              background:
+                "radial-gradient(circle, var(--primary) 0%, transparent 70%)",
+            }}
+          />
+          <div
+            className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full opacity-[0.02]"
+            style={{
+              background:
+                "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
+            }}
+          />
+          {/* Subtle grid pattern */}
+          <div
+            className="absolute inset-0 opacity-[0.015]"
+            style={{
+              backgroundImage:
+                "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <div
+            className={`flex flex-col text-center items-center`}
+            style={{
+              minHeight: "clamp(340px, 50vh, 520px)",
+              paddingTop: "clamp(3rem, 8vh, 6rem)",
+              paddingBottom: "clamp(3rem, 8vh, 6rem)",
+              justifyContent: "center",
+            }}
+          >
+            {/* Eyebrow / Badge */}
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2 text-sm font-medium text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              Visual Stories of Transformation
+            </div>
+
+            {/* Title */}
+            <h1
+              className="max-w-4xl text-foreground"
+              style={{
+                fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)",
+                fontWeight: 700,
+                letterSpacing: "-0.025em",
+                lineHeight: 1.1,
+              }}
+            >
+              Gallery
+            </h1>
+
+            {/* Subtitle */}
+            <p
+              className={`mt-5 text-muted-foreground center`}
+              style={{
+                fontSize: "clamp(1.0625rem, 1vw + 0.875rem, 1.25rem)",
+                lineHeight: 1.6,
+                maxWidth: "640px",
+              }}
+            >
+              A living record of our journey—from Sunya Meditation retreats to
+              farmer empowerment projects, from child education centres to the
+              revival of ancient manuscripts.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom border accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </section>
       <GalleryNav
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -72,33 +142,6 @@ export default function SifGalleryPage() {
   );
 }
 
-/* ========================= Header ========================= */
-
-/* ========================= Hero ========================= */
-function Hero() {
-  return (
-    <section className="relative h-screen bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <div className="w-full h-full opacity-20 bg-[radial-gradient(circle_at_20%_20%,white,transparent_50%),radial-gradient(circle_at_80%_80%,white,transparent_50%)]" />
-      </div>
-      <div className="container max-w-[800px] mx-auto px-6 text-center text-white relative animate-[slideUp_.8s_cubic-bezier(0.4,0,0.2,1)]">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-          <span>📸 Visual Stories of Transformation</span>
-        </div>
-        <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-[1.1] mb-4">
-          Gallery
-        </h1>
-        <p className="text-lg md:text-xl opacity-90 leading-relaxed">
-          A living record of our journey—from Sunya Meditation retreats to
-          farmer empowerment projects, from child education centres to the
-          revival of ancient manuscripts. Each photograph and video tells a
-          story of transformation, service, and hope.
-        </p>
-      </div>
-    </section>
-  );
-}
-
 /* ========================= Gallery Navigation ========================= */
 const FILTERS = [
   { id: "all", label: "All" },
@@ -114,21 +157,6 @@ function GalleryNav({ activeTab, setActiveTab, filter, setFilter }) {
   return (
     <section className="sticky top-[72px] z-40 bg-white border-b border-gray-200 py-6">
       <div className="container max-w-[1280px] mx-auto px-6">
-        {/* <div className="max-w-[420px] mx-auto flex gap-2 bg-gray-100 rounded-2xl p-2 mb-4">
-          {["photos", "videos"].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`flex-1 px-4 py-2 rounded-xl font-semibold text-sm transition ${
-                activeTab === tab
-                  ? "bg-white shadow text-gray-900"
-                  : "text-gray-600"
-              }`}
-            >
-              {tab === "photos" ? "Photos" : "Videos"}
-            </button>
-          ))}
-        </div> */}
         <div className="flex flex-wrap justify-start sm:justify-center gap-3">
           {FILTERS.map((f) => (
             <button
@@ -136,7 +164,7 @@ function GalleryNav({ activeTab, setActiveTab, filter, setFilter }) {
               onClick={() => setFilter(f.id)}
               className={`px-4 py-2 rounded-full border text-sm font-medium transition cursor-pointer ${
                 filter === f.id
-                  ? "bg-emerald-500 text-white border-emerald-500"
+                  ? "bg-[#2f2760] text-white border-emerald-500"
                   : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
               }`}
             >
@@ -302,11 +330,11 @@ function PhotosSection({ filter, onOpen }) {
         desc: "Display of finished sutras in community events celebrating cultural heritage.",
       },
     ],
-    []
+    [],
   );
 
   const filtered = photos.filter(
-    (p) => filter === "all" || p.category === filter
+    (p) => filter === "all" || p.category === filter,
   );
 
   const catGradient = {
@@ -426,7 +454,7 @@ function VideosSection({ filter }) {
   ];
 
   const filtered = videos.filter(
-    (v) => filter === "all" || v.category === filter
+    (v) => filter === "all" || v.category === filter,
   );
 
   return (

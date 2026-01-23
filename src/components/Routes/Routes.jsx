@@ -18,6 +18,7 @@ import ODOCPage from "../ODOC/ODOC";
 import PalmLeafSutraPage from "../PalmLeafSutra/PalmLeafSutra";
 import RuralHealthPage from "../RuralHealthAwareness/RuralHealth";
 import WomenEmpowermentPage from "../WomenEmpowerment/WomenEmpowerment";
+import CTA from "../Home/CTA";
 
 const AllRoutes = () => {
   return (
@@ -60,6 +61,7 @@ const AllRoutes = () => {
         </Routes>
         <Outlet />
       </div>
+      <CTA />
       <Footer />
     </>
   );

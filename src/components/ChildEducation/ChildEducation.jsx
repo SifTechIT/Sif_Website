@@ -9,9 +9,320 @@ import MindfulnessSession from "../../assets/AusumKids/MindfulnessSession.jpeg";
 import OpenCircles from "../../assets/AusumKids/Open_Circles.jpeg";
 import ResolutionCards from "../../assets/AusumKids/Resolution_Cards.jpeg";
 import StoryTelling from "../../assets/AusumKids/StoryTelling.jpg";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
+
 export default function ChildEducationCentresPage() {
   return (
     <main>
+      <section className="hero-gradient   relative w-full  ">
+        <div className="relative min-h-[90vh] sm:min-h-[660px] w-full mx-auto   ">
+          <div
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${SunyaMeditation})` }}
+          >
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Child Education Centres.
+              </h1>
+              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+                Creating environments where children learn, play, and grow
+                holistically through early learning, mindfulness, and behavioral
+                development.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full sm:w-auto">
+                  See Our Impact
+                </button>
+                <a
+                  href="#"
+                  className="text-white hover:underline font-medium text-lg"
+                >
+                  Our Programs
+                  <i className="fas fa-chevron-right text-xs ml-1"></i>
+                  {/* <ChevronRight className="w-4 h-4" /> */}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+          <div className="text-center mb-16">
+            <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
+              Young Lives Impact
+            </h2>
+            <h3 className="text-3xl font-bold">Measurable Outcomes</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">500+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Children Positively
+                <br />
+                Impacted
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">15+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Active Education
+                <br />
+                Centres
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">100+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Trained
+                <br />
+                Facilitators
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">25+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Communities
+                <br />
+                Served
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-purple-600 font-bold tracking-tight text-sm uppercase mb-4">
+                Foundations for Life
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gradient">
+                Holistic Growth.
+              </h3>
+              <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                Our centres are safe, nurturing spaces where children build a
+                strong foundation for both education and life. We focus on early
+                learning, behavioral development, and mindful awareness.
+              </p>
+              <p className="text-lg text-gray-500 leading-relaxed">
+                These hubs bring together children, parents, and facilitators,
+                creating supportive environments where every child's voice is
+                heard and valued.
+              </p>
+            </div>
+            <div className="rounded-[3rem] bg-purple-soft aspect-square flex items-center justify-center text-purple-300 overflow-hidden relative shadow-inner">
+              <i className="fas fa-child text-9xl opacity-20"></i>
+              <div className="absolute bottom-10 text-center">
+                <p className="text-[10px] uppercase tracking-widest font-bold text-purple-400">
+                  Creative Learning Environments
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-gradient">
+              Development Focus Areas
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              A comprehensive approach addressing multiple dimensions of child
+              growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bento-card col-span-1 md:col-span-2 md:row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end min-h-[450px]">
+              <div className="absolute top-12 left-12 text-5xl">📖</div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-4">
+                  Early Learning & Literacy
+                </h3>
+                <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                  Age-appropriate language and cognitive activities through
+                  engaging, play-based methods.
+                </p>
+                <button className="bg-white text-black px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+            <div className="bento-card col-span-1 md:col-span-2 p-10 flex flex-col justify-between bg-purple-50/50 border-purple-100">
+              <div className="flex justify-between items-start">
+                <div className="text-4xl">🧘</div>
+                <span className="text-[9px] font-bold uppercase tracking-widest bg-purple-600 text-white px-3 py-1 rounded-full">
+                  Mindfulness
+                </span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-2">Kids' Sunya Programs</h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Simple, playful practices that enhance concentration,
+                  patience, and self-awareness.
+                </p>
+              </div>
+            </div>
+
+            <div className="bento-card p-8 flex flex-col justify-center text-center">
+              <div className="text-3xl mb-4">🎨</div>
+              <h4 className="font-bold mb-2">Creative Learning</h4>
+              <p className="text-gray-500 text-xs">
+                Storytelling and art that encourage collaboration and
+                self-expression.
+              </p>
+            </div>
+
+            <div className="bento-card p-8 flex flex-col justify-center text-center bg-purple-600 text-white border-none">
+              <div className="text-3xl mb-4">🤗</div>
+              <h4 className="font-bold mb-2 text-white">Inclusive Spaces</h4>
+              <p className="text-purple-100 text-xs">
+                Equal opportunities for learning where every voice is respected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold tracking-tight mb-16 text-gradient">
+          Key Interventions & Activities.
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-12">
+          <div className="border-t border-gray-100 pt-6">
+            <h4 className="font-bold mb-3">Opening Circles</h4>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Children start by sharing something about friends, building an
+              environment of respect and belonging.
+            </p>
+          </div>
+          <div className="border-t border-gray-100 pt-6">
+            <h4 className="font-bold mb-3">Expressive Games</h4>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Kindness and empathy practiced through Food Bingo, story
+              enactments, and snack-sharing.
+            </p>
+          </div>
+          <div className="border-t border-gray-100 pt-6">
+            <h4 className="font-bold mb-3">Conflict Resolution Cards</h4>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Older children reflect on real-life situations to develop
+              respectful responses.
+            </p>
+          </div>
+          <div className="border-t border-gray-100 pt-6">
+            <h4 className="font-bold mb-3">Daily Mindfulness</h4>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Grounding through Sunya meditation to develop calmness and focus.
+            </p>
+          </div>
+          <div className="border-t border-gray-100 pt-6">
+            <h4 className="font-bold mb-3">Storytelling & Role-Play</h4>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Interactive sessions that develop language skills and social
+              understanding.
+            </p>
+          </div>
+          <div className="border-t border-gray-100 pt-6">
+            <h4 className="font-bold mb-3">Community Building</h4>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Strengthening support networks by bringing together children,
+              parents, and facilitators.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-zinc-50 border-y border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gradient">
+              Voices from Our Centres
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="border-l-2 border-purple-600 pl-8">
+              <p className="text-xl font-light italic text-gray-600 mb-6">
+                "My daughter comes home excited about her 'mindfulness time' and
+                practices being kind to her younger brother. The changes are
+                remarkable."
+              </p>
+              <div className="font-bold text-sm">Priya Sharma</div>
+              <div className="text-xs text-gray-400 uppercase tracking-widest">
+                Parent of Participant
+              </div>
+            </div>
+            <div className="border-l-2 border-purple-600 pl-8">
+              <p className="text-xl font-light italic text-gray-600 mb-6">
+                "Children who were shy and withdrawn now participate actively.
+                The opening circles have built their confidence beautifully."
+              </p>
+              <div className="font-bold text-sm">Teacher Coordinator</div>
+              <div className="text-xs text-gray-400 uppercase tracking-widest">
+                Rural Education Centre
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gradient">
+            Join Our Development Mission.
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="bento-card p-8 bg-purple-50/50 border-purple-100">
+            <i className="fas fa-chalkboard-teacher text-purple-600 mb-6 text-xl"></i>
+            <h4 className="font-bold mb-2">Facilitator</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Train to deliver Little Sunyatee programs in your community.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-purple-600">
+              Apply Now {">"}
+            </button>
+          </div>
+          <div className="bento-card p-8">
+            <i className="fas fa-hands-helping text-purple-600 mb-6 text-xl"></i>
+            <h4 className="font-bold mb-2">Volunteer</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Support our centres through programs or administration.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-purple-600">
+              Get Involved {">"}
+            </button>
+          </div>
+          <div className="bento-card p-8">
+            <i className="fas fa-users text-purple-600 mb-6 text-xl"></i>
+            <h4 className="font-bold mb-2">Parent Workshops</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Extend behavioral practices into your home environment.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-purple-600">
+              Register {">"}
+            </button>
+          </div>
+          <div className="bento-card p-8 bg-zinc-900 text-white border-none">
+            <i className="fas fa-heart text-purple-400 mb-6 text-xl"></i>
+            <h4 className="font-bold mb-2">Sponsor a Centre</h4>
+            <p className="text-xs text-zinc-500 mb-6">
+              Establish new centres with materials and funding.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-white underline">
+              Sponsor Now
+            </button>
+          </div>
+        </div>
+      </section>
       <HeroSlider />
       <Stats />
       <ProgramOverview />

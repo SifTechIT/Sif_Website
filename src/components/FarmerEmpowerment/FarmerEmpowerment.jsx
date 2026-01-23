@@ -15,6 +15,307 @@ import Training from "../../assets/FarmerEmpowerment/Training.jpeg";
 export default function FarmerEmpowermentPage() {
   return (
     <main>
+      <section className="pt-40 pb-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-block px-4 py-1.5 mb-6 bg-green-50 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-widest">
+            🌾 Sustainable Agriculture, Resilient Communities
+          </div>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-gradient mb-8 leading-[1.1]">
+            Farmer Empowerment.
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-500 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+            Transforming rural livelihoods through sustainable agriculture,
+            modern training, and assured market linkages.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg">
+              See Our Impact
+            </button>
+            <a
+              href="#projects"
+              className="text-green-700 hover:underline font-medium text-lg flex items-center"
+            >
+              Learn About Noni{" "}
+              <i className="fas fa-arrow-right text-xs ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 border-y border-gray-100 mb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 text-center mb-12">
+            Real Impact, Real Numbers
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center metric-card">
+              <div className="text-5xl font-bold tracking-tighter mb-2">21</div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Farmers in Siddipet
+              </p>
+            </div>
+            <div className="text-center metric-card">
+              <div className="text-5xl font-bold tracking-tighter mb-2">55</div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Acres Under Noni
+              </p>
+            </div>
+            <div className="text-center metric-card">
+              <div className="text-5xl font-bold tracking-tighter mb-2">
+                100%
+              </div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Buy-back Guarantee
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold tracking-tighter mb-2">
+                200+
+              </div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Expansion Planned
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div className="rounded-[3rem] bg-gray-100 aspect-square flex items-center justify-center text-gray-400 overflow-hidden relative">
+              <span className="text-sm uppercase tracking-widest font-medium">
+                Image: Noni Cultivation [1200x1200]
+              </span>
+            </div>
+            <div>
+              <h2 className="text-green-700 font-bold tracking-tight text-sm uppercase mb-4">
+                Foundation
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+                Program Overview.
+              </h3>
+              <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                The Farmer Empowerment program is a cornerstone initiative of
+                SIF, designed to improve farmer livelihoods through modern
+                training, soil health management, and assured market linkages.
+              </p>
+              <p className="text-lg text-gray-500 leading-relaxed">
+                Through partnerships with industry leaders like{" "}
+                <strong>DXN</strong>, we ensure that farmers have guaranteed
+                buyers for their produce, removing the uncertainty that often
+                plagues agricultural income.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="py-24 px-6 bg-[#fbfbfd]">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold tracking-tight">
+              The Noni Project - Siddipet.
+            </h2>
+            <p className="text-gray-500 mt-4 text-lg">
+              A flagship initiative launched in 2022, transforming lives through
+              sustainable cultivation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div className="md:col-span-8 bento-box bg-zinc-900 text-white p-12 flex flex-col justify-between min-h-[400px]">
+              <div>
+                <div className="text-3xl mb-6">🤝</div>
+                <h3 className="text-3xl font-bold mb-4">
+                  DXN Partnership & Buy-back
+                </h3>
+                <p className="text-zinc-400 max-w-md">
+                  SIF facilitated the supply of Noni plants from DXN and
+                  established a comprehensive buy-back scheme to ensure
+                  financial security.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <button className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+                  Join Program
+                </button>
+              </div>
+            </div>
+
+            <div className="md:col-span-4 bento-box p-10 flex flex-col">
+              <div className="text-2xl mb-4">👨‍🌾</div>
+              <h4 className="text-xl font-bold mb-3">Dedicated Support</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                A dedicated field coordinator supports farmers in day-to-day
+                cultivation activities and problem-solving.
+              </p>
+            </div>
+
+            <div className="md:col-span-4 bento-box p-10 flex flex-col">
+              <div className="text-2xl mb-4">🎓</div>
+              <h4 className="text-xl font-bold mb-3">Comprehensive Training</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Technical training on plantation techniques, irrigation methods,
+                and organic farming standards.
+              </p>
+            </div>
+
+            <div className="md:col-span-8 bento-box p-10 flex flex-col md:flex-row gap-12 items-center border-green-100 bg-green-50/30">
+              <div className="text-5xl">🧪</div>
+              <div>
+                <h4 className="text-xl font-bold mb-3">
+                  Scientific Soil Management
+                </h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Comprehensive soil testing conducted to ensure optimal growing
+                  conditions and long-term land health.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold tracking-tight mb-16">
+            Our Interventions & Activities.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-12">
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Soil Testing & Fertility
+              </h4>
+              <p className="text-sm text-gray-500">
+                Scientific soil assessment and application of bio-fertilizers.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Training Workshops
+              </h4>
+              <p className="text-sm text-gray-500">
+                Practical sessions on crop rotation, organic inputs, and
+                irrigation.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Crop Diversification
+              </h4>
+              <p className="text-sm text-gray-500">
+                Encouraging medicinal and high-value crops like Noni.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Farmer Groups
+              </h4>
+              <p className="text-sm text-gray-500">
+                Collective bargaining and shared learning experiences.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Technology Integration
+              </h4>
+              <p className="text-sm text-gray-500">
+                Mobile-based monitoring for productivity tracking.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Market Linkages
+              </h4>
+              <p className="text-sm text-gray-500">
+                Direct connections with buyers and assured procurement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gray-50/50 px-6">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-gray-400 text-8xl font-serif text-center mb-0 leading-none">
+            “
+          </p>
+          <div className="text-center">
+            <p className="text-2xl md:text-3xl font-light text-gray-800 italic leading-relaxed mb-12">
+              "With SIF's guidance, we moved to sustainable crops with stable
+              buy-back. Our lives changed."
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold">
+                F
+              </div>
+              <div className="text-left">
+                <p className="font-bold text-sm">Farmer Coordinator</p>
+                <p className="text-xs text-gray-400 uppercase tracking-widest">
+                  Siddipet, Telangana
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold tracking-tight mb-16 text-center">
+          Join Our Mission.
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bento-box p-10 flex flex-col justify-between">
+            <div>
+              <div className="text-2xl mb-6">🧑‍🌾</div>
+              <h4 className="font-bold mb-3">Partner Farmer</h4>
+              <p className="text-sm text-gray-500">
+                Join our network and benefit from training and linkages.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-green-700">
+              Apply Now →
+            </button>
+          </div>
+          <div className="bento-box p-10 flex flex-col justify-between bg-zinc-900 text-white border-none">
+            <div>
+              <div className="text-2xl mb-6">🏢</div>
+              <h4 className="font-bold mb-3">Corporate Partner</h4>
+              <p className="text-sm text-zinc-400">
+                Collaborate on buy-back schemes or community development.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-white underline underline-offset-8">
+              Partner With Us →
+            </button>
+          </div>
+          <div className="bento-box p-10 flex flex-col justify-between">
+            <div>
+              <div className="text-2xl mb-6">🎓</div>
+              <h4 className="font-bold mb-3">Education</h4>
+              <p className="text-sm text-gray-500">
+                Support our farmer education programs or volunteer.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-green-700">
+              Learn More →
+            </button>
+          </div>
+          <div className="bento-box p-10 flex flex-col justify-between border-green-200 bg-green-50/50">
+            <div>
+              <div className="text-2xl mb-6">❤️</div>
+              <h4 className="font-bold mb-3">Sponsor a Farm</h4>
+              <p className="text-sm text-gray-700">
+                Help expand our program by funding training workshops.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-green-700">
+              Sponsor →
+            </button>
+          </div>
+        </div>
+      </section>
       <HeroSlider />
       <Stats />
       <ProgramOverview />
@@ -529,8 +830,8 @@ function GetInvolved() {
                 i === 0
                   ? "lg:col-span-6 text-white bg-gradient-to-br from-emerald-500 to-emerald-700 border-transparent"
                   : i === 3
-                  ? "lg:col-span-6 text-white bg-gradient-to-br from-amber-500 to-amber-800 border-transparent"
-                  : "lg:col-span-6"
+                    ? "lg:col-span-6 text-white bg-gradient-to-br from-amber-500 to-amber-800 border-transparent"
+                    : "lg:col-span-6"
               }`}
             >
               <div

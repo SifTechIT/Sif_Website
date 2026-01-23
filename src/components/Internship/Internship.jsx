@@ -12,6 +12,292 @@ import Skill from "../../assets/Internship/Skill.jpg";
 export default function InternshipProgramsPage() {
   return (
     <main>
+      <header className="hero-section px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-block px-4 py-1.5 mb-6 bg-blue-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-blue-700 border border-blue-200">
+            🎓 Learning with Impact, Growing with Purpose
+          </div>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] text-gradient">
+            Internship
+            <br />
+            Programs.
+          </h1>
+          <p className="text-xl md:text-2xl font-light text-gray-500 max-w-3xl mx-auto leading-relaxed mb-12">
+            Combine meaningful learning with social impact. Join young
+            changemakers across education, health, technology, and community
+            development.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold shadow-lg">
+              See Our Impact
+            </button>
+            <button className="bg-white border border-gray-200 text-gray-600 px-10 py-4 rounded-full font-semibold">
+              Explore Areas
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section className="py-24 px-6 bg-zinc-900 text-white rounded-[4rem] mx-4 my-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
+              Program Impact & Growth
+            </h2>
+            <h3 className="text-3xl font-bold">
+              Empowering the Next Generation
+            </h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold accent-blue mb-2">50+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Interns
+                <br />
+                Mentored
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-blue mb-2">6</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Program Areas
+                <br />
+                Available
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-blue mb-2">95%</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Report Improved
+                <br />
+                Confidence
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-blue mb-2">100%</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Portfolio
+                <br />
+                Support
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div className="rounded-[3rem] bg-blue-50 aspect-square flex items-center justify-center text-blue-200 overflow-hidden relative border border-blue-100 shadow-inner">
+            <i className="fas fa-graduation-cap text-9xl opacity-20"></i>
+            <div className="absolute bottom-10 px-8 text-center">
+              <p className="text-[10px] uppercase tracking-widest font-bold text-blue-600">
+                Career-Ready Portfolios
+              </p>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-blue-600 font-bold tracking-tight text-sm uppercase mb-4">
+              Why SIF?
+            </h2>
+            <h3 className="text-4xl font-bold tracking-tight mb-6 text-gradient">
+              Education Meets Empathy.
+            </h3>
+            <p className="text-lg text-gray-500 leading-relaxed mb-6">
+              Our program offers young people the opportunity to combine
+              learning with meaningful social impact. Every internship is
+              purpose-driven work where participants don't just complete
+              tasks—they contribute to global causes.
+            </p>
+            <p className="text-lg text-gray-500 leading-relaxed">
+              Gain exposure across multiple domains while contributing to
+              nutrition, mindfulness, farmer empowerment, and cultural heritage
+              preservation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gradient">
+              Program Areas
+            </h2>
+            <p className="text-gray-500 mt-2">
+              Diverse opportunities across all SIF domains.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bento-card col-span-1 md:col-span-2 p-10 bg-zinc-900 text-white border-none">
+              <div className="text-3xl mb-6">💻</div>
+              <h4 className="text-xl font-bold mb-3">IT & Design</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Website development, social media design, dashboard building,
+                and creative campaigns.
+              </p>
+            </div>
+            <div className="bento-card p-10">
+              <div className="text-3xl mb-6">🎓</div>
+              <h4 className="text-lg font-bold mb-2">Education</h4>
+              <p className="text-gray-500 text-xs">
+                Assist in Child Education Centres and develop learning modules.
+              </p>
+            </div>
+            <div className="bento-card p-10">
+              <div className="text-3xl mb-6">📊</div>
+              <h4 className="text-lg font-bold mb-2">Research</h4>
+              <p className="text-gray-500 text-xs">
+                Collect field data and prepare global impact reports.
+              </p>
+            </div>
+            <div className="bento-card p-10">
+              <div className="text-3xl mb-6">🤝</div>
+              <h4 className="text-lg font-bold mb-2">Outreach</h4>
+              <p className="text-gray-500 text-xs">
+                Support awareness programs in health and rural engagement.
+              </p>
+            </div>
+            <div className="bento-card p-10">
+              <div className="text-3xl mb-6">🏛️</div>
+              <h4 className="text-lg font-bold mb-2">Heritage</h4>
+              <p className="text-gray-500 text-xs">
+                Contribute to Palm Leaf Sutra Printing through research.
+              </p>
+            </div>
+            <div className="bento-card col-span-1 md:col-span-2 p-10 bg-blue-600 text-white border-none flex flex-col justify-between">
+              <div>
+                <div className="text-3xl mb-6">🌐</div>
+                <h4 className="text-xl font-bold mb-3">Future Opportunities</h4>
+                <p className="text-blue-100 text-sm">
+                  Expanding into AI, digital storytelling, sustainability
+                  projects, and international exchange.
+                </p>
+              </div>
+              <div className="mt-8 text-[10px] uppercase tracking-widest font-bold">
+                Coming Soon
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-16 text-center">
+          Comprehensive Development.
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="flex gap-6">
+            <div className="text-blue-600 text-xl font-bold">01</div>
+            <div>
+              <h4 className="font-bold mb-2">Expert Mentorship</h4>
+              <p className="text-sm text-gray-500">
+                Receive guidance from SIF leaders ensuring structured,
+                high-value learning.
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-6">
+            <div className="text-blue-600 text-xl font-bold">02</div>
+            <div>
+              <h4 className="font-bold mb-2">Portfolio Building</h4>
+              <p className="text-sm text-gray-500">
+                Apply academic knowledge to real-world projects that enhance
+                your CV.
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-6">
+            <div className="text-blue-600 text-xl font-bold">03</div>
+            <div>
+              <h4 className="font-bold mb-2">Personal Growth</h4>
+              <p className="text-sm text-gray-500">
+                Develop confidence and leadership while making a meaningful
+                difference.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-zinc-50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-16">Voices from Our Interns</h2>
+          <div className="mb-12">
+            <p className="text-2xl font-light italic text-gray-600 mb-8 leading-relaxed">
+              "At SIF, I didn't just learn about NGO work—I discovered my own
+              strengths. Working on ODOC's impact dashboard gave me confidence
+              in data analysis."
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">
+                A
+              </div>
+              <div className="text-left">
+                <div className="font-bold text-sm">Ananya Sharma</div>
+                <div className="text-[10px] text-gray-400 uppercase tracking-widest">
+                  IT Intern, 2024
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center gap-2">
+            <span className="testimonial-dot active"></span>
+            <span className="testimonial-dot"></span>
+            <span className="testimonial-dot"></span>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold text-gradient">
+            Start Your Journey.
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="bento-card p-10 bg-blue-50/50 border-blue-100">
+            <i className="fas fa-file-signature text-blue-600 mb-6"></i>
+            <h4 className="font-bold mb-2">Apply for Internship</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Join our structured program with real-world projects.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
+              Apply Now {">"}
+            </button>
+          </div>
+          <div className="bento-card p-10">
+            <i className="fas fa-users text-blue-600 mb-6"></i>
+            <h4 className="font-bold mb-2">Volunteer</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Start with shorter-term opportunities to experience our work.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
+              Get Involved {">"}
+            </button>
+          </div>
+          <div className="bento-card p-10">
+            <i className="fas fa-network-wired text-blue-600 mb-6"></i>
+            <h4 className="font-bold mb-2">Alumni Network</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Connect with former interns for guidance and mentorship.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
+              Connect {">"}
+            </button>
+          </div>
+          <div className="bento-card p-10 bg-zinc-900 text-white border-none">
+            <i className="fas fa-award text-blue-400 mb-6"></i>
+            <h4 className="font-bold mb-2">Future Academy</h4>
+            <p className="text-xs text-zinc-500 mb-6">
+              Get certifications and global exchange opportunities.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-white underline">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
       <HeroSlider />
       <Stats />
       <ProgramOverview />

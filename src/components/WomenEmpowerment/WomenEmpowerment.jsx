@@ -5,6 +5,240 @@ import Banner1 from "../../assets/WomenEmpowerment/banner1.jpeg";
 export default function WomenEmpowermentPage() {
   return (
     <main>
+      <section className="pt-40 pb-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-gradient mb-8 leading-[1.1]">
+            She Leads,
+            <br />
+            We Rise.
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-500 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+            Rewriting the story of rural women through skill development,
+            meditation, and sustainable livelihood programs.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg">
+              Explore Projects
+            </button>
+            <a
+              href="#"
+              className="text-pink-600 hover:underline font-medium text-lg flex items-center"
+            >
+              See Impact <i className="fas fa-arrow-right text-xs ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold tracking-tight">
+              The Mission Behind the Movement
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm font-bold text-pink-600 border border-pink-100">
+                1
+              </div>
+              <h4 className="font-bold mb-3">Inner Strength</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Sunya workshops that bring clarity, calm, and self-awareness to
+                transform lives from within.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm font-bold text-pink-600 border border-pink-100">
+                2
+              </div>
+              <h4 className="font-bold mb-3">Livelihood Training</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Comprehensive training in tailoring and entrepreneurship to
+                create sustainable income.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm font-bold text-pink-600 border border-pink-100">
+                3
+              </div>
+              <h4 className="font-bold mb-3">Holistic Well-being</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Health programs including free medical check-ups and physical
+                wellness initiatives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-pink-600 font-bold tracking-tight text-sm uppercase mb-4">
+                Production Spotlight
+              </h2>
+              <h3 className="text-4xl font-bold tracking-tight mb-6">
+                Siddipet: Stitching Strength.
+              </h3>
+              <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                Women once bound by circumstance now lead production units and
+                contribute to real-world supply chains with pride.
+              </p>
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-center gap-3 text-gray-700 text-sm">
+                  <i className="fas fa-check text-pink-500"></i> Kimono and Zafu
+                  cushion production
+                </li>
+                <li className="flex items-center gap-3 text-gray-700 text-sm">
+                  <i className="fas fa-check text-pink-500"></i> Bulk uniform
+                  stitching for government projects
+                </li>
+                <li className="flex items-center gap-3 text-gray-700 text-sm">
+                  <i className="fas fa-check text-pink-500"></i> Home-based work
+                  opportunities
+                </li>
+              </ul>
+              <div className="flex gap-12 border-t border-gray-100 pt-8">
+                <div>
+                  <div className="text-3xl font-bold">250+</div>
+                  <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1">
+                    Women Trained
+                  </div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold">10K+</div>
+                  <div className="text-[10px] uppercase tracking-widest text-gray-400 mt-1">
+                    Garments Made
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-[3rem] bg-gray-100 h-[500px] flex items-center justify-center text-gray-400 overflow-hidden relative">
+              <span className="text-sm uppercase tracking-widest font-medium">
+                IMAGE: SIDDIPET PRODUCTION UNIT
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-pink-900/10 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-zinc-900 text-white rounded-[4rem] mx-4 my-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold">Collective Impact 2024–25</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold accent-pink mb-2">250+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+                Women Trained
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold accent-pink mb-2">10k+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+                Garments Produced
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold accent-pink mb-2">100+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+                Micro-Enterprises
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold accent-pink mb-2">500+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+                Practicing Sunya
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold accent-pink mb-2">100%</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+                On-Time Delivery
+              </div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold accent-pink mb-2">50+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+                Leadership Roles
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="border-l-2 border-pink-100 pl-8">
+            <p className="text-xl font-light italic text-gray-600 mb-6">
+              "I stitched 200 school uniforms this year. For the first time, my
+              children saw me as someone who makes things that matter."
+            </p>
+            <div className="font-bold text-sm">Rajitha</div>
+            <div className="text-xs text-gray-400">Production Unit Member</div>
+          </div>
+          <div className="border-l-2 border-pink-100 pl-8">
+            <p className="text-xl font-light italic text-gray-600 mb-6">
+              "I came in as a silent learner. Today, I train others. This place
+              gave me a future."
+            </p>
+            <div className="font-bold text-sm">Sucharitha</div>
+            <div className="text-xs text-gray-400">Team Leader</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold">Be Part of Her Journey.</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bento-box p-8 bg-pink-50/50">
+            <i className="fas fa-tools text-pink-600 mb-6"></i>
+            <h4 className="font-bold mb-2">Sponsor a Machine</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Provide the tools for sustainable livelihood.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600">
+              Get Involved {">"}
+            </button>
+          </div>
+          <div className="bento-box p-8">
+            <i className="fas fa-graduation-cap text-pink-600 mb-6"></i>
+            <h4 className="font-bold mb-2">Fund Training</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Invest in skill development and empowerment.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600">
+              Support {">"}
+            </button>
+          </div>
+          <div className="bento-box p-8">
+            <i className="fas fa-shopping-bag text-pink-600 mb-6"></i>
+            <h4 className="font-bold mb-2">Order Apparel</h4>
+            <p className="text-xs text-gray-500 mb-6">
+              Support production through direct orders.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600">
+              Shop Now {">"}
+            </button>
+          </div>
+          <div className="bento-box p-8 bg-zinc-900 text-white border-none">
+            <i className="fas fa-handshake text-pink-400 mb-6"></i>
+            <h4 className="font-bold mb-2">Partner with SIF</h4>
+            <p className="text-xs text-zinc-500 mb-6">
+              Collaborate on rural empowerment projects.
+            </p>
+            <button className="text-[10px] font-bold uppercase tracking-widest text-white underline">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </section>
       <Hero />
       <Mission />
       <Projects />
@@ -518,7 +752,7 @@ function Impact() {
 function CTA() {
   const cardClick = (action) => {
     alert(
-      `Thank you for your interest in: ${action}. Our team will contact you within 24 hours with more details about how you can make a difference.`
+      `Thank you for your interest in: ${action}. Our team will contact you within 24 hours with more details about how you can make a difference.`,
     );
   };
 
@@ -612,7 +846,7 @@ function Reveal({ children }) {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
     );
 
     obs.observe(el);

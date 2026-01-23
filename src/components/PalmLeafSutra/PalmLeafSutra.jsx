@@ -6,6 +6,382 @@ import Missions from "../../assets/PalmLeafSutra/Mission.jpg";
 export default function PalmLeafSutraPage() {
   return (
     <main>
+      <header className="hero-section px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-block px-4 py-1.5 mb-6 bg-teal-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-teal-800 border border-teal-200">
+            🌿 Ancient Craftsmanship Meets Modern Technology
+          </div>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] text-gradient">
+            Palm Leaf
+            <br />
+            Sutra Printing.
+          </h1>
+          <p className="text-xl md:text-2xl font-light text-gray-500 max-w-3xl mx-auto leading-relaxed mb-12">
+            Starting with the Diamond Sutra, we fuse ancestral craftsmanship
+            with modern laser technology to preserve timeless wisdom and empower
+            artisan communities.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold shadow-lg">
+              Meet Our Artisans
+            </button>
+            <button className="bg-white border border-gray-200 text-gray-600 px-10 py-4 rounded-full font-semibold">
+              Explore Texts
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section className="py-24 px-6 bg-zinc-900 text-white rounded-[4rem] mx-4 my-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
+              Artisan Legacy
+            </h2>
+            <h3 className="text-3xl font-bold">
+              Empowering Keepers of Tradition
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-5xl font-bold accent-teal mb-2">800+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Skilled Artisans
+                <br />
+                Involved
+              </div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold accent-teal mb-2">1000+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Years of Living
+                <br />
+                Heritage
+              </div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold accent-teal mb-2">8</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Dedicated Global
+                <br />
+                Employees
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-teal-700 font-bold tracking-tight text-sm uppercase mb-4">
+                The Mission
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gradient">
+                Safeguarding Wisdom.
+              </h3>
+              <p className="text-lg text-gray-500 leading-relaxed mb-6">
+                The Palm Leaf Sutra Printing Project revives one of India's most
+                sacred traditions—the art of inscribing scriptures on palm
+                leaves.
+              </p>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-center gap-3 text-sm text-gray-600">
+                  <i className="fas fa-check text-teal-500"></i> Empowering
+                  artisans with fair, sustainable employment
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-600">
+                  <i className="fas fa-check text-teal-500"></i> Blending
+                  traditional handcraft with laser precision
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-600">
+                  <i className="fas fa-check text-teal-500"></i> Creating global
+                  awareness of manuscript culture
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-[3rem] bg-teal-soft aspect-[4/3] flex items-center justify-center text-teal-200 overflow-hidden relative shadow-inner border border-teal-50">
+              <i className="fas fa-feather-pointed text-9xl opacity-20"></i>
+              <div className="absolute bottom-10 text-center">
+                <p className="text-[10px] uppercase tracking-widest font-bold text-teal-700/50">
+                  Modernizing Ancestral Mediums
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gradient">
+              Tradition Meets Innovation
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bento-card p-10">
+              <div className="text-2xl mb-6">✋</div>
+              <h4 className="font-bold mb-3">Handcrafted Preparation</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Each leaf is cured and polished following ancient techniques
+                passed down through generations in Odisha.
+              </p>
+            </div>
+            <div className="bento-card p-10 bg-teal-800 text-white border-none">
+              <div className="text-2xl mb-6">⚡</div>
+              <h4 className="font-bold mb-3">Laser Precision</h4>
+              <p className="text-teal-100/70 text-xs leading-relaxed">
+                Sutras are etched with durability using advanced laser
+                technology, ensuring they endure for centuries.
+              </p>
+            </div>
+            <div className="bento-card p-10">
+              <div className="text-2xl mb-6">📿</div>
+              <h4 className="font-bold mb-3">Sacred Medium</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                A complete collection of Buddhist and spiritual manuscripts
+                restored to their original physical form.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gradient">
+            Sacred Texts Collection
+          </h2>
+          <p className="text-gray-500 mt-4">
+            Preserving the most important spiritual manuscripts for humanity
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">💎</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Diamond Sutra
+            </span>
+          </div>
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">🧘</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Satipatthana
+            </span>
+          </div>
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">🌬️</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Anapana Smriti
+            </span>
+          </div>
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">❤️</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Heart Sutra
+            </span>
+          </div>
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">🤝</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              12 Commitments
+            </span>
+          </div>
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">📖</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Gita (84 Verses)
+            </span>
+          </div>
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">🗣️</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Nikayas
+            </span>
+          </div>
+          <div className="p-6 border border-gray-100 rounded-3xl text-center hover:bg-teal-50 transition">
+            <span className="block mb-3">📚</span>
+            <span className="text-xs font-bold uppercase tracking-wider">
+              Agamas
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-zinc-50 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-20 text-center">
+            Our Journey Through Time
+          </h2>
+          <div className="relative">
+            <div className="timeline-line"></div>
+
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              <div className="md:text-right">
+                <div className="text-teal-600 font-bold mb-1">
+                  5th Century BCE
+                </div>
+                <h4 className="font-bold">Ancient Origins</h4>
+                <p className="text-xs text-gray-500">
+                  Palm-leaf emerges as the primary medium for India's sacred
+                  texts.
+                </p>
+              </div>
+              <div className="hidden md:block"></div>
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              <div className="hidden md:block"></div>
+              <div>
+                <div className="text-teal-600 font-bold mb-1">
+                  4th – 12th Century
+                </div>
+                <h4 className="font-bold">Golden Age</h4>
+                <p className="text-xs text-gray-500">
+                  Tradition flourishes in universities like Nalanda, preserving
+                  vast libraries.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              <div className="md:text-right">
+                <div className="text-teal-600 font-bold mb-1">Feb 26, 2024</div>
+                <h4 className="font-bold">Modern Revival</h4>
+                <p className="text-xs text-gray-500">
+                  SIF launches the Palm Leaf Printing Project in Pune, blending
+                  heritage with laser tech.
+                </p>
+              </div>
+              <div className="hidden md:block"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          Measurable Impact
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="border-t border-gray-100 pt-8">
+            <div className="text-teal-600 mb-4">
+              <i className="fas fa-university"></i>
+            </div>
+            <h4 className="font-bold mb-2">Cultural Restoration</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Revival of a 1,000-year-old tradition, ensuring its survival for
+              scholars and practitioners.
+            </p>
+          </div>
+          <div className="border-t border-gray-100 pt-8">
+            <div className="text-teal-600 mb-4">
+              <i className="fas fa-user-check"></i>
+            </div>
+            <h4 className="font-bold mb-2">Artisan Empowerment</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Direct employment for 800+ skilled artisans in Odisha, providing
+              sustainable livelihoods.
+            </p>
+          </div>
+          <div className="border-t border-gray-100 pt-8">
+            <div className="text-teal-600 mb-4">
+              <i className="fas fa-globe"></i>
+            </div>
+            <h4 className="font-bold mb-2">Global Awareness</h4>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Increasing international appreciation for India's spiritual
+              heritage and manuscript culture.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-7xl mx-auto mb-12">
+        <div className="bento-card bg-zinc-900 text-white p-16 text-center">
+          <h2 className="text-4xl font-bold mb-6">Join the Legacy</h2>
+          <p className="text-zinc-400 mb-10 max-w-xl mx-auto">
+            Be part of preserving the world's oldest living manuscript
+            tradition.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center gap-6">
+            <button className="bg-teal-600 text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">
+              Support Artisans
+            </button>
+            <button className="bg-transparent border border-zinc-700 text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest">
+              Sponsor a Text
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2 className="text-[10px] uppercase tracking-[0.3em] text-teal-600 font-bold mb-4">
+            Final Call to Action
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">
+            Join the Legacy.
+          </h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Be part of preserving the world's oldest living manuscript tradition
+            and empowering the artisans who keep it alive.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bento-card p-10 flex flex-col justify-between min-h-[380px] bg-white border border-gray-100">
+            <div>
+              <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center text-2xl mb-8">
+                🧑‍🎨
+              </div>
+              <h4 className="text-xl font-bold mb-4">Support Artisans</h4>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Help artisans sustain their craft and livelihood by supporting
+                our palm leaf printing initiatives and traditional skill
+                preservation programs.
+              </p>
+            </div>
+            <button className="w-full mt-10 py-4 bg-teal-600 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-teal-700 transition shadow-lg shadow-teal-100">
+              Support Now
+            </button>
+          </div>
+
+          <div className="bento-card p-10 flex flex-col justify-between min-h-[380px] bg-zinc-900 text-white border-none">
+            <div>
+              <div className="w-14 h-14 bg-zinc-800 rounded-2xl flex items-center justify-center text-2xl mb-8">
+                📜
+              </div>
+              <h4 className="text-xl font-bold mb-4">Cultural Preservation</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Contribute to global heritage by sponsoring manuscript
+                digitization and precision laser-engraving preservation
+                projects.
+              </p>
+            </div>
+            <button className="w-full mt-10 py-4 bg-white text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-100 transition">
+              Contribute
+            </button>
+          </div>
+
+          <div className="bento-card p-10 flex flex-col justify-between min-h-[380px] bg-white border border-gray-100">
+            <div>
+              <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center text-2xl mb-8">
+                📚
+              </div>
+              <h4 className="text-xl font-bold mb-4">Spread Wisdom</h4>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Ensure that timeless wisdom of sutras continues to inspire
+                generations through education and awareness programs worldwide.
+              </p>
+            </div>
+            <button className="w-full mt-10 py-4 border border-gray-200 text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-50 transition">
+              Get Involved
+            </button>
+          </div>
+        </div>
+      </section>
       <Hero />
       <ArtisanStats />
       <Mission />
@@ -36,7 +412,7 @@ function FadeIn({ children, className = "" }) {
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && setVisible(true)),
-      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();

@@ -4,6 +4,314 @@ import { Link } from "react-router-dom";
 export default function RuralHealthPage() {
   return (
     <main>
+      <header
+        className="mt-3 mx-3 h-[80vh] rounded-b-[40px] overflow-hidden text-white flex items-center justify-center bg-center bg-cover bg-no-repeat
+      [background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.40)),url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop')]"
+      >
+        <div className="max-w-4xl px-6 text-center">
+          <div
+            className="inline-block px-4 py-1.5 mb-6 rounded-full text-[10px] font-bold uppercase tracking-widest
+          bg-white/20 backdrop-blur border border-white/30"
+          >
+            Healthcare for Underserved Communities
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+            Rural Health &amp; Awareness.
+          </h1>
+
+          <p className="text-lg md:text-2xl font-light opacity-90 max-w-2xl mx-auto leading-relaxed mb-10 text-white">
+            Building healthier, informed, and resilient communities through
+            comprehensive preventive care and nutrition education.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button className="bg-white text-black px-10 py-4 rounded-full font-bold text-sm">
+              See Our Impact
+            </button>
+
+            <button className="bg-white/20 backdrop-blur border border-white/30 text-white px-10 py-4 rounded-full font-bold text-sm">
+              Our Programs
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section className="py-20 border-b border-gray-100 mb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 text-center mb-12">
+            Health Impact Metrics
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center metric-card">
+              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
+                5,000+
+              </div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Beneficiaries Reached
+              </p>
+            </div>
+            <div className="text-center metric-card">
+              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
+                25+
+              </div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Villages Served
+              </p>
+            </div>
+            <div className="text-center metric-card">
+              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
+                200+
+              </div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Health Camps
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
+                50+
+              </div>
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Target Villages 2026
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-blue-600 font-bold tracking-tight text-sm uppercase mb-4">
+                The Initiative
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gradient">
+                Program Overview.
+              </h3>
+              <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                Our comprehensive approach addresses both physical and mental
+                well-being. We believe that health education is as important as
+                healthcare itself, empowering communities to take charge of
+                their own wellness.
+              </p>
+              <p className="text-lg text-gray-500 leading-relaxed">
+                Through partnerships with medical professionals, NGOs, and
+                government departments, we create sustainable healthcare models
+                that bring clinical excellence to the doorstep of rural India.
+              </p>
+            </div>
+            <div className="rounded-[3rem] bg-gray-100 aspect-square flex items-center justify-center text-gray-400 overflow-hidden relative">
+              <span className="text-xs uppercase tracking-widest font-medium">
+                Image: Rural Medical Support [1200x1200]
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-[#fbfbfd]">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold tracking-tight">Focus Areas.</h2>
+            <p className="text-gray-500 mt-4 text-lg">
+              Addressing multiple dimensions of rural wellness.
+            </p>
+          </div>
+
+          <div className="bento-grid">
+            <div className="bento-card col-span-4 md:col-span-2 md:row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end min-h-[400px]">
+              <div className="absolute top-12 left-12 text-5xl">🏥</div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-4">
+                  Preventive Health Camps
+                </h3>
+                <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                  Regular camps covering general check-ups, maternal care, eye
+                  care, and early detection via mobile medical units.
+                </p>
+                <button className="bg-white text-black px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  View Schedule
+                </button>
+              </div>
+            </div>
+
+            <div className="bento-card col-span-4 md:col-span-2 p-10 flex flex-col justify-between bg-blue-50/50">
+              <div className="flex justify-between items-start">
+                <div className="text-4xl">🥗</div>
+                <span className="text-[9px] font-bold uppercase tracking-widest bg-blue-600 text-white px-3 py-1 rounded-full">
+                  Vitality
+                </span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold mb-2">Nutrition & Hygiene</h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Educational sessions on balanced diets, safe water practices,
+                  and sanitation protocols.
+                </p>
+              </div>
+            </div>
+
+            <div className="bento-card col-span-2 md:col-span-1 p-8 flex flex-col justify-center text-center">
+              <div className="text-3xl mb-4">🧘</div>
+              <h4 className="text-lg font-bold mb-2">Mental Health</h4>
+              <p className="text-gray-500 text-xs">
+                Integrating Sunya meditation for stress reduction and clarity.
+              </p>
+            </div>
+
+            <div className="bento-card col-span-2 md:col-span-1 p-8 flex flex-col justify-center text-center bg-blue-600 text-white border-none">
+              <div className="text-3xl mb-4">🤝</div>
+              <h4 className="text-lg font-bold mb-2">Strategic Partners</h4>
+              <p className="text-blue-100 text-xs">
+                Collaborating with doctors and NGOs for sustainable impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold tracking-tight mb-16">
+            Key Interventions.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-12">
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                School Health Education
+              </h4>
+              <p className="text-sm text-gray-500">
+                Hygiene and nutrition modules delivered to children in rural
+                schools.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Women's Health Programs
+              </h4>
+              <p className="text-sm text-gray-500">
+                Menstrual health awareness, maternal care, and anemia
+                prevention.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Essential Kit Distribution
+              </h4>
+              <p className="text-sm text-gray-500">
+                Providing hygiene kits, water filters, and PPE to families in
+                need.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Community Awareness
+              </h4>
+              <p className="text-sm text-gray-500">
+                Door-to-door campaigns to spread key health messages and
+                preventive care.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Health Tracking
+              </h4>
+              <p className="text-sm text-gray-500">
+                Systematic monitoring of outcomes to ensure long-term wellness.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
+                Village Health Camps
+              </h4>
+              <p className="text-sm text-gray-500">
+                Mobile units and periodic check-ups conducted by volunteer
+                doctors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gray-50/50 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white p-12 rounded-[32px] border border-gray-100 shadow-sm text-center">
+            <p className="text-2xl font-light text-gray-800 italic leading-relaxed mb-12">
+              "The mobile health camps brought medical care to our doorstep.
+              Early detection saved my mother's life, and now our entire family
+              prioritizes preventive health check-ups."
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                R
+              </div>
+              <div className="text-left">
+                <p className="font-bold text-sm">Rajesh Kumar</p>
+                <p className="text-xs text-gray-400 uppercase tracking-widest">
+                  Village Health Beneficiary
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold tracking-tight mb-16 text-center">
+          Join Our Health Mission.
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bento-card p-10 flex flex-col justify-between">
+            <div>
+              <div className="text-2xl mb-6">🩺</div>
+              <h4 className="font-bold mb-3">Volunteer Doctor</h4>
+              <p className="text-sm text-gray-500">
+                Join our camps and provide essential medical services.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-blue-600">
+              Register Now →
+            </button>
+          </div>
+          <div className="bento-card p-10 flex flex-col justify-between bg-zinc-900 text-white border-none">
+            <div>
+              <div className="text-2xl mb-6">🏢</div>
+              <h4 className="font-bold mb-3">Corporate Partners</h4>
+              <p className="text-sm text-zinc-400">
+                Sponsor mobile units or health education via CSR.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-white underline underline-offset-8">
+              Partner With Us →
+            </button>
+          </div>
+          <div className="bento-card p-10 flex flex-col justify-between">
+            <div>
+              <div className="text-2xl mb-6">🎓</div>
+              <h4 className="font-bold mb-3">Health Educator</h4>
+              <p className="text-sm text-gray-500">
+                Volunteer to teach hygiene and wellness in rural schools.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-blue-600">
+              Get Involved →
+            </button>
+          </div>
+          <div className="bento-card p-10 flex flex-col justify-between border-blue-200 bg-blue-50/50">
+            <div>
+              <div className="text-2xl mb-6">❤️</div>
+              <h4 className="font-bold mb-3">Sponsor a Camp</h4>
+              <p className="text-sm text-gray-700">
+                Fund medical supplies to bring healthcare to more villages.
+              </p>
+            </div>
+            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-blue-600">
+              Sponsor →
+            </button>
+          </div>
+        </div>
+      </section>
       <HeroSlider />
       <Stats />
       <ProgramOverview />
@@ -495,8 +803,8 @@ function GetInvolved() {
                 i === 0
                   ? "lg:col-span-6 text-white bg-gradient-to-br from-blue-600 to-blue-800 border-transparent"
                   : i === 3
-                  ? "lg:col-span-6 text-white bg-gradient-to-br from-teal-500 to-emerald-600 border-transparent"
-                  : "lg:col-span-6"
+                    ? "lg:col-span-6 text-white bg-gradient-to-br from-teal-500 to-emerald-600 border-transparent"
+                    : "lg:col-span-6"
               }`}
             >
               <div

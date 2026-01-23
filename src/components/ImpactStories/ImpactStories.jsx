@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import SoilTest from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
 import COVIDPPE from "../../assets/ImpactStories/COVID_PPE.png";
 import CommunityConfidence from "../../assets/ImpactStories/Community_Confidence.png";
 import ConfidenceBeyondIncome from "../../assets/ImpactStories/Confidence_Beyond_Income.png";
@@ -23,96 +24,131 @@ import TransparencyAction from "../../assets/ImpactStories/Transparency_Action.j
 import WomenFarmer from "../../assets/ImpactStories/WomenFarmer.jpg";
 import YouthFarm from "../../assets/ImpactStories/YouthFarm.png";
 import YouthCraft from "../../assets/ImpactStories/Youth_Craft.jpg";
+
 export default function ImpactStoriesPage() {
   return (
     <main>
-      <Hero />
-      <FeaturedStories />
-      <StoriesWithFilter />
-      <Stats />
-    </main>
-  );
-}
+      <section className="hero-gradient   relative w-full  ">
+        <div className="relative min-h-[90vh] sm:min-h-[660px] w-full mx-auto   ">
+          <div
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${SunyaMeditation})` }}
+          >
+            <div className="absolute inset-0 bg-black/60" />
 
-/* ========================= Hero ========================= */
-function Hero() {
-  return (
-    <section className="bg-gradient-to-br from-emerald-500 to-emerald-700 text-white text-center py-40">
-      <div className="max-w-[800px] mx-auto px-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur text-sm font-medium mb-8">
-          <span>📈</span>
-          <span>Real Stories, Real Impact</span>
+            <div className="max-w-4xl  mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white ">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white ">
+                Real Stories.
+                <br />
+                Real Impact.
+              </h1>
+              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white ">
+                Discover how SIF initiatives are transforming lives across
+                communities—from farmers securing livelihoods to children
+                gaining confidence.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full sm:w-auto">
+                  Explore Sunya
+                </button>
+                <a
+                  href="#"
+                  className="text-blue-600 hover:underline font-medium text-lg"
+                >
+                  Support ODOC{" "}
+                  <i className="fas fa-chevron-right text-xs ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <h1 className="text-[clamp(3rem,8vw,5rem)] font-extrabold leading-tight mb-4">
-          Impact Stories
-        </h1>
-        <p className="text-lg md:text-xl text-white/90 leading-relaxed">
-          Discover how SIF initiatives are transforming lives across
-          communities. From farmers securing their livelihoods to children
-          gaining confidence, these are the stories that drive our mission
-          forward.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-/* ========================= Featured Stories ========================= */
-function FeaturedStories() {
-  const cards = [
-    {
-      icon: "🌾",
-      title: "From Uncertainty to Security",
-      text: "Farmers in Siddipet shifted from low-margin crops to Noni under SIF's buy-back model, eliminating income uncertainty and farming with confidence.",
-      span: "lg:col-span-8 bg-gradient-to-br from-emerald-500 to-emerald-700 text-white",
-    },
-    {
-      icon: "👩‍🧵",
-      title: "Hands that Earn",
-      text: "Women learned Kimono stitching, combining heritage with livelihood, gaining respect and financial independence.",
-      span: "lg:col-span-4 bg-gradient-to-br from-pink-500 to-pink-700 text-white",
-    },
-    {
-      icon: "👓",
-      title: "Vision for Learning",
-      text: "Eye camps provided free spectacles to children, improving learning outcomes instantly and preventing school dropouts.",
-      span: "lg:col-span-6 bg-gradient-to-br from-blue-600 to-blue-800 text-white",
-    },
-    {
-      icon: "🎒",
-      title: "Kindness in Action",
-      text: "Children learned empathy through sharing snacks and playing games that reinforced respect and collaboration.",
-      span: "lg:col-span-6 bg-gradient-to-br from-amber-500 to-orange-600 text-white",
-    },
-  ];
-  return (
-    <section className="py-28 bg-white">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+      </section>
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold tracking-tight mb-2">
             Featured Transformations
           </h2>
-          <p className="text-lg md:text-xl text-gray-500">
-            Highlighted stories that showcase the depth and breadth of our
-            impact
+          <p className="text-gray-500 text-lg font-light">
+            Highlighted stories showcasing the depth of our impact.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className={`rounded-3xl p-10 border border-gray-200 ${c.span}`}
-            >
-              <div className="w-16 h-16 rounded-2xl bg-white/10 grid place-items-center text-3xl mb-6 shadow">
-                {c.icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-3">{c.title}</h3>
-              <p className="leading-relaxed opacity-90">{c.text}</p>
+
+        <div className="bento-grid">
+          <div
+            className="bento-card col-span-2 row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end"
+            onclick="openModal('farmer')"
+          >
+            <div className="absolute top-12 left-12 text-5xl">🌾</div>
+            <div className="relative z-10">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-4 block">
+                Livelihoods
+              </span>
+              <h3 className="text-4xl font-bold mb-4">
+                From Uncertainty to Security
+              </h3>
+              <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                Farmers in Siddipet shifted to Noni under SIF's buy-back model,
+                eliminating income risks.
+              </p>
+              <span className="text-sm font-bold border-b-2 border-white pb-1">
+                Read Full Story →
+              </span>
             </div>
-          ))}
+          </div>
+
+          <div
+            className="bento-card col-span-2 row-span-1 p-10 flex flex-col justify-between border-pink-50 bg-pink-50/30"
+            onclick="openModal('women')"
+          >
+            <div className="flex justify-between items-start">
+              <div className="text-4xl">👩‍🧵</div>
+              <span className="text-[9px] font-bold uppercase tracking-widest bg-pink-600 text-white px-3 py-1 rounded-full">
+                Empowerment
+              </span>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-3 text-pink-900">
+                Hands that Earn
+              </h3>
+              <p className="text-pink-800/60 text-sm leading-relaxed">
+                Women learned Kimono stitching, combining heritage with
+                livelihood and financial independence.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-orange-50/50"
+            onclick="openModal('health')"
+          >
+            <div className="text-4xl mb-6">👓</div>
+            <h3 className="text-xl font-bold mb-2 text-orange-900">
+              Vision for Learning
+            </h3>
+            <p className="text-orange-800/60 text-xs">
+              Eye camps provided free spectacles to children, improving outcomes
+              instantly.
+            </p>
+          </div>
+
+          <div
+            className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-purple-50/50"
+            onclick="openModal('education')"
+          >
+            <div className="text-4xl mb-6">🎒</div>
+            <h3 className="text-xl font-bold mb-2 text-purple-900">
+              Kindness in Action
+            </h3>
+            <p className="text-purple-800/60 text-xs">
+              Children learned empathy through sharing snacks and games that
+              reinforced respect.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <StoriesWithFilter />
+      {/* <Stats /> */}
+    </main>
   );
 }
 
@@ -380,9 +416,9 @@ function StoriesWithFilter() {
   const stories = useMemo(
     () =>
       ALL_STORIES.filter((s) =>
-        active === "all" ? true : s.category === active
+        active === "all" ? true : s.category === active,
       ),
-    [active]
+    [active],
   );
 
   return (
@@ -470,83 +506,4 @@ function labelFromCategory(cat) {
     default:
       return cat;
   }
-}
-
-/* ========================= Stats ========================= */
-function Stats() {
-  const items = [
-    { value: 1000, suffix: "+", label: "Lives Directly Impacted" },
-    { value: 25, suffix: "+", label: "Stories of Transformation" },
-    { value: 7, suffix: "", label: "Program Areas Active" },
-    { value: 100, suffix: "%", label: "Community-Driven Approach" },
-  ];
-
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => e.isIntersecting && setVisible(true));
-      },
-      { threshold: 0.5 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  return (
-    <section ref={ref} className="py-28 bg-[#1f2937] text-white">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
-            Impact by the Numbers
-          </h2>
-          <p className="text-lg md:text-xl text-white/70">
-            Quantifying the transformation across all our initiatives
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {items.map((it) => (
-            <div key={it.label} className="text-center">
-              <div className="text-[3.25rem] md:text-[4rem] font-black mb-2 bg-clip-text text-transparent bg-gradient-to-br from-emerald-400 to-amber-400">
-                {visible ? (
-                  <CountUp to={it.value} suffix={it.suffix} />
-                ) : (
-                  <span>0{it.suffix}</span>
-                )}
-              </div>
-              <div className="text-sm font-semibold opacity-80">{it.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CountUp({ to, suffix }) {
-  const [n, setN] = useState(0);
-  useEffect(() => {
-    let current = 0;
-    const frames = 30;
-    const step = to / frames;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= to) {
-        current = to;
-        clearInterval(timer);
-      }
-      setN(Math.floor(current));
-    }, 50);
-    return () => clearInterval(timer);
-  }, [to]);
-  return (
-    <span>
-      {n}
-      {suffix}
-    </span>
-  );
 }

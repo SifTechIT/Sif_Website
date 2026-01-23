@@ -16,671 +16,353 @@ import Transformation from "../../assets/SunyaMeditation/Transformation.jpg";
 export default function SunyaLanding() {
   return (
     <main>
-      <Hero />
-      <Stats />
-      <WhatIsSunya />
-      <Benefits />
-      <Activities />
-      <Testimonials />
-      <GetInvolved />
+      <section className="pt-40 pb-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1
+            className="
+              text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]
+              bg-gradient-to-b from-[#1d1d1f] to-[#434344] bg-clip-text text-transparent
+            "
+          >
+            The Power of Nothing.
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-500 font-light mb-12 max-w-3xl mx-auto">
+            Ancient wisdom revived for the modern world. Experience inner peace
+            through the practice of conscious emptiness.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg">
+              Start Your Journey
+            </button>
+
+            <a
+              href="#programs"
+              className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
+            >
+              View Programs <ArrowRight className="h-4 w-4 ml-2" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* BELT BAR */}
+      <section className="max-w-5xl mx-auto px-6 mb-24">
+        <div className="flex w-full rounded-full overflow-hidden mb-4">
+          <div className="w-[14.28%] h-[6px] bg-red-500" />
+          <div className="w-[14.28%] h-[6px] bg-orange-500" />
+          <div className="w-[14.28%] h-[6px] bg-yellow-400" />
+          <div className="w-[14.28%] h-[6px] bg-green-500" />
+          <div className="w-[14.28%] h-[6px] bg-blue-500" />
+          <div className="w-[14.28%] h-[6px] bg-indigo-600" />
+          <div className="w-[14.28%] h-[6px] bg-purple-600" />
+        </div>
+
+        <div className="flex justify-between text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">
+          <span>Red Belt: Awareness</span>
+          <span className="hidden md:block text-gray-300">
+            The 7-Belt Pathway
+          </span>
+          <span>Violet Belt: Liberation</span>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="py-24 px-6 bg-[#fbfbfd]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-blue-600 font-bold tracking-tight text-sm uppercase mb-4">
+                Core Philosophy
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+                Embrace the Zero.
+              </h3>
+              <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                Sunya is a transformative practice that helps you reconnect with
+                your true self by consciously letting go of judgments. In a
+                world of noise, Sunya invites you to return to simplicity.
+              </p>
+
+              <div className="grid grid-cols-2 gap-6">
+                <div className="p-4 bg-white rounded-2xl border border-gray-100">
+                  <div className="text-blue-600 mb-2">
+                    <BrainIcon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-bold">Mental Clarity</p>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-gray-100">
+                  <div className="text-red-500 mb-2">
+                    <HeartIcon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-bold">Emotional Balance</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[3rem] bg-gray-200 h-[500px] flex items-center justify-center text-gray-400 overflow-hidden relative">
+              <span className="text-sm uppercase tracking-widest font-medium">
+                IMAGE: MEDITATION POSITION [1200x1500]
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROGRAMS */}
+      <section id="programs" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold tracking-tight">
+              Core Activities.
+            </h2>
+            <p className="text-gray-500 mt-4 text-lg">
+              Designed to deepen your practice at every stage.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <BentoBox className="md:col-span-7 bg-zinc-900 text-white p-12 flex flex-col justify-between h-[450px]">
+              <div>
+                <span className="text-blue-400 font-bold text-xs uppercase tracking-widest">
+                  Deep Immersion
+                </span>
+                <h3 className="text-3xl font-bold mt-4 mb-4">
+                  Residential Retreats
+                </h3>
+                <p className="text-zinc-400 max-w-sm">
+                  7 to 10-day silent retreats in serene environments with expert
+                  guidance for profound transformation.
+                </p>
+              </div>
+
+              <a
+                href="#"
+                className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit"
+              >
+                View Schedule
+              </a>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
+              <div>
+                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                  <UsersIcon className="h-5 w-5 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Foundation Course</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  A 3-day beginner workshop conducted in communities and
+                  colleges to build self-awareness.
+                </p>
+              </div>
+
+              <a href="#" className="text-blue-600 font-medium text-sm">
+                Learn more &gt;
+              </a>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Online Sessions</h4>
+              <p className="text-gray-500 text-sm mb-4">
+                Free guided meditations every weekend via Zoom &amp; YouTube.
+              </p>
+              <span className="text-blue-600 text-xs font-bold uppercase tracking-widest">
+                Join Live
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">School Programs</h4>
+              <p className="text-gray-500 text-sm mb-4">
+                Introduction to Sunya for students to enhance focus and focus.
+              </p>
+              <span className="text-blue-600 text-xs font-bold uppercase tracking-widest">
+                Explore
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-zinc-900 text-white p-8">
+              <h4 className="font-bold mb-2">Trainers Program</h4>
+              <p className="text-zinc-500 text-sm mb-4">
+                Join our certified facilitator program and spread the practice.
+              </p>
+              <span className="text-white text-xs font-bold uppercase tracking-widest underline underline-offset-4">
+                Apply Now
+              </span>
+            </BentoBox>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIAL */}
+      <section className="py-24 px-6 bg-[#fbfbfd] border-y border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-gray-200 text-8xl font-serif">“</span>
+
+          <p className="text-2xl md:text-3xl font-light text-gray-800 -mt-8 mb-10 leading-relaxed italic">
+            Sunya gave me more than peace—it gave me{" "}
+            <span className="text-blue-600 font-semibold">direction</span>. I
+            found a clarity I never knew existed in my professional and personal
+            life.
+          </p>
+
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">
+              A
+            </div>
+            <div className="text-left">
+              <div className="font-bold text-sm">Arif</div>
+              <div className="text-gray-400 text-xs uppercase tracking-widest">
+                Software Engineer
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2 className="text-[10px] uppercase tracking-[0.3em] text-indigo-600 font-bold mb-4">
+            Start Your Journey
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">
+            Get Involved.
+          </h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-white border border-gray-100">
+            <div>
+              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-xl mb-6">
+                📅
+              </div>
+              <h4 className="font-bold mb-3">Join a Workshop</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Experience transformative meditation through our Foundation
+                Course or immersive residential retreats.
+              </p>
+            </div>
+            <button className="w-full mt-8 py-3 bg-indigo-600 text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">
+              Find Events
+            </button>
+          </div>
+
+          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-white border border-gray-100">
+            <div>
+              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-xl mb-6">
+                📍
+              </div>
+              <h4 className="font-bold mb-3">Invite Us</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Bring Sunya meditation to your school, office, or community
+                center with customized modules.
+              </p>
+            </div>
+            <button className="w-full mt-8 py-3 border border-gray-200 text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50 transition">
+              Request Visit
+            </button>
+          </div>
+
+          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-white border border-gray-100">
+            <div>
+              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-xl mb-6">
+                🎓
+              </div>
+              <h4 className="font-bold mb-3">Become a Trainer</h4>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Join our certified trainer program and help spread Sunya
+                practices in your region and language.
+              </p>
+            </div>
+            <button className="w-full mt-8 py-3 border border-gray-200 text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50 transition">
+              Apply Now
+            </button>
+          </div>
+
+          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-zinc-900 text-white border-none">
+            <div>
+              <div className="w-12 h-12 bg-zinc-800 rounded-2xl flex items-center justify-center text-xl mb-6">
+                ❤️
+              </div>
+              <h4 className="font-bold mb-3">Sponsor a Retreat</h4>
+              <p className="text-zinc-400 text-xs leading-relaxed">
+                Support meditation retreats for underserved communities,
+                bringing peace to those who need it most.
+              </p>
+            </div>
+            <button className="w-full mt-8 py-3 bg-white text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-100 transition">
+              Sponsor
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
 
-/* ========================= Hero ========================= */
-function Hero() {
-  const slides = useMemo(
-    () => [
-      {
-        image: Banner1,
-        badge: "🧘‍♂️ Ancient Wisdom, Modern Practice",
-        title: "Sunya Meditation",
-        desc: "Experience the transformative power of NOTHING. Discover inner peace through ancient wisdom revived for the modern world.",
-        ctas: [
-          { href: "#benefits", label: "Discover Benefits", variant: "primary" },
-          { href: "#activities", label: "View Programs", variant: "secondary" },
-        ],
-        bg: "from-indigo-500 to-indigo-600",
-      },
-      {
-        image: Banner2,
-        badge: "🌿 Find Your Center",
-        title: "Inner Peace Awaits",
-        desc: "In a world of noise, discover silence. Sunya brings you back to stillness, clarity, and purpose through conscious emptiness.",
-        ctas: [
-          { href: "#testimonials", label: "Read Stories", variant: "primary" },
-          { href: "#get-involved", label: "Join Today", variant: "secondary" },
-        ],
-        bg: "from-emerald-500 to-indigo-500",
-      },
-      {
-        image: Banner3,
-        badge: "✨ Transform Your Life",
-        title: "Meet Yourself",
-        desc: "Practiced by thousands worldwide, Sunya forms the cornerstone of personality development and mindful living. Start your journey today.",
-        ctas: [
-          { href: "#stats", label: "See Impact", variant: "primary" },
-          { href: "#what-is-sunya", label: "Learn More", variant: "secondary" },
-        ],
-        bg: "from-indigo-600 to-emerald-500",
-      },
-    ],
-    []
-  );
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % slides.length),
-      5000
-    );
-    return () => clearInterval(id);
-  }, [slides.length]);
-
+function BentoBox({ className = "", children }) {
   return (
-    <section className="h-screen relative overflow-hidden " aria-label="Hero">
-      {slides.map((s, i) => (
-        <div
-          key={i}
-          className={`absolute inset-0 transition-opacity duration-[1200ms] ${
-            index === i ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <div
-            className={"h-full w-full flex items-center bg-center bg-cover"}
-            style={{ backgroundImage: `url(${s.image})` }}
-          >
-            {/* Overlay */}
-            <div
-              className="pointer-events-none absolute inset-0 bg-black/30"
-              aria-hidden="true"
-            />
-            <div className="max-w-[1280px] mx-auto px-6 w-full">
-              <div className="text-white max-w-3xl mx-auto text-center animate-[slideUp_800ms_cubic-bezier(0.4,0,0.2,1)]">
-                <div className="inline-flex items-center gap-2 mb-8 rounded-full border border-white/20 bg-white/10 backdrop-blur px-4 py-1.5 text-sm font-medium">
-                  <span>{s.badge.split(" ")[0]}</span>
-                  <span>{s.badge.split(" ").slice(1).join(" ")}</span>
-                </div>
-                <h1 className="text-4xl opacity-90 sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4">
-                  {s.title}
-                </h1>
-                <p className="text-lg md:text-xl/8 opacity-90  mb-10">
-                  {s.desc}
-                </p>
-                <div className="flex flex-wrap opacity-90 items-center justify-center gap-4">
-                  {s.ctas.map((c) => (
-                    <a
-                      key={c.label}
-                      href={c.href}
-                      className={
-                        c.variant === "primary"
-                          ? "inline-block rounded-xl bg-white text-indigo-600 font-semibold px-6 py-3 shadow hover:shadow-xl transition active:translate-y-px"
-                          : "inline-block rounded-xl border border-white/40 bg-white/10 text-white font-semibold px-6 py-3 backdrop-blur hover:bg-white/20 transition"
-                      }
-                    >
-                      {c.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-
-      {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`h-2 w-2 rounded-full transition transform ${
-              index === i ? "bg-white scale-110" : "bg-white/40"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ========================= Stats ========================= */
-function Stats() {
-  const ref = useFadeIn();
-
-  const stats = [
-    {
-      label: "Meditation Retreats Conducted",
-      value: "300+",
-      variant: "gradient",
-    },
-    { label: "Lives Transformed", value: "5,000+" },
-    { label: "Countries Active", value: "4" },
-    { label: "Partner Organizations", value: "50+", variant: "green" },
-  ];
-
-  return (
-    <section id="stats" className="mt-30 py-28 bg-gray-50" ref={ref}>
-      <div className="max-w-[1280px] mx-auto px-6">
-        <SectionHeader
-          title="Impact at Scale"
-          subtitle="Real numbers from our global Sunya meditation community"
-        />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className={`relative overflow-hidden rounded-3xl border p-10 transition hover:-translate-y-2 hover:shadow-2xl ${
-                s.variant === "gradient"
-                  ? "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white border-transparent"
-                  : s.variant === "green"
-                  ? "bg-gradient-to-br from-emerald-500 to-emerald-700 text-white border-transparent"
-                  : "bg-white border-gray-200"
-              }`}
-            >
-              <div className="text-5xl font-black tracking-tight mb-2">
-                {s.value}
-              </div>
-              <div
-                className={`${
-                  s.variant ? "opacity-90" : "text-gray-600"
-                } font-semibold`}
-              >
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ========================= What is Sunya ========================= */
-function WhatIsSunya() {
-  const ref = useFadeIn();
-
-  return (
-    <section id="what-is-sunya" className="mt-30 bg-white" ref={ref}>
-      <div className="max-w-[1280px] mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-        <div>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8">
-            What is Sunya Meditation?
-          </h2>
-          <p className="text-lg text-gray-600 mb-6">
-            Sunya is a transformative practice that helps you reconnect with
-            your true self by consciously letting go of thoughts, judgments, and
-            external influences.
-          </p>
-          <p className="text-lg text-gray-600 mb-6">
-            In a world full of noise and distractions, Sunya represents zero,
-            emptiness, or simply... NOTHING. It's not just a technique—it's a
-            way of life that leads to internal alignment, peace, and
-            transformation.
-          </p>
-          <p className="text-lg text-gray-600">
-            Sunya is not an escape. It's a return—to simplicity, to self, and to
-            truth. In a world that constantly tells you to be more, Sunya
-            invites you to just be.
-          </p>
-        </div>
-
-        <div className="relative h-[500px] rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-          <img
-            src={Sunya}
-            alt="circle"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ========================= Benefits ========================= */
-function Benefits() {
-  const ref = useFadeIn();
-  const cards = [
-    {
-      icon: "🌟",
-      title: "Personality Development",
-      text: "Cultivate discipline, confidence, and emotional intelligence through regular practice. Build the foundation for a more centered and purposeful life.",
-      bg: "from-amber-100 to-orange-100",
-    },
-    {
-      icon: "🧠",
-      title: "Mental Clarity & Balance",
-      text: "Say goodbye to overthinking, stress, and anxiety. Experience mental clarity and emotional balance that enhances your daily life and decision-making.",
-      bg: "from-violet-200 to-indigo-100",
-    },
-    {
-      icon: "❤️",
-      title: "Improved Relationships",
-      text: "By knowing yourself better, you connect better with others. Develop deeper, more meaningful relationships based on understanding and compassion.",
-      bg: "from-rose-100 to-rose-200",
-    },
-    {
-      icon: "💫",
-      title: "Purposeful Living",
-      text: "Sunya centers you—bringing focus to your actions and meaning to your life. Discover your true purpose and live with intention and clarity.",
-      bg: "from-emerald-100 to-green-200",
-    },
-  ];
-
-  return (
-    <section id="benefits" className="mt-30 py-28 bg-gray-50" ref={ref}>
-      <div className="max-w-[1280px] mx-auto px-6">
-        <SectionHeader
-          title="Why Practice Sunya?"
-          subtitle="Discover the transformative benefits that await you on this journey"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className={`rounded-3xl p-10 border transition hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br ${c.bg} border-gray-200/70`}
-            >
-              <div className="w-16 h-16 rounded-2xl bg-white shadow flex items-center justify-center text-3xl mb-6">
-                {c.icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-3">{c.title}</h3>
-              <p className="text-gray-700 leading-relaxed">{c.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ========================= Activities (Carousel) ========================= */
-function Activities() {
-  const ref = useFadeIn();
-
-  const slides = [
-    {
-      image: FoundationCourse,
-      icon: "🪷",
-      title: "Foundation Course",
-      desc: "A 3-day beginner-level meditation and self-awareness workshop conducted in communities, colleges, and NGOs.",
-      tags: ["3 Days", "Beginner", "Group Sessions"],
-    },
-    {
-      image: RESIDENTIAl,
-      icon: "🧘",
-      title: "Residential Retreats",
-      desc: "Multi-day silent retreats (3, 7, or 10 days) in serene environments with expert guidance for deep practice.",
-      tags: ["Silent Retreat", "7-10 Days", "Deep Practice"],
-    },
-    {
-      image: OnlineSession,
-      icon: "🎙️",
-      title: "Online Sessions",
-      desc: "Free guided meditations every weekend through Zoom and YouTube live for global accessibility.",
-      tags: ["Free", "Weekly", "Global Access"],
-    },
-    {
-      image: SchoolPrograms,
-      icon: "🏫",
-      title: "School Programs",
-      desc: "Introduction to Sunya for students and teachers to enhance focus and reduce exam anxiety.",
-      tags: ["Students", "Teachers", "Focus Training"],
-    },
-    {
-      image: Transformation,
-      icon: "🫂",
-      title: "Transformation Circles",
-      desc: "Small group gatherings focused on emotional healing and life-purpose discovery in supportive environments.",
-      tags: ["Small Groups", "Healing Focus", "Life Purpose"],
-    },
-    {
-      image: Trainers,
-      icon: "📚",
-      title: "Trainers Program",
-      desc: "Train-the-trainer initiative to build certified facilitators in different regions and languages.",
-      tags: ["Certification", "Train Trainers", "Multilingual"],
-    },
-  ];
-
-  return (
-    <section id="activities" className="mt-30 bg-white" ref={ref}>
-      <div className="max-w-[1280px] mx-auto px-6">
-        <SectionHeader
-          title="Core Activities"
-          subtitle="Comprehensive programs designed to deepen your Sunya meditation practice"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {slides.map((it) => (
-            <div
-              key={it.title}
-              className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3"
-            >
-              <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
-                <img
-                  src={it.image}
-                  alt={it.title}
-                  className="h-full w-full object-cover "
-                />
-              </div>
-              <div className="p-8">
-                <h3 className="text-lg font-bold mb-2">{it.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{it.desc}</p>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {it?.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-600"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ActivityCard({ image, icon, title, desc, tags }) {
-  return (
-    <div className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3 hover:shadow-2xl bg-white">
-      <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
-        <img src={image} alt={title} className="h-full w-full object-cover " />
-      </div>
-      <div className="p-8">
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="text-gray-600 leading-relaxed mb-4">{desc}</p>
-        <div className="flex flex-wrap gap-2">
-          {tags.map((t) => (
-            <span
-              key={t}
-              className="text-xs font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-600"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ========================= Testimonials ========================= */
-function Testimonials() {
-  const ref = useFadeIn();
-  const slides = [
-    {
-      text: '"Sunya gave me more than peace—it gave me direction in life. I found clarity I never knew existed."',
-      avatar: "K",
-      name: "Kavitha",
-      title: "Teacher, Bangalore",
-    },
-    {
-      text: '"Only with Sunya did I find a method to completely let go. The practice of NOTHING taught me everything."',
-      avatar: "A",
-      name: "Arif",
-      title: "Software Engineer, Hyderabad",
-    },
-    {
-      text: '"We introduced Sunya to 120 girls. The impact was immediate—confidence, calmness, and smiles."',
-      avatar: "N",
-      name: "NGO Partner",
-      title: "Women's Shelter, Mumbai",
-    },
-  ];
-
-  const [i, setI] = useState(0);
-  const total = slides.length;
-
-  const next = () => setI((v) => (v + 1) % total);
-  const prev = () => setI((v) => (v - 1 + total) % total);
-
-  useEffect(() => {
-    const id = setInterval(next, 7000);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <section
-      id="testimonials"
-      className="mt-30 py-28 bg-gray-900 text-white"
-      ref={ref}
+    <div
+      className={[
+        "rounded-[24px] border border-[#f2f2f7] transition-all duration-400",
+        "hover:-translate-y-[5px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)]",
+        className,
+      ].join(" ")}
     >
-      <div className="max-w-[1280px] mx-auto px-6">
-        <SectionHeader
-          title="Voices of Transformation"
-          subtitle="Real stories from those who discovered the power of Sunya meditation"
-          invert
-        />
-
-        <div className="relative mt-16 overflow-hidden rounded-3xl">
-          <div
-            className="flex transition-transform duration-700"
-            style={{ transform: `translateX(-${i * 100}%)` }}
-          >
-            {slides.map((t, ti) => (
-              <div
-                key={ti}
-                className="shrink-0 basis-full bg-white/5 backdrop-blur border border-white/10 px-6 md:px-16 py-12 md:py-16 text-center"
-              >
-                <p className="text-2xl md:text-3xl font-medium italic leading-snug mb-10">
-                  {t.text}
-                </p>
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-emerald-500 grid place-items-center font-bold text-2xl">
-                    {t.avatar}
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-semibold">{t.name}</h4>
-                    <p className="text-white/70 text-sm">{t.title}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-center gap-6 mt-10">
-            <button
-              onClick={prev}
-              className="h-12 w-12 rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/20 transition grid place-items-center"
-              aria-label="Previous testimonial"
-            >
-              ‹
-            </button>
-            <div className="flex gap-2">
-              {Array.from({ length: total }).map((_, di) => (
-                <button
-                  key={di}
-                  onClick={() => setI(di)}
-                  className={`h-2 w-2 rounded-full ${
-                    i === di ? "bg-white scale-110" : "bg-white/40"
-                  } transition`}
-                  aria-label={`Go to testimonial ${di + 1}`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              className="h-12 w-12 rounded-full border border-white/20 bg-white/10 text-white hover:bg-white/20 transition grid place-items-center"
-              aria-label="Next testimonial"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ========================= Get Involved ========================= */
-function GetInvolved() {
-  const ref = useFadeIn();
-  const cards = [
-    {
-      title: "Join a Workshop",
-      icon: "event",
-      text: "Experience transformative meditation through our Foundation Course or immersive residential retreats.",
-      cta: "Find Events",
-      variant: "indigo",
-      href: "/",
-    },
-    {
-      title: "Invite Us",
-      icon: "location_on",
-      text: "Bring Sunya meditation to your school, office, or community center with customized programs.",
-      cta: "Request Visit",
-      href: "/contact-us",
-    },
-    {
-      title: "Become a Trainer",
-      icon: "school",
-      text: "Join our certified trainer program and help spread Sunya practices in your region and language.",
-      cta: "Apply Now",
-      href: "/join-us",
-    },
-    {
-      title: "Sponsor a Retreat",
-      icon: "favorite",
-      text: "Support meditation retreats for underserved communities, bringing peace to those who need it most.",
-      cta: "Sponsor",
-      variant: "green",
-      href: "/contact-us",
-    },
-  ];
-
-  return (
-    <section id="get-involved" className="py-28 bg-gray-50" ref={ref}>
-      <div className="max-w-[1280px] mx-auto px-6">
-        <SectionHeader
-          title="Get Involved"
-          subtitle="Multiple pathways to experience and support Sunya meditation"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className={`rounded-3xl border p-10 transition hover:-translate-y-2 hover:shadow-2xl overflow-hidden ${
-                c.variant === "indigo"
-                  ? "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white border-transparent"
-                  : c.variant === "green"
-                  ? "bg-gradient-to-br from-emerald-500 to-emerald-700 text-white border-transparent"
-                  : "bg-white border-gray-200"
-              }`}
-            >
-              <div
-                className={`w-16 h-16 rounded-2xl grid place-items-center text-3xl mb-6 ${
-                  c.variant ? "bg-white/10" : "bg-gray-100 text-indigo-600"
-                }`}
-                aria-hidden
-              >
-                {/* Using emoji fallback instead of material icons for simplicity */}
-                <span>
-                  {c.icon === "event" && "📅"}
-                  {c.icon === "location_on" && "📍"}
-                  {c.icon === "school" && "🎓"}
-                  {c.icon === "favorite" && "❤️"}
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-3">{c.title}</h3>
-              <p
-                className={`${
-                  c.variant ? "opacity-90" : "text-gray-700"
-                } leading-relaxed mb-6`}
-              >
-                {c.text}
-              </p>
-              <Link
-                to={c.href}
-                className={`${
-                  c.variant
-                    ? "inline-block rounded-xl border border-white/30 bg-white/10 px-5 py-2 font-semibold hover:bg-white/20"
-                    : "inline-block rounded-xl bg-indigo-600 text-white px-5 py-2 font-semibold hover:bg-indigo-700"
-                }`}
-              >
-                {c.cta}
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function SectionHeader({ title, subtitle, invert = false }) {
-  return (
-    <div className="text-center mb-16">
-      <h2
-        className={`font-extrabold tracking-tight mb-4 ${
-          invert ? "text-white" : "text-gray-900"
-        } text-4xl md:text-5xl`}
-      >
-        {title}
-      </h2>
-      <p
-        className={`${
-          invert ? "text-white/70" : "text-gray-600"
-        } max-w-xl mx-auto text-lg`}
-      >
-        {subtitle}
-      </p>
+      {children}
     </div>
   );
 }
 
-/* ========================= Hook: Fade-in on View ========================= */
-function useFadeIn() {
-  const ref = useRef(null);
 
-  useEffect(() => {
-    if (!ref.current) return;
-    const el = ref.current;
-    el.classList.add("opacity-0", "translate-y-8");
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            el.classList.remove("opacity-0", "translate-y-8");
-            el.classList.add("opacity-100", "translate-y-0");
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
-    );
-
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
-  return ref;
+function ArrowRight({ className = "" }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="M13 5l7 7-7 7" />
+    </svg>
+  );
 }
 
-/* ========================= Keyframes (Tailwind) ========================= */
-// Add these to your tailwind.config.js under theme.extend:
-// extend: {
-//   keyframes: {
-//     breathe: {
-//       '0%, 100%': { transform: 'scale(1)' },
-//       '50%': { transform: 'scale(1.05)' },
-//     },
-//     slideUp: {
-//       from: { opacity: '0', transform: 'translateY(32px)' },
-//       to: { opacity: '1', transform: 'translateY(0)' },
-//     },
-//   },
-//   animation: {
-//     breathe: 'breathe 4s ease-in-out infinite',
-//     slideUp: 'slideUp 0.8s cubic-bezier(0.4,0,0.2,1)',
-//   },
-// }
+function BrainIcon({ className = "" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9 2a3 3 0 0 0-3 3v1.2A3.5 3.5 0 0 0 4 9.5c0 1.2.6 2.3 1.5 3A3.5 3.5 0 0 0 6 18v1a3 3 0 0 0 3 3h1v-8H9v-2h1V2H9Zm6 0h-1v8h1v2h-1v8h1a3 3 0 0 0 3-3v-1a3.5 3.5 0 0 0 .5-5.5A3.5 3.5 0 0 0 20 9.5a3.5 3.5 0 0 0-2-3.3V5a3 3 0 0 0-3-3Z" />
+    </svg>
+  );
+}
+
+function HeartIcon({ className = "" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 21s-7-4.6-9.4-9C.5 7.8 3.2 4.8 6.6 5c1.6.1 3 .9 3.9 2.1.9-1.2 2.3-2 3.9-2.1 3.4-.2 6.1 2.8 4 7-2.4 4.4-9.4 9-9.4 9Z" />
+    </svg>
+  );
+}
+
+function UsersIcon({ className = "", ...props }) {
+  return (
+    <svg
+      className={className}
+      {...props}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 20a7 7 0 0 1 16 0H4Zm14-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+    </svg>
+  );
+}

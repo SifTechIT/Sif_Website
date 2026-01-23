@@ -1,6 +1,7 @@
 import { saveData } from "@/lib/db";
 import { serverTimestamp } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 /** Contact Us – SIF | React + Tailwind (no config) */
 export default function ContactPage() {
@@ -15,19 +16,99 @@ export default function ContactPage() {
 
 function Hero() {
   return (
-    <section className="bg-gradient-to-br from-white to-[#f8fafc]">
-      <div className="max-w-[1200px] mx-auto px-6 py-28 text-center">
-        <div className="max-w-[680px] mx-auto">
-          <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold leading-tight tracking-tight mb-3">
+    <section className="relative overflow-hidden bg-background">
+      {/* Subtle decorative background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Gradient orbs */}
+        <div
+          className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-[0.03]"
+          style={{
+            background:
+              "radial-gradient(circle, var(--primary) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full opacity-[0.02]"
+          style={{
+            background:
+              "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
+          }}
+        />
+        {/* Subtle grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div
+          className={`flex flex-col text-center items-center`}
+          style={{
+            minHeight: "clamp(340px, 50vh, 520px)",
+            paddingTop: "clamp(3rem, 8vh, 6rem)",
+            paddingBottom: "clamp(3rem, 8vh, 6rem)",
+            justifyContent: "center",
+          }}
+        >
+          {/* Eyebrow / Badge */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2 text-sm font-medium text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            Get in Touch
+          </div>
+
+          {/* Title */}
+          <h1
+            className="max-w-4xl text-foreground"
+            style={{
+              fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)",
+              fontWeight: 700,
+              letterSpacing: "-0.025em",
+              lineHeight: 1.1,
+            }}
+          >
             Contact Us
           </h1>
-          <p className="text-[18px] text-gray-600 leading-8">
-            Ready to join our mission or learn more about our programs? We’d
+
+          {/* Subtitle */}
+          <p
+            className={`mt-5 text-muted-foreground center`}
+            style={{
+              fontSize: "clamp(1.0625rem, 1vw + 0.875rem, 1.25rem)",
+              lineHeight: 1.6,
+              maxWidth: "640px",
+            }}
+          >
+            Ready to join our mission or learn more about our programs? We'd
             love to hear from you. Reach out through any of our offices or send
             us a message below.
           </p>
+
+          {/* CTAs */}
+          <div className={`mt-8 flex flex-wrap gap-4 justify-center`}>
+            <Link
+              to="/join-us"
+              className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full sm:w-auto"
+            >
+              Join Us
+            </Link>
+            <Link
+              to="/about-us"
+              className="text-blue-600 hover:underline font-medium text-lg"
+            >
+              Our Work
+            </Link>
+          </div>
         </div>
       </div>
+
+      {/* Bottom border accent */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   );
 }
@@ -47,7 +128,7 @@ function useReveal() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -62,10 +143,10 @@ function ContactMain() {
     <section className="py-20 bg-white">
       <div
         ref={ref}
-        className="opacity-0 translate-y-5 transition-all duration-700 max-w-[1200px] mx-auto px-6"
+        className="opacity-0 translate-y-5 transition-all duration-700 max-w-7xl mx-auto "
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          <ContactForm />
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+           <ContactForm />
           <OfficeInfo />
         </div>
       </div>
@@ -100,46 +181,41 @@ function ContactForm() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 md:p-10 border border-[#e2e8f0] shadow-sm">
+    <div className=" text-left w-full rounded-2xl transition-all duration-300 ease-out bg-card border  border-border/60 p-8 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1">
       <div
-        className={`mb-5 rounded-lg border text-sm px-4 py-3 ${
-          show ? "block animate-[slideDown_.3s_ease]" : "hidden"
-        } bg-[#dcfce7] text-[#166534] border-[#bbf7d0]`}
+        className={`mb-5 rounded-lg border text-sm px-4 py-3 ${show ? "block" : "hidden"} bg-accent/10 text-accent border-accent/30`}
       >
-        Thank you! Your message has been sent successfully. We&apos;ll get back
-        to you soon.
+        Thank you! Your message has been sent successfully. We'll get back to
+        you soon.
       </div>
 
-      <div className="mb-8">
-        <h3 className="text-2xl font-bold mb-1">Get in Touch with Us</h3>
-        <p className="text-gray-600">
+      <div className="mb-6">
+        <h3 className="text-xl font-bold mb-1">Get in Touch with Us</h3>
+        <p className="text-muted-foreground text-sm">
           Fill out the form below, and our team will get back to you shortly.
-          Let’s connect and explore how we can assist you.
         </p>
       </div>
 
-      <form onSubmit={onSubmit} id="contactForm" className="space-y-5">
+      <form onSubmit={onSubmit} className="space-y-5">
         <div className="grid md:grid-cols-2 gap-5">
           <FormField id="firstName" label="First Name" type="text" required />
           <FormField id="lastName" label="Last Name" type="text" required />
         </div>
-
         <div className="grid md:grid-cols-2 gap-5">
           <FormField id="email" label="Email Address" type="email" required />
           <FormField id="phone" label="Phone Number" type="tel" />
         </div>
-
         <div>
           <label
             htmlFor="subject"
-            className="block text-sm font-semibold text-gray-900 mb-1.5"
+            className="block text-sm font-medium text-foreground mb-1.5"
           >
             How can we help you?
           </label>
           <select
             id="subject"
             required
-            className="w-full rounded-lg border border-[#e2e8f0] px-4 py-3 text-[15px] bg-white focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+            className="w-full rounded-lg border border-border px-4 py-3 text-sm bg-card focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
           >
             <option value="">Select an option</option>
             <option value="general">General Inquiry</option>
@@ -151,11 +227,10 @@ function ContactForm() {
             <option value="other">Other</option>
           </select>
         </div>
-
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-semibold text-gray-900 mb-1.5"
+            className="block text-sm font-medium text-foreground mb-1.5"
           >
             Message
           </label>
@@ -163,10 +238,9 @@ function ContactForm() {
             id="message"
             required
             placeholder="Tell us more about your inquiry..."
-            className="w-full min-h-[110px] rounded-lg border border-[#e2e8f0] px-4 py-3 text-[15px] bg-white resize-y focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+            className="w-full min-h-[110px] rounded-lg border border-border px-4 py-3 text-sm bg-card resize-y focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
         </div>
-
         <button
           type="submit"
           className="w-full rounded-lg bg-emerald-500 text-white font-semibold px-6 py-3 hover:bg-emerald-600 transition shadow-sm cursor-pointer"
@@ -193,7 +267,7 @@ function FormField({ id, label, type = "text", required }) {
     <div>
       <label
         htmlFor={id}
-        className="block text-sm font-semibold text-gray-900 mb-1.5"
+        className="block text-sm font-medium text-foreground mb-1.5"
       >
         {label}
       </label>
@@ -203,12 +277,11 @@ function FormField({ id, label, type = "text", required }) {
         required={required}
         onBlur={onBlur}
         onInput={onInput}
-        className={`w-full rounded-lg border px-4 py-3 text-[15px] bg-white focus:outline-none focus:ring-4 transition
-          ${
-            invalid
-              ? "border-red-500 focus:border-red-500 focus:ring-red-500/10"
-              : "border-[#e2e8f0] focus:border-emerald-500 focus:ring-emerald-500/10"
-          }`}
+        className={`w-full rounded-lg border px-4 py-3 text-sm bg-card focus:outline-none focus:ring-2 transition ${
+          invalid
+            ? "border-destructive focus:border-destructive focus:ring-destructive/20"
+            : "border-border focus:border-primary focus:ring-primary/20"
+        }`}
       />
     </div>
   );
@@ -217,14 +290,13 @@ function FormField({ id, label, type = "text", required }) {
 /* ========================= Office Info ========================= */
 function OfficeInfo() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-4">
       <div className="mb-1">
-        <h3 className="text-2xl font-bold mb-1">Our Offices</h3>
-        <p className="text-gray-600">
+        <h3 className="text-xl font-bold mb-1">Our Offices</h3>
+        <p className="text-muted-foreground text-sm">
           Visit us at any of our locations across India
         </p>
       </div>
-
       <OfficeCard
         title="Registered Office"
         type="Legal & Administrative Hub • Telangana"
@@ -259,7 +331,9 @@ function OfficeInfo() {
 
 function OfficeCard({ title, type, address, icon, bg }) {
   return (
-    <div className="border border-[#e2e8f0] rounded-xl p-6 transition hover:shadow-md hover:-translate-y-0.5">
+    <div
+      className={`text-left w-full rounded-2xl transition-all duration-300 ease-out bg-card border flex items-start gap-4 border-border/60 p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1`}
+    >
       <div className="flex items-start gap-4">
         <div
           className={`w-11 h-11 rounded-lg text-white grid place-items-center text-[20px] flex-shrink-0 bg-gradient-to-br ${bg}`}
@@ -267,9 +341,13 @@ function OfficeCard({ title, type, address, icon, bg }) {
           <span className="material-icons">{icon}</span>
         </div>
         <div className="flex-1">
-          <h4 className="text-[16px] font-bold text-gray-900">{title}</h4>
-          <p className="text-[13px] font-medium text-gray-400 mb-2">{type}</p>
-          <p className="text-[14px] text-gray-600 leading-relaxed">{address}</p>
+          <h4 className="text-base font-semibold text-foreground">{title}</h4>
+          <p className="text-xs font-medium text-muted-foreground mb-1">
+            {type}
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {address}
+          </p>
         </div>
       </div>
     </div>
@@ -286,16 +364,16 @@ function EmailContact() {
         className="opacity-0 translate-y-5 transition-all duration-700 max-w-[1200px] mx-auto px-6"
       >
         <div className="max-w-[520px] mx-auto text-center border border-[#e2e8f0] bg-white rounded-2xl p-8 md:p-10">
-          <div className="w-14 h-14 rounded-xl bg-emerald-500 text-white grid place-items-center mx-auto mb-4">
-            <span className="material-icons text-[26px]">mail</span>
+          <div className="w-14 h-14 rounded-xl bg-accent text-accent-foreground grid place-items-center mx-auto mb-4 text-2xl">
+            ✉️
           </div>
           <h3 className="text-xl font-bold mb-1">Email Us Directly</h3>
-          <p className="text-sm text-gray-600 mb-3">
+          <p className="text-sm text-muted-foreground mb-3">
             For quick inquiries and general information
           </p>
           <a
             href="mailto:hello@sifworld.com"
-            className="inline-block font-semibold text-emerald-600 hover:text-emerald-700 border-b-2 border-transparent hover:border-emerald-600 text-[18px]"
+            className="inline-block font-semibold text-accent hover:underline text-lg"
           >
             hello@sifworld.com
           </a>

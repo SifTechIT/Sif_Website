@@ -8,18 +8,6 @@ import Farmer from "../../assets/Home/Farmer_ac.jpeg";
 import ODOC from "../../assets/Home/ODOC_ac.jpeg";
 import SunyaMeditation from "../../assets/Home/Sunya_meditation_ac.JPG";
 import Women from "../../assets/Home/Women_ac.jpg";
-/**
- * ServicesGridSection – 3x3 Grid (Image Top)
- * ------------------------------------------
- * - Responsive grid: 1 col (mobile), 2 cols (sm), 3 cols (lg)
- * - Image on top, title, description, and "Know more" link
- * - Drop-in standalone component (TailwindCSS)
- *
- * Usage:
- *   <ServicesGridSection />
- *   // or provide your own items:
- *   <ServicesGridSection items={MY_SERVICES} />
- */
 
 const DEFAULT_SERVICES = [
   {
@@ -153,8 +141,6 @@ export default function ServicesGridSection({
           {subtitle}
         </p>
       </div>
-
-      {/* 3x3 Grid */}
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.slice(0, 9).map((s) => (
           <ServiceCard key={s.key} s={s} />
