@@ -7,34 +7,41 @@ import BrickHouse from "../../assets/BrickHouse/Brick_House.jpg";
 export default function BrickHouseProjectPage() {
   return (
     <main>
-      <header className="hero-section px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-block px-4 py-1.5 mb-6 bg-orange-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-orange-800 border border-orange-200">
-            🏛️ Reviving Ancient Indian Traditions & Knowledge Systems
-          </div>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] text-gradient">
-            The Brick House
-            <br />
-            Project.
-          </h1>
-          <p className="text-xl md:text-2xl font-light text-gray-500 max-w-3xl mx-auto leading-relaxed mb-12">
-            Building enduring foundations for cultural preservation.
-            Safeguarding what is timeless while reinterpreting it for today’s
-            world.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold shadow-lg">
-              See Our Impact
-            </button>
-            <button className="bg-white border border-gray-200 text-gray-600 px-10 py-4 rounded-full font-semibold">
-              Explore Projects
-            </button>
+      <section className="hero-gradient   relative w-full  ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
+          <div
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${Banner1})` }}
+          >
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <div className="inline-block px-4 py-1.5 mb-6 bg-orange-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-orange-800 border border-orange-200">
+                🏛️ Reviving Ancient Indian Traditions & Knowledge Systems
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                The Brick House Project.
+              </h1>
+              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+                Building enduring foundations for cultural preservation.
+                Safeguarding what is timeless while reinterpreting it for
+                today’s world.
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <Link
+                  to="/impact-stories"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
+                >
+                  Know More
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-
-      <section className="py-24 px-6 bg-zinc-900 text-white rounded-[4rem] mx-4 my-8">
-        <div className="max-w-6xl mx-auto">
+      </section>
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Heritage Preservation Progress
@@ -45,7 +52,7 @@ export default function BrickHouseProjectPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold accent-brick mb-2">25+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">25+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Heritage Sites
                 <br />
@@ -53,7 +60,7 @@ export default function BrickHouseProjectPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-brick mb-2">100+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">100+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Ancient Manuscripts
                 <br />
@@ -61,7 +68,7 @@ export default function BrickHouseProjectPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-brick mb-2">50+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">50+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Community Workshops
                 <br />
@@ -69,7 +76,7 @@ export default function BrickHouseProjectPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-brick mb-2">5+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">5+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Brick House
                 <br />

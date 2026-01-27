@@ -1,12 +1,22 @@
-import DrLim from "../../assets/About/DrLim2.png";
-import DrSavera from "../../assets/About/DrSavera1.png";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import DrLim from "../../assets/About/lim.jpeg";
+import DrSavera from "../../assets/About/rajesh.jpeg";
+import story from "../../assets/About/story.jpeg";
 import SunyaMeditation from "../../assets/About/sunya_meditation.jpg";
+import wisdom from "../../assets/About/wisdom.jpeg";
+import time1 from "../../assets/Timeline/2019.jpeg";
+import time2 from "../../assets/Timeline/2020.jpeg";
+import time3 from "../../assets/Timeline/2021.jpeg";
+import time4 from "../../assets/Timeline/2022.jpeg";
+import time5 from "../../assets/Timeline/2023.jpeg";
+import time6 from "../../assets/Timeline/2024.jpeg";
 
 export default function AboutUsPage() {
   return (
-    <div className="bg-gradient-to-b from-white via-neutral-50 to-white dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-950 dark:text-white">
+    <div className="">
       <section className="hero-gradient   relative w-full  ">
-        <div className="relative min-h-[90vh] sm:min-h-[660px] w-full mx-auto   ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
           <div
             className="absolute inset-0 bg-cover bg-center w-full h-full "
             style={{ backgroundImage: `url(${SunyaMeditation})` }}
@@ -23,13 +33,20 @@ export default function AboutUsPage() {
                 Sunyatee International Foundation has been transforming lives
                 through mindfulness and community service since 2019.
               </p>
+
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button className="bg-black text-white px-8 py-3 rounded-full text-sm font-medium">
+                <Link
+                  to="/impact-stories"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
+                >
                   Our Impact
-                </button>
-                <button className="border border-gray-300 px-8 py-3 rounded-full text-sm font-medium hover:bg-white transition">
-                  Get Involved
-                </button>
+                </Link>
+                <Link
+                  to="/onedollar-onechild"
+                  className="text-white hover:underline font-medium text-lg flex items-center"
+                >
+                  Get Involved <ChevronRight className="w-4 h-4 ml-1" />
+                </Link>
               </div>
             </div>
           </div>
@@ -45,106 +62,16 @@ export default function AboutUsPage() {
           empowerment.
         </p>
       </section>
+      <TimelineAutoScrollSection />
 
-      <section className="relative py-20 bg-[#fbfbfd] overflow-hidden">
-        <div className="line-connector hidden md:block"></div>
-
-        <div className="flex overflow-x-auto hide-scroll snap-x snap-mandatory px-12 md:px-[20vw] space-x-8 relative z-10">
-          <div className="timeline-card snap-center">
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition">
-              <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                Founding
-              </span>
-              <h3 className="text-4xl font-bold mb-4">2019</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Sunyatee International Foundation is established to bridge the
-                gap between inner peace and community resilience.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-card snap-center">
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition">
-              <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                Mindfulness
-              </span>
-              <h3 className="text-4xl font-bold mb-4">2020</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                First Sunya Mega Retreat launched. Global belt certification
-                programs reach practitioners across 40 countries.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-card snap-center">
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition">
-              <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                Relief
-              </span>
-              <h3 className="text-4xl font-bold mb-4">2021</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                COVID Relief operations: Distribution of 400 concentrators and 4
-                lakh masks to frontline rural communities.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-card snap-center">
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition">
-              <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                Livelihoods
-              </span>
-              <h3 className="text-4xl font-bold mb-4">2022</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                The Noni Farmer Project launches in Siddipet, transforming
-                agricultural uncertainty into guaranteed income.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-card snap-center">
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition">
-              <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                Inclusion
-              </span>
-              <h3 className="text-4xl font-bold mb-4">2023</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Ausum Kids therapy program begins, focusing on inclusion and
-                support for children with special needs.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-card snap-center">
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm hover:shadow-md transition">
-              <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
-                Growth
-              </span>
-              <h3 className="text-4xl font-bold mb-4">2024</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                ODOC program scales to support 5,000+ children, providing
-                essential Spirulina-based nutrition globally.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center text-gray-400 text-[10px] uppercase tracking-widest font-bold">
-          <i className="fas fa-chevron-left mr-2"></i> Swipe to explore{" "}
-          <i className="fas fa-chevron-right ml-2"></i>
-        </div>
-      </section>
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="img-placeholder h-[500px]">
-            <span className="text-gray-400 text-sm font-medium">
-              SIF FOUNDATION IMAGE [1200 x 1500]
-            </span>
-            {/* <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-6 rounded-2xl text-white">
-              <p className="text-sm font-light">
-                "Rooted in the practice of Sunya — the wisdom of nothingness."
-              </p>
-            </div> */}
+            <img
+              src={story}
+              alt="Timeline 2019"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
@@ -233,13 +160,12 @@ export default function AboutUsPage() {
 
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="rounded-[40px] bg-gray-100 h-[600px] flex items-center justify-center text-gray-400 italic overflow-hidden">
-            <div className="text-center p-12">
-              <p className="mb-4">IMAGE: LEADERSHIP IN THE FIELD [1200x1500]</p>
-              <p className="text-xs uppercase tracking-widest">
-                SIF Field Operations, 2024
-              </p>
-            </div>
+          <div className="">
+            <img
+              src={wisdom}
+              alt="Guided by Wisdom"
+              className="w-full h-full object-cover rounded-3xl"
+            />
           </div>
           <div className="space-y-8">
             <h2 className="text-4xl font-bold leading-tight">
@@ -306,5 +232,181 @@ export default function AboutUsPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+import { useEffect, useMemo, useRef } from "react";
+function TimelineAutoScrollSection() {
+  const scrollerRef = useRef(null);
+  const intervalRef = useRef(null);
+
+  const items = useMemo(
+    () => [
+      {
+        tag: "Founding",
+        year: "2019",
+        text: "Sunyatee International Foundation is established to bridge the gap between inner peace and community resilience.",
+        img: time1,
+      },
+      {
+        tag: "Mindfulness",
+        year: "2020",
+        text: "First Sunya Mega Retreat launched. Global belt certification programs reach practitioners across 40 countries.",
+        img: time2,
+      },
+      {
+        tag: "Relief",
+        year: "2021",
+        text: "COVID Relief operations: Distribution of 400 concentrators and 4 lakh masks to frontline rural communities.",
+        img: time3,
+      },
+      {
+        tag: "Livelihoods",
+        year: "2022",
+        text: "The Noni Farmer Project launches in Siddipet, transforming agricultural uncertainty into guaranteed income.",
+        img: time4,
+      },
+      {
+        tag: "Inclusion",
+        year: "2023",
+        text: "Ausum Kids therapy program begins, focusing on inclusion and support for children with special needs.",
+        img: time5,
+      },
+      {
+        tag: "Growth",
+        year: "2024",
+        text: "ODOC program scales to support 5,000+ children, providing essential Spirulina-based nutrition globally.",
+        img: time6,
+      },
+    ],
+    [],
+  );
+
+  const scrollByCard = (direction = 1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    // match your responsive card widths: 280 / 360 / 440
+    const w =
+      typeof window !== "undefined"
+        ? window.innerWidth < 640
+          ? 280
+          : window.innerWidth < 768
+            ? 360
+            : 440
+        : 440;
+
+    const gap = 32; // gap-8 = 2rem = 32px
+    const step = w + gap;
+
+    el.scrollBy({ left: step * direction, behavior: "smooth" });
+  };
+
+  const startAutoScroll = () => {
+    stopAutoScroll();
+    intervalRef.current = window.setInterval(() => {
+      const el = scrollerRef.current;
+      if (!el) return;
+
+      // same step logic as buttons
+      const w =
+        window.innerWidth < 640 ? 280 : window.innerWidth < 768 ? 360 : 440;
+      const gap = 32;
+      const step = w + gap;
+
+      const maxLeft = el.scrollWidth - el.clientWidth;
+      const nextLeft = el.scrollLeft + step;
+
+      // loop back to start when reaching end
+      if (nextLeft >= maxLeft - 2) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: step, behavior: "smooth" });
+      }
+    }, 2500);
+  };
+
+  const stopAutoScroll = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    // start autoplay
+    if (typeof window !== "undefined") startAutoScroll();
+
+    // cleanup
+    return () => stopAutoScroll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <section className="relative py-20 bg-[#fbfbfd] overflow-hidden">
+      <div className="line-connector hidden md:block"></div>
+
+      <div
+        ref={scrollerRef}
+        className="relative z-10 overflow-x-auto hide-scroll snap-x snap-mandatory px-6 sm:px-12 md:px-[20vw] py-2"
+        style={{ WebkitOverflowScrolling: "touch" }}
+        onMouseEnter={stopAutoScroll}
+        onMouseLeave={startAutoScroll}
+        onTouchStart={stopAutoScroll}
+        onTouchEnd={() => {
+          // small delay so swipe finishes smoothly
+          window.setTimeout(startAutoScroll, 1200);
+        }}
+      >
+        <div className="flex flex-nowrap w-max gap-8">
+          {items.map((item) => (
+            <div
+              key={item.year}
+              className="snap-center shrink-0 w-[280px] sm:w-[360px] md:w-[440px]"
+            >
+              <div className="bg-white  rounded-[32px] border-gray-100 shadow-sm hover:shadow-md transition overflow-hidden h-full flex flex-col">
+                <img
+                  src={item.img}
+                  alt=""
+                  className="w-full h-52 object-cover "
+                />
+                <div className=" p-8">
+                  <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">
+                    {item.tag}
+                  </span>
+                  <h3 className="text-4xl font-bold mb-4">{item.year}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12 text-center text-gray-400 text-[10px] uppercase tracking-widest font-bold flex items-center justify-center gap-3">
+        {/* same UI text, just making icons clickable */}
+        <button
+          type="button"
+          aria-label="Scroll left"
+          onClick={() => scrollByCard(-1)}
+          className="inline-flex items-center justify-center"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+
+        <span>Swipe to explore</span>
+
+        <button
+          type="button"
+          aria-label="Scroll right"
+          onClick={() => scrollByCard(1)}
+          className="inline-flex items-center justify-center"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </div>
+    </section>
   );
 }

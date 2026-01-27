@@ -1,18 +1,38 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import Banner1 from "../../assets/SunyaMeditation/Banner1.jpg";
-import Banner2 from "../../assets/SunyaMeditation/Banner2.JPG";
-import Banner3 from "../../assets/SunyaMeditation/Banner3.jpeg";
-import FoundationCourse from "../../assets/SunyaMeditation/FoundationCourse.jpg";
-import OnlineSession from "../../assets/SunyaMeditation/OnlineSession.jpeg";
-import RESIDENTIAl from "../../assets/SunyaMeditation/RESIDENTIAl.jpg";
-import SchoolPrograms from "../../assets/SunyaMeditation/SchoolPrograms.jpeg";
-import Sunya from "../../assets/SunyaMeditation/SunyaMedi.jpg";
-import Trainers from "../../assets/SunyaMeditation/Trainers.jpg";
-import Transformation from "../../assets/SunyaMeditation/Transformation.jpg";
 // If you're using Next.js, you can move the <Head> font link there.
 // For CRA/Vite, add Inter in index.html or via @import in your CSS.
 
+import { Link } from "react-router-dom";
+import TestimonialsCarousel from "../ui/TestimonialsCarousel";
+
+const DEFAULT_TESTIMONIALS = [
+  {
+    quote:
+      "Sunya gave me more than peace—it gave me direction in life. I found clarity I never knew existed.",
+    highlight: "₹1,80,000",
+    name: "Kavitha",
+    role: "Teacher, Bangalore",
+    avatarText: "K",
+    accent: "text-blue-600",
+  },
+  {
+    quote:
+      "Only with Sunya did I find a method to completely let go. The practice of NOTHING taught me everything.",
+    highlight: "",
+    name: "Arif",
+    role: "Software Engineer, Hyderabad",
+    avatarText: "A",
+    accent: "text-emerald-600",
+  },
+  {
+    quote:
+      "We introduced Sunya to 120 girls. The impact was immediate—confidence, calmness, and smiles.",
+    highlight: "",
+    name: "NGO Partner",
+    role: "Women's Shelter, Mumbai",
+    avatarText: "N",
+    accent: "text-indigo-600",
+  },
+];
 export default function SunyaLanding() {
   return (
     <main>
@@ -196,32 +216,8 @@ export default function SunyaLanding() {
           </div>
         </div>
       </section>
+      <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
 
-      {/* TESTIMONIAL */}
-      <section className="py-24 px-6 bg-[#fbfbfd] border-y border-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-gray-200 text-8xl font-serif">“</span>
-
-          <p className="text-2xl md:text-3xl font-light text-gray-800 -mt-8 mb-10 leading-relaxed italic">
-            Sunya gave me more than peace—it gave me{" "}
-            <span className="text-blue-600 font-semibold">direction</span>. I
-            found a clarity I never knew existed in my professional and personal
-            life.
-          </p>
-
-          <div className="flex items-center justify-center gap-4">
-            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">
-              A
-            </div>
-            <div className="text-left">
-              <div className="font-bold text-sm">Arif</div>
-              <div className="text-gray-400 text-xs uppercase tracking-widest">
-                Software Engineer
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-[10px] uppercase tracking-[0.3em] text-indigo-600 font-bold mb-4">
@@ -237,69 +233,9 @@ export default function SunyaLanding() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-white border border-gray-100">
-            <div>
-              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-xl mb-6">
-                📅
-              </div>
-              <h4 className="font-bold mb-3">Join a Workshop</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Experience transformative meditation through our Foundation
-                Course or immersive residential retreats.
-              </p>
-            </div>
-            <button className="w-full mt-8 py-3 bg-indigo-600 text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">
-              Find Events
-            </button>
-          </div>
-
-          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-white border border-gray-100">
-            <div>
-              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-xl mb-6">
-                📍
-              </div>
-              <h4 className="font-bold mb-3">Invite Us</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Bring Sunya meditation to your school, office, or community
-                center with customized modules.
-              </p>
-            </div>
-            <button className="w-full mt-8 py-3 border border-gray-200 text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50 transition">
-              Request Visit
-            </button>
-          </div>
-
-          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-white border border-gray-100">
-            <div>
-              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-xl mb-6">
-                🎓
-              </div>
-              <h4 className="font-bold mb-3">Become a Trainer</h4>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Join our certified trainer program and help spread Sunya
-                practices in your region and language.
-              </p>
-            </div>
-            <button className="w-full mt-8 py-3 border border-gray-200 text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-50 transition">
-              Apply Now
-            </button>
-          </div>
-
-          <div className="bento-card p-8 flex flex-col justify-between min-h-[340px] bg-zinc-900 text-white border-none">
-            <div>
-              <div className="w-12 h-12 bg-zinc-800 rounded-2xl flex items-center justify-center text-xl mb-6">
-                ❤️
-              </div>
-              <h4 className="font-bold mb-3">Sponsor a Retreat</h4>
-              <p className="text-zinc-400 text-xs leading-relaxed">
-                Support meditation retreats for underserved communities,
-                bringing peace to those who need it most.
-              </p>
-            </div>
-            <button className="w-full mt-8 py-3 bg-white text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-100 transition">
-              Sponsor
-            </button>
-          </div>
+          {cards.map((card, index) => (
+            <BentoCard key={index} {...card} />
+          ))}
         </div>
       </section>
     </main>
@@ -319,7 +255,6 @@ function BentoBox({ className = "", children }) {
     </div>
   );
 }
-
 
 function ArrowRight({ className = "" }) {
   return (
@@ -366,3 +301,84 @@ function UsersIcon({ className = "", ...props }) {
     </svg>
   );
 }
+const cards = [
+  {
+    icon: "📅",
+    title: "Join a Workshop",
+    description:
+      "Experience transformative meditation through our Foundation Course or immersive residential retreats.",
+    buttonText: "Find Events",
+    buttonVariant: "primary",
+    href: "/",
+  },
+  {
+    icon: "📍",
+    title: "Invite Us",
+    description:
+      "Bring Sunya meditation to your school, office, or community center with customized modules.",
+    buttonText: "Request Visit",
+    href: "/contact-us",
+  },
+  {
+    icon: "🎓",
+    title: "Become a Trainer",
+    description:
+      "Join our certified trainer program and help spread Sunya practices in your region and language.",
+    buttonText: "Apply Now",
+    href: "/join-us",
+  },
+  {
+    icon: "❤️",
+    title: "Sponsor a Retreat",
+    description:
+      "Support meditation retreats for underserved communities, bringing peace to those who need it most.",
+    buttonText: "Sponsor",
+    href: "/join-us",
+  },
+];
+
+const BentoCard = ({
+  icon,
+  title,
+  description,
+  buttonText,
+  buttonVariant = "primary",
+  href = "#",
+}) => {
+  return (
+    <div
+      className={`bento-card p-8 flex flex-col justify-between min-h-[340px] border
+      bg-white border-gray-100`}
+    >
+      <div>
+        <div
+          className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl mb-6
+           bg-indigo-50`}
+        >
+          {icon}
+        </div>
+
+        <h4 className="font-bold mb-3">{title}</h4>
+
+        <p
+          className={`text-xs leading-relaxed text-gray-500
+        `}
+        >
+          {description}
+        </p>
+      </div>
+
+      <Link
+        to={href}
+        className={`w-full mt-8 py-3 rounded-full text-[10px] font-bold uppercase text-center tracking-widest transition
+          ${
+            buttonVariant === "primary"
+              ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-100"
+              : "border border-gray-200 text-black hover:bg-gray-50"
+          }`}
+      >
+        {buttonText}
+      </Link>
+    </div>
+  );
+};

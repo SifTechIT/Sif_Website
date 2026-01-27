@@ -1,4 +1,6 @@
+import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AusumKids from "../../assets/AusumKids/Ausum_kids.jpg";
 import Banner1 from "../../assets/AusumKids/Banner1.jpg";
 import Banner2 from "../../assets/AusumKids/Banner2.jpg";
@@ -9,13 +11,14 @@ import MindfulnessSession from "../../assets/AusumKids/MindfulnessSession.jpeg";
 import OpenCircles from "../../assets/AusumKids/Open_Circles.jpeg";
 import ResolutionCards from "../../assets/AusumKids/Resolution_Cards.jpeg";
 import StoryTelling from "../../assets/AusumKids/StoryTelling.jpg";
-import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
+import MissionCard from "../ui/MissionCard";
 
 export default function ChildEducationCentresPage() {
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
-        <div className="relative min-h-[90vh] sm:min-h-[660px] w-full mx-auto   ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
           <div
             className="absolute inset-0 bg-cover bg-center w-full h-full "
             style={{ backgroundImage: `url(${SunyaMeditation})` }}
@@ -31,18 +34,20 @@ export default function ChildEducationCentresPage() {
                 holistically through early learning, mindfulness, and behavioral
                 development.
               </p>
+
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full sm:w-auto">
-                  See Our Impact
-                </button>
-                <a
-                  href="#"
-                  className="text-white hover:underline font-medium text-lg"
+                <Link
+                  to="/impact-stories"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
                 >
-                  Our Programs
-                  <i className="fas fa-chevron-right text-xs ml-1"></i>
-                  {/* <ChevronRight className="w-4 h-4" /> */}
-                </a>
+                  See Our Impact
+                </Link>
+                <Link
+                  to="/"
+                  className="text-white hover:underline font-medium text-lg flex items-center"
+                >
+                  Our Programs <ChevronRight className="w-4 h-4 ml-1" />
+                </Link>
               </div>
             </div>
           </div>
@@ -140,7 +145,7 @@ export default function ChildEducationCentresPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bento-card col-span-1 md:col-span-2 md:row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end min-h-[450px]">
+            <div className="bento-card col-span-1 md:col-span-2 md:row-span-2 bg-zinc-900  p-12 flex flex-col justify-end min-h-[450px]">
               <div className="absolute top-12 left-12 text-5xl">📖</div>
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold mb-4">
@@ -181,17 +186,16 @@ export default function ChildEducationCentresPage() {
               </p>
             </div>
 
-            <div className="bento-card p-8 flex flex-col justify-center text-center bg-purple-600 text-white border-none">
+            <div className="bento-card p-8 flex flex-col justify-center text-center bg-purple-600  border-none">
               <div className="text-3xl mb-4">🤗</div>
-              <h4 className="font-bold mb-2 text-white">Inclusive Spaces</h4>
-              <p className="text-purple-100 text-xs">
+              <h4 className="font-bold mb-2 ">Inclusive Spaces</h4>
+              <p className="text-gray-500 text-xs">
                 Equal opportunities for learning where every voice is respected.
               </p>
             </div>
           </div>
         </div>
       </section>
-
       <section className="py-24 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold tracking-tight mb-16 text-gradient">
           Key Interventions & Activities.
@@ -280,47 +284,11 @@ export default function ChildEducationCentresPage() {
             Join Our Development Mission.
           </h2>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bento-card p-8 bg-purple-50/50 border-purple-100">
-            <i className="fas fa-chalkboard-teacher text-purple-600 mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Facilitator</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Train to deliver Little Sunyatee programs in your community.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-purple-600">
-              Apply Now {">"}
-            </button>
-          </div>
-          <div className="bento-card p-8">
-            <i className="fas fa-hands-helping text-purple-600 mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Volunteer</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Support our centres through programs or administration.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-purple-600">
-              Get Involved {">"}
-            </button>
-          </div>
-          <div className="bento-card p-8">
-            <i className="fas fa-users text-purple-600 mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Parent Workshops</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Extend behavioral practices into your home environment.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-purple-600">
-              Register {">"}
-            </button>
-          </div>
-          <div className="bento-card p-8 bg-zinc-900 text-white border-none">
-            <i className="fas fa-heart text-purple-400 mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Sponsor a Centre</h4>
-            <p className="text-xs text-zinc-500 mb-6">
-              Establish new centres with materials and funding.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-white underline">
-              Sponsor Now
-            </button>
-          </div>
+          {missionCards.map((card, index) => (
+            <MissionCard key={index} {...card} />
+          ))}
         </div>
       </section>
       <HeroSlider />
@@ -938,3 +906,33 @@ function GetInvolved() {
     </section>
   );
 }
+
+const missionCards = [
+  {
+    icon: (
+      <i className={`fas fa-chalkboard-teacher text-purple-600  text-xl`} />
+    ),
+    title: "Facilitator",
+    description: "Train to deliver Little Sunyatee programs in your community.",
+    action: "Apply Now",
+    highlight: true,
+  },
+  {
+    icon: <i className={`fas fa-hands-helping text-purple-600  text-xl`} />,
+    title: "Volunteer",
+    description: "Support our centres through programs or administration.",
+    action: "Get Involved",
+  },
+  {
+    icon: <i className={`fas fa-users text-purple-600  text-xl`} />,
+    title: "Parent Workshops",
+    description: "Extend behavioral practices into your home environment.",
+    action: "Register",
+  },
+  {
+    icon: <i className={`fas fa-heart text-purple-600  text-xl`} />,
+    title: "Sponsor a Centre",
+    description: "Establish new centres with materials and funding.",
+    action: "Sponsor Now",
+  },
+];

@@ -1,14 +1,12 @@
-import img2 from "../../assets/noni_cultivate.jpg";
-import img1 from "../../assets/women_stitching.JPG";
-const images = [
-  img1,
-  img2,
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=70",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=70",
-];
+import { Link } from "react-router-dom";
+import img6 from "../../assets/Cta/brick.jpeg";
+import img2 from "../../assets/Cta/farmer.jpeg";
+import img3 from "../../assets/Cta/kids.png";
+import img5 from "../../assets/Cta/lim.jpeg";
+import img4 from "../../assets/Cta/odoc.jpeg";
+import img7 from "../../assets/Cta/palm.jpeg";
+import img1 from "../../assets/Cta/women.jpeg";
+const images = [img1, img2, img3, img5, img6, img4, img7];
 function CTA() {
   return (
     <section className="w-full  py-8">
@@ -24,12 +22,18 @@ function CTA() {
               create a mindful world.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition">
+              <Link
+                to="/get-involved"
+                className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition"
+              >
                 Get Involved
-              </button>
-              <button className="bg-white text-black border border-black px-10 py-4 rounded-full font-semibold hover:bg-gray-50 transition">
+              </Link>
+              <Link
+                to="/contact-us"
+                className="bg-white text-black border border-black px-10 py-4 rounded-full font-semibold hover:bg-gray-50 transition"
+              >
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
           {/* Bottom strip (photos) */}

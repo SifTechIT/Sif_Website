@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner1 from "../../assets/FarmerEmpowerment/Banner1.jpeg";
@@ -12,69 +13,82 @@ import {
 import SoilTesting from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
 import Technology from "../../assets/FarmerEmpowerment/Technology.jpeg";
 import Training from "../../assets/FarmerEmpowerment/Training.jpeg";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
+
 export default function FarmerEmpowermentPage() {
   return (
     <main>
-      <section className="pt-40 pb-20 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-block px-4 py-1.5 mb-6 bg-green-50 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-widest">
-            🌾 Sustainable Agriculture, Resilient Communities
-          </div>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-gradient mb-8 leading-[1.1]">
-            Farmer Empowerment.
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-500 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
-            Transforming rural livelihoods through sustainable agriculture,
-            modern training, and assured market linkages.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg">
-              See Our Impact
-            </button>
-            <a
-              href="#projects"
-              className="text-green-700 hover:underline font-medium text-lg flex items-center"
-            >
-              Learn About Noni{" "}
-              <i className="fas fa-arrow-right text-xs ml-2"></i>
-            </a>
+      <section className="hero-gradient   relative w-full  ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
+          <div
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${SunyaMeditation})` }}
+          >
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <div className="inline-block px-4 py-1.5 mb-6 bg-green-50 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                🌾 Sustainable Agriculture, Resilient Communities
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Farmer Empowerment.
+              </h1>
+              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+                Transforming rural livelihoods through sustainable agriculture,
+                modern training, and assured market linkages.
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <Link
+                  to="/impact-stories"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
+                >
+                  See Our Impact
+                </Link>
+                <Link
+                  to="/"
+                  className="text-white hover:underline font-medium text-lg flex items-center"
+                >
+                  Learn About Noni <ChevronRight className="w-4 h-4 ml-1" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 border-y border-gray-100 mb-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 text-center mb-12">
-            Real Impact, Real Numbers
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center metric-card">
-              <div className="text-5xl font-bold tracking-tighter mb-2">21</div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+          <div className="text-center mb-16">
+            <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
+              Young Lives Impact
+            </h2>
+            <h3 className="text-3xl font-bold"> Real Impact, Real Numbers</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">21</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Farmers in Siddipet
-              </p>
+              </div>
             </div>
-            <div className="text-center metric-card">
-              <div className="text-5xl font-bold tracking-tighter mb-2">55</div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">55</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Acres Under Noni
-              </p>
-            </div>
-            <div className="text-center metric-card">
-              <div className="text-5xl font-bold tracking-tighter mb-2">
-                100%
               </div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">100%</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Buy-back Guarantee
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold tracking-tighter mb-2">
-                200+
               </div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">200+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Expansion Planned
-              </p>
+              </div>
             </div>
           </div>
         </div>

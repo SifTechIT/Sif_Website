@@ -1,7 +1,9 @@
+import { ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import SoilTest from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
-import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
-import COVIDPPE from "../../assets/ImpactStories/COVID_PPE.png";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
+import Covidppe from "../../assets/ImpactStories/COVID_PPE.png";
 import CommunityConfidence from "../../assets/ImpactStories/Community_Confidence.png";
 import ConfidenceBeyondIncome from "../../assets/ImpactStories/Confidence_Beyond_Income.png";
 import ConflictCards from "../../assets/ImpactStories/Conflict_Cards.jpg";
@@ -29,7 +31,7 @@ export default function ImpactStoriesPage() {
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
-        <div className="relative min-h-[90vh] sm:min-h-[660px] w-full mx-auto   ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
           <div
             className="absolute inset-0 bg-cover bg-center w-full h-full "
             style={{ backgroundImage: `url(${SunyaMeditation})` }}
@@ -48,16 +50,18 @@ export default function ImpactStoriesPage() {
                 gaining confidence.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full sm:w-auto">
-                  Explore Sunya
-                </button>
-                <a
-                  href="#"
-                  className="text-blue-600 hover:underline font-medium text-lg"
+                <Link
+                  to="/meditation"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
                 >
-                  Support ODOC{" "}
-                  <i className="fas fa-chevron-right text-xs ml-1"></i>
-                </a>
+                  Explore Sunya
+                </Link>
+                <Link
+                  to="/onedollar-onechild"
+                  className="text-white hover:underline font-medium text-lg flex items-center"
+                >
+                  Support ODOC <ChevronRight className="w-4 h-4 ml-1" />
+                </Link>
               </div>
             </div>
           </div>
@@ -74,10 +78,7 @@ export default function ImpactStoriesPage() {
         </div>
 
         <div className="bento-grid">
-          <div
-            className="bento-card col-span-2 row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end"
-            onclick="openModal('farmer')"
-          >
+          <div className="bento-card col-span-2 row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end">
             <div className="absolute top-12 left-12 text-5xl">🌾</div>
             <div className="relative z-10">
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-4 block">
@@ -96,10 +97,7 @@ export default function ImpactStoriesPage() {
             </div>
           </div>
 
-          <div
-            className="bento-card col-span-2 row-span-1 p-10 flex flex-col justify-between border-pink-50 bg-pink-50/30"
-            onclick="openModal('women')"
-          >
+          <div className="bento-card col-span-2 row-span-1 p-10 flex flex-col justify-between border-pink-50 bg-pink-50/30">
             <div className="flex justify-between items-start">
               <div className="text-4xl">👩‍🧵</div>
               <span className="text-[9px] font-bold uppercase tracking-widest bg-pink-600 text-white px-3 py-1 rounded-full">
@@ -117,10 +115,7 @@ export default function ImpactStoriesPage() {
             </div>
           </div>
 
-          <div
-            className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-orange-50/50"
-            onclick="openModal('health')"
-          >
+          <div className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-orange-50/50">
             <div className="text-4xl mb-6">👓</div>
             <h3 className="text-xl font-bold mb-2 text-orange-900">
               Vision for Learning
@@ -131,10 +126,7 @@ export default function ImpactStoriesPage() {
             </p>
           </div>
 
-          <div
-            className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-purple-50/50"
-            onclick="openModal('education')"
-          >
+          <div className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-purple-50/50">
             <div className="text-4xl mb-6">🎒</div>
             <h3 className="text-xl font-bold mb-2 text-purple-900">
               Kindness in Action
@@ -147,14 +139,12 @@ export default function ImpactStoriesPage() {
         </div>
       </section>
       <StoriesWithFilter />
-      {/* <Stats /> */}
     </main>
   );
 }
 
 /* ========================= Stories + Filter ========================= */
 const ALL_STORIES = [
-  // Farmer Empowerment
   {
     image: SecureLivehoods,
     category: "farmer",
@@ -244,7 +234,7 @@ const ALL_STORIES = [
     desc: "Girls attended school regularly after SIF distributed dignity kits and conducted health sessions.",
   },
   {
-    image: COVIDPPE,
+    image: Covidppe,
     category: "health",
     color: "from-blue-600 to-blue-800",
     emoji: "😷",
@@ -440,7 +430,7 @@ function StoriesWithFilter() {
               onClick={() => setActive(t.id)}
               className={`px-5 py-2 rounded-full text-sm font-medium border transition cursor-pointer ${
                 active === t.id
-                  ? "bg-emerald-500 border-emerald-500 text-white"
+                  ? "bg-[#2f2760] text-white "
                   : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
               }`}
             >

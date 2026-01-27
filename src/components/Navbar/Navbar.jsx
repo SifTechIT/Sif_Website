@@ -15,28 +15,28 @@ const ACTIVITIES_COLUMNS = [
         icon: <i className="fas fa-om text-xs" />,
       },
       {
-        label: "Ausum Kids",
+        label: "Child Education",
         href: "/child-education",
         desc: "Special needs therapy",
         chipClass:
           "bg-pink-50 text-pink-600 group-hover/item:bg-pink-600 group-hover/item:text-white",
         icon: <i className="fas fa-child text-xs" />,
       },
-       {
+      {
         label: "Rural Health & Awareness",
-         href: "/rural-health-awareness",
-          chipClass:
+        href: "/rural-health-awareness",
+        chipClass:
           "bg-pink-50 text-pink-600 group-hover/item:bg-pink-600 group-hover/item:text-white",
-         desc: "Camps, nutrition, hygiene, well-being.",
-          icon: <i className="fas fa-child text-xs" />,
+        desc: "Camps, nutrition, hygiene, well-being.",
+        icon: <i className="fas fa-child text-xs" />,
       },
-        {
+      {
         label: "ODOC – One Dollar One Child",
-          href: "/onedollar-onechild",
-          chipClass:
+        href: "/onedollar-onechild",
+        chipClass:
           "bg-pink-50 text-pink-600 group-hover/item:bg-pink-600 group-hover/item:text-white",
-          desc: "Spirulina nutrition at $1/child.",
-          icon: <i className="fas fa-child text-xs" />,
+        desc: "Spirulina nutrition at $1/child.",
+        icon: <i className="fas fa-child text-xs" />,
       },
     ],
   },
@@ -81,6 +81,22 @@ const ACTIVITIES_COLUMNS = [
         label: "Internship Academy",
         href: "/internships-education",
         desc: "Learning with Impact",
+        chipClass:
+          "bg-blue-50 text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white",
+        icon: <i className="fas fa-graduation-cap text-xs" />,
+      },
+      {
+        label: "Brick House",
+        href: "/brick-house",
+        desc: "High-impact programs with companies.",
+        chipClass:
+          "bg-blue-50 text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white",
+        icon: <i className="fas fa-graduation-cap text-xs" />,
+      },
+      {
+        label: "Palm Leaf Sutra Printing",
+        href: "/palm-leaf-sutra-printing",
+        desc: "High-impact programs with companies.",
         chipClass:
           "bg-blue-50 text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white",
         icon: <i className="fas fa-graduation-cap text-xs" />,

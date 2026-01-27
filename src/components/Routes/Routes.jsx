@@ -8,6 +8,7 @@ import ContactPage from "../ContactPage/ContactPage";
 import FarmerEmpowermentPage from "../FarmerEmpowerment/FarmerEmpowerment";
 import Footer from "../Footer/Footer";
 import GalleryPage from "../Gallery/Gallery";
+import CTA from "../Home/CTA";
 import Home from "../Home/Home";
 import ImpactStoriesPage from "../ImpactStories/ImpactStories";
 import InternshipProgramsPage from "../Internship/Internship";
@@ -18,7 +19,6 @@ import ODOCPage from "../ODOC/ODOC";
 import PalmLeafSutraPage from "../PalmLeafSutra/PalmLeafSutra";
 import RuralHealthPage from "../RuralHealthAwareness/RuralHealth";
 import WomenEmpowermentPage from "../WomenEmpowerment/WomenEmpowerment";
-import CTA from "../Home/CTA";
 
 const AllRoutes = () => {
   return (

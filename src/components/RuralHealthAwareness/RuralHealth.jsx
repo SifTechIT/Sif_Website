@@ -1,79 +1,118 @@
+import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
+import MissionCard from "../ui/MissionCard";
+import TestimonialsCarousel from "../ui/TestimonialsCarousel";
+
+const DEFAULT_TESTIMONIALS = [
+  {
+    quote:
+      "Before SIF's awareness drive, many in our village ignored basic hygiene. Now our children follow safe practices, and women openly discuss health issues without hesitation.",
+    highlight: "₹1,80,000",
+    name: "Community Volunteer",
+    role: "Rural Telangana",
+    avatarText: "C",
+    accent: "text-blue-600",
+  },
+  {
+    quote:
+      "The mobile health camps brought medical care to our doorstep. Early detection saved my mother's life, and now our entire family prioritizes preventive health check-ups.",
+    highlight: "",
+    name: "Rajesh Kumar",
+    role: "Village Health Beneficiary",
+    avatarText: "R",
+    accent: "text-emerald-600",
+  },
+  {
+    quote:
+      "SIF's women's health programs gave us courage to seek proper care. The menstrual hygiene awareness changed how we approach health in our community.",
+    highlight: "",
+    name: "Sita Devi",
+    role: "Women's Health Advocate",
+    avatarText: "S",
+    accent: "text-indigo-600",
+  },
+];
 
 export default function RuralHealthPage() {
   return (
     <main>
-      <header
-        className="mt-3 mx-3 h-[80vh] rounded-b-[40px] overflow-hidden text-white flex items-center justify-center bg-center bg-cover bg-no-repeat
-      [background-image:linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.40)),url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop')]"
-      >
-        <div className="max-w-4xl px-6 text-center">
+      <section className="hero-gradient   relative w-full  ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
           <div
-            className="inline-block px-4 py-1.5 mb-6 rounded-full text-[10px] font-bold uppercase tracking-widest
-          bg-white/20 backdrop-blur border border-white/30"
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${SunyaMeditation})` }}
           >
-            Healthcare for Underserved Communities
-          </div>
+            <div className="absolute inset-0 bg-black/60" />
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
-            Rural Health &amp; Awareness.
-          </h1>
+            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <div
+                className="inline-block px-4 py-1.5 mb-6 rounded-full text-[10px] font-bold uppercase tracking-widest
+          bg-white/20 backdrop-blur border border-white/30"
+              >
+                Healthcare for Underserved Communities
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Rural Health &amp; Awareness.
+              </h1>
+              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+                Building healthier, informed, and resilient communities through
+                comprehensive preventive care and nutrition education.
+              </p>
 
-          <p className="text-lg md:text-2xl font-light opacity-90 max-w-2xl mx-auto leading-relaxed mb-10 text-white">
-            Building healthier, informed, and resilient communities through
-            comprehensive preventive care and nutrition education.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-black px-10 py-4 rounded-full font-bold text-sm">
-              See Our Impact
-            </button>
-
-            <button className="bg-white/20 backdrop-blur border border-white/30 text-white px-10 py-4 rounded-full font-bold text-sm">
-              Our Programs
-            </button>
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <Link
+                  to="/impact-stories"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
+                >
+                  See Our Impact
+                </Link>
+                <Link
+                  to="/"
+                  className="text-white hover:underline font-medium text-lg flex items-center"
+                >
+                  Our Programs <ChevronRight className="w-4 h-4 ml-1" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-
-      <section className="py-20 border-b border-gray-100 mb-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 text-center mb-12">
-            Health Impact Metrics
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center metric-card">
-              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
+      </section>
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+          <div className="text-center mb-16">
+            <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
+              Young Lives Impact
+            </h2>
+            <h3 className="text-3xl font-bold"> Health Impact Metrics</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">
                 5,000+
               </div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Beneficiaries Reached
-              </p>
-            </div>
-            <div className="text-center metric-card">
-              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
-                25+
               </div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">25+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Villages Served
-              </p>
-            </div>
-            <div className="text-center metric-card">
-              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
-                200+
               </div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">200+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Health Camps
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold tracking-tighter mb-2 text-blue-600">
-                50+
               </div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">50+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Target Villages 2026
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -233,85 +272,21 @@ export default function RuralHealthPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-24 bg-gray-50/50 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white p-12 rounded-[32px] border border-gray-100 shadow-sm text-center">
-            <p className="text-2xl font-light text-gray-800 italic leading-relaxed mb-12">
-              "The mobile health camps brought medical care to our doorstep.
-              Early detection saved my mother's life, and now our entire family
-              prioritizes preventive health check-ups."
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                R
-              </div>
-              <div className="text-left">
-                <p className="font-bold text-sm">Rajesh Kumar</p>
-                <p className="text-xs text-gray-400 uppercase tracking-widest">
-                  Village Health Beneficiary
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
       <section className="py-24 px-6 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold tracking-tight mb-16 text-center">
-          Join Our Health Mission.
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bento-card p-10 flex flex-col justify-between">
-            <div>
-              <div className="text-2xl mb-6">🩺</div>
-              <h4 className="font-bold mb-3">Volunteer Doctor</h4>
-              <p className="text-sm text-gray-500">
-                Join our camps and provide essential medical services.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-blue-600">
-              Register Now →
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between bg-zinc-900 text-white border-none">
-            <div>
-              <div className="text-2xl mb-6">🏢</div>
-              <h4 className="font-bold mb-3">Corporate Partners</h4>
-              <p className="text-sm text-zinc-400">
-                Sponsor mobile units or health education via CSR.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-white underline underline-offset-8">
-              Partner With Us →
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between">
-            <div>
-              <div className="text-2xl mb-6">🎓</div>
-              <h4 className="font-bold mb-3">Health Educator</h4>
-              <p className="text-sm text-gray-500">
-                Volunteer to teach hygiene and wellness in rural schools.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-blue-600">
-              Get Involved →
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between border-blue-200 bg-blue-50/50">
-            <div>
-              <div className="text-2xl mb-6">❤️</div>
-              <h4 className="font-bold mb-3">Sponsor a Camp</h4>
-              <p className="text-sm text-gray-700">
-                Fund medical supplies to bring healthcare to more villages.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-blue-600">
-              Sponsor →
-            </button>
-          </div>
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gradient">
+            Join Our Health Mission.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {healthMissionCards.map((card, index) => (
+            <MissionCard key={index} {...card} />
+          ))}
         </div>
       </section>
+
       <HeroSlider />
       <Stats />
       <ProgramOverview />
@@ -322,6 +297,32 @@ export default function RuralHealthPage() {
     </main>
   );
 }
+const healthMissionCards = [
+  {
+    icon: "🩺",
+    title: "Volunteer Doctor",
+    description: "Join our camps and provide essential medical services.",
+    action: "Register Now",
+  },
+  {
+    icon: "🏢",
+    title: "Corporate Partners",
+    description: "Sponsor mobile units or health education via CSR.",
+    action: "Partner With Us",
+  },
+  {
+    icon: "🎓",
+    title: "Health Educator",
+    description: "Volunteer to teach hygiene and wellness in rural schools.",
+    action: "Get Involved",
+  },
+  {
+    icon: "❤️",
+    title: "Sponsor a Camp",
+    description: "Fund medical supplies to bring healthcare to more villages.",
+    action: "Sponsor",
+  },
+];
 
 /* ========================= Hero Slider ========================= */
 function HeroSlider() {

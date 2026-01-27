@@ -1,34 +1,45 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
 
 export default function AgamasTranslationsPage() {
   return (
     <main>
-      <header className="hero-section px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-block px-4 py-1.5 mb-6 bg-amber-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-amber-800 border border-amber-200">
-            📜 Preserving Ancient Wisdom for Future Generations
-          </div>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] text-gradient">
-            Agamas &<br />
-            Translations.
-          </h1>
-          <p className="text-xl md:text-2xl font-light text-gray-500 max-w-3xl mx-auto leading-relaxed mb-12">
-            Preserving, translating, and reviving ancient Indian spiritual and
-            philosophical texts—making timeless wisdom accessible to humanity.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold shadow-lg">
-              See Our Progress
-            </button>
-            <button className="bg-white border border-gray-200 text-gray-600 px-10 py-4 rounded-full font-semibold">
-              Explore Texts
-            </button>
+      <section className="hero-gradient   relative w-full  ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
+          <div
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${SunyaMeditation})` }}
+          >
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <div className="inline-block px-4 py-1.5 mb-6 bg-amber-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-amber-800 border border-amber-200">
+                📜 Preserving Ancient Wisdom for Future Generations
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Agamas & Translations.
+              </h1>
+              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+                Preserving, translating, and reviving ancient Indian spiritual
+                and philosophical texts—making timeless wisdom accessible to
+                humanity.
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <Link
+                  to="/impact-stories"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
+                >
+                  Know More
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-
-      <section className="py-24 px-6 bg-zinc-900 text-white rounded-[4rem] mx-4 my-8">
-        <div className="max-w-6xl mx-auto">
+      </section>
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Preservation Progress
@@ -39,7 +50,7 @@ export default function AgamasTranslationsPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold accent-gold mb-2">50+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">50+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Manuscripts
                 <br />
@@ -47,7 +58,7 @@ export default function AgamasTranslationsPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-gold mb-2">15+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">15+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Languages
                 <br />
@@ -55,7 +66,7 @@ export default function AgamasTranslationsPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-gold mb-2">200+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">200+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Pages
                 <br />
@@ -63,7 +74,7 @@ export default function AgamasTranslationsPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-gold mb-2">10+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">10+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Partner
                 <br />

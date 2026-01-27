@@ -1,12 +1,54 @@
-import SunyaMeditation from "../../assets/Home/Sunya_Meditation.JPG";
-import ServicesSlider from "./ServicesSlider";
+import { Link, useNavigate } from "react-router-dom";
+import Banner2 from "../../assets/BrickHouse/Banner2.jpg";
+import Agamas from "../../assets/Home/Agamas_ac.jpeg";
+import AusumKids from "../../assets/Home/Ausum_Kids_ac.jpg";
+import Awareness from "../../assets/Home/Awareness.jpeg";
+import CSR from "../../assets/Home/CSR_ac.png";
+import Education from "../../assets/Home/Education_ac.jpg";
+import Farmer from "../../assets/Home/Farmer_ac.jpeg";
+import ODOC from "../../assets/Home/ODOC_ac.jpeg";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
+import SunyaMeditation1 from "../../assets/Home/Sunya_meditation_ac.JPG";
+import Women from "../../assets/Home/Women_ac.jpg";
+import palm from "../../assets/Home/palm.jpeg";
+import TestimonialsCarousel from "../ui/TestimonialsCarousel";
+import { Card, CardContent } from "../ui/card";
+
+const DEFAULT_TESTIMONIALS = [
+  {
+    quote:
+      "After joining the Noni Project, my income grew from ₹18,000 to ₹1,80,000 per year. Today, I can support my family with dignity and confidence.",
+    highlight: "₹1,80,000",
+    name: "Nagireddy",
+    role: "Farmer, Siddipet",
+    avatarText: "N",
+    accent: "text-blue-600",
+  },
+  {
+    quote:
+      "SIF gave me skills and independence. I can now support my children’s education and live with self-respect.",
+    highlight: "",
+    name: "Sandiri Sushama",
+    role: "Single Mother, Telangana",
+    avatarText: "S",
+    accent: "text-emerald-600",
+  },
+  {
+    quote:
+      "During COVID, when my husband lost his income, SIF’s training and support helped me stabilize my family financially.",
+    highlight: "",
+    name: "Harika",
+    role: "Mother of Two",
+    avatarText: "H",
+    accent: "text-indigo-600",
+  },
+];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-neutral-50 to-white text-neutral-900 overflow-x-hidden">
-      {/* <Navbar /> */}
-      <section className="hero-gradient   relative w-full  ">
-        <div className="relative min-h-[90vh] sm:min-h-[660px] w-full mx-auto   ">
+      <section className="hero-gradient relative w-full">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
           <div
             className="absolute inset-0 bg-cover bg-center w-full h-full "
             style={{ backgroundImage: `url(${SunyaMeditation})` }}
@@ -24,16 +66,12 @@ export default function Home() {
                 by Sunya.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full sm:w-auto">
-                  Explore Sunya
-                </button>
-                <a
-                  href="#"
-                  className="text-white hover:underline font-medium text-lg"
+                <Link
+                  to="/meditation"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
                 >
-                  Support ODOC{" "}
-                  <i className="fas fa-chevron-right text-xs ml-1"></i>
-                </a>
+                  Explore Sunya
+                </Link>
               </div>
             </div>
           </div>
@@ -80,12 +118,18 @@ export default function Home() {
                 guided by the wisdom of Sunya.
               </p>
               <div className="mt-10 flex space-x-6">
-                <button className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition">
+                <Link
+                  to="about-us"
+                  className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition"
+                >
                   Explore Our Work
-                </button>
-                <button className="text-black border border-gray-300 px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                </Link>
+                <Link
+                  to="csr-partnership"
+                  className="text-black border border-gray-300 px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-50 transition"
+                >
                   Partner via CSR
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -135,7 +179,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-24 px-6 bg-[#fbfbfd]">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
@@ -276,153 +319,153 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <TestimonialsCarousel />
-      <ServicesSlider />
+      <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
+      <section className="py-24 px-6 bg-white">
+        <div className="mx-auto max-w-6xl p-4">
+          <div className="mb-6">
+            <p className="text-sm uppercase tracking-wider text-emerald-600">
+              Activities
+            </p>
+            <h2 className="mt-1 text-3xl font-semibold tracking-tight">
+              Our Activities
+            </h2>
+            <p className="mt-2 max-w-2xl text-neutral-700 dark:text-neutral-300">
+              Explore how we serve communities through meditation, empowerment,
+              health, heritage, and education.
+            </p>
+          </div>
+          <div
+            className="
+             grid grid-cols-3 gap-8
+            "
+          >
+            {items.map((it) => (
+              <ServiceCard key={it.id} item={it} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
 
-// TestimonialsCarousel.jsx
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import * as React from "react";
-
-const DEFAULT_TESTIMONIALS = [
-  {
-    quote:
-      "After joining the Noni Project, my income grew from ₹18,000 to ₹1,80,000 per year. Today, I can support my family with dignity.",
-    highlight: "₹1,80,000",
-    name: "Nagireddy",
-    role: "Farmer, Siddipet",
-    avatarText: "N",
-    accent: "text-blue-600",
-  },
-  {
-    quote:
-      "With the training and buy-back support, I reduced losses and started saving every month. My farm has become more stable and planned.",
-    highlight: "started saving",
-    name: "Sridevi",
-    role: "Farmer, Medak",
-    avatarText: "S",
-    accent: "text-emerald-600",
-  },
-  {
-    quote:
-      "Earlier I depended on seasonal work. Now the cultivation income is regular, and I’m confident about my children’s education.",
-    highlight: "regular",
-    name: "Ramesh",
-    role: "Farmer, Karimnagar",
-    avatarText: "R",
-    accent: "text-indigo-600",
-  },
-  {
-    quote:
-      "The community support helped me adopt better practices. I’m proud that my land is healthier and my income is improving each year.",
-    highlight: "healthier",
-    name: "Lakshmi",
-    role: "Farmer, Nizamabad",
-    avatarText: "L",
-    accent: "text-rose-600",
-  },
-];
-function TestimonialsCarousel({
-  testimonials = DEFAULT_TESTIMONIALS,
-  autoPlay = true,
-  autoPlayMs = 4500,
-}) {
-  const [index, setIndex] = React.useState(0);
-  const total = testimonials.length;
-
-  const next = React.useCallback(() => {
-    setIndex((i) => (i + 1) % total);
-  }, [total]);
-
-  const prev = React.useCallback(() => {
-    setIndex((i) => (i - 1 + total) % total);
-  }, [total]);
-
-  React.useEffect(() => {
-    if (!autoPlay) return;
-    const t = setInterval(next, autoPlayMs);
-    return () => clearInterval(t);
-  }, [autoPlay, autoPlayMs, next]);
-
-  const t = testimonials[index];
+function ServiceCard({ item }) {
+  const navigation = useNavigate();
 
   return (
-    <section className="bg-slate-100 ">
-      <div className="py-24 px-6 max-w-4xl mx-auto text-center">
-        <div className="p-8 md:p-12 text-center">
-          <p className="text-2xl md:text-4xl font-light italic leading-relaxed text-gray-800">
-            “{renderHighlightedQuote(t.quote, t.highlight, t.accent)}”
-          </p>
-
-          <div className="mt-8 flex items-center justify-center">
-            <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200 font-bold text-gray-600">
-              {t.avatarText}
-            </div>
-            <div className="text-left">
-              <div className="font-bold text-gray-900">{t.name}</div>
-              <div className="text-sm text-gray-500">{t.role}</div>
+    <Card className=" shrink-0 overflow-hidden rounded-none border p-0 shadow-none">
+      <CardContent className="p-0">
+        <div className="cursor-pointer" onClick={() => navigation(item.href)}>
+          <div className={`relative h-[175px] ${item.top}`}>
+            <div className="absolute left-7 top-16">
+              <div className="text-[22px] font-medium leading-none text-white">
+                {item.title}
+              </div>
+              <div className="mt-2  text-xs tracking-wide text-white/70">
+                {item.desc}
+              </div>
             </div>
           </div>
-
-          {/* Controls */}
-          <div className="mt-10 flex items-center justify-center gap-3">
-            <Button
-              type="button"
-              variant="outline"
-              size="icon"
-              onClick={prev}
-              className="h-10 w-10 rounded-full"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
-
-            {/* Dots */}
-            <div className="flex items-center gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setIndex(i)}
-                  className={[
-                    "h-2.5 w-2.5 rounded-full transition",
-                    i === index ? "bg-gray-900/70" : "bg-gray-900/20",
-                  ].join(" ")}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                />
-              ))}
-            </div>
-
-            <Button
-              type="button"
-              variant="outline"
-              size="icon"
-              onClick={next}
-              className="h-10 w-10 rounded-full"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </Button>
+          <div className="relative h-[190px] bg-white">
+            <img
+              src={item.img}
+              alt={item.title}
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   );
 }
 
-function renderHighlightedQuote(quote, highlight, accentClass) {
-  if (!highlight) return quote;
-
-  const parts = quote.split(highlight);
-  if (parts.length === 1) return quote;
-
-  return (
-    <>
-      {parts[0]}
-      <span className={`${accentClass} font-semibold`}>{highlight}</span>
-      {parts.slice(1).join(highlight)}
-    </>
-  );
-}
+const items = [
+  {
+    id: "implementation",
+    top: "bg-[#4C0C3E]",
+    title: "Sunya Meditation Programs",
+    desc: "Structured 7-belt pathway, retreats, and online practice to build clarity and resilience.",
+    img: SunyaMeditation1,
+    href: "/meditation",
+  },
+  {
+    id: "women",
+    top: "bg-[#36A7D6]",
+    title: "Farmer Empowerment",
+    desc: "Soil testing, noni cultivation, training & buy-back support to boost farmer incomes.",
+    img: Farmer,
+    href: "/farmer-empowerment",
+  },
+  {
+    id: "management",
+    top: "bg-[#D85A33]",
+    title: "Women’s Skill Centers",
+    desc: "Textiles, eco-products, and SHG-led entrepreneurship for livelihood and dignity.",
+    img: Women,
+    href: "/women-empowerment",
+  },
+  {
+    id: "health",
+    top: "bg-[#1F6FEB]",
+    title: "Rural Health & Awareness",
+    desc: "Preventive health camps, nutrition & hygiene sessions, mental well-being workshops.",
+    img: Awareness,
+    href: "/rural-health-awareness",
+  },
+  {
+    id: "csr",
+    top: "bg-[#0F766E]",
+    title: "CSR Partnerships",
+    desc: "Design and execution of high-impact CSR programs in health, education, and livelihoods.",
+    img: CSR,
+    href: "/csr-partnership",
+  },
+  {
+    id: "odoc",
+    top: "bg-[#7C3AED]",
+    title: "One Dollar One Child",
+    desc: "Spirulina nutrition at $1 per child—community-driven malnutrition intervention.",
+    img: ODOC,
+    href: "/onedollar-onechild",
+  },
+  {
+    id: "ausum",
+    top: "bg-[#B91C1C]",
+    title: "Ausum Kids",
+    desc: "Therapy & inclusion programs for children on the spectrum and their caregivers.",
+    img: AusumKids,
+    href: "/child-education",
+  },
+  {
+    id: "agamas",
+    top: "bg-[#0B1220]", // deep navy/black
+    title: "Agamas & Translations",
+    desc: "Palm-leaf sutra printing and scripture translations preserving timeless wisdom.",
+    img: Agamas,
+    href: "/agamas-translations",
+  },
+  {
+    id: "training",
+    top: "bg-[#F59E0B]", // amber
+    title: "Internships & Education",
+    desc: "Hands-on training in IT, design, agritech, and management for youth and volunteers.",
+    img: Education,
+    href: "/internships-education",
+  },
+  {
+    id: "brick-house",
+    top: "bg-[#16A34A]", // green
+    title: "Brick house ",
+    desc: "Sustainable housing solutions using eco-friendly materials and techniques.",
+    img: Banner2,
+    href: "/brick-house",
+  },
+  {
+    id: "Palm",
+    top: "bg-[#4C0C3E]", // same purple scheme
+    title: "Palm Leaf Sutra Printing",
+    desc: "Preserving ancient wisdom through traditional palm-leaf manuscript printing techniques.",
+    img: palm,
+    href: "/palm-leaf-sutra-printing",
+  },
+];

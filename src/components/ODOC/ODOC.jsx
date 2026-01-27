@@ -1,36 +1,53 @@
+import { ChevronRight } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
 import Banner1 from "../../assets/ODOC/Banner1.jpeg";
+
 export default function ODOCPage() {
   return (
     <main>
-      <header className="hero-section px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-block px-4 py-1.5 mb-6 bg-green-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-green-700 border border-green-200">
-            Global Nutrition Initiative by DXN & SIF
-          </div>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] text-gradient">
-            One Dollar.
-            <br />
-            One Child.
-          </h1>
-          <p className="text-xl md:text-2xl font-light text-gray-500 max-w-2xl mx-auto leading-relaxed mb-12">
-            Combatting malnutrition for 1 million children through targeted
-            Spirulina supplementation and comprehensive health monitoring.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold shadow-lg">
-              See Live Impact
-            </button>
-            <button className="bg-white border border-gray-200 text-gray-600 px-10 py-4 rounded-full font-semibold">
-              Our Approach
-            </button>
+      <section className="hero-gradient   relative w-full  ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
+          <div
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${SunyaMeditation})` }}
+          >
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <div className="inline-block px-4 py-1.5 mb-6 bg-green-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-green-700 border border-green-200">
+                Global Nutrition Initiative by DXN & SIF
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Child Education Centres.
+              </h1>
+              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+                Creating environments where children learn, play, and grow
+                holistically through early learning, mindfulness, and behavioral
+                development.
+              </p>
+
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <Link
+                  to="/impact-stories"
+                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
+                >
+                  See Live Impact
+                </Link>
+                <Link
+                  to="/"
+                  className="text-white hover:underline font-medium text-lg flex items-center"
+                >
+                  Our Approach <ChevronRight className="w-4 h-4 ml-1" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-
-      <section className="py-24 px-6 bg-zinc-900 text-white rounded-[4rem] mx-4 my-8">
-        <div className="max-w-6xl mx-auto">
+      </section>
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Live Impact Dashboard
@@ -41,7 +58,7 @@ export default function ODOCPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold accent-green mb-2">50k+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">50k+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Children
                 <br />
@@ -49,7 +66,7 @@ export default function ODOCPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-green mb-2">120k+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">120k+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Spirulina Bottles
                 <br />
@@ -57,7 +74,7 @@ export default function ODOCPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-green mb-2">85+</div>
+              <div className="text-4xl font-bold accent-purple mb-2">85+</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Partner
                 <br />
@@ -65,7 +82,7 @@ export default function ODOCPage() {
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold accent-green mb-2">100%</div>
+              <div className="text-4xl font-bold accent-purple mb-2">100%</div>
               <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
                 Transparency
                 <br />

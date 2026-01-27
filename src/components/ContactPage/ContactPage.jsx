@@ -1,7 +1,6 @@
 import { saveData } from "@/lib/db";
 import { serverTimestamp } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 
 /** Contact Us – SIF | React + Tailwind (no config) */
 export default function ContactPage() {
@@ -88,22 +87,6 @@ function Hero() {
             love to hear from you. Reach out through any of our offices or send
             us a message below.
           </p>
-
-          {/* CTAs */}
-          <div className={`mt-8 flex flex-wrap gap-4 justify-center`}>
-            <Link
-              to="/join-us"
-              className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full sm:w-auto"
-            >
-              Join Us
-            </Link>
-            <Link
-              to="/about-us"
-              className="text-blue-600 hover:underline font-medium text-lg"
-            >
-              Our Work
-            </Link>
-          </div>
         </div>
       </div>
 
@@ -145,8 +128,8 @@ function ContactMain() {
         ref={ref}
         className="opacity-0 translate-y-5 transition-all duration-700 max-w-7xl mx-auto "
       >
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-           <ContactForm />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <ContactForm />
           <OfficeInfo />
         </div>
       </div>
