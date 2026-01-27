@@ -7,11 +7,11 @@ import SutraEngraving from "../../assets/CulturalRevival/Gallery_Sutra_Engraving
 import FarmerSmile from "../../assets/FarmerEmpowerment/Gallery_Farmer_Smile.jpeg";
 import Noni from "../../assets/FarmerEmpowerment/Gallery_Noni.jpeg";
 import SoilTesting from "../../assets/FarmerEmpowerment/Gallery_Soil.jpg";
+import BodhGaya from "../../assets/Gallery/Gallery_Bodh_Gaya.JPG";
+import ChildrenFirst from "../../assets/Gallery/Gallery_ChildMeditation.jpg";
+import CommunityPractice from "../../assets/Gallery/Gallery_Community_Practice.JPG";
 import PalmLeafPreparation from "../../assets/PalmLeafSutra/Mission.jpg";
 import StressRelief from "../../assets/RuralHealth/Stress_Relief.jpg";
-import BodhGaya from "../../assets/SunyaMeditation/Gallery_Bodh_Gaya.JPG";
-import ChildrenFirst from "../../assets/SunyaMeditation/Gallery_ChildMeditation.jpg";
-import CommunityPractice from "../../assets/SunyaMeditation/Gallery_Community_Practice.JPG";
 import FirstSale from "../../assets/WomenEmpowerment/Gallery_First_Sale.jpg";
 import WomenLeader from "../../assets/WomenEmpowerment/Gallery_Leader.jpg";
 import GallerySkillCenter from "../../assets/WomenEmpowerment/Gallery_Skill_Center.jpg";

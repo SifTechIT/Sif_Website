@@ -1,7 +1,7 @@
-// If you're using Next.js, you can move the <Head> font link there.
-// For CRA/Vite, add Inter in index.html or via @import in your CSS.
-
 import { Link } from "react-router-dom";
+import SunyaMeditation from "../../assets/SunyaMeditation/banner.jpeg";
+// import Residential from "../../assets/SunyaMeditation/Residential.jpeg";
+// import Trainers from "../../assets/SunyaMeditation/Trainers.jpeg";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 
 const DEFAULT_TESTIMONIALS = [
@@ -33,42 +33,52 @@ const DEFAULT_TESTIMONIALS = [
     accent: "text-indigo-600",
   },
 ];
+
 export default function SunyaLanding() {
   return (
     <main>
-      <section className="pt-40 pb-20 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1
-            className="
-              text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]
-              bg-gradient-to-b from-[#1d1d1f] to-[#434344] bg-clip-text text-transparent
-            "
+      <section className="hero-gradient relative w-full">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
+          <div
+            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            style={{ backgroundImage: `url(${SunyaMeditation})` }}
           >
-            The Power of Nothing.
-          </h1>
+            <div className="absolute inset-0 bg-black/60" />
 
-          <p className="text-xl md:text-2xl text-gray-500 font-light mb-12 max-w-3xl mx-auto">
-            Ancient wisdom revived for the modern world. Experience inner peace
-            through the practice of conscious emptiness.
-          </p>
+            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <h1
+                className="
+              text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]
+             text-white  
+            "
+              >
+                The Power of Nothing.
+              </h1>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg">
-              Start Your Journey
-            </button>
+              <p className="text-xl md:text-2xl text-white font-light mb-12 max-w-3xl mx-auto">
+                Ancient wisdom revived for the modern world. Experience inner
+                peace through the practice of conscious emptiness.
+              </p>
 
-            <a
-              href="#programs"
-              className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
-            >
-              View Programs <ArrowRight className="h-4 w-4 ml-2" />
-            </a>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg">
+                  Start Your Journey
+                </button>
+
+                <a
+                  href="#programs"
+                  className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
+                >
+                  View Programs <ArrowRight className="h-4 w-4 ml-2" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* BELT BAR */}
-      <section className="max-w-5xl mx-auto px-6 mb-24">
+      <section className="max-w-5xl mx-auto px-6 py-24 ">
         <div className="flex w-full rounded-full overflow-hidden mb-4">
           <div className="w-[14.28%] h-[6px] bg-red-500" />
           <div className="w-[14.28%] h-[6px] bg-orange-500" />
@@ -145,26 +155,32 @@ export default function SunyaLanding() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <BentoBox className="md:col-span-7 bg-zinc-900 text-white p-12 flex flex-col justify-between h-[450px]">
-              <div>
-                <span className="text-blue-400 font-bold text-xs uppercase tracking-widest">
-                  Deep Immersion
-                </span>
-                <h3 className="text-3xl font-bold mt-4 mb-4">
-                  Residential Retreats
-                </h3>
-                <p className="text-zinc-400 max-w-sm">
-                  7 to 10-day silent retreats in serene environments with expert
-                  guidance for profound transformation.
-                </p>
-              </div>
-
-              <a
-                href="#"
-                className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit"
+            <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
+              <div
+                className=" bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${SunyaMeditation})` }}
               >
-                View Schedule
-              </a>
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="z-10">
+                  <span className="text-blue-400 font-bold text-xs uppercase tracking-widest">
+                    Deep Immersion
+                  </span>
+                  <h3 className="text-3xl font-bold mt-4 mb-4">
+                    Residential Retreats
+                  </h3>
+                  <p className="text-zinc-400 max-w-sm">
+                    7 to 10-day silent retreats in serene environments with
+                    expert guidance for profound transformation.
+                  </p>
+                </div>
+
+                <a
+                  href="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit"
+                >
+                  View Schedule
+                </a>
+              </div>
             </BentoBox>
 
             <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">

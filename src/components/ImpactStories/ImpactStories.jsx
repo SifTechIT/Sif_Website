@@ -26,6 +26,8 @@ import TransparencyAction from "../../assets/ImpactStories/Transparency_Action.j
 import WomenFarmer from "../../assets/ImpactStories/WomenFarmer.jpg";
 import YouthFarm from "../../assets/ImpactStories/YouthFarm.png";
 import YouthCraft from "../../assets/ImpactStories/Youth_Craft.jpg";
+import bento1 from "../../assets/ImpactStories/bento1.jpeg";
+import bento2 from "../../assets/ImpactStories/bento2.jpeg";
 
 export default function ImpactStoriesPage() {
   return (
@@ -78,7 +80,10 @@ export default function ImpactStoriesPage() {
         </div>
 
         <div className="bento-grid">
-          <div className="bento-card col-span-2 row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end">
+          <div
+            className="bento-card col-span-2 row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end bg-cover bg-center w-full h-full"
+            style={{ backgroundImage: `url(${bento1})` }}
+          >
             <div className="absolute top-12 left-12 text-5xl">🌾</div>
             <div className="relative z-10">
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-4 block">
@@ -97,7 +102,13 @@ export default function ImpactStoriesPage() {
             </div>
           </div>
 
-          <div className="bento-card col-span-2 row-span-1 p-10 flex flex-col justify-between border-pink-50 bg-pink-50/30">
+          <div
+            className="bento-card col-span-2 row-span-1 p-10 flex flex-col justify-between border-pink-50 bg-pink-50/30 bg-cover bg-center w-full h-full"
+            style={{
+              backgroundSize: "cover",
+              backgroundImage: `url(${bento2})`,
+            }}
+          >
             <div className="flex justify-between items-start">
               <div className="text-4xl">👩‍🧵</div>
               <span className="text-[9px] font-bold uppercase tracking-widest bg-pink-600 text-white px-3 py-1 rounded-full">
