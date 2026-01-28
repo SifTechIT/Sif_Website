@@ -23,13 +23,13 @@ export default function AboutUsPage() {
           >
             <div className="absolute inset-0 bg-black/60" />
 
-            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+            <div className="max-w-6xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
+              <h1 className="heading mb-6 text-white">
                 Creating Peace.
                 <br />
                 Empowering Lives.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white  ">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white  ">
                 Sunyatee International Foundation has been transforming lives
                 through mindfulness and community service since 2019.
               </p>
@@ -48,10 +48,8 @@ export default function AboutUsPage() {
       </section>
 
       <section className="pt-32 pb-16 px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          Our Journey.
-        </h1>
-        <p className="text-gray-500 text-lg max-w-2xl mx-auto font-light">
+        <h1 className="heading mb-6">Our Journey.</h1>
+        <p className="text-gray-500 hero-desc mx-auto font-light">
           From a single vision in 2019 to a global movement for mindfulness and
           empowerment.
         </p>
@@ -68,7 +66,7 @@ export default function AboutUsPage() {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+            <h2 className="subheading mb-6">Our Story</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               Founded in 2019, Sunyatee International Foundation (SIF) is
               inspired by the vision of <strong>Datuk Lim Siow Jin</strong> and{" "}
@@ -103,9 +101,7 @@ export default function AboutUsPage() {
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-4xl font-bold tracking-tight">
-              Our Leadership.
-            </h2>
+            <h2 className="subheading">Our Leadership.</h2>
             <p className="text-gray-500 mt-4">
               The visionaries guiding our global initiatives.
             </p>
@@ -162,7 +158,7 @@ export default function AboutUsPage() {
             />
           </div>
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold leading-tight">
+            <h2 className="subheading">
               Guided by Wisdom.
               <br />
               Driven by Impact.
@@ -173,7 +169,7 @@ export default function AboutUsPage() {
               nothingness — we are dedicated to uplifting lives through
               meditation, empowerment, and cultural preservation.
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
               <div className="p-6 bg-blue-50 rounded-3xl">
                 <h4 className="font-bold text-blue-700">Vision</h4>
                 <p className="text-sm text-blue-600/70">
@@ -194,31 +190,31 @@ export default function AboutUsPage() {
       <section className="py-24 px-6 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
           <div>
-            <div className="text-4xl font-bold tracking-tighter">45,000+</div>
+            <div className="subheading">45,000+</div>
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mt-2">
               Certificates
             </div>
           </div>
           <div>
-            <div className="text-4xl font-bold tracking-tighter">300+</div>
+            <div className="subheading">300+</div>
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mt-2">
               Volunteers
             </div>
           </div>
           <div>
-            <div className="text-4xl font-bold tracking-tighter">40+</div>
+            <div className="subheading">40+</div>
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mt-2">
               Countries
             </div>
           </div>
           <div>
-            <div className="text-4xl font-bold tracking-tighter">5,000+</div>
+            <div className="subheading">5,000+</div>
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mt-2">
               ODOC Kids
             </div>
           </div>
           <div>
-            <div className="text-4xl font-bold tracking-tighter">4 Lakh</div>
+            <div className="subheading">4 Lakh</div>
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mt-2">
               Relief Kits
             </div>
