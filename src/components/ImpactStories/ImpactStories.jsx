@@ -467,7 +467,7 @@ function StoriesWithFilter() {
           {stories.map((s, i) => (
             <article
               key={`${s.title}-${i}`}
-              className="rounded-2xl overflow-hidden border border-gray-200 transition hover:-translate-y-2 bg-white"
+              className="rounded-[2.5rem] overflow-hidden border border-gray-200 transition hover:-translate-y-2 bg-white"
             >
               <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
                 <img
@@ -485,7 +485,7 @@ function StoriesWithFilter() {
                 </h3>
                 <p className="text-gray-600 leading-relaxed">{s.desc}</p>
                 {s.quote && (
-                  <blockquote className="bg-gray-50 border-l-4 border-emerald-500 p-4 mt-4 rounded-r-md italic text-gray-800">
+                  <blockquote className="bg-gray-50 border-l-4 border-emerald-500 p-4 mt-4 rounded-r-[2.5rem] italic text-gray-800">
                     {s.quote}
                     <div className="font-semibold text-sm text-gray-600 mt-2">
                       {s.author}

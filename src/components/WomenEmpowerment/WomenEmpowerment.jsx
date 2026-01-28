@@ -1,4 +1,5 @@
 import { scrollToSection } from "@/lib/scrollToSection";
+import { ChevronRight } from "lucide-react";
 import WomenStitching from "../../assets/women_stitching.JPG";
 import Banner1 from "../../assets/WomenEmpowerment/banner1.jpeg";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
@@ -216,8 +217,8 @@ export default function WomenEmpowermentPage() {
             <p className="text-xs text-gray-500 mb-6">
               Provide the tools for sustainable livelihood.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600">
-              Get Involved {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
+              Get Involved <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-8">
@@ -226,8 +227,8 @@ export default function WomenEmpowermentPage() {
             <p className="text-xs text-gray-500 mb-6">
               Invest in skill development and empowerment.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600">
-              Support {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
+              Support <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-8">
@@ -236,8 +237,8 @@ export default function WomenEmpowermentPage() {
             <p className="text-xs text-gray-500 mb-6">
               Support production through direct orders.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600">
-              Shop Now {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
+              Shop Now <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-8 bg-zinc-900 border-none">
@@ -246,8 +247,8 @@ export default function WomenEmpowermentPage() {
             <p className="text-xs text-zinc-500 mb-6">
               Collaborate on rural empowerment projects.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600  ">
-              Contact Us {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
+              Contact Us <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         </div>

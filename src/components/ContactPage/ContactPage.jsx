@@ -65,10 +65,7 @@ function Hero() {
           <h1 className="max-w-4xl heading text-foreground">Contact Us</h1>
 
           {/* Subtitle */}
-          <p
-            className={`mt-5 text-muted-foreground hero-desc center`}
-          
-          >
+          <p className={`mt-5 text-muted-foreground hero-desc center`}>
             Ready to join our mission or learn more about our programs? We'd
             love to hear from you. Reach out through any of our offices or send
             us a message below.
@@ -150,7 +147,7 @@ function ContactForm() {
   };
 
   return (
-    <div className=" text-left w-full rounded-2xl transition-all duration-300 ease-out bg-card border  border-border/60 p-8 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1">
+    <div className=" text-left w-full rounded-[2.5rem] transition-all duration-300 ease-out bg-card border  border-border/60 p-8 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1">
       <div
         className={`mb-5 rounded-lg border text-sm px-4 py-3 ${show ? "block" : "hidden"} bg-accent/10 text-accent border-accent/30`}
       >
@@ -301,7 +298,7 @@ function OfficeInfo() {
 function OfficeCard({ title, type, address, icon, bg }) {
   return (
     <div
-      className={`text-left w-full rounded-2xl transition-all duration-300 ease-out bg-card border flex items-start gap-4 border-border/60 p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1`}
+      className={`text-left w-full rounded-[2.5rem] transition-all duration-300 ease-out bg-card border flex items-start gap-4 border-border/60 p-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1`}
     >
       <div className="flex items-start gap-4">
         <div
@@ -332,8 +329,8 @@ function EmailContact() {
         ref={ref}
         className="opacity-0 translate-y-5 transition-all duration-700 max-w-[1200px] mx-auto px-6"
       >
-        <div className="max-w-[520px] mx-auto text-center border border-[#e2e8f0] bg-white rounded-2xl p-8 md:p-10">
-          <div className="w-14 h-14 rounded-xl bg-accent text-accent-foreground grid place-items-center mx-auto mb-4 text-2xl">
+        <div className="max-w-[520px] mx-auto text-center border border-[#e2e8f0] bg-white rounded-[2.5rem] p-8 md:p-10">
+          <div className="w-14 h-14 rounded-2xl bg-accent text-accent-foreground grid place-items-center mx-auto mb-4 text-2xl">
             ✉️
           </div>
           <h3 className="text-xl font-bold mb-1">Email Us Directly</h3>

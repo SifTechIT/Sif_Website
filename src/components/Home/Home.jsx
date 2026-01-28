@@ -1,4 +1,5 @@
 import { scrollToSection } from "@/lib/scrollToSection";
+import { ChevronRight, HandHeart } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Banner2 from "../../assets/BrickHouse/Banner2.jpg";
 import Agamas from "../../assets/Home/Agamas_ac.jpeg";
@@ -221,14 +222,17 @@ export default function Home() {
                 Special-needs inclusion programs
               </li>
             </ul>
-            <a href="#" className="text-blue-600 font-medium hover:underline">
-              View Programs {">"}
-            </a>
+            <Link
+              to="#"
+              className="text-blue-600 font-medium hover:underline flex items-center "
+            >
+              View Programs <ChevronRight className="w-4 h-4" />
+            </Link>
           </Card>
 
           <Card>
             <div className="mb-4 text-green-600">
-              <i className="fas fa-hands-holding-circle fa-2x"></i>
+              <HandHeart className="w-10 h-10" />
             </div>
             <h4 className="text-2xl font-bold mb-3">Livelihoods & CSR</h4>
             <p className="text-gray-500 leading-relaxed mb-6">
@@ -249,9 +253,12 @@ export default function Home() {
                 corporate partnerships
               </li>
             </ul>
-            <a href="#" className="text-green-600 font-medium hover:underline">
-              Explore Initiatives {">"}
-            </a>
+            <Link
+              to="#"
+              className="text-green-600 font-medium hover:underline flex items-center"
+            >
+              Explore Initiatives <ChevronRight className="w-4 h-4" />
+            </Link>
           </Card>
         </div>
       </section>
@@ -268,12 +275,12 @@ export default function Home() {
                 <p className="text-gray-400 max-w-xs">
                   A 7-belt pathway from stillness to strength.
                 </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-block text-blue-400 hover:underline"
+                <Link
+                  to="#"
+                  className="mt-4  text-blue-400 hover:underline flex items-center"
                 >
-                  Learn more {">"}
-                </a>
+                  Learn more <ChevronRight className="w-4 h-4" />
+                </Link>
               </div>
               <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-gradient-to-tl from-indigo-900 to-transparent opacity-50"></div>
             </div>
@@ -284,12 +291,12 @@ export default function Home() {
                 <p className="text-gray-400 max-w-xs">
                   Boosting income through Noni cultivation and soil testing.
                 </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-block text-blue-400 hover:underline"
+                <Link
+                  to="#"
+                  className="mt-4  text-blue-400 hover:underline flex items-center"
                 >
-                  Learn more {">"}
-                </a>
+                  Learn more <ChevronRight className="w-4 h-4" />
+                </Link>
               </div>
               <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-gradient-to-tl from-green-900 to-transparent opacity-50"></div>
             </div>

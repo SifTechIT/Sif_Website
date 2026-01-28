@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../../assets/Logo.png";
 
 const ACTIVITIES_COLUMNS = [
   {
@@ -143,6 +144,11 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="SIFworld Logo"
+            className="h-12 w-9 object-cover"
+          />
           <div className="text-xl font-bold tracking-tighter uppercase">
             SIF<span className="font-light text-gray-400">world</span>
           </div>

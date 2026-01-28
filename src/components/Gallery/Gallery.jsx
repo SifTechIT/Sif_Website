@@ -337,7 +337,7 @@ function PhotosSection({ filter, onOpen }) {
             <button
               key={`${p.title}-${i}`}
               onClick={() => onOpen(p)}
-              className="text-left group rounded-2xl overflow-hidden border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-2xl"
+              className="text-left group rounded-[2.5rem] overflow-hidden border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-2xl"
             >
               <div
                 className={`h-[250px] bg-gradient-to-br ${
@@ -470,7 +470,7 @@ function VideosSection({ filter }) {
           {filtered.map((v, i) => (
             <div
               key={`${v.title}-${i}`}
-              className="rounded-2xl overflow-hidden border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-2xl"
+              className="rounded-[2.5rem] overflow-hidden border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-2xl"
             >
               <div className="h-[200px] bg-gradient-to-br from-gray-100 to-gray-200 grid place-items-center">
                 <button
@@ -499,10 +499,10 @@ function VideosSection({ filter }) {
 function FeaturedCard({ title, desc, grad, emoji, span }) {
   return (
     <div
-      className={`rounded-3xl p-10 border border-gray-200 text-white bg-gradient-to-br ${grad} ${span} relative overflow-hidden transition hover:-translate-y-1 hover:shadow-2xl`}
+      className={`rounded-[2.5rem] p-10 border border-gray-200 text-white bg-gradient-to-br ${grad} ${span} relative overflow-hidden transition hover:-translate-y-1 hover:shadow-2xl`}
     >
       <button
-        className="w-16 h-16 rounded-2xl bg-white/10 grid place-items-center text-3xl mb-6 border border-white/20 hover:scale-105 transition"
+        className="w-16 h-16 rounded-[2.5rem] bg-white/10 grid place-items-center text-3xl mb-6 border border-white/20 hover:scale-105 transition"
         aria-label="Play video"
       >
         {emoji}
@@ -530,7 +530,7 @@ function Lightbox({ open, title, desc, onClose, image }) {
       onClick={onClose}
     >
       <div
-        className="relative max-w-[90%] max-h-[90%] bg-white rounded-2xl overflow-hidden"
+        className="relative max-w-[90%] max-h-[90%] bg-white rounded-[2.5rem] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button

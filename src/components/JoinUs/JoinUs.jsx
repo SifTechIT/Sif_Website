@@ -79,7 +79,7 @@ function VolunteerForm() {
     <section id="volunteer" className="py-24">
       <div className="mx-auto w-full px-5 sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="rounded-2xl border border-gray-200 shadow-sm p-8">
+          <div className="rounded-[2.5rem] border border-gray-200 shadow-sm p-8">
             <h3 className="text-xl font-semibold mb-2">Volunteer with SIF</h3>
             <p className="text-muted-foreground mb-6">
               Choose your cause. Give your time. Create tangible impact.
@@ -157,7 +157,7 @@ function VolunteerForm() {
             </form>
           </div>
 
-          <div className="rounded-2xl border border-gray-200 shadow-sm p-8">
+          <div className="rounded-[2.5rem] border border-gray-200 shadow-sm p-8">
             <h3 className="text-xl font-semibold mb-2">
               Popular Volunteer Tracks
             </h3>
@@ -261,7 +261,7 @@ function InternshipForm() {
     <section id="internship" className="py-24">
       <div className="mx-auto w-full px-5 sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid md:grid-cols-2 gap-12">
-          <div className="rounded-2xl border border-gray-200 shadow-sm p-8">
+          <div className="rounded-[2.5rem] border border-gray-200 shadow-sm p-8">
             <h3 className="text-xl font-semibold mb-2">
               Internship Application
             </h3>
@@ -358,7 +358,7 @@ function InternshipForm() {
             </form>
           </div>
 
-          <div className="h-fit rounded-2xl border border-gray-200 shadow-sm p-8">
+          <div className="h-fit rounded-[2.5rem] border border-gray-200 shadow-sm p-8">
             <h3 className="text-xl font-semibold mb-2">Intern Benefits</h3>
             <p className="text-muted-foreground mb-6">
               Mentored pathways & certifications

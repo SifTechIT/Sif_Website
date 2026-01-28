@@ -382,7 +382,7 @@
 
   /* Bento Card — Apple-style soft */
   .bento-card {
-    @apply rounded-2xl border border-border bg-card p-6 transition-all duration-300;
+    @apply rounded-[2.5rem] border border-border bg-card p-6 transition-all duration-300;
     box-shadow: var(--shadow-card);
   }
 
@@ -577,7 +577,7 @@
 
   /* Apple-style card */
   .card-apple {
-    @apply bg-card rounded-2xl border border-border p-6;
+    @apply bg-card rounded-[2.5rem] border border-border p-6;
     box-shadow: var(--shadow-card);
     transition: all 0.3s ease;
   }
@@ -589,7 +589,7 @@
 
   /* Feature card with image */
   .card-feature {
-    @apply bg-card rounded-2xl overflow-hidden border border-border;
+    @apply bg-card rounded-[2.5rem] overflow-hidden border border-border;
     box-shadow: var(--shadow-card);
   }
 
@@ -762,7 +762,7 @@
 
 /* Image container with Apple-style rounded corners */
 .img-container {
-  @apply overflow-hidden rounded-2xl;
+  @apply overflow-hidden rounded-[2.5rem];
   box-shadow: var(--shadow-card);
 }
 

@@ -319,8 +319,8 @@ export default function AgamasTranslationsPage() {
             <p className="text-xs text-gray-500 mb-6">
               Join our team working on Pali, Sanskrit, and Tamil texts.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700">
-              Apply Now {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700 flex items-center">
+              Apply Now <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-10">
@@ -329,8 +329,8 @@ export default function AgamasTranslationsPage() {
             <p className="text-xs text-gray-500 mb-6">
               Collaborate as an institution or research center.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700">
-              Partner With Us {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700 flex items-center">
+              Partner With Us <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-10">
@@ -339,8 +339,8 @@ export default function AgamasTranslationsPage() {
             <p className="text-xs text-gray-500 mb-6">
               Help with archiving and preservation for global access.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700">
-              Get Involved {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700 flex items-center">
+              Get Involved <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-10 bg-zinc-900 border-none">

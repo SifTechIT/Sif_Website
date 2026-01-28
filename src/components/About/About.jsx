@@ -58,11 +58,11 @@ export default function AboutUsPage() {
 
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="img-placeholder h-[500px]">
+          <div className=" rounded-[2.5rem] h-[500px]">
             <img
               src={story}
               alt="Timeline 2019"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-[2.5rem]"
             />
           </div>
           <div>
@@ -107,7 +107,7 @@ export default function AboutUsPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
+            <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-300">
                 <img
                   src={DrLim}
@@ -125,7 +125,7 @@ export default function AboutUsPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-[32px] border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
+            <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-300">
                 <img
                   src={DrSavera}
@@ -154,7 +154,7 @@ export default function AboutUsPage() {
             <img
               src={wisdom}
               alt="Guided by Wisdom"
-              className="w-full h-full object-cover rounded-3xl"
+              className="w-full h-full object-cover rounded-[2.5rem]"
             />
           </div>
           <div className="space-y-8">
@@ -170,13 +170,13 @@ export default function AboutUsPage() {
               meditation, empowerment, and cultural preservation.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
-              <div className="p-6 bg-blue-50 rounded-3xl">
+              <div className="p-6 bg-blue-50 rounded-[2.5rem]">
                 <h4 className="font-bold text-blue-700">Vision</h4>
                 <p className="text-sm text-blue-600/70">
                   A world where peace and prosperity are lived realities.
                 </p>
               </div>
-              <div className="p-6 bg-zinc-900 rounded-3xl text-white">
+              <div className="p-6 bg-zinc-900 rounded-[2.5rem] text-white">
                 <h4 className="font-bold">Mission</h4>
                 <p className="text-sm text-zinc-400">
                   Sustainable programs that nurture holistic well-being.

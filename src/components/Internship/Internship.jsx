@@ -1,4 +1,5 @@
 import { scrollToSection } from "@/lib/scrollToSection";
+import { ChevronRight } from "lucide-react";
 import Banner1 from "../../assets/Internship/Banner1.jpg";
 import Banner2 from "../../assets/Internship/Banner2.jpg";
 import Banner3 from "../../assets/Internship/Banner3.jpg";
@@ -273,8 +274,8 @@ export default function InternshipProgramsPage() {
             <p className="text-xs text-gray-500 mb-6">
               Join our structured program with real-world projects.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
-              Apply Now {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
+              Apply Now <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-10">
@@ -283,8 +284,8 @@ export default function InternshipProgramsPage() {
             <p className="text-xs text-gray-500 mb-6">
               Start with shorter-term opportunities to experience our work.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
-              Get Involved {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
+              Get Involved <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-10">
@@ -293,8 +294,8 @@ export default function InternshipProgramsPage() {
             <p className="text-xs text-gray-500 mb-6">
               Connect with former interns for guidance and mentorship.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
-              Connect {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
+              Connect <ChevronRight className="w-4 h-4" />
             </button>
           </div>
           <div className="bento-card p-10 bg-zinc-900  border-none">
@@ -303,8 +304,8 @@ export default function InternshipProgramsPage() {
             <p className="text-xs text-zinc-500 mb-6">
               Get certifications and global exchange opportunities.
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
-              Learn More {">"}
+            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
+              Learn More <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         </div>

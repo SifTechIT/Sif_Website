@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
-
+import logo from "../../assets/Logo.png";
 const Footer = () => {
   return (
     <footer className="border-t border-neutral-200/60 bg-white/70 py-10 dark:border-neutral-800 dark:bg-neutral-950/40">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-400 to-sky-500 shadow" />
+            <img
+              src={logo}
+              alt="SIFworld Logo"
+              className="h-10 w-8  object-cover"
+            />
             <span className="font-semibold">SIFworld</span>
           </div>
           <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300">
