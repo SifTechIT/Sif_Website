@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import SoilTest from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
@@ -57,12 +56,6 @@ export default function ImpactStoriesPage() {
                   className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
                 >
                   Explore Sunya
-                </Link>
-                <Link
-                  to="/onedollar-onechild"
-                  className="text-white hover:underline font-medium text-lg flex items-center"
-                >
-                  Support ODOC <ChevronRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>
             </div>

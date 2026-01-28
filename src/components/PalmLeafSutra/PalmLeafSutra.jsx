@@ -1,7 +1,9 @@
+import { scrollToSection } from "@/lib/scrollToSection";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../../assets/PalmLeafSutra/Banner.JPG";
 import Missions from "../../assets/PalmLeafSutra/Mission.jpg";
+import bento from "../../assets/PalmLeafSutra/bento.jpg";
 
 export default function PalmLeafSutraPage() {
   return (
@@ -28,12 +30,12 @@ export default function PalmLeafSutraPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Link
-                  to="/impact-stories"
+                <button
+                  onClick={() => scrollToSection("mission")}
                   className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
                 >
                   Know More
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -78,7 +80,7 @@ export default function PalmLeafSutraPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section className="py-24 px-6" id="mission">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
@@ -109,12 +111,7 @@ export default function PalmLeafSutraPage() {
               </ul>
             </div>
             <div className="rounded-[3rem] bg-teal-soft aspect-[4/3] flex items-center justify-center text-teal-200 overflow-hidden relative shadow-inner border border-teal-50">
-              <i className="fas fa-feather-pointed text-9xl opacity-20"></i>
-              <div className="absolute bottom-10 text-center">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-teal-700/50">
-                  Modernizing Ancestral Mediums
-                </p>
-              </div>
+              <img src={Missions} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -136,10 +133,10 @@ export default function PalmLeafSutraPage() {
                 passed down through generations in Odisha.
               </p>
             </div>
-            <div className="bento-card p-10 bg-teal-800 text-white border-none">
+            <div className="bento-card p-10">
               <div className="text-2xl mb-6">⚡</div>
               <h4 className="font-bold mb-3">Laser Precision</h4>
-              <p className="text-teal-100/70 text-xs leading-relaxed">
+              <p className="text-gray-500 text-xs leading-relaxed">
                 Sutras are etched with durability using advanced laser
                 technology, ensuring they endure for centuries.
               </p>
@@ -307,7 +304,14 @@ export default function PalmLeafSutraPage() {
       </section>
 
       <section className="py-24 px-6 max-w-7xl mx-auto mb-12">
-        <div className="bento-card bg-zinc-900 text-white p-16 text-center">
+        <div
+          className="bento-card bg-zinc-900 text-white p-16 text-center"
+          style={{
+            backgroundImage: `url(${bento})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <h2 className="text-4xl font-bold mb-6">Join the Legacy</h2>
           <p className="text-zinc-400 mb-10 max-w-xl mx-auto">
             Be part of preserving the world's oldest living manuscript
@@ -355,13 +359,13 @@ export default function PalmLeafSutraPage() {
             </button>
           </div>
 
-          <div className="bento-card p-10 flex flex-col justify-between min-h-[380px] bg-zinc-900 text-white border-none">
+          <div className="bento-card p-10 flex flex-col justify-between min-h-[380px] bg-zinc-900  border-none">
             <div>
               <div className="w-14 h-14 bg-zinc-800 rounded-2xl flex items-center justify-center text-2xl mb-8">
                 📜
               </div>
               <h4 className="text-xl font-bold mb-4">Cultural Preservation</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 Contribute to global heritage by sponsoring manuscript
                 digitization and precision laser-engraving preservation
                 projects.
@@ -389,14 +393,6 @@ export default function PalmLeafSutraPage() {
           </div>
         </div>
       </section>
-      <Hero />
-      <ArtisanStats />
-      <Mission />
-      <TraditionInnovation />
-      <SacredTexts />
-      <Timeline />
-      <Impact />
-      <GetInvolved />
     </main>
   );
 }

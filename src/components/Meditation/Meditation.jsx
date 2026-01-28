@@ -1,7 +1,9 @@
+import { scrollToSection } from "@/lib/scrollToSection";
 import { Link } from "react-router-dom";
 import SunyaMeditation from "../../assets/SunyaMeditation/banner.jpeg";
-// import Residential from "../../assets/SunyaMeditation/Residential.jpeg";
-// import Trainers from "../../assets/SunyaMeditation/Trainers.jpeg";
+import Philosophy from "../../assets/SunyaMeditation/Philosophy.jpeg";
+import Residential from "../../assets/SunyaMeditation/Residential.jpeg";
+import Trainers from "../../assets/SunyaMeditation/Trainers.jpeg";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 
 const DEFAULT_TESTIMONIALS = [
@@ -46,12 +48,7 @@ export default function SunyaLanding() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <h1
-                className="
-              text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]
-             text-white  
-            "
-              >
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
                 The Power of Nothing.
               </h1>
 
@@ -61,16 +58,12 @@ export default function SunyaLanding() {
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <button className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg">
-                  Start Your Journey
-                </button>
-
-                <a
-                  href="#programs"
-                  className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
+                <button
+                  className="bg-black text-white px-10 py-4 rounded-full font-semibold hover:bg-zinc-800 transition shadow-lg"
+                  onClick={() => scrollToSection("PHILOSOPHY")}
                 >
-                  View Programs <ArrowRight className="h-4 w-4 ml-2" />
-                </a>
+                  Know More
+                </button>
               </div>
             </div>
           </div>
@@ -99,7 +92,7 @@ export default function SunyaLanding() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="py-24 px-6 bg-[#fbfbfd]">
+      <section className="py-24 px-6 bg-[#fbfbfd]" id="PHILOSOPHY">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
@@ -133,10 +126,11 @@ export default function SunyaLanding() {
             </div>
 
             <div className="rounded-[3rem] bg-gray-200 h-[500px] flex items-center justify-center text-gray-400 overflow-hidden relative">
-              <span className="text-sm uppercase tracking-widest font-medium">
-                IMAGE: MEDITATION POSITION [1200x1500]
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
+              <img
+                src={Philosophy}
+                alt="Philosophy"
+                className="object-cover w-full h-full absolute inset-0"
+              />
             </div>
           </div>
         </div>
@@ -157,29 +151,29 @@ export default function SunyaLanding() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
               <div
-                className=" bg-cover bg-center w-full h-full p-12"
-                style={{ backgroundImage: `url(${SunyaMeditation})` }}
+                className="relative bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${Residential})` }}
               >
                 <div className="absolute inset-0 bg-black/60" />
-                <div className="z-10">
+                <div className="z-10 relative my-4">
                   <span className="text-blue-400 font-bold text-xs uppercase tracking-widest">
                     Deep Immersion
                   </span>
                   <h3 className="text-3xl font-bold mt-4 mb-4">
                     Residential Retreats
                   </h3>
-                  <p className="text-zinc-400 max-w-sm">
+                  <p className="text-white max-w-sm">
                     7 to 10-day silent retreats in serene environments with
                     expert guidance for profound transformation.
                   </p>
                 </div>
 
-                <a
-                  href="#"
-                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit"
+                <Link
+                  to="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit relative "
                 >
                   View Schedule
-                </a>
+                </Link>
               </div>
             </BentoBox>
 
@@ -220,14 +214,21 @@ export default function SunyaLanding() {
               </span>
             </BentoBox>
 
-            <BentoBox className="md:col-span-4 bg-zinc-900 text-white p-8">
-              <h4 className="font-bold mb-2">Trainers Program</h4>
-              <p className="text-zinc-500 text-sm mb-4">
-                Join our certified facilitator program and spread the practice.
-              </p>
-              <span className="text-white text-xs font-bold uppercase tracking-widest underline underline-offset-4">
-                Apply Now
-              </span>
+            <BentoBox className="md:col-span-4  text-white overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-8 "
+                style={{ backgroundImage: `url(${Trainers})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <h4 className="font-bold mb-2 relative">Trainers Program</h4>
+                <p className="text-sm mb-4 relative">
+                  Join our certified facilitator program and spread the
+                  practice.
+                </p>
+                <span className="text-white text-xs relative font-bold uppercase tracking-widest underline underline-offset-4">
+                  Apply Now
+                </span>
+              </div>
             </BentoBox>
           </div>
         </div>
@@ -269,23 +270,6 @@ function BentoBox({ className = "", children }) {
     >
       {children}
     </div>
-  );
-}
-
-function ArrowRight({ className = "" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 12h14" />
-      <path d="M13 5l7 7-7 7" />
-    </svg>
   );
 }
 

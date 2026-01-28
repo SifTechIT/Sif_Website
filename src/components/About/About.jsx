@@ -41,12 +41,6 @@ export default function AboutUsPage() {
                 >
                   Our Impact
                 </Link>
-                <Link
-                  to="/onedollar-onechild"
-                  className="text-white hover:underline font-medium text-lg flex items-center"
-                >
-                  Get Involved <ChevronRight className="w-4 h-4 ml-1" />
-                </Link>
               </div>
             </div>
           </div>

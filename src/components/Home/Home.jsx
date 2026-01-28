@@ -1,3 +1,4 @@
+import { scrollToSection } from "@/lib/scrollToSection";
 import { Link, useNavigate } from "react-router-dom";
 import Banner2 from "../../assets/BrickHouse/Banner2.jpg";
 import Agamas from "../../assets/Home/Agamas_ac.jpeg";
@@ -66,12 +67,12 @@ export default function Home() {
                 by Sunya.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Link
-                  to="/meditation"
+                <button
+                  onClick={() => scrollToSection("activities")}
                   className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
                 >
                   Explore Sunya
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -102,7 +103,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-white" id="xyz">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
@@ -320,7 +321,7 @@ export default function Home() {
         </div>
       </section>
       <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-white" id="activities">
         <div className="mx-auto max-w-6xl p-4">
           <div className="mb-6">
             <p className="text-sm uppercase tracking-wider text-emerald-600">
