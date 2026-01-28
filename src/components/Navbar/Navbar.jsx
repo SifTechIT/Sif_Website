@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const ACTIVITIES_COLUMNS = [
   {
@@ -106,9 +107,40 @@ const ACTIVITIES_COLUMNS = [
 ];
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [activitiesOpen, setActivitiesOpen] = useState(false);
+
+  const navRef = useRef(null);
+  const location = useLocation();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+    setAboutOpen(false);
+    setActivitiesOpen(false);
+  }, [location.pathname]);
+
+  // Close on click outside
+  useEffect(() => {
+    function onDown(e) {
+      if (!navRef.current) return;
+      if (!navRef.current.contains(e.target)) {
+        setMobileOpen(false);
+        setAboutOpen(false);
+        setActivitiesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, []);
+
   return (
-    <nav className="sticky inset-x-0 top-0 z-[100] border-b border-gray-100 bg-white/70 backdrop-blur-xl backdrop-saturate-150">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <nav
+      ref={navRef}
+      className="sticky top-0 left-0 right-0 z-[100] border-b border-gray-100 bg-white/70 backdrop-blur-xl backdrop-saturate-150"
+    >
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2">
           <div className="text-xl font-bold tracking-tighter uppercase">
@@ -124,7 +156,10 @@ export default function Navbar() {
 
           {/* About dropdown */}
           <div className="relative group">
-            <button className="flex items-center gap-1 py-4 transition hover:text-black">
+            <button
+              type="button"
+              className="flex items-center gap-1 py-4 transition hover:text-black"
+            >
               About
               <ChevronDown className="h-3 w-3 opacity-50 transition-transform group-hover:rotate-180" />
             </button>
@@ -147,7 +182,10 @@ export default function Navbar() {
 
           {/* All activities mega menu */}
           <div className="relative group">
-            <button className="flex items-center gap-1 py-4 transition hover:text-black">
+            <button
+              type="button"
+              className="flex items-center gap-1 py-4 transition hover:text-black"
+            >
               All Activities
               <ChevronDown className="h-3 w-3 opacity-50 transition-transform group-hover:rotate-180" />
             </button>
@@ -185,20 +223,184 @@ export default function Navbar() {
         </div>
 
         {/* Right actions */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           <Link
             to="/join-us"
-            className="rounded-full bg-black px-6 py-2 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg shadow-zinc-200 transition hover:bg-zinc-800"
+            className="hidden rounded-full bg-black px-6 py-2 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg shadow-zinc-200 transition hover:bg-zinc-800 sm:inline-flex"
           >
             Join Us
           </Link>
 
-          <button className="text-xl text-gray-600 lg:hidden" aria-label="Menu">
-            <BarsIcon className="h-6 w-6" />
+          {/* Mobile menu button */}
+          <button
+            className="text-gray-600 lg:hidden"
+            aria-label="Menu"
+            onClick={() => setMobileOpen((v) => !v)}
+          >
+            {mobileOpen ? (
+              <XIcon className="h-7 w-7" />
+            ) : (
+              <BarsIcon className="h-7 w-7" />
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile panel */}
+      <div
+        className={[
+          "lg:hidden relative border-t border-gray-100 bg-white/90 backdrop-blur-xl",
+          mobileOpen ? "max-h-[90vh] opacity-100" : "max-h-0 opacity-0",
+          "transition-opacity duration-300",
+        ].join(" ")}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4 max-h-[76vh] overflow-y-auto overscroll-contain">
+          <div className="flex flex-col gap-2 text-sm font-medium text-gray-700">
+            <NavMobileLink to="/" onClick={() => setMobileOpen(false)}>
+              Home
+            </NavMobileLink>
+
+            {/* About accordion */}
+            <button
+              type="button"
+              className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-gray-50"
+              onClick={() => setAboutOpen((v) => !v)}
+            >
+              <span>About</span>
+              <ChevronDown
+                className={[
+                  "h-4 w-4 opacity-60 transition-transform",
+                  aboutOpen ? "rotate-180" : "",
+                ].join(" ")}
+              />
+            </button>
+            <div
+              className={[
+                "grid overflow-hidden pl-3 transition-all duration-300",
+                aboutOpen
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0",
+              ].join(" ")}
+            >
+              <div className="min-h-0">
+                <NavMobileLink
+                  to="/about-us"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  About Us
+                </NavMobileLink>
+                <NavMobileLink
+                  to="/impact-stories"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Impact Stories
+                </NavMobileLink>
+              </div>
+            </div>
+
+            {/* Activities accordion */}
+            <button
+              type="button"
+              className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-gray-50"
+              onClick={() => setActivitiesOpen((v) => !v)}
+            >
+              <span>All Activities</span>
+              <ChevronDown
+                className={[
+                  "h-4 w-4 opacity-60 transition-transform",
+                  activitiesOpen ? "rotate-180" : "",
+                ].join(" ")}
+              />
+            </button>
+
+            <div
+              className={[
+                "grid overflow-hidden transition-all duration-300",
+                activitiesOpen
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0",
+              ].join(" ")}
+            >
+              <div className="min-h-0">
+                {/* Mobile activities list */}
+                <div className="mt-2 space-y-6 rounded-2xl border border-gray-100 bg-white p-4">
+                  {ACTIVITIES_COLUMNS.map((col) => (
+                    <div key={col.title}>
+                      <h4
+                        className={[
+                          "mb-3 text-[10px] font-bold uppercase tracking-widest",
+                          col.headingClass,
+                        ].join(" ")}
+                      >
+                        {col.title}
+                      </h4>
+
+                      <div className="space-y-3">
+                        {col.items.map((it) => (
+                          <Link
+                            key={it.href + it.label}
+                            to={it.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50"
+                          >
+                            <div
+                              className={[
+                                "flex h-8 w-8 items-center justify-center rounded-lg",
+                                it.chipClass,
+                              ].join(" ")}
+                            >
+                              {it.icon}
+                            </div>
+                            <div>
+                              <p className="font-semibold text-black">
+                                {it.label}
+                              </p>
+                              <p className="text-[11px] leading-snug text-gray-400">
+                                {it.desc}
+                              </p>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <NavMobileLink to="/gallery" onClick={() => setMobileOpen(false)}>
+              Gallery
+            </NavMobileLink>
+            <NavMobileLink
+              to="/contact-us"
+              onClick={() => setMobileOpen(false)}
+            >
+              Contact Us
+            </NavMobileLink>
+
+            <Link
+              to="/join-us"
+              onClick={() => setMobileOpen(false)}
+              className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-black px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg shadow-zinc-200 transition hover:bg-zinc-800"
+            >
+              Join Us
+            </Link>
+          </div>
+        </div>
+      </div>
     </nav>
+  );
+}
+
+function NavMobileLink({ to, children, onClick }) {
+  return (
+    <Link
+      to={to}
+      onClick={onClick}
+      className="rounded-xl px-3 py-3 hover:bg-gray-50"
+    >
+      {children}
+    </Link>
   );
 }
 
@@ -253,88 +455,18 @@ function BarsIcon({ className = "" }) {
     </svg>
   );
 }
-
-function OmIcon({ className = "" }) {
+function XIcon({ className = "" }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2c-2.8 0-5 2.2-5 5 0 1.6.7 2.9 1.9 3.9-.6.5-1.4.8-2.3.8v2c2 0 3.5-.7 4.5-1.9.6.2 1.2.3 1.9.3 3.3 0 6-2.7 6-6 0-2.8-2.2-5-5-5Zm0 2c1.7 0 3 1.3 3 3 0 2.2-1.8 4-4 4-1.7 0-3-1.3-3-3 0-2.2 1.8-4 4-4Zm-6.5 13.5c.9 2.6 3.4 4.5 6.5 4.5 3.9 0 7-3.1 7-7h-2c0 2.8-2.2 5-5 5-2.3 0-4.2-1.5-4.8-3.6l-1.7.6Z" />
-    </svg>
-  );
-}
-function SparkIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2l1.2 5.2L18 9l-4.8 1.8L12 16l-1.2-5.2L6 9l4.8-1.8L12 2Zm7 10l.7 3-3 1.1L15.6 19l-1.1-3-3-1.1 3-1.1L15.6 11 16.7 14l3 1.1-3 .9Z" />
-    </svg>
-  );
-}
-function SeedlingIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 22v-7c-2.8 0-5-2.2-5-5V4h2v6c0 1.7 1.3 3 3 3V2c5 0 9 4 9 9 0 3.9-3.1 7-7 7v4h-2Z" />
-    </svg>
-  );
-}
-function FemaleIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm1 14.9V20h3v2h-3v2h-2v-2H8v-2h3v-3.1a8.9 8.9 0 0 0 2 0Z" />
-    </svg>
-  );
-}
-function PlusIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M11 4h2v16h-2zM4 11h16v2H4z" />
-    </svg>
-  );
-}
-function ChildIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-7 20a7 7 0 0 1 14 0h-2a5 5 0 0 0-10 0H5Zm7-12c-3 0-6 2-6 5v1h12v-1c0-3-3-5-6-5Z" />
-    </svg>
-  );
-}
-function LeafIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20 4c-7 0-12 5-12 12 0 2.2.7 4.2 2 6-4.2-1-7-4.5-7-9 0-6 5-9 17-9v0Zm-9 9c-1.7 0-3 1.3-3 3 0 1.2.7 2.3 1.8 2.8.6-1.5 1.6-2.7 3.2-3.8-.4-1.1-1.5-1.8-2.9-1.8Z" />
-    </svg>
-  );
-}
-function ScrollIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M6 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V5a2 2 0 0 1 2-2Zm2 6h8v2H8V9Zm0 4h8v2H8v-2Zm0 4h6v2H8v-2Z" />
-    </svg>
-  );
-}
-function BuildingIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4 22V3h10v19H4Zm12 0V9h4v13h-4ZM6 6h2v2H6V6Zm0 4h2v2H6v-2Zm0 4h2v2H6v-2Zm4-8h2v2h-2V6Zm0 4h2v2h-2v-2Zm0 4h2v2h-2v-2Z" />
-    </svg>
-  );
-}
-function PrinterIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M7 7V3h10v4H7Zm10 12v-3H7v3H5v-7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v7h-2Z" />
-    </svg>
-  );
-}
-function HandshakeIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M8 12 4 8l2-2 4 4-2 2Zm8 0-2-2 4-4 2 2-4 4ZM9 13l2-2 2 2 2-2 2 2-2 2-2-2-2 2-2-2-2 2-2-2 2-2 2 2Zm-4 2 2 2 2-2 2 2 2-2 2 2 2-2 2 2-2 2-2-2-2 2-2-2-2 2-2-2-2 2-2-2 2-2Z" />
-    </svg>
-  );
-}
-function CapIcon({ className = "" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.7V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.3l-7 3.8-7-3.8Z" />
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 6L6 18M6 6l12 12" />
     </svg>
   );
 }

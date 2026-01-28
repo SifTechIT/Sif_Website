@@ -1,5 +1,5 @@
-import ScrollToTop from "@/lib/ScrollToTop";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import AboutUsPage from "../About/About";
 import AgamasTranslationsPage from "../AgamasTranslation/AgamaTranslation";
 import BrickHouseProjectPage from "../BrickHouse/BrickHouse";
@@ -21,9 +21,13 @@ import RuralHealthPage from "../RuralHealthAwareness/RuralHealth";
 import WomenEmpowermentPage from "../WomenEmpowerment/WomenEmpowerment";
 
 const AllRoutes = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
   return (
     <>
-      <ScrollToTop />
       <Navbar />
       <div>
         <Routes>
