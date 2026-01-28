@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import SoilTest from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
-import SunyaMeditation from "../../assets/Home/Sunya_Meditation.jpeg";
 import Covidppe from "../../assets/ImpactStories/COVID_PPE.png";
 import CommunityConfidence from "../../assets/ImpactStories/Community_Confidence.png";
 import ConfidenceBeyondIncome from "../../assets/ImpactStories/Confidence_Beyond_Income.png";
@@ -20,6 +19,7 @@ import MindfulnessPlay from "../../assets/ImpactStories/Mindfulness_Play.png";
 import ParentalPride from "../../assets/ImpactStories/Parental_Pride.jpg";
 import SecureLivehoods from "../../assets/ImpactStories/SecureLivelihoods.jpg";
 import StudentsGainFocus from "../../assets/ImpactStories/Students_Gain_Focus.JPG";
+import SunyaMeditation from "../../assets/ImpactStories/Sunya_Meditation.jpeg";
 import TacklingAnemia from "../../assets/ImpactStories/Tackling_Anemia.jpeg";
 import TransparencyAction from "../../assets/ImpactStories/Transparency_Action.jpeg";
 import WomenFarmer from "../../assets/ImpactStories/WomenFarmer.jpg";
@@ -35,17 +35,21 @@ export default function ImpactStoriesPage() {
         <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
           <div
             className="absolute inset-0 bg-cover bg-center w-full h-full "
-            style={{ backgroundImage: `url(${SunyaMeditation})` }}
+            style={{
+              backgroundImage: `url(${SunyaMeditation})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl  mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white ">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white ">
+              <h1 className="heading mb-6 text-white ">
                 Real Stories.
                 <br />
                 Real Impact.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white ">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white ">
                 Discover how SIF initiatives are transforming lives across
                 communities—from farmers securing livelihoods to children
                 gaining confidence.
@@ -64,78 +68,96 @@ export default function ImpactStoriesPage() {
       </section>
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="mb-16">
-          <h2 className="text-4xl font-bold tracking-tight mb-2">
-            Featured Transformations
-          </h2>
+          <h2 className="subheading mb-2">Featured Transformations</h2>
           <p className="text-gray-500 text-lg font-light">
             Highlighted stories showcasing the depth of our impact.
           </p>
         </div>
 
-        <div className="bento-grid">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Big card */}
           <div
-            className="bento-card col-span-2 row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end bg-cover bg-center w-full h-full"
-            style={{ backgroundImage: `url(${bento1})` }}
+            className="relative bento-card col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2
+               bg-zinc-900 text-white p-6 sm:p-10 lg:p-12
+               flex flex-col justify-end bg-cover bg-center min-h-[320px] sm:min-h-[420px] lg:min-h-[520px]"
+            style={{
+              backgroundImage: `url(${bento1})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            <div className="absolute top-12 left-12 text-5xl">🌾</div>
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="absolute top-6 left-6 sm:top-10 sm:left-10 lg:top-12 lg:left-12 text-4xl sm:text-5xl">
+              🌾
+            </div>
+
             <div className="relative z-10">
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-4 block">
                 Livelihoods
               </span>
-              <h3 className="text-4xl font-bold mb-4">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
                 From Uncertainty to Security
               </h3>
-              <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+              <p className="text-zinc-200 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl">
                 Farmers in Siddipet shifted to Noni under SIF's buy-back model,
                 eliminating income risks.
               </p>
-              <span className="text-sm font-bold border-b-2 border-white pb-1">
+              <span className="text-sm font-bold border-b-2 border-white pb-1 inline-block">
                 Read Full Story →
               </span>
             </div>
           </div>
 
+          {/* Wide card */}
           <div
-            className="bento-card col-span-2 row-span-1 p-10 flex flex-col justify-between border-pink-50 bg-pink-50/30 bg-cover bg-center w-full h-full"
+            className="relative bento-card col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-1
+               p-6 sm:p-8 lg:p-10
+               flex flex-col justify-between border-pink-50 bg-pink-50/30 bg-cover bg-center min-h-[220px]"
             style={{
               backgroundSize: "cover",
+              backgroundPosition: "center",
               backgroundImage: `url(${bento2})`,
             }}
           >
-            <div className="flex justify-between items-start">
-              <div className="text-4xl">👩‍🧵</div>
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="flex justify-between items-start relative z-10">
+              <div className="text-3xl sm:text-4xl">👩‍🧵</div>
               <span className="text-[9px] font-bold uppercase tracking-widest bg-pink-600 text-white px-3 py-1 rounded-full">
                 Empowerment
               </span>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-3 text-pink-900">
+            <div className="relative z-10">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-pink-600">
                 Hands that Earn
               </h3>
-              <p className="text-pink-800/60 text-sm leading-relaxed">
+              <p className="text-pink-700 text-sm leading-relaxed max-w-md">
                 Women learned Kimono stitching, combining heritage with
                 livelihood and financial independence.
               </p>
             </div>
           </div>
 
-          <div className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-orange-50/50">
-            <div className="text-4xl mb-6">👓</div>
-            <h3 className="text-xl font-bold mb-2 text-orange-900">
+          {/* Small card 1 */}
+          <div className="bento-card col-span-1 lg:col-span-1 lg:row-span-1 p-6 sm:p-8 flex flex-col justify-center text-center bg-orange-50/50 min-h-[220px]">
+            <div className="text-3xl sm:text-4xl mb-5 sm:mb-6">👓</div>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-orange-900">
               Vision for Learning
             </h3>
-            <p className="text-orange-800/60 text-xs">
+            <p className="text-orange-800/60 text-sm sm:text-xs sm:leading-relaxed">
               Eye camps provided free spectacles to children, improving outcomes
               instantly.
             </p>
           </div>
 
-          <div className="bento-card col-span-1 row-span-1 p-8 flex flex-col justify-center text-center bg-purple-50/50">
-            <div className="text-4xl mb-6">🎒</div>
-            <h3 className="text-xl font-bold mb-2 text-purple-900">
+          {/* Small card 2 */}
+          <div className="bento-card col-span-1 lg:col-span-1 lg:row-span-1 p-6 sm:p-8 flex flex-col justify-center text-center bg-purple-50/50 min-h-[220px]">
+            <div className="text-3xl sm:text-4xl mb-5 sm:mb-6">🎒</div>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-purple-900">
               Kindness in Action
             </h3>
-            <p className="text-purple-800/60 text-xs">
+            <p className="text-purple-800/60 text-sm sm:text-xs sm:leading-relaxed">
               Children learned empathy through sharing snacks and games that
               reinforced respect.
             </p>
@@ -419,10 +441,8 @@ function StoriesWithFilter() {
     <section className="py-28 bg-gray-50">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-            All Impact Stories
-          </h2>
-          <p className="text-lg md:text-xl text-gray-500">
+          <h2 className="subheading mb-4">All Impact Stories</h2>
+          <p className="text-lg  text-gray-500">
             Filter by program to explore specific transformations
           </p>
         </div>

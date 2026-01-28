@@ -3,7 +3,6 @@ import { storage } from "@/lib/firebase";
 import { serverTimestamp } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import FileUpload from "./FileUpload";
 
 /** Join Us – SIF (React + Tailwind, no config) */
@@ -24,7 +23,7 @@ export default function JoinUs() {
         />
 
         {/* Choice Chips */}
-        <section className="sticky top-[72px] z-40 bg-white border-b border-gray-200 py-4">
+        <section className="sticky top-[60px] z-40 bg-white border-b border-gray-200 py-4">
           <div className="max-w-[315px] sm:max-w-[400px]  mx-auto flex gap-2 bg-gray-100 rounded-xl p-2 justify-center">
             {[
               { id: "volunteer", label: "Volunteer" },
@@ -195,7 +194,7 @@ function VolunteerForm() {
                 const [heading, body] = text.split(":");
                 return (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs flex items-center justify-center">
+                    <div className="p-1.5 rounded-full bg-accent text-accent-foreground text-xs flex items-center justify-center">
                       {icon}
                     </div>
                     <p className="text-foreground">
@@ -376,7 +375,7 @@ function InternshipForm() {
                 ["🧘", "Sunya mindfulness sessions for focus & resilience."],
               ].map(([icon, text], i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs flex items-center justify-center">
+                  <div className="p-1.5 rounded-full bg-accent text-accent-foreground text-xs flex items-center justify-center">
                     {icon}
                   </div>
                   <p className="text-foreground">{text}</p>
@@ -426,14 +425,7 @@ function Textarea({ minRows = 3, className = "", ...props }) {
   );
 }
 
-function PageHero({
-  eyebrow,
-  title,
-  subtitle,
-  primaryCta,
-  secondaryCta,
-  align = "center",
-}) {
+function PageHero({ eyebrow, title, subtitle, align = "center" }) {
   const alignClasses = {
     center: "text-center items-center",
     left: "text-left items-start",
@@ -489,56 +481,15 @@ function PageHero({
           )}
 
           {/* Title */}
-          <h1
-            className="max-w-4xl text-foreground"
-            style={{
-              fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)",
-              fontWeight: 700,
-              letterSpacing: "-0.025em",
-              lineHeight: 1.1,
-            }}
-          >
-            {title}
-          </h1>
+          <h1 className="max-w-4xl heading text-foreground">{title}</h1>
 
           {/* Subtitle */}
           {subtitle && (
             <p
-              className={`mt-5 text-muted-foreground ${align === "center" ? "mx-auto" : ""}`}
-              style={{
-                fontSize: "clamp(1.0625rem, 1vw + 0.875rem, 1.25rem)",
-                lineHeight: 1.6,
-                maxWidth: "640px",
-              }}
+              className={`mt-5 hero-desc text-muted-foreground ${align === "center" ? "mx-auto" : ""}`}
             >
               {subtitle}
             </p>
-          )}
-
-          {/* CTAs */}
-          {(primaryCta || secondaryCta) && (
-            <div className=" mt-8  flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-              {primaryCta && (
-                <Link
-                  to={primaryCta.to}
-                  variant="default"
-                  size="lg"
-                  className="bg-emerald-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-emerald-700 transition w-full sm:w-auto"
-                >
-                  {primaryCta.label}
-                </Link>
-              )}
-              {secondaryCta && (
-                <Link
-                  to={secondaryCta.to}
-                  variant="outline"
-                  size="lg"
-                  className="text-emerald-600 hover:underline font-medium text-lg"
-                >
-                  {secondaryCta.label}
-                </Link>
-              )}
-            </div>
           )}
         </div>
       </div>
