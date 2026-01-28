@@ -13,7 +13,7 @@ import SunyaMeditation1 from "../../assets/Home/Sunya_meditation_ac.JPG";
 import Women from "../../assets/Home/Women_ac.jpg";
 import palm from "../../assets/Home/palm.jpeg";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
-import { Card, CardContent } from "../ui/card";
+import { Card } from "../ui/card";
 
 const DEFAULT_TESTIMONIALS = [
   {
@@ -80,27 +80,27 @@ export default function Home() {
       </section>
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-sm bento-card text-center">
+          <Card>
             <div className="text-5xl font-bold mb-2">45k+</div>
             <div className="text-gray-500 font-medium">Sunya Certificates</div>
             <p className="mt-4 text-sm text-gray-400">
               Global practitioners achieving mental clarity and liberation.
             </p>
-          </div>
-          <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-sm bento-card text-center">
+          </Card>
+          <Card>
             <div className="text-5xl font-bold mb-2">26+</div>
             <div className="text-gray-500 font-medium">Active Projects</div>
             <p className="mt-4 text-sm text-gray-400">
               Impactful initiatives spanning health, livelihoods, and heritage.
             </p>
-          </div>
-          <div className="bg-white p-10 rounded-3xl border border-gray-100 shadow-sm bento-card text-center">
+          </Card>
+          <Card>
             <div className="text-5xl font-bold mb-2">300+</div>
             <div className="text-gray-500 font-medium">Global Volunteers</div>
             <p className="mt-4 text-sm text-gray-400">
               A dedicated workforce driving change across 40+ countries.
             </p>
-          </div>
+          </Card>
         </div>
       </section>
       <section className="py-24 px-6 bg-white" id="xyz">
@@ -118,23 +118,27 @@ export default function Home() {
                 empowerment, cultural revival, and community well-being—all
                 guided by the wisdom of Sunya.
               </p>
-              <div className="mt-10 flex space-x-6">
-                <Link
-                  to="about-us"
-                  className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition"
-                >
-                  Explore Our Work
-                </Link>
-                <Link
-                  to="csr-partnership"
-                  className="text-black border border-gray-300 px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-50 transition"
-                >
-                  Partner via CSR
-                </Link>
+              <div className="mt-10 md:flex space-x-6 space-y-6 ">
+                <div>
+                  <Link
+                    to="about-us"
+                    className="bg-black text-white px-6 py-3 rounded-full  text-sm font-medium hover:bg-gray-800 transition"
+                  >
+                    Explore Our Work
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    to="csr-partnership"
+                    className="text-black border border-gray-300 px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-50 transition"
+                  >
+                    Partner via CSR
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-[2.5rem] p-8 md:p-12 border border-gray-100">
+            <Card>
               <h4 className="text-2xl font-bold mb-8 italic text-gray-400">
                 Our Vision
               </h4>
@@ -176,7 +180,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -193,69 +197,62 @@ export default function Home() {
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-[2.5rem] border border-gray-200 overflow-hidden group bento-card">
-            <div className="p-10">
-              <div className="mb-4 text-blue-600">
-                <i className="fas fa-circle-notch fa-2x"></i>
-              </div>
-              <h4 className="text-2xl font-bold mb-3">Sunya Programs</h4>
-              <p className="text-gray-500 leading-relaxed mb-6">
-                A structured 7-belt pathway to mental clarity, resilience, and
-                liberation. Available via global retreats, corporate modules,
-                and youth workshops.
-              </p>
-              <ul className="text-sm text-gray-400 space-y-2 mb-8">
-                <li>
-                  <i className="fas fa-check text-blue-500 mr-2"></i> 7-Belt
-                  pathway: awareness → liberation
-                </li>
-                <li>
-                  <i className="fas fa-check text-blue-500 mr-2"></i> Global
-                  retreats & 40+ country telecasts
-                </li>
-                <li>
-                  <i className="fas fa-check text-blue-500 mr-2"></i>{" "}
-                  Special-needs inclusion programs
-                </li>
-              </ul>
-              <a href="#" className="text-blue-600 font-medium hover:underline">
-                View Programs {">"}
-              </a>
+          <Card>
+            <div className="mb-4 text-blue-600">
+              <i className="fas fa-circle-notch fa-2x"></i>
             </div>
-          </div>
+            <h4 className="text-2xl font-bold mb-3">Sunya Programs</h4>
+            <p className="text-gray-500 leading-relaxed mb-6">
+              A structured 7-belt pathway to mental clarity, resilience, and
+              liberation. Available via global retreats, corporate modules, and
+              youth workshops.
+            </p>
+            <ul className="text-sm text-gray-400 space-y-2 mb-8">
+              <li>
+                <i className="fas fa-check text-blue-500 mr-2"></i> 7-Belt
+                pathway: awareness → liberation
+              </li>
+              <li>
+                <i className="fas fa-check text-blue-500 mr-2"></i> Global
+                retreats & 40+ country telecasts
+              </li>
+              <li>
+                <i className="fas fa-check text-blue-500 mr-2"></i>{" "}
+                Special-needs inclusion programs
+              </li>
+            </ul>
+            <a href="#" className="text-blue-600 font-medium hover:underline">
+              View Programs {">"}
+            </a>
+          </Card>
 
-          <div className="bg-white rounded-[2.5rem] border border-gray-200 overflow-hidden group bento-card">
-            <div className="p-10">
-              <div className="mb-4 text-green-600">
-                <i className="fas fa-hands-holding-circle fa-2x"></i>
-              </div>
-              <h4 className="text-2xl font-bold mb-3">Livelihoods & CSR</h4>
-              <p className="text-gray-500 leading-relaxed mb-6">
-                Creating economic stability through farmer buy-back programs,
-                women's skill centers, and the ODOC nutrition initiative.
-              </p>
-              <ul className="text-sm text-gray-400 space-y-2 mb-8">
-                <li>
-                  <i className="fas fa-check text-green-500 mr-2"></i> Noni
-                  cultivation & farmer training
-                </li>
-                <li>
-                  <i className="fas fa-check text-green-500 mr-2"></i> ODOC:
-                  Spirulina nutrition at $1/child
-                </li>
-                <li>
-                  <i className="fas fa-check text-green-500 mr-2"></i>{" "}
-                  High-impact corporate partnerships
-                </li>
-              </ul>
-              <a
-                href="#"
-                className="text-green-600 font-medium hover:underline"
-              >
-                Explore Initiatives {">"}
-              </a>
+          <Card>
+            <div className="mb-4 text-green-600">
+              <i className="fas fa-hands-holding-circle fa-2x"></i>
             </div>
-          </div>
+            <h4 className="text-2xl font-bold mb-3">Livelihoods & CSR</h4>
+            <p className="text-gray-500 leading-relaxed mb-6">
+              Creating economic stability through farmer buy-back programs,
+              women's skill centers, and the ODOC nutrition initiative.
+            </p>
+            <ul className="text-sm text-gray-400 space-y-2 mb-8">
+              <li>
+                <i className="fas fa-check text-green-500 mr-2"></i> Noni
+                cultivation & farmer training
+              </li>
+              <li>
+                <i className="fas fa-check text-green-500 mr-2"></i> ODOC:
+                Spirulina nutrition at $1/child
+              </li>
+              <li>
+                <i className="fas fa-check text-green-500 mr-2"></i> High-impact
+                corporate partnerships
+              </li>
+            </ul>
+            <a href="#" className="text-green-600 font-medium hover:underline">
+              Explore Initiatives {">"}
+            </a>
+          </Card>
         </div>
       </section>
       <section className="py-24 bg-black text-white overflow-hidden">
@@ -337,7 +334,7 @@ export default function Home() {
           </div>
           <div
             className="
-             grid grid-cols-3 gap-8
+             grid lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1 overflow-x-auto
             "
           >
             {items.map((it) => (
@@ -354,29 +351,27 @@ function ServiceCard({ item }) {
   const navigation = useNavigate();
 
   return (
-    <Card className=" shrink-0 overflow-hidden rounded-none border p-0 shadow-none">
-      <CardContent className="p-0">
-        <div className="cursor-pointer" onClick={() => navigation(item.href)}>
-          <div className={`relative h-[175px] ${item.top}`}>
-            <div className="absolute left-7 top-16">
-              <div className="text-[22px] font-medium leading-none text-white">
-                {item.title}
-              </div>
-              <div className="mt-2  text-xs tracking-wide text-white/70">
-                {item.desc}
-              </div>
+    <div className=" shrink-0 overflow-hidden rounded-none border p-0 shadow-none">
+      <div className="cursor-pointer" onClick={() => navigation(item.href)}>
+        <div className={`relative h-[175px] ${item.top}`}>
+          <div className="absolute left-7 top-16">
+            <div className="text-[22px] font-medium leading-none text-white">
+              {item.title}
+            </div>
+            <div className="mt-2  text-xs tracking-wide text-white/70">
+              {item.desc}
             </div>
           </div>
-          <div className="relative h-[190px] bg-white">
-            <img
-              src={item.img}
-              alt={item.title}
-              className="h-full w-full object-cover"
-            />
-          </div>
         </div>
-      </CardContent>
-    </Card>
+        <div className="relative h-[190px] bg-white">
+          <img
+            src={item.img}
+            alt={item.title}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 

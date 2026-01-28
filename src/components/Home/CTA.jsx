@@ -55,8 +55,7 @@ function Photo({ src, className = "" }) {
   return (
     <div
       className={[
-        "group relative h-[120px] w-[140px] overflow-hidden bg-neutral-200 shadow-[0_10px_25px_rgba(0,0,0,0.12)] cursor-pointer",
-        "sm:h-[150px] sm:w-[170px]",
+        "group relative overflow-hidden bg-neutral-200 shadow-[0_10px_25px_rgba(0,0,0,0.12)] cursor-pointer",
         className,
       ].join(" ")}
     >
@@ -79,14 +78,15 @@ function getOverlapClass(i) {
   // 7 images: make the 3 middle ones “pop up” more
   const base = "translate-y-0";
   const map = {
-    0: " h-[150px] w-[165px] sm:h-[200px] sm:w-[210px] z-20",
-    1: " h-[150px] w-[165px] sm:h-[270px] sm:w-[210px] z-20",
-    2: " h-[150px] w-[165px] sm:h-[330px] sm:w-[260px] z-20",
-    3: " h-[140px] w-[155px] sm:h-[250px] sm:w-[210px] z-10",
-    4: " h-[150px] w-[165px] sm:h-[330px] sm:w-[260px] z-20",
-    5: " h-[150px] w-[165px] sm:h-[270px] sm:w-[210px] z-20",
-    6: " h-[150px] w-[165px] sm:h-[200px] sm:w-[210px] z-20",
+    0: "h-[70px] w-[70px] sm:h-[120px] sm:w-[130px] md:h-[200px] md:w-[210px] z-20",
+    1: "h-[90px] w-[70px] sm:h-[160px] sm:w-[130px] md:h-[270px] md:w-[210px] z-20",
+    2: "h-[100px] w-[100px] sm:h-[200px] sm:w-[160px] md:h-[330px] md:w-[260px] z-20",
+    3: "h-[80px] w-[80px] sm:h-[150px] sm:w-[130px] md:h-[250px] md:w-[210px] z-10",
+    4: "h-[100px] w-[100px] sm:h-[200px] sm:w-[160px] md:h-[330px] md:w-[260px] z-20",
+    5: "h-[90px] w-[70px] sm:h-[160px] sm:w-[130px] md:h-[270px] md:w-[210px] z-20",
+    6: "h-[70px] w-[70px] sm:h-[120px] sm:w-[130px] md:h-[200px] md:w-[210px] z-20",
   };
+
   return map[i] || base;
 }
 
