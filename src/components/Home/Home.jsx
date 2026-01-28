@@ -57,12 +57,12 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+              <h1 className="heading mb-6 text-white">
                 Awakening Peace.
                 <br />
                 Empowering Communities.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Mindfulness, farmer empowerment, and cultural revival — powered
                 by Sunya.
               </p>
@@ -81,21 +81,21 @@ export default function Home() {
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card>
-            <div className="text-5xl font-bold mb-2">45k+</div>
+            <div className="subheading font-bold mb-2">45k+</div>
             <div className="text-gray-500 font-medium">Sunya Certificates</div>
             <p className="mt-4 text-sm text-gray-400">
               Global practitioners achieving mental clarity and liberation.
             </p>
           </Card>
           <Card>
-            <div className="text-5xl font-bold mb-2">26+</div>
+            <div className="subheading font-bold mb-2">26+</div>
             <div className="text-gray-500 font-medium">Active Projects</div>
             <p className="mt-4 text-sm text-gray-400">
               Impactful initiatives spanning health, livelihoods, and heritage.
             </p>
           </Card>
           <Card>
-            <div className="text-5xl font-bold mb-2">300+</div>
+            <div className="subheading font-bold mb-2">300+</div>
             <div className="text-gray-500 font-medium">Global Volunteers</div>
             <p className="mt-4 text-sm text-gray-400">
               A dedicated workforce driving change across 40+ countries.
@@ -110,7 +110,7 @@ export default function Home() {
               <h2 className="text-blue-600 font-semibold tracking-wide uppercase text-sm mb-4">
                 About SIF
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+              <h3 className="subheading mb-6">
                 Sunyatee International Foundation.
               </h3>
               <p className="text-xl text-gray-500 font-light leading-relaxed">
@@ -186,10 +186,10 @@ export default function Home() {
       </section>
       <section className="py-24 px-6 bg-[#fbfbfd]">
         <div className="max-w-6xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          <h2 className="subheading font-bold tracking-tight mb-6">
             Our Mission.
           </h2>
-          <p className="text-gray-500 text-xl max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-gray-500 hero-desc max-w-3xl mx-auto font-light leading-relaxed">
             Spread Sunya meditation globally; empower farmers and women through
             training; and revive cultural wisdom through high-impact CSR
             partnerships.
@@ -324,9 +324,7 @@ export default function Home() {
             <p className="text-sm uppercase tracking-wider text-emerald-600">
               Activities
             </p>
-            <h2 className="mt-1 text-3xl font-semibold tracking-tight">
-              Our Activities
-            </h2>
+            <h2 className="mt-1 subheading">Our Activities</h2>
             <p className="mt-2 max-w-2xl text-neutral-700 dark:text-neutral-300">
               Explore how we serve communities through meditation, empowerment,
               health, heritage, and education.

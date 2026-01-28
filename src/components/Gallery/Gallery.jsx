@@ -76,27 +76,10 @@ export default function SifGalleryPage() {
             </div>
 
             {/* Title */}
-            <h1
-              className="max-w-4xl text-foreground"
-              style={{
-                fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)",
-                fontWeight: 700,
-                letterSpacing: "-0.025em",
-                lineHeight: 1.1,
-              }}
-            >
-              Gallery
-            </h1>
+            <h1 className="max-w-4xl heading text-foreground">Gallery</h1>
 
             {/* Subtitle */}
-            <p
-              className={`mt-5 text-muted-foreground center`}
-              style={{
-                fontSize: "clamp(1.0625rem, 1vw + 0.875rem, 1.25rem)",
-                lineHeight: 1.6,
-                maxWidth: "640px",
-              }}
-            >
+            <p className={`mt-5 text-muted-foreground hero-desc center`}>
               A living record of our journey—from Sunya Meditation retreats to
               farmer empowerment projects, from child education centres to the
               revival of ancient manuscripts.

@@ -14,9 +14,7 @@ function CTA() {
       <div className="mx-auto w-full px-4">
         <div className="relative overflow-hidden rounded-[2rem] ring-1 ring-white/20 bg-">
           <div className="max-w-6xl mx-auto  px-6 pt-10 pb-20 text-center">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-              Ready to make an impact?
-            </h2>
+            <h2 className="heading mb-8">Ready to make an impact?</h2>
             <p className="text-xl text-gray-500 mb-12">
               Volunteer, partner via CSR, or support ODOC. Together, we can
               create a mindful world.

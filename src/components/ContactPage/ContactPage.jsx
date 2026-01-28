@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 /** Contact Us – SIF | React + Tailwind (no config) */
 export default function ContactPage() {
   return (
-    <main>
+    <main className="">
       <Hero />
       <ContactMain />
       <EmailContact />
@@ -45,7 +45,7 @@ function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 px-3 md:px-6">
         <div
           className={`flex flex-col text-center items-center`}
           style={{
@@ -62,26 +62,12 @@ function Hero() {
           </div>
 
           {/* Title */}
-          <h1
-            className="max-w-4xl text-foreground"
-            style={{
-              fontSize: "clamp(2.25rem, 5vw + 1rem, 4rem)",
-              fontWeight: 700,
-              letterSpacing: "-0.025em",
-              lineHeight: 1.1,
-            }}
-          >
-            Contact Us
-          </h1>
+          <h1 className="max-w-4xl heading text-foreground">Contact Us</h1>
 
           {/* Subtitle */}
           <p
-            className={`mt-5 text-muted-foreground center`}
-            style={{
-              fontSize: "clamp(1.0625rem, 1vw + 0.875rem, 1.25rem)",
-              lineHeight: 1.6,
-              maxWidth: "640px",
-            }}
+            className={`mt-5 text-muted-foreground hero-desc center`}
+          
           >
             Ready to join our mission or learn more about our programs? We'd
             love to hear from you. Reach out through any of our offices or send
@@ -123,7 +109,7 @@ function useReveal() {
 function ContactMain() {
   const ref = useReveal();
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white px-3 md:px-6">
       <div
         ref={ref}
         className="opacity-0 translate-y-5 transition-all duration-700 max-w-7xl mx-auto "

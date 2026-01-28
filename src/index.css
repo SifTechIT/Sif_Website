@@ -183,6 +183,20 @@
     line-height: 1.5;
   }
 
+
+  .heading {
+    @apply text-4xl md:text-7xl font-bold tracking-tight;
+  }
+
+  .hero-desc {
+    @apply text-xl md:text-2xl font-light;
+  }
+
+  .subheading {
+    @apply text-4xl md:text-5xl font-bold tracking-tight leading-tight;
+  }
+
+
   /* Fluid Typography Scale */
 
   /* Lead text - larger paragraph */
@@ -459,6 +473,11 @@
    Button System — Premium NGO Style
    ============================================ */
 @layer components {
+
+
+
+
+
 
   /* Base button */
   .btn {
