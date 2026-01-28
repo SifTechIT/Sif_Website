@@ -50,35 +50,40 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-neutral-50 to-white text-neutral-900 overflow-x-hidden">
       <section className="hero-gradient relative w-full">
-        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full mx-auto   ">
+        <div className="relative min-h-[90vh] sm:min-h-[680px] w-full">
           <div
-            className="absolute inset-0 bg-cover bg-center w-full h-full "
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${SunyaMeditation})` }}
           >
             <div className="absolute inset-0 bg-black/60" />
 
-            <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <h1 className="heading mb-6 text-white">
-                Awakening Peace.
-                <br />
-                Empowering Communities.
-              </h1>
-              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
-                Mindfulness, farmer empowerment, and cultural revival — powered
-                by Sunya.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button
-                  onClick={() => scrollToSection("activities")}
-                  className="bg-black text-white px-8 py-3 rounded-full font-semibold  transition w-full sm:w-auto"
-                >
-                  Explore Sunya
-                </button>
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-full relative">
+              <div className="flex h-full flex-col items-center justify-center text-center text-white">
+                <h1 className="heading mb-6 text-white">
+                  Awakening Peace.
+                  <br />
+                  Empowering Communities.
+                </h1>
+
+                <p className="hero-desc mb-10 max-w-2xl text-white">
+                  Mindfulness, farmer empowerment, and cultural revival —
+                  powered by Sunya.
+                </p>
+
+                <div className="flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row sm:gap-6">
+                  <button
+                    onClick={() => scrollToSection("activities")}
+                    className="w-full rounded-full bg-black px-8 py-3 font-semibold text-white transition sm:w-auto"
+                  >
+                    Explore Sunya
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card>
