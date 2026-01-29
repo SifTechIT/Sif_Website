@@ -1,3 +1,4 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
 import { ChevronRight, HandHeart } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
@@ -83,7 +84,36 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2.5rem]">
+          <div className="text-center mb-16">
+            <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
+              Young Lives Impact
+            </h2>
+            <h3 className="subheading"> Real Impact, Real Numbers</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">45k+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Sunya Certificates
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">26+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Active Projects
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">300+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Global Volunteers
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card>
@@ -267,69 +297,6 @@ export default function Home() {
           </Card>
         </div>
       </section>
-      <section className="py-24 bg-black text-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold mb-16">
-            Our Activities.
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 h-[500px]">
-              <div className="p-10 absolute z-10">
-                <h3 className="text-3xl font-bold mb-2">Sunya Meditation</h3>
-                <p className="text-gray-400 max-w-xs">
-                  A 7-belt pathway from stillness to strength.
-                </p>
-                <Link
-                  to="#"
-                  className="mt-4  text-blue-400 hover:underline flex items-center"
-                >
-                  Learn more <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-gradient-to-tl from-indigo-900 to-transparent opacity-50"></div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 h-[500px]">
-              <div className="p-10 absolute z-10">
-                <h3 className="text-3xl font-bold mb-2">Farmer Empowerment</h3>
-                <p className="text-gray-400 max-w-xs">
-                  Boosting income through Noni cultivation and soil testing.
-                </p>
-                <Link
-                  to="#"
-                  className="mt-4  text-blue-400 hover:underline flex items-center"
-                >
-                  Learn more <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-gradient-to-tl from-green-900 to-transparent opacity-50"></div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-zinc-900 p-8 rounded-3xl">
-              <h4 className="text-xl font-bold mb-2">ODOC</h4>
-              <p className="text-gray-400 text-sm">
-                One Dollar One Child. Spirulina nutrition at $1/child.
-              </p>
-            </div>
-            <div className="bg-zinc-900 p-8 rounded-3xl">
-              <h4 className="text-xl font-bold mb-2">Women Skill Centers</h4>
-              <p className="text-gray-400 text-sm">
-                Empowering SHGs through textiles and eco-products.
-              </p>
-            </div>
-            <div className="bg-zinc-900 p-8 rounded-3xl">
-              <h4 className="text-xl font-bold mb-2">Agamas</h4>
-              <p className="text-gray-400 text-sm">
-                Preserving heritage through Palm-leaf sutra printing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
       <section className="py-24 px-6 bg-white" id="activities">
         <div className="mx-auto max-w-6xl p-4">
           <div className="mb-6">
@@ -350,9 +317,15 @@ export default function Home() {
             {items.map((it) => (
               <ServiceCard key={it.id} item={it} />
             ))}
+            <div className="shrink-0 overflow-hidden rounded-md border p-0 shadow-none flex items-center justify-center bg-[#2b245d]  cursor-pointer">
+              <div className="text-white font-medium flex items-center ">
+                Know More <ChevronRight className="w-5 h-5 ml-1" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
+      <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
     </div>
   );
 }
@@ -361,24 +334,33 @@ function ServiceCard({ item }) {
   const navigation = useNavigate();
 
   return (
-    <div className=" shrink-0 overflow-hidden rounded-none border p-0 shadow-none">
+    <div className="group shrink-0 overflow-hidden rounded-md border shadow-none transition-all duration-300 hover:-translate-y-1 ">
       <div className="cursor-pointer" onClick={() => navigation(item.href)}>
-        <div className={`relative h-[175px] ${item.top}`}>
-          <div className="absolute left-7 top-16">
-            <div className="text-[22px] font-medium leading-none text-white">
-              {item.title}
-            </div>
-            <div className="mt-2  text-xs tracking-wide text-white/70">
-              {item.desc}
-            </div>
-          </div>
-        </div>
-        <div className="relative h-[190px] bg-white">
+        {/* Image */}
+        <div className="relative h-[190px] overflow-hidden bg-white">
           <img
             src={item.img}
             alt={item.title}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
+
+          {/* dark overlay */}
+          <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/10" />
+        </div>
+
+        {/* Content */}
+        <div
+          className={`flex pt-10 w-full h-[175px] transition-all duration-300 ${item.top}`}
+        >
+          <div className="w-full px-6">
+            <div className="text-[32px] font-bold leading-none text-white transition-transform duration-300 group-hover:-translate-y-1">
+              {item.title}
+            </div>
+
+            <div className="mt-2 text-xs tracking-wide text-white/70 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 opacity-80 translate-y-1">
+              {item.desc}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -387,91 +369,92 @@ function ServiceCard({ item }) {
 
 const items = [
   {
-    id: "implementation",
-    top: "bg-[#4C0C3E]",
+    id: "sunyaMeditation",
+    top: activitiesColors.sunyaMeditation.bg,
     title: "Sunya Meditation Programs",
     desc: "Structured 7-belt pathway, retreats, and online practice to build clarity and resilience.",
     img: SunyaMeditation1,
     href: "/meditation",
   },
   {
-    id: "women",
-    top: "bg-[#36A7D6]",
+    id: "farmerEmpowerment",
+    top: activitiesColors.farmerEmpowerment.bg,
     title: "Farmer Empowerment",
     desc: "Soil testing, noni cultivation, training & buy-back support to boost farmer incomes.",
     img: Farmer,
     href: "/farmer-empowerment",
   },
   {
-    id: "management",
-    top: "bg-[#D85A33]",
+    id: "womenSkillCenters",
+    top: activitiesColors.womenSkillCenters.bg,
     title: "Women’s Skill Centers",
     desc: "Textiles, eco-products, and SHG-led entrepreneurship for livelihood and dignity.",
     img: Women,
     href: "/women-empowerment",
   },
   {
-    id: "health",
-    top: "bg-[#1F6FEB]",
+    id: "ruralHealthAwareness",
+    top: activitiesColors.ruralHealthAwareness.bg,
     title: "Rural Health & Awareness",
     desc: "Preventive health camps, nutrition & hygiene sessions, mental well-being workshops.",
     img: Awareness,
     href: "/rural-health-awareness",
   },
+
   {
-    id: "csr",
-    top: "bg-[#0F766E]",
-    title: "CSR Partnerships",
-    desc: "Design and execution of high-impact CSR programs in health, education, and livelihoods.",
-    img: CSR,
-    href: "/csr-partnership",
-  },
-  {
-    id: "odoc",
-    top: "bg-[#7C3AED]",
+    id: "oDOCOneDollarOneChild",
+    top: activitiesColors.oDOCOneDollarOneChild.bg,
     title: "One Dollar One Child",
     desc: "Spirulina nutrition at $1 per child—community-driven malnutrition intervention.",
     img: ODOC,
     href: "/onedollar-onechild",
   },
   {
-    id: "ausum",
-    top: "bg-[#B91C1C]",
+    id: "childEducation",
+    top: activitiesColors.childEducation.bg,
     title: "Ausum Kids",
     desc: "Therapy & inclusion programs for children on the spectrum and their caregivers.",
     img: AusumKids,
     href: "/child-education",
   },
   {
-    id: "agamas",
-    top: "bg-[#0B1220]", // deep navy/black
+    id: "agamasAndSutras",
+    top: activitiesColors.agamasAndSutras.bg, // deep navy/black
     title: "Agamas & Translations",
     desc: "Palm-leaf sutra printing and scripture translations preserving timeless wisdom.",
     img: Agamas,
     href: "/agamas-translations",
   },
   {
-    id: "training",
-    top: "bg-[#F59E0B]", // amber
+    id: "internshipAcademy",
+    top: activitiesColors.internshipAcademy.bg, // amber
     title: "Internships & Education",
     desc: "Hands-on training in IT, design, agritech, and management for youth and volunteers.",
     img: Education,
     href: "/internships-education",
   },
   {
-    id: "brick-house",
-    top: "bg-[#16A34A]", // green
+    id: "brickHouse",
+    top: activitiesColors.brickHouse.bg, // green
     title: "Brick house ",
     desc: "Sustainable housing solutions using eco-friendly materials and techniques.",
     img: Banner2,
     href: "/brick-house",
   },
   {
-    id: "Palm",
-    top: "bg-[#4C0C3E]", // same purple scheme
+    id: "palmLeafSutraPrinting",
+    top: activitiesColors.palmLeafSutraPrinting.bg, // same purple scheme
     title: "Palm Leaf Sutra Printing",
     desc: "Preserving ancient wisdom through traditional palm-leaf manuscript printing techniques.",
     img: palm,
     href: "/palm-leaf-sutra-printing",
+  },
+  {
+    id: "csr",
+    top: activitiesColors.csr.bg,
+    title: "CSR Partnerships",
+    desc: "Design and execution of high-impact CSR programs in health, education, and livelihoods.",
+    img: CSR,
+    href: "/csr-partnership",
   },
 ];

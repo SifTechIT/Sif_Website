@@ -107,7 +107,7 @@ export default function AboutUsPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
+            <Card className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-300">
                 <img
                   src={DrLim}
@@ -124,8 +124,8 @@ export default function AboutUsPage() {
                   as a tool for global peace and inclusive prosperity.
                 </p>
               </div>
-            </div>
-            <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 flex flex-col md:flex-row gap-8 items-center">
+            </Card>
+            <Card className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-300">
                 <img
                   src={DrSavera}
@@ -143,7 +143,7 @@ export default function AboutUsPage() {
                   cultural revival.
                 </p>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -226,6 +226,7 @@ export default function AboutUsPage() {
 }
 
 import { useEffect, useMemo, useRef } from "react";
+import { Card } from "../ui/card";
 function TimelineAutoScrollSection() {
   const scrollerRef = useRef(null);
   const intervalRef = useRef(null);
@@ -354,7 +355,7 @@ function TimelineAutoScrollSection() {
               key={item.year}
               className="snap-center shrink-0 w-[280px] sm:w-[360px] md:w-[440px]"
             >
-              <div className="bg-white  rounded-[32px] border-gray-100 shadow-sm hover:shadow-md transition overflow-hidden h-full flex flex-col">
+              <div className="bg-white  rounded-[32px] border-gray-100 border transition overflow-hidden h-full flex flex-col">
                 <img
                   src={item.img}
                   alt=""

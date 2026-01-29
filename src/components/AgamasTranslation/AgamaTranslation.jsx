@@ -1,4 +1,5 @@
 import { scrollToSection } from "@/lib/scrollToSection";
+import { ChevronRight } from "lucide-react";
 import SunyaMeditation from "../../assets/Agamas/banner.jpeg";
 import banner2 from "../../assets/Agamas/banner2.jpeg";
 import bento from "../../assets/Agamas/bento.jpeg";
@@ -20,10 +21,10 @@ export default function AgamasTranslationsPage() {
               <div className="inline-block px-4 py-1.5 mb-6 bg-amber-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-amber-800 border border-amber-200">
                 📜 Preserving Ancient Wisdom for Future Generations
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+              <h1 className="heading mb-6 text-white">
                 Agamas & Translations.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Preserving, translating, and reviving ancient Indian spiritual
                 and philosophical texts—making timeless wisdom accessible to
                 humanity.
@@ -41,15 +42,14 @@ export default function AgamasTranslationsPage() {
           </div>
         </div>
       </section>
+
       <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2.5rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Preservation Progress
             </h2>
-            <h3 className="text-3xl font-bold">
-              Safeguarding Civilizational Heritage
-            </h3>
+            <h3 className="subheading">Safeguarding Civilizational Heritage</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -95,7 +95,7 @@ export default function AgamasTranslationsPage() {
               <h2 className="text-amber-700 font-bold tracking-tight text-sm uppercase mb-4">
                 The Initiative
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gradient">
+              <h3 className="subheading mb-6 text-gradient">
                 Bridging Past & Future.
               </h3>
               <p className="text-lg text-gray-500 leading-relaxed mb-8">
@@ -109,7 +109,7 @@ export default function AgamasTranslationsPage() {
                 sacred knowledge accessible to the world.
               </p>
             </div>
-            <div className="rounded-[3rem] bg-amber-50 aspect-square flex items-center justify-center text-amber-200 overflow-hidden relative shadow-inner">
+            <div className="rounded-[2.5rem] bg-amber-50 aspect-square flex items-center justify-center text-amber-200 overflow-hidden relative shadow-inner">
               <img src={banner2} className="w-full h-full object-cover" />
             </div>
           </div>
@@ -119,9 +119,7 @@ export default function AgamasTranslationsPage() {
       <section className="py-24 px-6 bg-gray-50/50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gradient">
-              Why Preservation Matters
-            </h2>
+            <h2 className="subheading">Why Preservation Matters</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -163,9 +161,7 @@ export default function AgamasTranslationsPage() {
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gradient">
-              Key Focus Areas
-            </h2>
+            <h2 className="subheading">Key Focus Areas</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -236,7 +232,7 @@ export default function AgamasTranslationsPage() {
       </section>
 
       <section
-        className="py-24 px-6 bg-zinc-950 text-white rounded-[4rem] mx-4 my-8 relative overflow-hidden"
+        className="py-24 px-6 bg-zinc-950 text-white rounded-[2.5rem] mx-4 my-8 relative overflow-hidden"
         style={{
           backgroundImage: `url(${bento3})`,
           backgroundSize: "cover",
@@ -245,7 +241,7 @@ export default function AgamasTranslationsPage() {
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="max-w-4xl mx-auto text-center relative">
-          <h2 className="text-3xl font-bold mb-12">Global Language Network</h2>
+          <h2 className="subheading mb-12">Global Language Network</h2>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <span className="lang-tag">🇨🇳 Chinese</span>
             <span className="lang-tag">🇬🇧 English</span>

@@ -1,3 +1,4 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
 import Banner1 from "../../assets/FarmerEmpowerment/Banner1.jpeg";
 import Banner2 from "../../assets/FarmerEmpowerment/Banner2.jpeg";
@@ -13,6 +14,8 @@ import Training from "../../assets/FarmerEmpowerment/Training.jpeg";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 
 export default function FarmerEmpowermentPage() {
+  const textColor = activitiesColors.farmerEmpowerment.text;
+  const bgColor = activitiesColors.farmerEmpowerment.bg;
   const DEFAULT_TESTIMONIALS = [
     {
       quote:
@@ -50,13 +53,16 @@ export default function FarmerEmpowermentPage() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <div className="inline-block px-4 py-1.5 mb-6 bg-green-50 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-widest">
+              <div
+                className={
+                  "inline-block px-4 py-1.5 mb-6 bg-green-50  rounded-full text-[10px] font-bold uppercase tracking-widest " +
+                  textColor
+                }
+              >
                 🌾 Sustainable Agriculture, Resilient Communities
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
-                Farmer Empowerment.
-              </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <h1 className="heading mb-6 text-white">Farmer Empowerment.</h1>
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Transforming rural livelihoods through sustainable agriculture,
                 modern training, and assured market linkages.
               </p>
@@ -75,12 +81,12 @@ export default function FarmerEmpowermentPage() {
       </section>
 
       <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2.5rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Young Lives Impact
             </h2>
-            <h3 className="text-3xl font-bold"> Real Impact, Real Numbers</h3>
+            <h3 className="subheading"> Real Impact, Real Numbers</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -114,7 +120,7 @@ export default function FarmerEmpowermentPage() {
       <section className="pb-24 px-6" id="Foundations">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div className="rounded-[3rem] bg-gray-100 aspect-square flex items-center justify-center text-gray-400 overflow-hidden relative">
+            <div className="rounded-[2.5rem] bg-gray-100 aspect-square flex items-center justify-center text-gray-400 overflow-hidden relative">
               <img
                 src={Banner1}
                 alt="Farmer Empowerment"
@@ -122,12 +128,15 @@ export default function FarmerEmpowermentPage() {
               />
             </div>
             <div>
-              <h2 className="text-green-700 font-bold tracking-tight text-sm uppercase mb-4">
+              <h2
+                className={
+                  " font-bold tracking-tight text-sm uppercase mb-4 " +
+                  textColor
+                }
+              >
                 Foundation
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                Program Overview.
-              </h3>
+              <h3 className="subheading mb-6">Program Overview.</h3>
               <p className="text-lg text-gray-500 leading-relaxed mb-8">
                 The Farmer Empowerment program is a cornerstone initiative of
                 SIF, designed to improve farmer livelihoods through modern
@@ -147,9 +156,7 @@ export default function FarmerEmpowermentPage() {
       <section id="projects" className="py-24 px-6 bg-[#fbfbfd]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-4xl font-bold tracking-tight">
-              The Noni Project - Siddipet.
-            </h2>
+            <h2 className="subheading">The Noni Project - Siddipet.</h2>
             <p className="text-gray-500 mt-4 text-lg">
               A flagship initiative launched in 2022, transforming lives through
               sustainable cultivation.
@@ -158,7 +165,7 @@ export default function FarmerEmpowermentPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             <div
-              className="md:col-span-8 bento-card bg-zinc-900 text-white p-12 flex flex-col justify-between min-h-[400px] rounded-3xl"
+              className="md:col-span-8 bento-card bg-zinc-900 text-white p-12 flex flex-col justify-between min-h-[400px] rounded-[2.5rem]"
               style={{
                 backgroundImage: `url(${Banner2})`,
                 backgroundSize: "cover",
@@ -331,7 +338,7 @@ function Interventions() {
           {items.map((it) => (
             <div
               key={it.title}
-              className="rounded-2xl border border-gray-200 overflow-hidden transition hover:-translate-y-3"
+              className="rounded-[2.5rem] border border-gray-200 overflow-hidden transition hover:-translate-y-3"
             >
               <div className="h-52 w-full bg-gray-100 flex items-center justify-center">
                 <img

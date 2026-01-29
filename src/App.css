@@ -25,7 +25,7 @@
 
     /* Bento Grid Style */
     .bento-card {
-        border-radius: 32px;
+        border-radius: 2.5rem;
         overflow: hidden;
         position: relative;
         background: #ffffff;

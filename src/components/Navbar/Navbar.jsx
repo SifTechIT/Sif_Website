@@ -1,3 +1,4 @@
+import activitiesColors from "@/lib/activies";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo.png";
@@ -9,34 +10,34 @@ const ACTIVITIES_COLUMNS = [
     headingClass: "text-indigo-600",
     items: [
       {
+        id: "sunyaMeditation",
         label: "Sunya Meditation",
         href: "/meditation",
         desc: "Mindfulness & online practice",
-        chipClass:
-          "bg-indigo-50 text-indigo-600 group-hover/item:bg-indigo-600 group-hover/item:text-white",
+        chipClass: activitiesColors.sunyaMeditation.bg + " text-white",
         icon: <i className="fas fa-om text-xs" />,
       },
       {
+        id: "childEducation",
         label: "Child Education",
         href: "/child-education",
         desc: "Special needs therapy",
-        chipClass:
-          "bg-pink-50 text-pink-600 group-hover/item:bg-pink-600 group-hover/item:text-white",
+        chipClass: activitiesColors.childEducation.bg + " text-white",
         icon: <i className="fas fa-child text-xs" />,
       },
       {
+        id: "ruralHealthAwareness",
         label: "Rural Health & Awareness",
         href: "/rural-health-awareness",
-        chipClass:
-          "bg-pink-50 text-pink-600 group-hover/item:bg-pink-600 group-hover/item:text-white",
+        chipClass: activitiesColors.ruralHealthAwareness.bg + " text-white",
         desc: "Camps, nutrition, hygiene, well-being.",
         icon: <i className="fas fa-child text-xs" />,
       },
       {
+        id: "oDOCOneDollarOneChild",
         label: "ODOC – One Dollar One Child",
         href: "/onedollar-onechild",
-        chipClass:
-          "bg-pink-50 text-pink-600 group-hover/item:bg-pink-600 group-hover/item:text-white",
+        chipClass: activitiesColors.oDOCOneDollarOneChild.bg + " text-white",
         desc: "Spirulina nutrition at $1/child.",
         icon: <i className="fas fa-child text-xs" />,
       },
@@ -48,19 +49,19 @@ const ACTIVITIES_COLUMNS = [
     headingClass: "text-emerald-600",
     items: [
       {
+        id: "farmerEmpowerment",
         label: "Farmer Empowerment",
         href: "/farmer-empowerment",
         desc: "Noni & soil testing",
-        chipClass:
-          "bg-emerald-50 text-emerald-600 group-hover/item:bg-emerald-600 group-hover/item:text-white",
+        chipClass: activitiesColors.farmerEmpowerment.bg + " text-white",
         icon: <i className="fas fa-seedling text-xs" />,
       },
       {
+        id: "womenSkillCenters",
         label: "Women Skill Centers",
         href: "/women-empowerment",
         desc: "SHGs & Textiles",
-        chipClass:
-          "bg-rose-50 text-rose-600 group-hover/item:bg-rose-600 group-hover/item:text-white",
+        chipClass: activitiesColors.womenSkillCenters.bg + " text-white",
         icon: <i className="fas fa-female text-xs" />,
       },
     ],
@@ -71,36 +72,36 @@ const ACTIVITIES_COLUMNS = [
     headingClass: "text-amber-600",
     items: [
       {
+        id: "agamasAndSutras",
         label: "Agamas & Sutras",
         href: "/agamas-translations",
         desc: "Palm-leaf & Translations",
-        chipClass:
-          "bg-amber-50 text-amber-600 group-hover/item:bg-amber-600 group-hover/item:text-white",
+        chipClass: activitiesColors.agamasAndSutras.bg + " text-white",
         icon: <i className="fas fa-scroll text-xs" />,
       },
 
       {
+        id: "internshipAcademy",
         label: "Internship Academy",
         href: "/internships-education",
         desc: "Learning with Impact",
-        chipClass:
-          "bg-blue-50 text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white",
+        chipClass: activitiesColors.internshipAcademy.bg + " text-white",
         icon: <i className="fas fa-graduation-cap text-xs" />,
       },
       {
+        id: "brickHouse",
         label: "Brick House",
         href: "/brick-house",
         desc: "High-impact programs with companies.",
-        chipClass:
-          "bg-blue-50 text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white",
+        chipClass: activitiesColors.brickHouse.bg + " text-white",
         icon: <i className="fas fa-graduation-cap text-xs" />,
       },
       {
+        id: "palmLeafSutraPrinting",
         label: "Palm Leaf Sutra Printing",
         href: "/palm-leaf-sutra-printing",
         desc: "High-impact programs with companies.",
-        chipClass:
-          "bg-blue-50 text-blue-600 group-hover/item:bg-blue-600 group-hover/item:text-white",
+        chipClass: activitiesColors.palmLeafSutraPrinting.bg + " text-white",
         icon: <i className="fas fa-graduation-cap text-xs" />,
       },
     ],

@@ -1,9 +1,11 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
 import { Link } from "react-router-dom";
 import SunyaMeditation from "../../assets/SunyaMeditation/banner.jpeg";
 import Philosophy from "../../assets/SunyaMeditation/Philosophy.jpeg";
 import Residential from "../../assets/SunyaMeditation/Residential.jpeg";
 import Trainers from "../../assets/SunyaMeditation/Trainers.jpeg";
+import BentoCard from "../ui/bento-card";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 
 const DEFAULT_TESTIMONIALS = [
@@ -37,6 +39,8 @@ const DEFAULT_TESTIMONIALS = [
 ];
 
 export default function SunyaLanding() {
+  const textColor = activitiesColors.sunyaMeditation.text;
+  const bgColor = activitiesColors.sunyaMeditation.bg;
   return (
     <main>
       <section className="hero-gradient relative w-full">
@@ -48,11 +52,9 @@ export default function SunyaLanding() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
-                The Power of Nothing.
-              </h1>
+              <h1 className="heading mb-6 text-white">The Power of Nothing.</h1>
 
-              <p className="text-xl md:text-2xl text-white font-light mb-12 max-w-3xl mx-auto">
+              <p className="hero-desc text-white  mb-12 max-w-3xl mx-auto">
                 Ancient wisdom revived for the modern world. Experience inner
                 peace through the practice of conscious emptiness.
               </p>
@@ -96,12 +98,12 @@ export default function SunyaLanding() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-blue-600 font-bold tracking-tight text-sm uppercase mb-4">
+              <h2
+                className={`${textColor} font-bold tracking-tight text-sm uppercase mb-4`}
+              >
                 Core Philosophy
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                Embrace the Zero.
-              </h3>
+              <h3 className="subheading mb-6">Embrace the Zero.</h3>
               <p className="text-lg text-gray-500 leading-relaxed mb-8">
                 Sunya is a transformative practice that helps you reconnect with
                 your true self by consciously letting go of judgments. In a
@@ -109,14 +111,14 @@ export default function SunyaLanding() {
               </p>
 
               <div className="grid grid-cols-2 gap-6">
-                <div className="p-4 bg-white rounded-2xl border border-gray-100">
+                <div className="p-8 bg-white rounded-[1rem] border border-gray-100">
                   <div className="text-blue-600 mb-2">
                     <BrainIcon className="h-5 w-5" />
                   </div>
                   <p className="text-sm font-bold">Mental Clarity</p>
                 </div>
 
-                <div className="p-4 bg-white rounded-2xl border border-gray-100">
+                <div className="p-8 bg-white rounded-[1rem] border border-gray-100">
                   <div className="text-red-500 mb-2">
                     <HeartIcon className="h-5 w-5" />
                   </div>
@@ -125,11 +127,11 @@ export default function SunyaLanding() {
               </div>
             </div>
 
-            <div className="rounded-[3rem] bg-gray-200 h-[500px] flex items-center justify-center text-gray-400 overflow-hidden relative">
+            <div className="rounded-[2.5rem] bg-gray-200 h-[500px] flex items-center justify-center text-gray-400 overflow-hidden relative">
               <img
                 src={Philosophy}
                 alt="Philosophy"
-                className="object-cover w-full h-full absolute inset-0"
+                className="object-cover w-full h-full absolute inset-0 rounded-[2.5rem]"
               />
             </div>
           </div>
@@ -140,9 +142,7 @@ export default function SunyaLanding() {
       <section id="programs" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-4xl font-bold tracking-tight">
-              Core Activities.
-            </h2>
+            <h2 className="subheading ">Core Activities.</h2>
             <p className="text-gray-500 mt-4 text-lg">
               Designed to deepen your practice at every stage.
             </p>
@@ -156,7 +156,9 @@ export default function SunyaLanding() {
               >
                 <div className="absolute inset-0 bg-black/60" />
                 <div className="z-10 relative my-4">
-                  <span className="text-blue-400 font-bold text-xs uppercase tracking-widest">
+                  <span
+                    className={`${textColor} font-bold text-xs uppercase tracking-widest`}
+                  >
                     Deep Immersion
                   </span>
                   <h3 className="text-3xl font-bold mt-4 mb-4">
@@ -179,8 +181,10 @@ export default function SunyaLanding() {
 
             <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
               <div>
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                  <UsersIcon className="h-5 w-5 text-blue-600" />
+                <div
+                  className={`w-12 h-12 bg-white rounded-[2.5rem] flex items-center justify-center mb-6 shadow-sm ${textColor}`}
+                >
+                  <UsersIcon className={`h-5 w-5 ${textColor}`} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Foundation Course</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -189,9 +193,9 @@ export default function SunyaLanding() {
                 </p>
               </div>
 
-              <a href="#" className="text-blue-600 font-medium text-sm">
+              <Link to="#" className={`${textColor} font-medium text-sm`}>
                 Learn more &gt;
-              </a>
+              </Link>
             </BentoBox>
 
             <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
@@ -199,7 +203,9 @@ export default function SunyaLanding() {
               <p className="text-gray-500 text-sm mb-4">
                 Free guided meditations every weekend via Zoom &amp; YouTube.
               </p>
-              <span className="text-blue-600 text-xs font-bold uppercase tracking-widest">
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest `}
+              >
                 Join Live
               </span>
             </BentoBox>
@@ -209,7 +215,9 @@ export default function SunyaLanding() {
               <p className="text-gray-500 text-sm mb-4">
                 Introduction to Sunya for students to enhance focus and focus.
               </p>
-              <span className="text-blue-600 text-xs font-bold uppercase tracking-widest">
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest`}
+              >
                 Explore
               </span>
             </BentoBox>
@@ -237,12 +245,12 @@ export default function SunyaLanding() {
 
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="mb-16 text-center">
-          <h2 className="text-[10px] uppercase tracking-[0.3em] text-indigo-600 font-bold mb-4">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
             Start Your Journey
           </h2>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">
-            Get Involved.
-          </h3>
+          <h3 className="subheading text-gradient">Get Involved.</h3>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Multiple pathways to experience, share, and support the practice of
             Sunya meditation globally.
@@ -251,7 +259,7 @@ export default function SunyaLanding() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {cards.map((card, index) => (
-            <BentoCard key={index} {...card} />
+            <BentoCard key={index} {...card} btnColor={bgColor} />
           ))}
         </div>
       </section>
@@ -263,7 +271,7 @@ function BentoBox({ className = "", children }) {
   return (
     <div
       className={[
-        "rounded-[24px] border border-[#f2f2f7] transition-all duration-400",
+        "rounded-[2.5rem] border border-[#f2f2f7] transition-all duration-400",
         "hover:-translate-y-[5px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)]",
         className,
       ].join(" ")}
@@ -336,49 +344,3 @@ const cards = [
     href: "/join-us",
   },
 ];
-
-const BentoCard = ({
-  icon,
-  title,
-  description,
-  buttonText,
-  buttonVariant = "primary",
-  href = "#",
-}) => {
-  return (
-    <div
-      className={`bento-card p-8 flex flex-col justify-between min-h-[340px] border
-      bg-white border-gray-100`}
-    >
-      <div>
-        <div
-          className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl mb-6
-           bg-indigo-50`}
-        >
-          {icon}
-        </div>
-
-        <h4 className="font-bold mb-3">{title}</h4>
-
-        <p
-          className={`text-xs leading-relaxed text-gray-500
-        `}
-        >
-          {description}
-        </p>
-      </div>
-
-      <Link
-        to={href}
-        className={`w-full mt-8 py-3 rounded-full text-[10px] font-bold uppercase text-center tracking-widest transition
-          ${
-            buttonVariant === "primary"
-              ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-100"
-              : "border border-gray-200 text-black hover:bg-gray-50"
-          }`}
-      >
-        {buttonText}
-      </Link>
-    </div>
-  );
-};
