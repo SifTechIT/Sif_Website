@@ -6,7 +6,6 @@ import SunyaMeditation from "../../assets/Agamas/banner.jpeg";
 import banner2 from "../../assets/Agamas/banner2.jpeg";
 import bento from "../../assets/Agamas/bento.jpeg";
 import bento2 from "../../assets/Agamas/bento2.jpeg";
-import bento3 from "../../assets/Agamas/bento3.jpeg";
 import { BentoBox, BentoCard } from "../ui/bento-card";
 
 export default function AgamasTranslationsPage() {
@@ -271,16 +270,8 @@ export default function AgamasTranslationsPage() {
         </div>
       </section>
 
-      <section
-        className="section-gap bg-zinc-950 text-white rounded-[2.5rem] mx-4 my-8 relative overflow-hidden"
-        style={{
-          backgroundImage: `url(${bento3})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="max-w-4xl mx-auto text-center relative">
+      <section className="section-gap ">
+        <div className="max-w-6xl mx-auto text-center relative">
           <h2 className="subheading mb-12">Global Language Network</h2>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <span className="lang-tag">🇨🇳 Chinese</span>

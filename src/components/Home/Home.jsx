@@ -114,31 +114,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-20 px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <div className="subheading font-bold mb-2">45k+</div>
-            <div className="text-gray-500 font-medium">Sunya Certificates</div>
-            <p className="mt-4 text-sm text-gray-400">
-              Global practitioners achieving mental clarity and liberation.
-            </p>
-          </Card>
-          <Card>
-            <div className="subheading font-bold mb-2">26+</div>
-            <div className="text-gray-500 font-medium">Active Projects</div>
-            <p className="mt-4 text-sm text-gray-400">
-              Impactful initiatives spanning health, livelihoods, and heritage.
-            </p>
-          </Card>
-          <Card>
-            <div className="subheading font-bold mb-2">300+</div>
-            <div className="text-gray-500 font-medium">Global Volunteers</div>
-            <p className="mt-4 text-sm text-gray-400">
-              A dedicated workforce driving change across 40+ countries.
-            </p>
-          </Card>
-        </div>
-      </section>
+
       <section className="section-gap  bg-white" id="xyz">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">

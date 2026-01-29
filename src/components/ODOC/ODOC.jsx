@@ -4,6 +4,7 @@ import DrLim from "../../assets/About/lim.jpeg";
 import DrSavera from "../../assets/About/rajesh.jpeg";
 import Banner1 from "../../assets/ODOC/Banner1.jpeg";
 import { BentoCard } from "../ui/bento-card";
+import { Card } from "../ui/card";
 export default function ODOCPage() {
   const textColor = activitiesColors.oDOCOneDollarOneChild.text;
   const bgColor = activitiesColors.oDOCOneDollarOneChild.bg;
@@ -240,50 +241,44 @@ export default function ODOCPage() {
           </div>
         </div>
       </section>
-
       <section className="section-gap max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="flex items-start gap-8">
-            <div className="w-28 h-28  bg-zinc-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl font-bold text-gray-400">
+          <Card className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-300">
               <img
                 src={DrLim}
-                alt="Datuk Lim Siow Jin"
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
             <div>
-              <h4 className="text-xl font-bold mb-1">Datuk Lim Siow Jin</h4>
-              <p className="text-xs text-green-600 font-bold uppercase tracking-widest mb-4">
+              <h3 className="text-xl font-bold">Datuk Lim Siow Jin</h3>
+              <p className="text-green-600 text-xs font-bold uppercase tracking-widest mb-4">
                 Guiding Principal
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Leading the global mission to eliminate childhood malnutrition
                 through innovative supplementation.
               </p>
             </div>
-          </div>
-          <div className="flex items-start gap-8">
-            <div
-              className="w-28
-h-28 bg-zinc-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl font-bold text-gray-400"
-            >
+          </Card>
+          <Card className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-gray-300">
               <img
                 src={DrSavera}
-                alt="Dr. Rajesh Savera"
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
             <div>
-              <h4 className="text-xl font-bold mb-1">Dr. Rajesh Savera</h4>
-              <p className="text-xs text-green-600 font-bold uppercase tracking-widest mb-4">
-                Program Director
+              <h3 className="text-xl font-bold">Dr. Rajesh Savera</h3>
+              <p className="text-green-600 text-xs font-bold uppercase tracking-widest mb-4">
+                Founder & Director
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 Pioneering evidence-based nutrition interventions and ensuring
                 sustainable improvements worldwide.
               </p>
             </div>
-          </div>
+          </Card>
         </div>
       </section>
 
