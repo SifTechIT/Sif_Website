@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative mx-4 -mt-30 z-56 mb-8">
+      <section className="relative mx-4 -mt-30 z-56">
         <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2.5rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
@@ -139,7 +139,7 @@ export default function Home() {
           </Card>
         </div>
       </section>
-      <section className="py-24 px-6 bg-white" id="xyz">
+      <section className="section-gap  bg-white" id="xyz">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
@@ -220,7 +220,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-24 px-6 bg-[#fbfbfd]">
+      <section className="section-gap  bg-[#fbfbfd]">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="subheading font-bold tracking-tight mb-6">
             Our Mission.
@@ -297,8 +297,8 @@ export default function Home() {
           </Card>
         </div>
       </section>
-      <section className="py-24 px-6 bg-white" id="activities">
-        <div className="mx-auto max-w-6xl p-4">
+      <section className="section-gap  bg-white" id="activities">
+        <div className="mx-auto max-w-6xl ">
           <div className="mb-6">
             <p className="text-sm uppercase tracking-wider text-emerald-600">
               Activities

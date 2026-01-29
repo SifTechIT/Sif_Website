@@ -1,10 +1,12 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
+import { Link } from "react-router-dom";
 import SunyaMeditation from "../../assets/RuralHealth/Stress_Relief.jpg";
 import banner from "../../assets/RuralHealth/banner.jpg";
 import bento1 from "../../assets/RuralHealth/bento1.jpg";
 import bento2 from "../../assets/RuralHealth/bento2.jpg";
-import MissionCard from "../ui/MissionCard";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
+import { BentoBox, BentoCard } from "../ui/bento-card";
 
 const DEFAULT_TESTIMONIALS = [
   {
@@ -37,6 +39,8 @@ const DEFAULT_TESTIMONIALS = [
 ];
 
 export default function RuralHealthPage() {
+  const textColor = activitiesColors.ruralHealthAwareness.text;
+  const bgColor = activitiesColors.ruralHealthAwareness.bg;
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
@@ -49,15 +53,17 @@ export default function RuralHealthPage() {
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
               <div
-                className="inline-block px-4 py-1.5 mb-6 rounded-full text-[10px] font-bold uppercase tracking-widest
-          bg-white/20 backdrop-blur border border-white/30"
+                className={
+                  "inline-block px-4 py-1.5 mb-6 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur border border-white/30 " +
+                  bgColor
+                }
               >
                 Healthcare for Underserved Communities
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+              <h1 className="heading mb-6 text-white">
                 Rural Health &amp; Awareness.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Building healthier, informed, and resilient communities through
                 comprehensive preventive care and nutrition education.
               </p>
@@ -74,13 +80,13 @@ export default function RuralHealthPage() {
           </div>
         </div>
       </section>
-      <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+      <section className="relative mx-4 -mt-30 z-56 ">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Young Lives Impact
             </h2>
-            <h3 className="text-3xl font-bold"> Health Impact Metrics</h3>
+            <h3 className="subheading"> Health Impact Metrics</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -113,14 +119,18 @@ export default function RuralHealthPage() {
         </div>
       </section>
 
-      <section className="pb-24 px-6" id="initiative">
+      <section className="section-gap" id="initiative">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-blue-600 font-bold tracking-tight text-sm uppercase mb-4">
+              <h2
+                className={
+                  "font-bold tracking-tight text-sm uppercase mb-4 " + textColor
+                }
+              >
                 The Initiative
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gradient">
+              <h3 className="subheading mb-6 text-gradient">
                 Program Overview.
               </h3>
               <p className="text-lg text-gray-500 leading-relaxed mb-8">
@@ -145,87 +155,103 @@ export default function RuralHealthPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-24 px-6 bg-[#fbfbfd]">
+      <section id="programs" className="section-gap">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-4xl font-bold tracking-tight">Focus Areas.</h2>
+            <h2 className="subheading ">Focus Areas.</h2>
             <p className="text-gray-500 mt-4 text-lg">
               Addressing multiple dimensions of rural wellness.
             </p>
           </div>
 
-          <div className="bento-grid">
-            <div
-              className="bento-card col-span-4 md:col-span-2 md:row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end min-h-[400px]"
-              style={{
-                backgroundImage: `url(${bento1})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="absolute top-12 left-12 text-5xl">🏥</div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">
-                  Preventive Health Camps
-                </h3>
-                <p className=" text-lg leading-relaxed mb-8">
-                  Regular camps covering general check-ups, maternal care, eye
-                  care, and early detection via mobile medical units.
-                </p>
-                <button className="bg-white text-black px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                  View Schedule
-                </button>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${bento1})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="z-10 relative my-4">
+                  <h3 className="text-3xl font-bold mt-4 mb-4">
+                    Preventive Health Camps
+                  </h3>
+                  <p className="text-white max-w-sm">
+                    Regular camps covering general check-ups, maternal care, eye
+                    care, and early detection via mobile medical units.
+                  </p>
+                </div>
 
-            <div className="bento-card col-span-4 md:col-span-2 p-10 flex flex-col justify-between bg-blue-50/50">
-              <div className="flex justify-between items-start">
-                <div className="text-4xl">🥗</div>
-                <span className="text-[9px] font-bold uppercase tracking-widest bg-blue-600 text-white px-3 py-1 rounded-full">
-                  Vitality
-                </span>
+                <Link
+                  to="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit relative "
+                >
+                  View Schedule
+                </Link>
               </div>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
               <div>
-                <h4 className="text-xl font-bold mb-2">Nutrition & Hygiene</h4>
+                <div className="text-4xl">🥗</div>
+                <h3 className="text-xl font-bold mb-3">Nutrition & Hygiene</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Educational sessions on balanced diets, safe water practices,
                   and sanitation protocols.
                 </p>
               </div>
-            </div>
 
-            <div className="bento-card col-span-2 md:col-span-1 p-8 flex flex-col justify-center text-center">
-              <div className="text-3xl mb-4">🧘</div>
-              <h4 className="text-lg font-bold mb-2">Mental Health</h4>
-              <p className="text-gray-500 text-xs">
+              <Link to="#" className={`${textColor} font-medium text-sm`}>
+                Learn more &gt;
+              </Link>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Mental Health</h4>
+              <p className="text-gray-500 text-sm mb-4">
                 Integrating Sunya meditation for stress reduction and clarity.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest `}
+              >
+                Join Live
+              </span>
+            </BentoBox>
 
-            <div
-              className="bento-card col-span-2 md:col-span-1 p-8 flex flex-col justify-center text-center bg-blue-600 text-white border-none"
-              style={{
-                backgroundImage: `url(${bento2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="text-3xl mb-4">🤝</div>
-              <h4 className="text-lg font-bold mb-2">Strategic Partners</h4>
-              <p className="text-white text-xs">
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Strategic Partners</h4>
+              <p className="text-gray-500 text-sm mb-4">
                 Collaborating with doctors and NGOs for sustainable impact.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest`}
+              >
+                Explore
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4  text-white overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-8 "
+                style={{ backgroundImage: `url(${bento2})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <h4 className="font-bold mb-2 relative">Trainers Program</h4>
+                <p className="text-sm mb-4 relative">
+                  Join our certified facilitator program and spread the
+                  practice.
+                </p>
+                <span className="text-white text-xs relative font-bold uppercase tracking-widest underline underline-offset-4">
+                  Apply Now
+                </span>
+              </div>
+            </BentoBox>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section className="section-gap">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight mb-16">
-            Key Interventions.
-          </h2>
+          <h2 className="subheading mb-16">Key Interventions.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-12">
             <div>
               <h4 className="font-bold border-b border-gray-100 pb-4 mb-4">
@@ -284,16 +310,24 @@ export default function RuralHealthPage() {
         </div>
       </section>
       <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gradient">
+
+      <section className="section-gap max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
             Join Our Health Mission.
           </h2>
+          <h3 className="subheading text-gradient">Get Involved.</h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {healthMissionCards.map((card, index) => (
-            <MissionCard key={index} {...card} />
+            <BentoCard key={index} {...card} btnColor={bgColor} />
           ))}
         </div>
       </section>
@@ -305,24 +339,28 @@ const healthMissionCards = [
     icon: "🩺",
     title: "Volunteer Doctor",
     description: "Join our camps and provide essential medical services.",
-    action: "Register Now",
+    buttonText: "Register Now",
+    href: "/",
   },
   {
     icon: "🏢",
     title: "Corporate Partners",
     description: "Sponsor mobile units or health education via CSR.",
-    action: "Partner With Us",
+    buttonText: "Partner With Us",
+    href: "/",
   },
   {
     icon: "🎓",
     title: "Health Educator",
     description: "Volunteer to teach hygiene and wellness in rural schools.",
-    action: "Get Involved",
+    buttonText: "Get Involved",
+    href: "/",
   },
   {
     icon: "❤️",
     title: "Sponsor a Camp",
     description: "Fund medical supplies to bring healthcare to more villages.",
-    action: "Sponsor",
+    buttonText: "Sponsor",
+    href: "/",
   },
 ];

@@ -29,7 +29,7 @@ export default function SifGalleryPage() {
   return (
     <div className="scroll-smooth font-sans text-[#111827] bg-white">
       {/* <Header scrolled={scrolled} /> */}
-      <section className="relative overflow-hidden bg-background">
+      <section className=" relative overflow-hidden bg-background">
         {/* Subtle decorative background */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Gradient orbs */}
@@ -330,14 +330,14 @@ function PhotosSection({ filter, onOpen }) {
   };
 
   return (
-    <section id="photos" className="py-20 bg-gray-50">
+    <section id="photos" className="section-gap bg-gray-50">
       <div className="container max-w-[1280px] mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {filtered.map((p, i) => (
             <button
               key={`${p.title}-${i}`}
               onClick={() => onOpen(p)}
-              className="text-left group rounded-[2.5rem] overflow-hidden border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-2xl"
+              className="text-left group rounded-[2.5rem] overflow-hidden border border-gray-200 bg-white transition hover:-translate-y-1 "
             >
               <div
                 className={`h-[250px] bg-gradient-to-br ${

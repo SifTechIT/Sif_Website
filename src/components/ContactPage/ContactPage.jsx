@@ -16,9 +16,7 @@ export default function ContactPage() {
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-background">
-      {/* Subtle decorative background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Gradient orbs */}
         <div
           className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-[0.03]"
           style={{
@@ -33,7 +31,6 @@ function Hero() {
               "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
           }}
         />
-        {/* Subtle grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.015]"
           style={{
@@ -106,10 +103,10 @@ function useReveal() {
 function ContactMain() {
   const ref = useReveal();
   return (
-    <section className="py-20 bg-white px-3 md:px-6">
+    <section className="section-gap bg-white ">
       <div
         ref={ref}
-        className="opacity-0 translate-y-5 transition-all duration-700 max-w-7xl mx-auto "
+        className="opacity-0 translate-y-5 transition-all duration-700 max-w-6xl mx-auto "
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <ContactForm />

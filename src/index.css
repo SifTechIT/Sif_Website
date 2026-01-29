@@ -307,6 +307,10 @@
    ============================================ */
 @layer utilities {
 
+  .section-gap {
+    @apply py-24
+  }
+
   /* Page Container */
   .page-container {
     @apply mx-auto w-full px-6 sm:px-8 lg:px-12;
@@ -382,13 +386,11 @@
 
   /* Bento Card — Apple-style soft */
   .bento-card {
-    @apply rounded-[2.5rem] border border-border bg-card p-6 transition-all duration-300;
-    box-shadow: var(--shadow-card);
+    @apply rounded-[2.5rem] border border-border p-6 transition-all duration-300;
   }
 
   .bento-card-hover {
     @apply hover:border-border/80;
-    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
   }
 

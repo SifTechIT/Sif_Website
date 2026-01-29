@@ -7,13 +7,7 @@
         background: linear-gradient(180deg, #fff 0%, #f5f5f7 100%);
     }
 
-    .bento-card {
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
 
-    .bento-card:hover {
-        transform: scale(1.02);
-    }
 
     /* Hero Styling */
     .hero-section {
@@ -24,19 +18,8 @@
     }
 
     /* Bento Grid Style */
-    .bento-card {
-        border-radius: 2.5rem;
-        overflow: hidden;
-        position: relative;
-        background: #ffffff;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid #f2f2f7;
-    }
 
-    .bento-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-    }
+
 
     .text-gradient {
         background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
@@ -52,10 +35,6 @@
         background-color: #fff7ed;
     }
 
-    .bento-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-    }
 
     .text-gradient {
         background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
@@ -142,19 +121,4 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 320px);
         gap: 20px;
-    }
-
-    .bento-card {
-        border-radius: 2.5rem;
-        overflow: hidden;
-        position: relative;
-        background: #f5f5f7;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-        border: 1px solid #e5e7eb;
-    }
-
-    .bento-card:hover {
-        transform: scale(0.985);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     }

@@ -5,7 +5,7 @@ import SunyaMeditation from "../../assets/SunyaMeditation/banner.jpeg";
 import Philosophy from "../../assets/SunyaMeditation/Philosophy.jpeg";
 import Residential from "../../assets/SunyaMeditation/Residential.jpeg";
 import Trainers from "../../assets/SunyaMeditation/Trainers.jpeg";
-import BentoCard from "../ui/bento-card";
+import { BentoBox, BentoCard } from "../ui/bento-card";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 
 const DEFAULT_TESTIMONIALS = [
@@ -73,7 +73,7 @@ export default function SunyaLanding() {
       </section>
 
       {/* BELT BAR */}
-      <section className="max-w-5xl mx-auto px-6 py-24 ">
+      <section className="max-w-6xl mx-auto section-gap ">
         <div className="flex w-full rounded-full overflow-hidden mb-4">
           <div className="w-[14.28%] h-[6px] bg-red-500" />
           <div className="w-[14.28%] h-[6px] bg-orange-500" />
@@ -94,7 +94,7 @@ export default function SunyaLanding() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="py-24 px-6 bg-[#fbfbfd]" id="PHILOSOPHY">
+      <section className="section-gap bg-[#fbfbfd]" id="PHILOSOPHY">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
@@ -139,7 +139,7 @@ export default function SunyaLanding() {
       </section>
 
       {/* PROGRAMS */}
-      <section id="programs" className="py-24 px-6">
+      <section id="programs" className="section-gap">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h2 className="subheading ">Core Activities.</h2>
@@ -243,7 +243,7 @@ export default function SunyaLanding() {
       </section>
       <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
 
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section className="section-gap max-w-6xl mx-auto">
         <div className="mb-16 text-center">
           <h2
             className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
@@ -264,20 +264,6 @@ export default function SunyaLanding() {
         </div>
       </section>
     </main>
-  );
-}
-
-function BentoBox({ className = "", children }) {
-  return (
-    <div
-      className={[
-        "rounded-[2.5rem] border border-[#f2f2f7] transition-all duration-400",
-        "hover:-translate-y-[5px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)]",
-        className,
-      ].join(" ")}
-    >
-      {children}
-    </div>
   );
 }
 
@@ -316,7 +302,6 @@ const cards = [
     description:
       "Experience transformative meditation through our Foundation Course or immersive residential retreats.",
     buttonText: "Find Events",
-    buttonVariant: "primary",
     href: "/",
   },
   {

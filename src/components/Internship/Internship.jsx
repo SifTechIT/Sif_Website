@@ -1,10 +1,13 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
-import { ChevronRight } from "lucide-react";
+import { UsersIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import Banner1 from "../../assets/Internship/Banner1.jpg";
 import Banner2 from "../../assets/Internship/Banner2.jpg";
 import Banner3 from "../../assets/Internship/Banner3.jpg";
 import bento2 from "../../assets/Internship/skill.jpg";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
+import { BentoBox, BentoCard } from "../ui/bento-card";
 export default function InternshipProgramsPage() {
   const DEFAULT_TESTIMONIALS = [
     {
@@ -35,6 +38,8 @@ export default function InternshipProgramsPage() {
       accent: "text-indigo-600",
     },
   ];
+  const textColor = activitiesColors.internshipAcademy.text;
+  const bgColor = activitiesColors.internshipAcademy.bg;
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
@@ -46,13 +51,16 @@ export default function InternshipProgramsPage() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <div className="inline-block px-4 py-1.5 mb-6 bg-blue-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-blue-700 border border-blue-200">
+              <div
+                className={
+                  "inline-block px-4 py-1.5 mb-6 rounded-full text-[10px] font-bold uppercase tracking-widest  " +
+                  bgColor
+                }
+              >
                 🎓 Learning with Impact, Growing with Purpose
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
-                Internship Programs.
-              </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <h1 className="heading mb-6 text-white">Internship Programs.</h1>
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Combine meaningful learning with social impact. Join young
                 changemakers across education, health, technology, and community
                 development.
@@ -71,14 +79,12 @@ export default function InternshipProgramsPage() {
         </div>
       </section>
       <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Program Impact & Growth
             </h2>
-            <h3 className="text-3xl font-bold">
-              Empowering the Next Generation
-            </h3>
+            <h3 className="subheading">Empowering the Next Generation</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -117,7 +123,7 @@ export default function InternshipProgramsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-6xl mx-auto" id="sif">
+      <section className="section-gap max-w-6xl mx-auto" id="sif">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div className="rounded-[3rem] bg-blue-50 aspect-square flex items-center justify-center text-blue-200 overflow-hidden relative border border-blue-100 shadow-inner">
             <img src={Banner1} className="w-full h-full object-cover" />
@@ -126,7 +132,7 @@ export default function InternshipProgramsPage() {
             <h2 className="text-blue-600 font-bold tracking-tight text-sm uppercase mb-4">
               Why SIF?
             </h2>
-            <h3 className="text-4xl font-bold tracking-tight mb-6 text-gradient">
+            <h3 className="subheading mb-6 text-gradient">
               Education Meets Empathy.
             </h3>
             <p className="text-lg text-gray-500 leading-relaxed mb-6">
@@ -144,86 +150,102 @@ export default function InternshipProgramsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gray-50/50">
+      <section id="programs" className="section-gap">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gradient">
-              Program Areas
-            </h2>
-            <p className="text-gray-500 mt-2">
+            <h2 className="subheading ">Program Areas</h2>
+            <p className="text-gray-500 mt-4 text-lg">
               Diverse opportunities across all SIF domains.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div
-              className="bento-card col-span-1 md:col-span-2 p-10 bg-zinc-900 text-white border-none"
-              style={{
-                backgroundImage: `url(${Banner2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="text-3xl mb-6">💻</div>
-              <h4 className="text-xl font-bold mb-3">IT & Design</h4>
-              <p className=" text-sm leading-relaxed">
-                Website development, social media design, dashboard building,
-                and creative campaigns.
-              </p>
-            </div>
-            <div className="bento-card p-10">
-              <div className="text-3xl mb-6">🎓</div>
-              <h4 className="text-lg font-bold mb-2">Education</h4>
-              <p className="text-gray-500 text-xs">
-                Assist in Child Education Centres and develop learning modules.
-              </p>
-            </div>
-            <div className="bento-card p-10">
-              <div className="text-3xl mb-6">📊</div>
-              <h4 className="text-lg font-bold mb-2">Research</h4>
-              <p className="text-gray-500 text-xs">
-                Collect field data and prepare global impact reports.
-              </p>
-            </div>
-            <div className="bento-card p-10">
-              <div className="text-3xl mb-6">🤝</div>
-              <h4 className="text-lg font-bold mb-2">Outreach</h4>
-              <p className="text-gray-500 text-xs">
-                Support awareness programs in health and rural engagement.
-              </p>
-            </div>
-            <div className="bento-card p-10">
-              <div className="text-3xl mb-6">🏛️</div>
-              <h4 className="text-lg font-bold mb-2">Heritage</h4>
-              <p className="text-gray-500 text-xs">
-                Contribute to Palm Leaf Sutra Printing through research.
-              </p>
-            </div>
-            <div
-              className="bento-card col-span-1 md:col-span-2 p-10 bg-blue-600 text-white border-none flex flex-col justify-between"
-              style={{
-                backgroundImage: `url(${bento2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${Banner2})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="z-10 relative my-4">
+                  <h3 className="text-3xl font-bold mt-4 mb-4">IT & Design</h3>
+                  <p className="text-white max-w-sm">
+                    Website development, social media design, dashboard
+                    building, and creative campaigns.
+                  </p>
+                </div>
+
+                <Link
+                  to="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit relative "
+                >
+                  View Schedule
+                </Link>
+              </div>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
               <div>
-                <div className="text-3xl mb-6">🌐</div>
-                <h4 className="text-xl font-bold mb-3">Future Opportunities</h4>
-                <p className="text-blue-100 text-sm">
-                  Expanding into AI, digital storytelling, sustainability
-                  projects, and international exchange.
+                <div
+                  className={`w-12 h-12 bg-white rounded-[2.5rem] flex items-center justify-center mb-6 shadow-sm ${textColor}`}
+                >
+                  <UsersIcon className={`h-5 w-5 ${textColor}`} />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Education</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Assist in Child Education Centres and develop learning
+                  modules.
                 </p>
               </div>
-              <div className="mt-8 text-[10px] uppercase tracking-widest font-bold">
-                Coming Soon
+
+              <Link to="#" className={`${textColor} font-medium text-sm`}>
+                Learn more &gt;
+              </Link>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Research</h4>
+              <p className="text-gray-500 text-sm mb-4">
+                Collect field data and prepare global impact reports.
+              </p>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest `}
+              >
+                Join Live
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Outreach</h4>
+              <p className="text-gray-500 text-sm mb-4">
+                Support awareness programs in health and rural engagement.
+              </p>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest`}
+              >
+                Explore
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4  text-white overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-8 "
+                style={{ backgroundImage: `url(${bento2})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <h4 className="font-bold mb-2 relative">Heritage</h4>
+                <p className="text-sm mb-4 relative">
+                  Contribute to Palm Leaf Sutra Printing through research.
+                </p>
+                <span className="text-white text-xs relative font-bold uppercase tracking-widest underline underline-offset-4">
+                  Apply Now
+                </span>
               </div>
-            </div>
+            </BentoBox>
           </div>
         </div>
       </section>
-
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-16 text-center">
+      <section className="section-gap max-w-6xl mx-auto">
+        <h2 className="subheading mb-16 text-center">
           Comprehensive Development.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -261,55 +283,58 @@ export default function InternshipProgramsPage() {
       </section>
       <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
 
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-gradient">
-            Start Your Journey.
+      <section className="section-gap max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
+            Start Your Journey
           </h2>
+          <h3 className="subheading text-gradient">Get Involved.</h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bento-card p-10 bg-blue-50/50 border-blue-100">
-            <i className="fas fa-file-signature text-blue-600 mb-6"></i>
-            <h4 className="font-bold mb-2">Apply for Internship</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Join our structured program with real-world projects.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
-              Apply Now <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-10">
-            <i className="fas fa-users text-blue-600 mb-6"></i>
-            <h4 className="font-bold mb-2">Volunteer</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Start with shorter-term opportunities to experience our work.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
-              Get Involved <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-10">
-            <i className="fas fa-network-wired text-blue-600 mb-6"></i>
-            <h4 className="font-bold mb-2">Alumni Network</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Connect with former interns for guidance and mentorship.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
-              Connect <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-10 bg-zinc-900  border-none">
-            <i className="fas fa-award text-blue-400 mb-6"></i>
-            <h4 className="font-bold mb-2">Future Academy</h4>
-            <p className="text-xs text-zinc-500 mb-6">
-              Get certifications and global exchange opportunities.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-blue-600 flex items-center">
-              Learn More <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+          {cards.map((card, index) => (
+            <BentoCard key={index} {...card} btnColor={bgColor} />
+          ))}
         </div>
       </section>
     </main>
   );
 }
+
+const cards = [
+  {
+    icon: "📅",
+    title: "Apply for Internship",
+    description: "Join our structured program with real-world projects.",
+    buttonText: "Find Events",
+    href: "/",
+  },
+  {
+    icon: "📍",
+    title: "Volunteer",
+    description:
+      "Start with shorter-term opportunities to experience our work.",
+    buttonText: "Request Visit",
+    href: "/contact-us",
+  },
+  {
+    icon: "🎓",
+    title: "Alumni Network",
+    description: "Connect with former interns for guidance and mentorship.",
+    buttonText: "Apply Now",
+    href: "/join-us",
+  },
+  {
+    icon: "❤️",
+    title: "Future Academy",
+    description: "Get certifications and global exchange opportunities.",
+    buttonText: "Sponsor",
+    href: "/join-us",
+  },
+];

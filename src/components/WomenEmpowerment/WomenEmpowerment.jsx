@@ -1,7 +1,8 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
-import { ChevronRight } from "lucide-react";
 import WomenStitching from "../../assets/women_stitching.JPG";
 import Banner1 from "../../assets/WomenEmpowerment/banner1.jpeg";
+import { BentoCard } from "../ui/bento-card";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 export default function WomenEmpowermentPage() {
   const DEFAULT_TESTIMONIALS = [
@@ -33,6 +34,8 @@ export default function WomenEmpowermentPage() {
       accent: "text-indigo-600",
     },
   ];
+  const textColor = activitiesColors.womenSkillCenters.text;
+  const bgColor = activitiesColors.womenSkillCenters.bg;
   return (
     <main>
       <section className="hero-gradient relative w-full">
@@ -44,10 +47,8 @@ export default function WomenEmpowermentPage() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
-                She Leads, We Rise.
-              </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <h1 className="heading mb-6 text-white">She Leads, We Rise.</h1>
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Rewriting the story of rural women through skill development,
                 meditation, and sustainable livelihood programs.
               </p>
@@ -63,10 +64,59 @@ export default function WomenEmpowermentPage() {
           </div>
         </div>
       </section>
-      <section className="py-24 px-6 bg-gray-50/50" id="mission">
+      <section className="relative mx-4 -mt-30 z-56 mb-8">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2.5rem]">
+          <div className="text-center mb-16">
+            <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
+              Young Lives Impact
+            </h2>
+            <h3 className="subheading">Collective Impact 2024–25</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">250+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Women Trained
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">10k+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Garments Produced
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">100+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Micro-Enterprises
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">500+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Practicing Sunya
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">100%</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                On-Time Delivery
+              </div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold accent-purple mb-2">50+</div>
+              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 leading-relaxed">
+                Leadership Roles
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-gap bg-gray-50/50" id="mission">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h2 className="subheading tracking-tight">
               The Mission Behind the Movement
             </h2>
           </div>
@@ -105,11 +155,16 @@ export default function WomenEmpowermentPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section className="section-gap">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-pink-600 font-bold tracking-tight text-sm uppercase mb-4">
+              <h2
+                className={
+                  " font-bold tracking-tight text-sm uppercase mb-4 " +
+                  textColor
+                }
+              >
                 Production Spotlight
               </h2>
               <h3 className="text-4xl font-bold tracking-tight mb-6">
@@ -159,100 +214,59 @@ export default function WomenEmpowermentPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-zinc-900 text-white rounded-[4rem] mx-4 my-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold">Collective Impact 2024–25</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold accent-pink mb-2">250+</div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
-                Women Trained
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold accent-pink mb-2">10k+</div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
-                Garments Produced
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold accent-pink mb-2">100+</div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
-                Micro-Enterprises
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold accent-pink mb-2">500+</div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
-                Practicing Sunya
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold accent-pink mb-2">100%</div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
-                On-Time Delivery
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold accent-pink mb-2">50+</div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-zinc-500">
-                Leadership Roles
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
 
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold">Be Part of Her Journey.</h2>
+      <section className="section-gap max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
+            Start Your Journey
+          </h2>
+          <h3 className="subheading text-gradient">Be Part of Her Journey.</h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bento-card p-8 bg-pink-50/50">
-            <i className="fas fa-tools text-pink-600 mb-6"></i>
-            <h4 className="font-bold mb-2">Sponsor a Machine</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Provide the tools for sustainable livelihood.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
-              Get Involved <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-8">
-            <i className="fas fa-graduation-cap text-pink-600 mb-6"></i>
-            <h4 className="font-bold mb-2">Fund Training</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Invest in skill development and empowerment.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
-              Support <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-8">
-            <i className="fas fa-shopping-bag text-pink-600 mb-6"></i>
-            <h4 className="font-bold mb-2">Order Apparel</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Support production through direct orders.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
-              Shop Now <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-8 bg-zinc-900 border-none">
-            <i className="fas fa-handshake text-pink-400 mb-6"></i>
-            <h4 className="font-bold mb-2">Partner with SIF</h4>
-            <p className="text-xs text-zinc-500 mb-6">
-              Collaborate on rural empowerment projects.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-pink-600 flex items-center">
-              Contact Us <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {cards.map((card, index) => (
+            <BentoCard key={index} {...card} btnColor={bgColor} />
+          ))}
         </div>
       </section>
     </main>
   );
 }
+
+const cards = [
+  {
+    icon: "📅",
+    title: "Partner with SIF",
+    description: "Collaborate on rural empowerment projects.",
+    buttonText: "Find Events",
+    href: "/",
+  },
+  {
+    icon: "📍",
+    title: "Order Apparel",
+    description: "Support production through direct orders.",
+    buttonText: "Request Visit",
+    href: "/contact-us",
+  },
+  {
+    icon: "🎓",
+    title: "Fund Training",
+    description: "Invest in skill development and empowerment.",
+    buttonText: "Apply Now",
+    href: "/join-us",
+  },
+  {
+    icon: "❤️",
+    title: "Sponsor a Machine",
+    description: "Provide the tools for sustainable livelihood.",
+    buttonText: "Sponsor",
+    href: "/join-us",
+  },
+];

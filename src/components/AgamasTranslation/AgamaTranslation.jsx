@@ -1,12 +1,17 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
-import { ChevronRight } from "lucide-react";
+import { UsersIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import SunyaMeditation from "../../assets/Agamas/banner.jpeg";
 import banner2 from "../../assets/Agamas/banner2.jpeg";
 import bento from "../../assets/Agamas/bento.jpeg";
 import bento2 from "../../assets/Agamas/bento2.jpeg";
 import bento3 from "../../assets/Agamas/bento3.jpeg";
+import { BentoBox, BentoCard } from "../ui/bento-card";
 
 export default function AgamasTranslationsPage() {
+  const textColor = activitiesColors.agamasAndSutras.text;
+  const bgColor = activitiesColors.agamasAndSutras.bg;
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
@@ -18,7 +23,12 @@ export default function AgamasTranslationsPage() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <div className="inline-block px-4 py-1.5 mb-6 bg-amber-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-amber-800 border border-amber-200">
+              <div
+                className={
+                  "inline-block px-4 py-1.5 mb-6  rounded-full text-[10px] font-bold uppercase tracking-widest " +
+                  bgColor
+                }
+              >
                 📜 Preserving Ancient Wisdom for Future Generations
               </div>
               <h1 className="heading mb-6 text-white">
@@ -44,7 +54,7 @@ export default function AgamasTranslationsPage() {
       </section>
 
       <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2.5rem]">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2.5rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Preservation Progress
@@ -88,11 +98,16 @@ export default function AgamasTranslationsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6" id="initiative">
+      <section className="section-gap" id="initiative">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-amber-700 font-bold tracking-tight text-sm uppercase mb-4">
+              <h2
+                className={
+                  " font-bold tracking-tight text-sm uppercase mb-4 " +
+                  textColor
+                }
+              >
                 The Initiative
               </h2>
               <h3 className="subheading mb-6 text-gradient">
@@ -116,7 +131,7 @@ export default function AgamasTranslationsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gray-50/50">
+      <section className="section-gap bg-gray-50/50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="subheading">Why Preservation Matters</h2>
@@ -157,82 +172,107 @@ export default function AgamasTranslationsPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-24 px-6">
+      <section id="programs" className="section-gap">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="subheading">Key Focus Areas</h2>
+            <h2 className="subheading ">Key Focus Areas</h2>
+            <p className="text-gray-500 mt-4 text-lg">
+              Designed to deepen your practice at every stage.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div
-              className="bento-card col-span-1 md:col-span-2 md:row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end min-h-[450px]"
-              style={{
-                backgroundImage: `url(${bento})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="absolute top-12 left-12 text-5xl">🌿</div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">
-                  Palm-leaf Sutra Printing
-                </h3>
-                <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-                  Reviving the craft of printing sacred sutras on authentic palm
-                  leaves, blending heritage with modern preservation.
-                </p>
-                <button className="bg-white text-black px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                  View Archive
-                </button>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${bento})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="z-10 relative my-4">
+                  <h3 className="text-3xl font-bold mt-4 mb-4">
+                    Palm-leaf Sutra Printing
+                  </h3>
+                  <p className="text-white max-w-sm">
+                    Reviving the craft of printing sacred sutras on authentic
+                    palm leaves, blending heritage with modern preservation.
+                  </p>
+                </div>
 
-            <div className="bento-card col-span-1 md:col-span-2 p-10 flex flex-col justify-between bg-amber-50/50 border-amber-100">
-              <div className="flex justify-between items-start">
-                <div className="text-4xl">💻</div>
-                <span className="text-[9px] font-bold uppercase tracking-widest bg-amber-700 text-white px-3 py-1 rounded-full">
-                  Open Access
-                </span>
+                <Link
+                  to="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit relative "
+                >
+                  View Archive
+                </Link>
               </div>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
               <div>
-                <h4 className="text-xl font-bold mb-2">Digital Libraries</h4>
+                <div
+                  className={`w-12 h-12 bg-white rounded-[2.5rem] flex items-center justify-center mb-6 shadow-sm ${textColor}`}
+                >
+                  <UsersIcon className={`h-5 w-5 ${textColor}`} />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Digital Libraries</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Building open-access repositories for global study, research,
                   and daily practice.
                 </p>
               </div>
-            </div>
 
-            <div className="bento-card p-8 flex flex-col justify-center text-center">
-              <div className="text-3xl mb-4">🔤</div>
+              <Link to="#" className={`${textColor} font-medium text-sm`}>
+                Learn more &gt;
+              </Link>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
               <h4 className="font-bold mb-2">Pali & Sanskrit</h4>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-sm mb-4">
                 Rendering early Buddhist texts into modern languages with
                 accuracy.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest `}
+              >
+                Join Live
+              </span>
+            </BentoBox>
 
-            <div
-              className="bento-card p-8 flex flex-col justify-center text-center bg-amber-700 text-white border-none"
-              style={{
-                backgroundImage: `url(${bento2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="text-3xl mb-4">📜</div>
-              <h4 className="font-bold mb-2 text-white">Ancient History</h4>
-              <p className="text-amber-100 text-xs">
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Ancient History</h4>
+              <p className="text-gray-500 text-sm mb-4">
                 Works illuminating philosophy, law, and human governance.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest`}
+              >
+                Explore
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4  text-white overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-8 "
+                style={{ backgroundImage: `url(${bento2})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <h4 className="font-bold mb-2 relative">Trainers Program</h4>
+                <p className="text-sm mb-4 relative">
+                  Join our certified facilitator program and spread the
+                  practice.
+                </p>
+                <span className="text-white text-xs relative font-bold uppercase tracking-widest underline underline-offset-4">
+                  Apply Now
+                </span>
+              </div>
+            </BentoBox>
           </div>
         </div>
       </section>
 
       <section
-        className="py-24 px-6 bg-zinc-950 text-white rounded-[2.5rem] mx-4 my-8 relative overflow-hidden"
+        className="section-gap bg-zinc-950 text-white rounded-[2.5rem] mx-4 my-8 relative overflow-hidden"
         style={{
           backgroundImage: `url(${bento3})`,
           backgroundSize: "cover",
@@ -259,7 +299,7 @@ export default function AgamasTranslationsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="section-gap max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div>
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
@@ -302,55 +342,57 @@ export default function AgamasTranslationsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-gradient">
-            Support Ancient Wisdom.
+      <section className="section-gap max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
+            Start Your Journey
           </h2>
+          <h3 className="subheading text-gradient">Support Ancient Wisdom.</h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bento-card p-10 bg-amber-50/50 border-amber-100">
-            <i className="fas fa-pen-nib accent-gold mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Become a Translator</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Join our team working on Pali, Sanskrit, and Tamil texts.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700 flex items-center">
-              Apply Now <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-10">
-            <i className="fas fa-university accent-gold mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Research Partners</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Collaborate as an institution or research center.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700 flex items-center">
-              Partner With Us <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-10">
-            <i className="fas fa-desktop accent-gold mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Support Digitization</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Help with archiving and preservation for global access.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700 flex items-center">
-              Get Involved <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="bento-card p-10 bg-zinc-900 border-none">
-            <i className="fas fa-coins accent-gold  mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Fund Preservation</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Sponsor translation projects or study centers.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-amber-700">
-              Sponsor Now
-            </button>
-          </div>
+          {cards.map((card, index) => (
+            <BentoCard key={index} {...card} btnColor={bgColor} />
+          ))}
         </div>
       </section>
     </main>
   );
 }
+
+const cards = [
+  {
+    icon: "📅",
+    title: "Become a Translator",
+    description: "Join our team working on Pali, Sanskrit, and Tamil texts.",
+    buttonText: "Find Events",
+    href: "/",
+  },
+  {
+    icon: "📍",
+    title: "Research Partners",
+    description: "Collaborate as an institution or research center.",
+    buttonText: "Request Visit",
+    href: "/contact-us",
+  },
+  {
+    icon: "🎓",
+    title: "Support Digitization",
+    description: "Help with archiving and preservation for global access.",
+    buttonText: "Apply Now",
+    href: "/join-us",
+  },
+  {
+    icon: "❤️",
+    title: "Fund Preservation",
+    description: "Sponsor translation projects or study centers.",
+    buttonText: "Sponsor",
+    href: "/join-us",
+  },
+];

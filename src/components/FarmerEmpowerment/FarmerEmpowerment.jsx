@@ -1,5 +1,7 @@
 import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
+import { UsersIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import Banner1 from "../../assets/FarmerEmpowerment/Banner1.jpeg";
 import Banner2 from "../../assets/FarmerEmpowerment/Banner2.jpeg";
 import Banner3 from "../../assets/FarmerEmpowerment/Banner3.jpeg";
@@ -11,6 +13,7 @@ import {
 import SoilTesting from "../../assets/FarmerEmpowerment/Soil_Testing.jpeg";
 import Technology from "../../assets/FarmerEmpowerment/Technology.jpeg";
 import Training from "../../assets/FarmerEmpowerment/Training.jpeg";
+import { BentoBox, BentoCard } from "../ui/bento-card";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
 
 export default function FarmerEmpowermentPage() {
@@ -55,8 +58,8 @@ export default function FarmerEmpowermentPage() {
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
               <div
                 className={
-                  "inline-block px-4 py-1.5 mb-6 bg-green-50  rounded-full text-[10px] font-bold uppercase tracking-widest " +
-                  textColor
+                  "inline-block px-4 py-1.5 mb-6  rounded-full text-[10px] font-bold uppercase tracking-widest " +
+                  bgColor
                 }
               >
                 🌾 Sustainable Agriculture, Resilient Communities
@@ -81,7 +84,7 @@ export default function FarmerEmpowermentPage() {
       </section>
 
       <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2.5rem]">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2.5rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Young Lives Impact
@@ -117,7 +120,7 @@ export default function FarmerEmpowermentPage() {
         </div>
       </section>
 
-      <section className="pb-24 px-6" id="Foundations">
+      <section className="section-gap" id="Foundations">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="rounded-[2.5rem] bg-gray-100 aspect-square flex items-center justify-center text-gray-400 overflow-hidden relative">
@@ -153,10 +156,10 @@ export default function FarmerEmpowermentPage() {
         </div>
       </section>
 
-      <section id="projects" className="py-24 px-6 bg-[#fbfbfd]">
+      <section id="programs" className="section-gap">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="subheading">The Noni Project - Siddipet.</h2>
+            <h2 className="subheading ">The Noni Project - Siddipet.</h2>
             <p className="text-gray-500 mt-4 text-lg">
               A flagship initiative launched in 2022, transforming lives through
               sustainable cultivation.
@@ -164,62 +167,92 @@ export default function FarmerEmpowermentPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div
-              className="md:col-span-8 bento-card bg-zinc-900 text-white p-12 flex flex-col justify-between min-h-[400px] rounded-[2.5rem]"
-              style={{
-                backgroundImage: `url(${Banner2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div>
-                <div className="text-3xl mb-6">🤝</div>
-                <h3 className="text-3xl font-bold mb-4">
-                  DXN Partnership & Buy-back
-                </h3>
-                <p className=" max-w-md">
-                  SIF facilitated the supply of Noni plants from DXN and
-                  established a comprehensive buy-back scheme to ensure
-                  financial security.
-                </p>
+            <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${Banner2})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="z-10 relative my-4">
+                  <h3 className="text-3xl font-bold mt-4 mb-4">
+                    DXN Partnership & Buy-back
+                  </h3>
+                  <p className="text-white max-w-sm">
+                    SIF facilitated the supply of Noni plants from DXN and
+                    established a comprehensive buy-back scheme to ensure
+                    financial security.
+                  </p>
+                </div>
+
+                <Link
+                  to="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit relative "
+                >
+                  View Schedule
+                </Link>
               </div>
-              <div className="flex gap-4">
-                <button className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-                  Join Program
-                </button>
-              </div>
-            </div>
+            </BentoBox>
 
-            <div className="md:col-span-4 bento-card p-10 flex flex-col">
-              <div className="text-2xl mb-4">👨‍🌾</div>
-              <h4 className="text-xl font-bold mb-3">Dedicated Support</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                A dedicated field coordinator supports farmers in day-to-day
-                cultivation activities and problem-solving.
-              </p>
-            </div>
-
-            <div className="md:col-span-4 bento-card p-10 flex flex-col">
-              <div className="text-2xl mb-4">🎓</div>
-              <h4 className="text-xl font-bold mb-3">Comprehensive Training</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                Technical training on plantation techniques, irrigation methods,
-                and organic farming standards.
-              </p>
-            </div>
-
-            <div className="md:col-span-8 bento-card p-10 flex flex-col md:flex-row gap-12 items-center border-green-100 bg-green-50/30">
-              <div className="text-5xl">🧪</div>
+            <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
               <div>
-                <h4 className="text-xl font-bold mb-3">
-                  Scientific Soil Management
-                </h4>
+                <div
+                  className={`w-12 h-12 bg-white rounded-[2.5rem] flex items-center justify-center mb-6 shadow-sm ${textColor}`}
+                >
+                  <UsersIcon className={`h-5 w-5 ${textColor}`} />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Dedicated Support</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Comprehensive soil testing conducted to ensure optimal growing
                   conditions and long-term land health.
                 </p>
               </div>
-            </div>
+
+              <Link to="#" className={`${textColor} font-medium text-sm`}>
+                Learn more &gt;
+              </Link>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Scientific Soil Management</h4>
+              <p className="text-gray-500 text-sm mb-4">
+                Technical training on plantation techniques, irrigation methods,
+                and organic farming standards.
+              </p>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest `}
+              >
+                Join Live
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">School Programs</h4>
+              <p className="text-gray-500 text-sm mb-4">
+                Introduction to Sunya for students to enhance focus and focus.
+              </p>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest`}
+              >
+                Explore
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4  text-white overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-8 "
+                style={{ backgroundImage: `url(${Banner3})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <h4 className="font-bold mb-2 relative">Trainers Program</h4>
+                <p className="text-sm mb-4 relative">
+                  Join our certified facilitator program and spread the
+                  practice.
+                </p>
+                <span className="text-white text-xs relative font-bold uppercase tracking-widest underline underline-offset-4">
+                  Apply Now
+                </span>
+              </div>
+            </BentoBox>
           </div>
         </div>
       </section>
@@ -227,59 +260,24 @@ export default function FarmerEmpowermentPage() {
 
       <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
 
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold tracking-tight mb-16 text-center">
-          Join Our Mission.
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bento-card p-10 flex flex-col justify-between">
-            <div>
-              <div className="text-2xl mb-6">🧑‍🌾</div>
-              <h4 className="font-bold mb-3">Partner Farmer</h4>
-              <p className="text-sm text-gray-500">
-                Join our network and benefit from training and linkages.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-green-700">
-              Apply Now →
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between bg-zinc-900  border-none">
-            <div>
-              <div className="text-2xl mb-6">🏢</div>
-              <h4 className="font-bold mb-3">Corporate Partner</h4>
-              <p className="text-sm text-zinc-400">
-                Collaborate on buy-back schemes or community development.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest  text-green-700  ">
-              Partner With Us →
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between">
-            <div>
-              <div className="text-2xl mb-6">🎓</div>
-              <h4 className="font-bold mb-3">Education</h4>
-              <p className="text-sm text-gray-500">
-                Support our farmer education programs or volunteer.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-green-700">
-              Learn More →
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between border-green-200 bg-green-50/50">
-            <div>
-              <div className="text-2xl mb-6">❤️</div>
-              <h4 className="font-bold mb-3">Sponsor a Farm</h4>
-              <p className="text-sm text-gray-700">
-                Help expand our program by funding training workshops.
-              </p>
-            </div>
-            <button className="mt-8 text-xs font-bold uppercase tracking-widest text-green-700">
-              Sponsor →
-            </button>
-          </div>
+      <section className="section-gap max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
+            Start Your Journey
+          </h2>
+          <h3 className="subheading text-gradient">Join Our Mission.</h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {cards.map((card, index) => (
+            <BentoCard key={index} {...card} btnColor={bgColor} />
+          ))}
         </div>
       </section>
     </main>
@@ -328,11 +326,9 @@ function Interventions() {
   ];
 
   return (
-    <section id="interventions" className="mt-30 bg-white">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <h2 className="text-3xl font-bold tracking-tight mb-16">
-          Our Interventions & Activities.
-        </h2>
+    <section id="interventions" className="section-gap bg-white">
+      <div className="max-w-6xl mx-auto ">
+        <h2 className="subheading mb-16">Our Interventions & Activities.</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((it) => (
@@ -358,3 +354,34 @@ function Interventions() {
     </section>
   );
 }
+
+const cards = [
+  {
+    icon: "📅",
+    title: "Partner Farmer",
+    description: "Join our network and benefit from training and linkages.",
+    buttonText: "Find Events",
+    href: "/",
+  },
+  {
+    icon: "📍",
+    title: "Corporate Partner",
+    description: "Collaborate on buy-back schemes or community development.",
+    buttonText: "Request Visit",
+    href: "/contact-us",
+  },
+  {
+    icon: "🎓",
+    title: "Education",
+    description: "Support our farmer education programs or volunteer.",
+    buttonText: "Apply Now",
+    href: "/join-us",
+  },
+  {
+    icon: "❤️",
+    title: "Sponsor a Farm",
+    description: "Help expand our program by funding training workshops.",
+    buttonText: "Sponsor",
+    href: "/join-us",
+  },
+];

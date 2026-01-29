@@ -66,7 +66,7 @@ export default function ImpactStoriesPage() {
           </div>
         </div>
       </section>
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-6xl mx-auto section-gap">
         <div className="mb-16">
           <h2 className="subheading mb-2">Featured Transformations</h2>
           <p className="text-gray-500 text-lg font-light">
@@ -79,7 +79,7 @@ export default function ImpactStoriesPage() {
           <div
             className="relative bento-card col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2
                bg-zinc-900 text-white p-6 sm:p-10 lg:p-12
-               flex flex-col justify-end bg-cover bg-center min-h-[320px] sm:min-h-[420px] lg:min-h-[520px]"
+               flex flex-col justify-end bg-cover bg-center min-h-[320px] sm:min-h-[420px] lg:min-h-[520px] overflow-hidden "
             style={{
               backgroundImage: `url(${bento1})`,
               backgroundSize: "cover",
@@ -113,7 +113,7 @@ export default function ImpactStoriesPage() {
           <div
             className="relative bento-card col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-1
                p-6 sm:p-8 lg:p-10
-               flex flex-col justify-between border-pink-50 bg-pink-50/30 bg-cover bg-center min-h-[220px]"
+               flex flex-col justify-between border-pink-50 bg-pink-50/30 bg-cover bg-center min-h-[220px] overflow-hidden "
             style={{
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -438,8 +438,8 @@ function StoriesWithFilter() {
   );
 
   return (
-    <section className="py-28 bg-gray-50">
-      <div className="max-w-[1280px] mx-auto px-6">
+    <section className="section-gap bg-gray-50">
+      <div className="max-w-6xl mx-auto ">
         <div className="text-center mb-10">
           <h2 className="subheading mb-4">All Impact Stories</h2>
           <p className="text-lg  text-gray-500">

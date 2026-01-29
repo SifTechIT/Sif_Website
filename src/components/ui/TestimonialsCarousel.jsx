@@ -27,8 +27,8 @@ function TestimonialsCarousel({
   const t = testimonials[index];
 
   return (
-    <section className="bg-slate-100 ">
-      <div className="py-24 px-6 max-w-6xl mx-auto text-center">
+    <section className="bg-slate-100 section-gap">
+      <div className="  max-w-6xl mx-auto text-center">
         <div className="p-8 md:p-12 text-center">
           <p className="text-2xl md:text-4xl font-light italic leading-relaxed text-gray-800">
             “{renderHighlightedQuote(t.quote, t.highlight, t.accent)}”

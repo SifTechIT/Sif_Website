@@ -1,9 +1,15 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
+import { UsersIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import Banner1 from "../../assets/BrickHouse/Banner1.jpg";
 import Banner2 from "../../assets/BrickHouse/Banner2.jpg";
 import Banner3 from "../../assets/BrickHouse/Banner3.jpg";
 import BrickHouse from "../../assets/BrickHouse/Brick_House.jpg";
+import { BentoBox, BentoCard } from "../ui/bento-card";
 export default function BrickHouseProjectPage() {
+  const textColor = activitiesColors.brickHouse.text;
+  const bgColor = activitiesColors.brickHouse.bg;
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
@@ -15,13 +21,18 @@ export default function BrickHouseProjectPage() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <div className="inline-block px-4 py-1.5 mb-6 bg-orange-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-orange-800 border border-orange-200">
+              <div
+                className={
+                  "inline-block px-4 py-1.5 mb-6  rounded-full text-[10px] font-bold uppercase tracking-widest  " +
+                  bgColor
+                }
+              >
                 🏛️ Reviving Ancient Indian Traditions & Knowledge Systems
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+              <h1 className="heading mb-6 text-white">
                 The Brick House Project.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Building enduring foundations for cultural preservation.
                 Safeguarding what is timeless while reinterpreting it for
                 today’s world.
@@ -40,12 +51,12 @@ export default function BrickHouseProjectPage() {
         </div>
       </section>
       <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Heritage Preservation Progress
             </h2>
-            <h3 className="text-3xl font-bold">
+            <h3 className="subheading">
               Safeguarding and Reviving Ancient Traditions
             </h3>
           </div>
@@ -86,14 +97,19 @@ export default function BrickHouseProjectPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6" id="Foundations">
+      <section className="section-gap" id="Foundations">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-orange-800 font-bold tracking-tight text-sm uppercase mb-4">
+              <h2
+                className={
+                  " font-bold tracking-tight text-sm uppercase mb-4 " +
+                  textColor
+                }
+              >
                 The Vision
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gradient">
+              <h3 className="subheading mb-6 text-gradient">
                 Building on Foundations.
               </h3>
               <p className="text-lg text-gray-500 leading-relaxed mb-8">
@@ -114,12 +130,10 @@ export default function BrickHouseProjectPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gray-50/50">
+      <section className="section-gap bg-gray-50/50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gradient">
-              Why Heritage Matters
-            </h2>
+            <h2 className="subheading">Why Heritage Matters</h2>
             <p className="text-gray-500 mt-4">
               Preserving cultural DNA while unlocking ancient wisdom for modern
               challenges.
@@ -162,85 +176,110 @@ export default function BrickHouseProjectPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section id="programs" className="section-gap">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gradient">
-              Key Focus Areas
-            </h2>
+            <h2 className="subheading ">Key Focus Areas</h2>
+            <p className="text-gray-500 mt-4 text-lg">
+              Designed to deepen your practice at every stage.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div
-              className="bento-card col-span-1 md:col-span-2 md:row-span-2 bg-zinc-900 text-white p-12 flex flex-col justify-end min-h-[450px]"
-              style={{
-                backgroundImage: `url(${Banner2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="absolute top-12 left-12 text-5xl">🏛️</div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">
-                  Community Hubs (Brick Houses)
-                </h3>
-                <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-                  Establishing meditation halls, libraries, and cultural centers
-                  inspired by ancient design principles for modern use.
-                </p>
-                <button className="bg-white text-black px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                  Visit a Center
-                </button>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${Banner2})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="z-10 relative my-4">
+                  <h3 className="text-3xl font-bold mt-4 mb-4">
+                    Community Hubs (Brick Houses)
+                  </h3>
+                  <p className="text-white max-w-sm">
+                    Establishing meditation halls, libraries, and cultural
+                    centers inspired by ancient design principles for modern
+                    use.
+                  </p>
+                </div>
 
-            <div className="bento-card col-span-1 md:col-span-2 p-10 flex flex-col justify-between bg-orange-50/50 border-orange-100">
-              <div className="flex justify-between items-start">
-                <div className="text-4xl">🏗️</div>
-                <span className="text-[9px] font-bold uppercase tracking-widest bg-orange-800 text-white px-3 py-1 rounded-full">
-                  Innovation
-                </span>
+                <Link
+                  to="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit relative "
+                >
+                  Visit a Center
+                </Link>
               </div>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
               <div>
-                <h4 className="text-xl font-bold mb-2">
+                <div
+                  className={`w-12 h-12 bg-white rounded-[2.5rem] flex items-center justify-center mb-6 shadow-sm ${textColor}`}
+                >
+                  <UsersIcon className={`h-5 w-5 ${textColor}`} />
+                </div>
+                <h3 className="text-xl font-bold mb-3">
                   Architectural Revival
-                </h4>
+                </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Reinterpreting ancient brick and stone architecture for
                   eco-friendly and sustainable building.
                 </p>
               </div>
-            </div>
 
-            <div className="bento-card p-8 flex flex-col justify-center text-center">
-              <div className="text-3xl mb-4">🌿</div>
+              <Link to="#" className={`${textColor} font-medium text-sm`}>
+                Learn more &gt;
+              </Link>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
               <h4 className="font-bold mb-2">Living Heritage</h4>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-sm mb-4">
                 Creating eco-villages and festivals that bring ancient practices
                 into contemporary life.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest `}
+              >
+                Join Live
+              </span>
+            </BentoBox>
 
-            <div
-              className="bento-card p-8 flex flex-col justify-center text-center bg-orange-800 text-white border-none"
-              style={{
-                backgroundImage: `url(${Banner3})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="text-3xl mb-4">🧱</div>
-              <h4 className="font-bold mb-2 text-white">Each Brick</h4>
-              <p className="text-orange-100 text-xs">
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">Each Brick</h4>
+              <p className="text-gray-500 text-sm mb-4">
                 Every text and practice preserved strengthens our collective
                 house.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest`}
+              >
+                Explore
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4  text-white overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-8 "
+                style={{ backgroundImage: `url(${Banner3})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <h4 className="font-bold mb-2 relative">Trainers Program</h4>
+                <p className="text-sm mb-4 relative">
+                  Join our certified facilitator program and spread the
+                  practice.
+                </p>
+                <span className="text-white text-xs relative font-bold uppercase tracking-widest underline underline-offset-4">
+                  Apply Now
+                </span>
+              </div>
+            </BentoBox>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-zinc-50 border-y border-gray-100">
+      <section className="section-gap bg-zinc-50 border-y border-gray-100">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
@@ -289,55 +328,57 @@ export default function BrickHouseProjectPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-gradient">
-            Build Heritage With Us.
+      <section className="section-gap max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
+            Start Your Journey
           </h2>
+          <h3 className="subheading text-gradient">Build Heritage With Us.</h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bento-card p-10 bg-orange-50/50 border-orange-100">
-            <i className="fas fa-camera-retro accent-brick mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Documentation</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Help document ancient architecture or crafts in your region.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-orange-800">
-              Volunteer Now{" >"}
-            </button>
-          </div>
-          <div className="bento-card p-10">
-            <i className="fas fa-handshake accent-brick mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Research Partners</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Collaborate as an academic institution or heritage expert.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-orange-800">
-              Partner With Us{" >"}
-            </button>
-          </div>
-          <div className="bento-card p-10">
-            <i className="fas fa-users-cog accent-brick mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Community</h4>
-            <p className="text-xs text-gray-500 mb-6">
-              Participate in cultural education and craft workshops.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-orange-800">
-              Join Programs{" >"}
-            </button>
-          </div>
-          <div className="bento-card p-10 bg-zinc-900  border-none">
-            <i className="fas fa-university accent-brick mb-6 text-xl"></i>
-            <h4 className="font-bold mb-2">Sponsor a Center</h4>
-            <p className="text-xs text-zinc-500 mb-6">
-              Fund the establishment of a Brick House community hub.
-            </p>
-            <button className="text-[10px] font-bold uppercase tracking-widest text-orange-800">
-              Sponsor Now{" >"}
-            </button>
-          </div>
+          {cards.map((card, index) => (
+            <BentoCard key={index} {...card} btnColor={bgColor} />
+          ))}
         </div>
       </section>
     </main>
   );
 }
+
+const cards = [
+  {
+    icon: "📅",
+    title: "Documentation",
+    description: "Help document ancient architecture or crafts in your region.",
+    buttonText: "Find Events",
+    href: "/",
+  },
+  {
+    icon: "📍",
+    title: "Research Partners",
+    description: "Collaborate as an academic institution or heritage expert.",
+    buttonText: "Request Visit",
+    href: "/contact-us",
+  },
+  {
+    icon: "🎓",
+    title: "Community",
+    description: "Participate in cultural education and craft workshops.",
+    buttonText: "Apply Now",
+    href: "/join-us",
+  },
+  {
+    icon: "❤️",
+    title: "Sponsor a Center",
+    description: "Fund the establishment of a Brick House community hub.",
+    buttonText: "Sponsor",
+    href: "/join-us",
+  },
+];

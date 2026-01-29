@@ -1,8 +1,12 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
 import DrLim from "../../assets/About/lim.jpeg";
 import DrSavera from "../../assets/About/rajesh.jpeg";
 import Banner1 from "../../assets/ODOC/Banner1.jpeg";
+import { BentoCard } from "../ui/bento-card";
 export default function ODOCPage() {
+  const textColor = activitiesColors.oDOCOneDollarOneChild.text;
+  const bgColor = activitiesColors.oDOCOneDollarOneChild.bg;
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
@@ -14,13 +18,18 @@ export default function ODOCPage() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <div className="inline-block px-4 py-1.5 mb-6 bg-green-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-green-700 border border-green-200">
+              <div
+                className={
+                  "inline-block px-4 py-1.5 mb-6  rounded-full text-[10px] font-bold uppercase tracking-widest    " +
+                  bgColor
+                }
+              >
                 Global Nutrition Initiative by DXN & SIF
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+              <h1 className="heading mb-6 text-white">
                 Child Education Centres.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Creating environments where children learn, play, and grow
                 holistically through early learning, mindfulness, and behavioral
                 development.
@@ -39,7 +48,7 @@ export default function ODOCPage() {
         </div>
       </section>
       <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Live Impact Dashboard
@@ -85,7 +94,7 @@ export default function ODOCPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6" id="mission">
+      <section className="section-gap" id="mission">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="p-12 bg-green-50 rounded-[3rem] border border-green-100">
@@ -111,7 +120,7 @@ export default function ODOCPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gray-50/50">
+      <section className="section-gap bg-gray-50/50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gradient">
@@ -131,7 +140,7 @@ export default function ODOCPage() {
                 minerals in highly bioavailable forms.
               </p>
             </div>
-            <div className="bento-card p-10 bg-zinc-900 ">
+            <div className="bento-card p-10  ">
               <div className="text-3xl mb-6">📊</div>
               <h4 className="text-xl font-bold mb-4">Data-Driven Impact</h4>
               <p className="text-zinc-400 text-sm leading-relaxed">
@@ -151,7 +160,7 @@ export default function ODOCPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="section-gap max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-16 text-center">
           A Systematic Approach.
         </h2>
@@ -194,7 +203,7 @@ export default function ODOCPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-green-50/30">
+      <section className="section-gap bg-green-50/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-16 text-center">
             Nature's Most Complete Superfood.
@@ -232,10 +241,10 @@ export default function ODOCPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="section-gap max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="flex items-start gap-8">
-            <div className="w-20 h-20  bg-zinc-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl font-bold text-gray-400">
+            <div className="w-28 h-28  bg-zinc-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl font-bold text-gray-400">
               <img
                 src={DrLim}
                 alt="Datuk Lim Siow Jin"
@@ -254,7 +263,10 @@ export default function ODOCPage() {
             </div>
           </div>
           <div className="flex items-start gap-8">
-            <div className="w-20 h-20 bg-zinc-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl font-bold text-gray-400">
+            <div
+              className="w-28
+h-28 bg-zinc-100 rounded-full flex-shrink-0 flex items-center justify-center text-2xl font-bold text-gray-400"
+            >
               <img
                 src={DrSavera}
                 alt="Dr. Rajesh Savera"
@@ -275,51 +287,61 @@ export default function ODOCPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-gradient">
-            Help Us Reach 1 Million Children.
+      <section className="section-gap max-w-6xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2
+            className={`text-[10px] uppercase tracking-[0.3em]  font-bold mb-4 ${textColor}`}
+          >
+            Start Your Journey
           </h2>
+          <h3 className="subheading text-gradient">
+            {" "}
+            Help Us Reach 1 Million Children.
+          </h3>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+            Multiple pathways to experience, share, and support the practice of
+            Sunya meditation globally.
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bento-card p-10 flex flex-col justify-between">
-            <div>
-              <div className="text-2xl mb-6">❤️</div>
-              <h4 className="font-bold mb-3">Sponsor a Child</h4>
-              <p className="text-sm text-gray-500">
-                Fund a child's nutrition for just One Dollar.
-              </p>
-            </div>
-            <button className="mt-8 bg-green-600 text-white py-3 rounded-full text-xs font-bold uppercase tracking-widest">
-              Donate $1 Now
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between bg-zinc-900  border-none">
-            <div>
-              <div className="text-2xl mb-6">🏢</div>
-              <h4 className="font-bold mb-3">Partner With Us</h4>
-              <p className="text-sm text-zinc-400">
-                Join as an organizational partner for schools and centers.
-              </p>
-            </div>
-            <button className="mt-8 bg-white text-black py-3 rounded-full text-xs font-bold uppercase tracking-widest">
-              Partner Now
-            </button>
-          </div>
-          <div className="bento-card p-10 flex flex-col justify-between">
-            <div>
-              <div className="text-2xl mb-6">🙌</div>
-              <h4 className="font-bold mb-3">Volunteer</h4>
-              <p className="text-sm text-gray-500">
-                Support field operations, monitoring, or outreach.
-              </p>
-            </div>
-            <button className="mt-8 border border-gray-200 text-black py-3 rounded-full text-xs font-bold uppercase tracking-widest">
-              Get Involved
-            </button>
-          </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {cards.map((card, index) => (
+            <BentoCard key={index} {...card} btnColor={bgColor} />
+          ))}
         </div>
       </section>
     </main>
   );
 }
+
+const cards = [
+  {
+    icon: "📅",
+    title: "Partner With Us",
+    description: "Join as an organizational partner for schools and centers.",
+    buttonText: "  Partner Now",
+    href: "/",
+  },
+  {
+    icon: "📍",
+    title: "Invite Us",
+    description:
+      "Bring Sunya meditation to your school, office, or community center with customized modules.",
+    buttonText: "Request Visit",
+    href: "/contact-us",
+  },
+  {
+    icon: "🎓",
+    title: "Volunteer",
+    description: "Support field operations, monitoring, or outreach.",
+    buttonText: "Apply Now",
+    href: "/join-us",
+  },
+  {
+    icon: "❤️",
+    title: "Sponsor a Child",
+    description: "Fund a child's nutrition for just One Dollar.",
+    buttonText: "Donate $1 Now",
+    href: "/join-us",
+  },
+];

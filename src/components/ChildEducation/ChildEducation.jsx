@@ -1,4 +1,6 @@
+import activitiesColors from "@/lib/activies";
 import { scrollToSection } from "@/lib/scrollToSection";
+import { Link } from "react-router-dom";
 import banner from "../../assets/AusumKids/Banner1.jpg";
 import bento1 from "../../assets/AusumKids/Banner2.jpg";
 import bento2 from "../../assets/AusumKids/Banner3.jpg";
@@ -9,8 +11,8 @@ import MindfulnessSession from "../../assets/AusumKids/MindfulnessSession.jpeg";
 import OpenCircles from "../../assets/AusumKids/Open_Circles.jpeg";
 import ResolutionCards from "../../assets/AusumKids/Resolution_Cards.jpeg";
 import StoryTelling from "../../assets/AusumKids/StoryTelling.jpg";
-import MissionCard from "../ui/MissionCard";
 import TestimonialsCarousel from "../ui/TestimonialsCarousel";
+import { BentoBox, BentoCard } from "../ui/bento-card";
 export default function ChildEducationCentresPage() {
   const DEFAULT_TESTIMONIALS = [
     {
@@ -41,7 +43,8 @@ export default function ChildEducationCentresPage() {
       accent: "text-indigo-600",
     },
   ];
-
+  const textColor = activitiesColors.childEducation.text;
+  const bgColor = activitiesColors.childEducation.bg;
   return (
     <main>
       <section className="hero-gradient   relative w-full  ">
@@ -53,10 +56,10 @@ export default function ChildEducationCentresPage() {
             <div className="absolute inset-0 bg-black/60" />
 
             <div className="max-w-4xl mx-auto text-center flex  flex-col justify-center items-center h-full  relative z-10 text-white">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+              <h1 className="heading mb-6 text-white">
                 Child Education Centres.
               </h1>
-              <p className="text-xl md:text-2xl  font-light mb-10 max-w-2xl mx-auto text-white">
+              <p className="hero-desc mb-10 max-w-2xl mx-auto text-white">
                 Creating environments where children learn, play, and grow
                 holistically through early learning, mindfulness, and behavioral
                 development.
@@ -75,13 +78,13 @@ export default function ChildEducationCentresPage() {
         </div>
       </section>
 
-      <section className="relative mx-4 -mt-30 z-56 mb-8">
-        <div className="max-w-6xl mx-auto bg-zinc-900 text-white py-24 px-6 rounded-[2rem]">
+      <section className="relative mx-4 -mt-30 z-56 ">
+        <div className="max-w-6xl mx-auto bg-zinc-900 text-white section-gap rounded-[2rem]">
           <div className="text-center mb-16">
             <h2 className="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-bold mb-4">
               Young Lives Impact
             </h2>
-            <h3 className="text-3xl font-bold">Measurable Outcomes</h3>
+            <h3 className="subheading">Measurable Outcomes</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -120,16 +123,16 @@ export default function ChildEducationCentresPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6" id="Foundations">
+      <section className="section-gap" id="Foundations">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-purple-600 font-bold tracking-tight text-sm uppercase mb-4">
+              <h2
+                className={`${textColor} font-bold tracking-tight text-sm uppercase mb-4`}
+              >
                 Foundations for Life
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gradient">
-                Holistic Growth.
-              </h3>
+              <h3 className="subheading mb-6 ">Holistic Growth.</h3>
               <p className="text-lg text-gray-500 leading-relaxed mb-8">
                 Our centres are safe, nurturing spaces where children build a
                 strong foundation for both education and life. We focus on early
@@ -141,7 +144,9 @@ export default function ChildEducationCentresPage() {
                 heard and valued.
               </p>
             </div>
-            <div className="rounded-[3rem] bg-purple-soft aspect-square flex items-center justify-center text-purple-300 overflow-hidden relative shadow-inner">
+            <div
+              className={`rounded-[3rem]  aspect-square flex items-center justify-center text-purple-300 overflow-hidden relative shadow-inner`}
+            >
               <img
                 src={Little_Sunyatee}
                 alt="Child Education Centres"
@@ -151,88 +156,106 @@ export default function ChildEducationCentresPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-24 px-6 bg-gray-50/50">
+      <section id="programs" className="section-gap">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold tracking-tight mb-4 text-gradient">
-              Development Focus Areas
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+          <div className="mb-16">
+            <h2 className="subheading ">Development Focus Areas</h2>
+            <p className="text-gray-500 mt-4 text-lg">
               A comprehensive approach addressing multiple dimensions of child
               growth.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div
-              className="bento-card col-span-1 md:col-span-2 md:row-span-2 bg-zinc-900  p-12 flex flex-col justify-end min-h-[450px] bg-cover bg-center w-full h-full "
-              style={{
-                backgroundImage: `url(${bento1})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="absolute top-12 left-12 text-5xl">📖</div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4 text-white">
-                  Early Learning & Literacy
-                </h3>
-                <p className="text-white text-lg leading-relaxed mb-8">
-                  Age-appropriate language and cognitive activities through
-                  engaging, play-based methods.
-                </p>
-                <button className="bg-white text-black px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                  Learn More
-                </button>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <BentoBox className="md:col-span-7  text-white  flex flex-col justify-between h-[450px] overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-12"
+                style={{ backgroundImage: `url(${bento1})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="z-10 relative my-4">
+                  <div className="text-4xl">📖</div>
+                  <h3 className="text-3xl font-bold mt-4 mb-4">
+                    Early Learning & Literacy
+                  </h3>
+                  <p className="text-white max-w-sm">
+                    Age-appropriate language and cognitive activities through
+                    engaging, play-based methods.
+                  </p>
+                </div>
 
-            <div className="bento-card col-span-1 md:col-span-2 p-10 flex flex-col justify-between bg-purple-50/50 border-purple-100">
-              <div className="flex justify-between items-start">
-                <div className="text-4xl">🧘</div>
-                <span className="text-[9px] font-bold uppercase tracking-widest bg-purple-600 text-white px-3 py-1 rounded-full">
-                  Mindfulness
-                </span>
+                <Link
+                  to="#"
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium w-fit relative "
+                >
+                  Learn More
+                </Link>
               </div>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-5 bg-gray-50 p-10 flex flex-col justify-between h-[450px]">
               <div>
-                <h4 className="text-xl font-bold mb-2">Kids' Sunya Programs</h4>
+                <div className="text-4xl">🧘</div>
+                <h3 className="subheading mb-3">Kids' Sunya Programs</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Simple, playful practices that enhance concentration,
                   patience, and self-awareness.
                 </p>
               </div>
-            </div>
 
-            <div className="bento-card p-8 flex flex-col justify-center text-center">
-              <div className="text-3xl mb-4">🎨</div>
+              <Link to="#" className={`${textColor} font-medium text-sm`}>
+                Learn more &gt;
+              </Link>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
               <h4 className="font-bold mb-2">Creative Learning</h4>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-sm mb-4">
                 Storytelling and art that encourage collaboration and
                 self-expression.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest `}
+              >
+                Join Live
+              </span>
+            </BentoBox>
 
-            <div
-              className="bento-card p-8 flex flex-col justify-center text-center bg-purple-600  border-none bg-cover bg-center w-full h-full "
-              style={{
-                backgroundImage: `url(${bento2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="text-3xl mb-4">🤗</div>
-              <h4 className="font-bold mb-2 text-white">Inclusive Spaces</h4>
-              <p className="text-white text-xs">
-                Equal opportunities for learning where every voice is respected.
+            <BentoBox className="md:col-span-4 bg-white p-8 border border-gray-100">
+              <h4 className="font-bold mb-2">School Programs</h4>
+              <p className="text-gray-500 text-sm mb-4">
+                Introduction to Sunya for students to enhance focus and focus.
               </p>
-            </div>
+              <span
+                className={`${textColor} text-xs font-bold uppercase tracking-widest`}
+              >
+                Explore
+              </span>
+            </BentoBox>
+
+            <BentoBox className="md:col-span-4  text-white overflow-hidden">
+              <div
+                className="relative bg-cover bg-center w-full h-full p-8 "
+                style={{ backgroundImage: `url(${bento2})` }}
+              >
+                <div className="absolute inset-0 bg-black/60" />
+                <h4 className="font-bold mb-2 relative">Inclusive Spaces</h4>
+                <p className="text-sm mb-4 relative">
+                  Equal opportunities for learning where every voice is
+                  respected.
+                </p>
+                <span className="text-white text-xs relative font-bold uppercase tracking-widest underline underline-offset-4">
+                  Apply Now
+                </span>
+              </div>
+            </BentoBox>
           </div>
         </div>
       </section>
+
       <Activities />
       <TestimonialsCarousel testimonials={DEFAULT_TESTIMONIALS} />
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="section-gap max-w-6xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-gradient">
             Join Our Development Mission.
@@ -241,7 +264,7 @@ export default function ChildEducationCentresPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {missionCards.map((card, index) => (
-            <MissionCard key={index} {...card} />
+            <BentoCard key={index} {...card} btnColor={bgColor} />
           ))}
         </div>
       </section>
@@ -256,26 +279,29 @@ const missionCards = [
     ),
     title: "Facilitator",
     description: "Train to deliver Little Sunyatee programs in your community.",
-    action: "Apply Now",
-    highlight: true,
+    buttonText: "Apply Now",
+    href: "/",
   },
   {
     icon: <i className={`fas fa-hands-helping text-purple-600  text-xl`} />,
     title: "Volunteer",
     description: "Support our centres through programs or administration.",
-    action: "Get Involved",
+    buttonText: "Get Involved",
+    href: "/",
   },
   {
     icon: <i className={`fas fa-users text-purple-600  text-xl`} />,
     title: "Parent Workshops",
     description: "Extend behavioral practices into your home environment.",
-    action: "Register",
+    buttonText: "Register",
+    href: "/",
   },
   {
     icon: <i className={`fas fa-heart text-purple-600  text-xl`} />,
     title: "Sponsor a Centre",
     description: "Establish new centres with materials and funding.",
-    action: "Sponsor Now",
+    buttonText: "Sponsor Now",
+    href: "/",
   },
 ];
 
@@ -319,7 +345,7 @@ function Activities() {
     },
   ];
   return (
-    <section id="activities" className="py-28 bg-white">
+    <section id="activities" className="section-gap bg-white">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4">

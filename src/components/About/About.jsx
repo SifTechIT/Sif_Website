@@ -47,7 +47,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="pt-32 pb-16 px-6 text-center">
+      <section className="section-gap text-center">
         <h1 className="heading mb-6">Our Journey.</h1>
         <p className="text-gray-500 hero-desc mx-auto font-light">
           From a single vision in 2019 to a global movement for mindfulness and
@@ -56,7 +56,7 @@ export default function AboutUsPage() {
       </section>
       <TimelineAutoScrollSection />
 
-      <section className="py-24 px-6">
+      <section className="section-gap">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className=" rounded-[2.5rem] h-[500px]">
             <img
@@ -98,7 +98,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gray-50">
+      <section className="section-gap bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h2 className="subheading">Our Leadership.</h2>
@@ -148,7 +148,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="section-gap max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="">
             <img
@@ -187,8 +187,8 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white border-y border-gray-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+      <section className="section-gap bg-white border-y border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
           <div>
             <div className="subheading">45,000+</div>
             <div className="text-[10px] text-gray-400 uppercase tracking-widest mt-2">

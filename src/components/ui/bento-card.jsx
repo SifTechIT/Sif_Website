@@ -42,4 +42,18 @@ const BentoCard = ({
   );
 };
 
-export default BentoCard;
+function BentoBox({ className = "", children }) {
+  return (
+    <div
+      className={[
+        "rounded-[2.5rem] border border-[#f2f2f7] transition-all duration-400",
+        "hover:-translate-y-[5px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)]",
+        className,
+      ].join(" ")}
+    >
+      {children}
+    </div>
+  );
+}
+
+export { BentoBox, BentoCard };
